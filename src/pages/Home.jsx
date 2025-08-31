@@ -1,148 +1,107 @@
 import React, { useState, useEffect } from "react";
 import {
+  Box,
   Container,
   Typography,
-  Box,
   Button,
-  Grid,
   Card,
   CardContent,
-  Paper,
-  Avatar,
+  Grid,
   IconButton,
   useTheme as useMuiTheme,
 } from "@mui/material";
 import {
+  Engineering,
+  Cloud,
+  Memory,
+  School,
   ChevronLeft,
   ChevronRight,
-  School,
-  Groups,
-  WorkspacePremium,
-  TrendingUp,
-  Code,
-  Psychology,
-  Engineering,
-  Business,
-  ContactMail,
-  ArrowForward,
-  Star,
 } from "@mui/icons-material";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Home = () => {
-  const { theme, darkMode } = useTheme();
-  const muiTheme = useMuiTheme();
+  const theme = useMuiTheme();
+  const { mode } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
     {
-      title: "Maalgudi Technolabs",
-      subtitle: "Education Technology College",
+      title: "Empowering Future Tech Leaders",
+
       description:
-        "With Maalgudi Technolabs responsive platform, you can promote your all technology training, certification and educational services.",
+        "Comprehensive training programs in emerging technologies. From cloud computing to IoT development, we shape the next generation of technology professionals.",
       image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      buttons: [
-        { text: "Contact Us", variant: "contained" },
-        { text: "Read More", variant: "outlined" },
-      ],
-    },
-    {
-      title: "Modern",
-      subtitle: "Learning Experience",
-      description:
-        "Advance your career with cutting-edge technology training and industry-recognized certifications.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
       buttons: [
         { text: "Get Started", variant: "contained" },
         { text: "Learn More", variant: "outlined" },
       ],
     },
     {
-      title: "Professional",
-      subtitle: "Development Programs",
+      title: "Our Mission",
+      subtitle: "",
+      description:
+        "To provide Personality development, professional exposure, technology upgrade, achieving leadership, management techniques, Financial Management, public speaking, team work and skills required to become highly qualified professionals.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      buttons: [
+        { text: "Contact Us", variant: "contained" },
+        { text: "Read More", variant: "outlined" },
+      ],
+    },
+    {
+      title: "Modern Learning Experience",
+
+      description:
+        "Advance your career with cutting-edge technology training and industry-recognized certifications.",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+      buttons: [
+        { text: "Start Learning", variant: "contained" },
+        { text: "Explore Courses", variant: "outlined" },
+      ],
+    },
+    {
+      title: "Professional Development Programs",
+
       description:
         "Join thousands of professionals who have transformed their careers with our expert-led training programs.",
       image:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
       buttons: [
         { text: "Enroll Now", variant: "contained" },
-        { text: "View Courses", variant: "outlined" },
+        { text: "Learn More", variant: "outlined" },
       ],
     },
-  ];
-
-  const stats = [
-    { icon: <Groups />, number: "2000+", label: "Students Trained" },
-    { icon: <School />, number: "150+", label: "Courses Delivered" },
-    { icon: <WorkspacePremium />, number: "98%", label: "Success Rate" },
-    { icon: <TrendingUp />, number: "5+", label: "Years Experience" },
   ];
 
   const services = [
     {
       icon: <Engineering />,
-      title: "Technology Workshops",
+      title: "Software Development & Testing",
       description:
-        "Comprehensive hands-on training in IoT, Cloud Computing, and emerging technologies with practical implementation.",
+        "Comprehensive training in modern software development methodologies, testing frameworks, and quality assurance practices.",
     },
     {
-      icon: <Psychology />,
-      title: "Leadership Development",
+      icon: <Cloud />,
+      title: "Cloud Computing & DevOps",
       description:
-        "Professional development programs focused on leadership skills and management excellence for career advancement.",
+        "Master cloud platforms like AWS, Azure, and GCP. Learn DevOps practices, containerization, and infrastructure automation.",
     },
     {
-      icon: <Groups />,
-      title: "Corporate Training",
+      icon: <Memory />,
+      title: "IoT & Embedded Systems",
       description:
-        "Customized training solutions for organizations with on-site delivery and certification programs.",
+        "Hands-on training in Internet of Things development, sensor integration, and embedded systems programming.",
     },
     {
-      icon: <Code />,
-      title: "Technical Consulting",
+      icon: <School />,
+      title: "Professional Development",
       description:
-        "Expert consulting services for technology implementation, system architecture, and digital transformation.",
+        "Personality development, leadership skills, financial management, and communication training for career advancement.",
     },
   ];
-
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      role: "Software Engineer at TechCorp",
-      content:
-        "Maalgudi Technolabs transformed my technical skills. The hands-on approach and expert instructors made all the difference.",
-      rating: 5,
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Project Manager at InnovateTech",
-      content:
-        "The leadership development program helped me advance to a management role. Highly recommended for career growth.",
-      rating: 5,
-      avatar:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    },
-    {
-      name: "Amit Patel",
-      role: "Data Scientist at DataFlow",
-      content:
-        "Professional training with real-world applications. The curriculum is up-to-date with industry standards.",
-      rating: 5,
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-    },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -154,125 +113,102 @@ const Home = () => {
     );
   };
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentHero = heroSlides[currentSlide];
+
   return (
-    <Box sx={{ width: "100%", overflowX: "hidden" }}>
-      {/* Hero Slider Section - Maalgudi Technolabs Style */}
+    <Box>
+      {/* Hero Section */}
       <Box
         sx={{
-          height: "100vh",
           position: "relative",
-          overflow: "hidden",
+          height: "100vh",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
+          backgroundImage: `linear-gradient(rgba(8, 9, 10, 0.7), rgba(8, 9, 10, 0.7)), url(${currentHero.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "white",
+          textAlign: "center",
         }}
       >
-        {/* Background Image */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url(${heroSlides[currentSlide].image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: "rgba(0,0,0,0.5)",
-            },
-          }}
-        />
-
-        {/* Content */}
-        <Container
-          maxWidth={false}
-          sx={{
-            position: "relative",
-            zIndex: 1,
-            textAlign: "right",
-            width: "100%",
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
-          }}
-        >
-          <Box sx={{ maxWidth: "100%", ml: "auto", color: "white" }}>
+        <Container maxWidth={false} sx={{ textAlign: "center" }}>
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              fontWeight: "bold",
+              mb: 2,
+              color: "#5DFDCB",
+            }}
+          >
+            {currentHero.title}
+          </Typography>
+          {currentHero.subtitle && (
             <Typography
-              variant="h1"
+              variant="h2"
+              component="h2"
               sx={{
-                fontWeight: 700,
-                mb: 2,
-                fontSize: { xs: "2.5rem", md: "4rem", xl: "5rem" },
-                lineHeight: 1.2,
+                fontSize: { xs: "1.5rem", md: "2.5rem" },
+                fontWeight: "light",
+                mb: 3,
+                color: "#7CC6FE",
               }}
             >
-              <Box component="strong" sx={{ color: "#7CC6FE" }}>
-                {heroSlides[currentSlide].title}
-              </Box>{" "}
-              {heroSlides[currentSlide].subtitle}
+              {currentHero.subtitle}
             </Typography>
-
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 4,
-                fontSize: { xs: "1.1rem", md: "1.3rem", xl: "1.5rem" },
-                lineHeight: 1.6,
-                opacity: 0.9,
-              }}
-            >
-              {heroSlides[currentSlide].description}
-            </Typography>
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: 3,
-                justifyContent: "flex-end",
-                flexWrap: "wrap",
-              }}
-            >
-              {heroSlides[currentSlide].buttons.map((button, index) => (
-                <Button
-                  key={index}
-                  variant={button.variant}
-                  size="large"
-                  sx={{
-                    px: 4,
-                    py: 2,
-                    fontSize: { xs: "1rem", xl: "1.2rem" },
-                    fontWeight: 600,
-                    borderRadius: 0,
-                    ...(button.variant === "contained"
-                      ? {
-                          background:
-                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-                          color: "#08090A",
-                          boxShadow: "0 4px 15px rgba(124, 198, 254, 0.3)",
-                          "&:hover": {
-                            background:
-                              "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
-                            transform: "translateY(-2px)",
-                          },
-                        }
-                      : {
-                          borderColor: "#7CC6FE",
-                          color: "#7CC6FE",
-                          "&:hover": {
-                            background: "#7CC6FE",
-                            color: "#08090A",
-                          },
-                        }),
-                  }}
-                >
-                  {button.text}
-                </Button>
-              ))}
-            </Box>
+          )}
+          <Typography
+            variant="h5"
+            component="p"
+            sx={{
+              mb: 4,
+              maxWidth: "800px",
+              mx: "auto",
+              lineHeight: 1.6,
+            }}
+          >
+            {currentHero.description}
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+            {currentHero.buttons.map((button, index) => (
+              <Button
+                key={index}
+                variant={button.variant}
+                size="large"
+                sx={{
+                  px: 4,
+                  py: 1.5,
+                  fontSize: "1.1rem",
+                  ...(button.variant === "contained" && {
+                    backgroundColor: "#5DFDCB",
+                    color: "#08090A",
+                    "&:hover": {
+                      backgroundColor: "#4AE3B2",
+                    },
+                  }),
+                  ...(button.variant === "outlined" && {
+                    borderColor: "#7CC6FE",
+                    color: "#7CC6FE",
+                    "&:hover": {
+                      borderColor: "#63B4FB",
+                      backgroundColor: "rgba(124, 198, 254, 0.1)",
+                    },
+                  }),
+                }}
+              >
+                {button.text}
+              </Button>
+            ))}
           </Box>
         </Container>
 
@@ -284,16 +220,16 @@ const Home = () => {
             left: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(124, 198, 254, 0.8)",
-            color: "white",
+            backgroundColor: "rgba(93, 253, 203, 0.8)",
+            color: "#08090A",
+            zIndex: 10,
             "&:hover": {
-              backgroundColor: "#7CC6FE",
+              backgroundColor: "rgba(93, 253, 203, 1)",
             },
           }}
         >
-          <ChevronLeft />
+          <ChevronLeft fontSize="large" />
         </IconButton>
-
         <IconButton
           onClick={nextSlide}
           sx={{
@@ -301,14 +237,15 @@ const Home = () => {
             right: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(124, 198, 254, 0.8)",
-            color: "white",
+            backgroundColor: "rgba(93, 253, 203, 0.8)",
+            color: "#08090A",
+            zIndex: 10,
             "&:hover": {
-              backgroundColor: "#7CC6FE",
+              backgroundColor: "rgba(93, 253, 203, 1)",
             },
           }}
         >
-          <ChevronRight />
+          <ChevronRight fontSize="large" />
         </IconButton>
 
         {/* Slide Indicators */}
@@ -320,6 +257,7 @@ const Home = () => {
             transform: "translateX(-50%)",
             display: "flex",
             gap: 1,
+            zIndex: 10,
           }}
         >
           {heroSlides.map((_, index) => (
@@ -340,444 +278,168 @@ const Home = () => {
         </Box>
       </Box>
 
-      {/* Stats Section */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container
-          maxWidth={false}
+      {/* Services Section */}
+      <Container maxWidth={false} sx={{ py: 8 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          textAlign="center"
           sx={{
-            width: "100%",
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+            mb: 6,
+            color: mode === "dark" ? "#5DFDCB" : "#08090A",
+            fontWeight: "bold",
           }}
         >
-          <Grid
-            container
-            spacing={{ xs: 3, sm: 4, md: 6 }}
-            sx={{ alignItems: "stretch" }}
-          >
-            {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index} sx={{ display: "flex" }}>
-                <Paper
-                  elevation={0}
+          Our Services
+        </Typography>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          alignItems="stretch"
+        >
+          {services.map((service, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={3}
+              key={index}
+              sx={{ display: "flex" }}
+            >
+              <Card
+                sx={{
+                  height: 220, // Reduced height for more compact cards
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  backgroundColor: mode === "dark" ? "#1a1a1a" : "#7CC6FE",
+                  color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                  boxShadow:
+                    mode === "dark"
+                      ? "0 4px 20px rgba(93, 253, 203, 0.1)"
+                      : "0 4px 20px rgba(8, 9, 10, 0.1)",
+                  border:
+                    mode === "dark"
+                      ? "1px solid rgba(93, 253, 203, 0.3)"
+                      : "none",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-8px)",
+                    boxShadow:
+                      mode === "dark"
+                        ? "0 8px 40px rgba(93, 253, 203, 0.2)"
+                        : "0 8px 40px rgba(8, 9, 10, 0.15)",
+                  },
+                }}
+              >
+                <CardContent
                   sx={{
-                    p: 4,
-                    textAlign: "center",
-                    backgroundColor: "white",
-                    borderRadius: 0,
-                    transition: "all 0.3s ease",
-                    width: "100%",
+                    height: "100%",
+                    p: 2, // Reduced padding from 3 to 2
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                    },
+                    alignItems: "center",
+                    justifyContent: "space-evenly", // Distribute space evenly
+                    textAlign: "center",
                   }}
                 >
                   <Box
                     sx={{
-                      color: "#7CC6FE",
-                      mb: 2,
-                      fontSize: { xs: "2rem", md: "3rem" },
+                      mb: 0.5, // Reduced margin
+                      display: "flex",
+                      justifyContent: "center",
+                      "& svg": {
+                        fontSize: 48, // Reduced icon size from 60 to 48
+                        color: mode === "dark" ? "#5DFDCB" : "#08090A",
+                      },
                     }}
                   >
-                    {stat.icon}
+                    {service.icon}
                   </Box>
                   <Typography
-                    variant="h3"
+                    variant="h6"
+                    component="h3"
                     sx={{
-                      fontWeight: 700,
-                      color: "#333",
-                      mb: 1,
-                      fontSize: { xs: "2rem", md: "3rem" },
+                      mb: 0.5, // Reduced margin
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      fontSize: "1.1rem", // Reduced font size
+                      lineHeight: 1.2,
                     }}
                   >
-                    {stat.number}
+                    {service.title}
                   </Typography>
                   <Typography
-                    variant="body1"
+                    variant="body2"
                     sx={{
-                      color: "#666",
-                      fontWeight: 500,
-                      fontSize: { xs: "0.9rem", md: "1rem" },
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Services Section */}
-      <Box sx={{ py: 10, backgroundColor: darkMode ? "#1a1b1c" : "#f0f8ff" }}>
-        <Container
-          maxWidth={false}
-          sx={{
-            width: "100%",
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
-          }}
-        >
-          <Box sx={{ textAlign: "center", mb: 8 }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 700,
-                color: "#333",
-                mb: 2,
-                fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
-              }}
-            >
-              Our{" "}
-              <Box component="span" sx={{ color: "#7CC6FE" }}>
-                Services
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#666",
-                maxWidth: "600px",
-                mx: "auto",
-                lineHeight: 1.8,
-                fontSize: { xs: "1rem", md: "1.2rem" },
-              }}
-            >
-              Comprehensive technology training and professional development
-              solutions
-            </Typography>
-          </Box>
-
-          <Grid
-            container
-            spacing={{ xs: 3, sm: 4, md: 6 }}
-            sx={{
-              alignItems: "stretch",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            {services.map((service, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={6}
-                key={index}
-                sx={{
-                  display: "flex",
-                  alignItems: "stretch",
-                }}
-              >
-                <Card
-                  elevation={2}
-                  sx={{
-                    height: "100%",
-                    width: "100%",
-                    minWidth: "100%",
-                    borderRadius: 0,
-                    border: "1px solid #e0e0e0",
-                    backgroundColor: darkMode ? "#242526" : "#f0f8ff",
-                    transition: "all 0.3s ease",
-                    display: "flex",
-                    flexDirection: "column",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      backgroundColor: darkMode ? "#2a2d2e" : "#e6f4ff",
-                      boxShadow: darkMode
-                        ? "0 12px 30px rgba(255,255,255,0.15)"
-                        : "0 12px 30px rgba(124, 198, 254, 0.2)",
-                      "& .service-icon": {
-                        backgroundColor: "#5DFDCB",
-                        color: "#08090A",
-                      },
-                    },
-                  }}
-                >
-                  <CardContent
-                    sx={{
-                      p: 4,
-                      flexGrow: 1,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                      alignItems: "flex-start",
-                      height: "100%",
-                    }}
-                  >
-                    <Box
-                      className="service-icon"
-                      sx={{
-                        backgroundColor: darkMode ? "#242526" : "#f8f9fa",
-                        color: "#7CC6FE",
-                        p: 2,
-                        borderRadius: 0,
-                        display: "inline-flex",
-                        mb: 3,
-                        fontSize: "2rem",
-                        transition: "all 0.3s ease",
-                      }}
-                    >
-                      {service.icon}
-                    </Box>
-
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontWeight: 600,
-                        color: "#333",
-                        mb: 2,
-                        fontSize: { xs: "1.3rem", md: "1.5rem" },
-                      }}
-                    >
-                      {service.title}
-                    </Typography>
-
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: "#666",
-                        lineHeight: 1.8,
-                        fontSize: { xs: "0.9rem", md: "1rem" },
-                      }}
-                    >
-                      {service.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Testimonials Section */}
-      <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container
-          maxWidth={false}
-          sx={{
-            width: "100%",
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
-          }}
-        >
-          <Box sx={{ textAlign: "center", mb: 8 }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 700,
-                color: "#333",
-                mb: 2,
-                fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
-              }}
-            >
-              Student{" "}
-              <Box component="span" sx={{ color: "#7CC6FE" }}>
-                Testimonials
-              </Box>
-            </Typography>
-          </Box>
-
-          <Grid
-            container
-            spacing={{ xs: 3, sm: 4, md: 6 }}
-            sx={{ alignItems: "stretch" }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <Grid item xs={12} md={4} key={index} sx={{ display: "flex" }}>
-                <Card
-                  elevation={2}
-                  sx={{
-                    height: "100%",
-                    width: "100%",
-                    borderRadius: 0,
-                    border: "1px solid #e0e0e0",
-                    backgroundColor: darkMode ? "#242526" : "#fafafa",
-                    transition: "all 0.3s ease",
-                    display: "flex",
-                    flexDirection: "column",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: darkMode
-                        ? "0 12px 30px rgba(255,255,255,0.15)"
-                        : "0 12px 30px rgba(0,0,0,0.15)",
-                    },
-                  }}
-                >
-                  <CardContent
-                    sx={{
-                      p: 4,
+                      lineHeight: 1.3, // Reduced line height
                       textAlign: "center",
-                      flexGrow: 1,
+                      fontSize: "0.8rem", // Reduced font size
+                      flex: 1, // Take remaining space
                       display: "flex",
-                      flexDirection: "column",
+                      alignItems: "center",
                     }}
                   >
-                    {/* Top Section - Avatar and Rating */}
-                    <Box sx={{ mb: 3 }}>
-                      <Avatar
-                        src={testimonial.avatar}
-                        sx={{
-                          width: 80,
-                          height: 80,
-                          mx: "auto",
-                          mb: 2,
-                        }}
-                      />
-
-                      <Box sx={{ mb: 2 }}>
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star
-                            key={i}
-                            sx={{ color: "#5DFDCB", fontSize: "1.2rem" }}
-                          />
-                        ))}
-                      </Box>
-                    </Box>
-
-                    {/* Middle Section - Testimonial Text (Flexible) */}
-                    <Box
-                      sx={{
-                        flexGrow: 1,
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          color: "#666",
-                          fontStyle: "italic",
-                          lineHeight: 1.7,
-                        }}
-                      >
-                        "{testimonial.content}"
-                      </Typography>
-                    </Box>
-
-                    {/* Bottom Section - Name and Role */}
-                    <Box sx={{ mt: 3 }}>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 600,
-                          color: "#333",
-                          mb: 1,
-                        }}
-                      >
-                        {testimonial.name}
-                      </Typography>
-
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          color: "#7CC6FE",
-                          fontSize: "0.9rem",
-                        }}
-                      >
-                        {testimonial.role}
-                      </Typography>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+                    {service.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
       {/* CTA Section */}
       <Box
         sx={{
-          py: 10,
-          backgroundColor: "#333",
-          color: "white",
-          textAlign: "center",
+          backgroundColor: "#08090A", // Always black background
+          py: 8,
         }}
       >
-        <Container
-          maxWidth={false}
-          sx={{
-            width: "100%",
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
-            maxWidth: "1200px",
-            mx: "auto",
-          }}
-        >
+        <Container maxWidth={false}>
           <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: "2rem", md: "3rem" },
-            }}
-          >
-            Ready to Start Your Journey?
-          </Typography>
-
-          <Typography
-            variant="h6"
+            variant="h3"
+            component="h2"
+            textAlign="center"
             sx={{
               mb: 4,
-              opacity: 0.9,
-              lineHeight: 1.6,
-              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "#5DFDCB", // Always mint green text
+              fontWeight: "bold",
             }}
           >
-            Join thousands of professionals who have transformed their careers
-            with our training programs
+            Ready to Transform Your Career?
           </Typography>
-
-          <Box
+          <Typography
+            variant="h6"
+            textAlign="center"
             sx={{
-              display: "flex",
-              gap: 3,
-              justifyContent: "center",
-              flexWrap: "wrap",
+              mb: 4,
+              color: "#F4FAFF", // Always light text
+              maxWidth: "600px",
+              mx: "auto",
             }}
           >
+            Join thousands of professionals who have advanced their careers with
+            our comprehensive training programs.
+          </Typography>
+          <Box sx={{ textAlign: "center" }}>
             <Button
               variant="contained"
               size="large"
-              endIcon={<ArrowForward />}
               sx={{
-                background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-                color: "#08090A",
-                px: 4,
+                px: 6,
                 py: 2,
-                fontSize: { xs: "1rem", xl: "1.2rem" },
-                fontWeight: 600,
-                borderRadius: 0,
+                fontSize: "1.2rem",
+                backgroundColor: "#5DFDCB", // Always mint green button
+                color: "#08090A", // Always dark text on button
                 "&:hover": {
-                  background:
-                    "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
-                  transform: "translateY(-2px)",
+                  backgroundColor: "#4AE3B2", // Slightly darker mint on hover
                 },
               }}
             >
               Get Started Today
-            </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              startIcon={<ContactMail />}
-              sx={{
-                borderColor: "#7CC6FE",
-                color: "#7CC6FE",
-                px: 4,
-                py: 2,
-                fontSize: { xs: "1rem", xl: "1.2rem" },
-                fontWeight: 600,
-                borderRadius: 0,
-                "&:hover": {
-                  background: "#7CC6FE",
-                  color: "#08090A",
-                },
-              }}
-            >
-              Contact Us
             </Button>
           </Box>
         </Container>

@@ -28,13 +28,6 @@ import { useTheme } from "../contexts/ThemeContext";
 
 const About = () => {
   const { theme, darkMode } = useTheme();
-  const stats = [
-    { icon: <School />, number: "2000+", label: "Students Trained" },
-    { icon: <Groups />, number: "150+", label: "Courses Delivered" },
-    { icon: <EmojiEvents />, number: "98%", label: "Success Rate" },
-    { icon: <TrendingUp />, number: "5+", label: "Years Experience" },
-  ];
-
   const team = [
     {
       name: "Dr. Rajesh Kumar",
@@ -171,64 +164,6 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Stats Section */}
-      <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Grid container spacing={4}>
-            {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index}>
-                <Paper
-                  elevation={0}
-                  sx={{
-                    p: 4,
-                    textAlign: "center",
-                    backgroundColor: "white",
-                    borderRadius: 0,
-                    border: "3px solid transparent",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      borderColor: "#7CC6FE",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-                    },
-                  }}
-                >
-                  <Box
-                    sx={{
-                      color: "#7CC6FE",
-                      mb: 2,
-                      fontSize: { xs: "2rem", md: "3rem" },
-                    }}
-                  >
-                    {stat.icon}
-                  </Box>
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      fontWeight: 700,
-                      color: "#333",
-                      mb: 1,
-                      fontSize: { xs: "2rem", md: "3rem" },
-                    }}
-                  >
-                    {stat.number}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "#666",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
       {/* Mission & Vision Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
@@ -257,9 +192,10 @@ const About = () => {
                   fontSize: { xs: "1rem", md: "1.2rem" },
                 }}
               >
-                To empower professionals and organizations with cutting-edge
-                technology skills and leadership capabilities that drive
-                innovation and success in the digital age.
+                To provide Personality development, professional exposure,
+                technology upgrade, achieving leadership, management techniques,
+                Financial Management, public speaking, team work and skills
+                required to become highly qualified professionals.
               </Typography>
 
               <Typography
