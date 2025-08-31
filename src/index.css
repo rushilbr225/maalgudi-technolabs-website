@@ -1,0 +1,144 @@
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced scaling for large displays and presentations */
+@media (min-width: 1920px) {
+  :root {
+    font-size: 18px; /* Scale base font size for large screens */
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    font-size: 22px; /* Even larger for 4K displays */
+  }
+}
+
+/* Ensure proper viewport scaling */
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #213547;
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+/* Professional typography scaling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Enhanced button styling for presentations */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Link styling */
+a {
+  font-weight: 500;
+  color: #1e3c72;
+  text-decoration: inherit;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: #ff6b35;
+}
+
+/* Smooth scrolling for better presentation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3c72;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a5298;
+}
+
+/* Ensure images scale properly */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Professional focus styles */
+button:focus,
+button:focus-visible {
+  outline: 2px solid #1e3c72;
+  outline-offset: 2px;
+}
+
+/* Print styles for presentations */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+  h2 {
+    font-size: 20pt;
+  }
+  h3 {
+    font-size: 16pt;
+  }
+  h4 {
+    font-size: 14pt;
+  }
+  h5 {
+    font-size: 12pt;
+  }
+  h6 {
+    font-size: 10pt;
+  }
+}
