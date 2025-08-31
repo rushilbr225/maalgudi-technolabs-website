@@ -24,8 +24,10 @@ import {
   Email,
   Phone,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const About = () => {
+  const { theme, darkMode } = useTheme();
   const stats = [
     { icon: <School />, number: "2000+", label: "Students Trained" },
     { icon: <Groups />, number: "150+", label: "Courses Delivered" },
@@ -130,7 +132,7 @@ const About = () => {
       <Box
         sx={{
           background:
-            'linear-gradient(135deg, rgba(238, 164, 18, 0.9) 0%, rgba(245, 200, 66, 0.9) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(135deg, rgba(124, 198, 254, 0.95) 0%, rgba(93, 253, 203, 0.95) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "white",
@@ -138,7 +140,7 @@ const About = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Typography
             variant="h1"
             sx={{
@@ -148,14 +150,14 @@ const About = () => {
             }}
           >
             About{" "}
-            <Box component="span" sx={{ color: "#fff" }}>
+            <Box component="span" sx={{ color: "#1a1a1a" }}>
               Maalgudi Technolabs
             </Box>
           </Typography>
           <Typography
             variant="h5"
             sx={{
-              maxWidth: "800px",
+              maxWidth: "100%",
               mx: "auto",
               opacity: 0.95,
               lineHeight: 1.6,
@@ -171,7 +173,7 @@ const About = () => {
 
       {/* Stats Section */}
       <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={4}>
             {stats.map((stat, index) => (
               <Grid item xs={6} md={3} key={index}>
@@ -186,14 +188,14 @@ const About = () => {
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      borderColor: "#eea412",
+                      borderColor: "#7CC6FE",
                       boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
                     },
                   }}
                 >
                   <Box
                     sx={{
-                      color: "#eea412",
+                      color: "#7CC6FE",
                       mb: 2,
                       fontSize: { xs: "2rem", md: "3rem" },
                     }}
@@ -229,7 +231,7 @@ const About = () => {
 
       {/* Mission & Vision Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography
@@ -242,7 +244,7 @@ const About = () => {
                 }}
               >
                 Our{" "}
-                <Box component="span" sx={{ color: "#eea412" }}>
+                <Box component="span" sx={{ color: "#7CC6FE" }}>
                   Mission
                 </Box>
               </Typography>
@@ -264,7 +266,7 @@ const About = () => {
                 variant="h4"
                 sx={{
                   fontWeight: 600,
-                  color: "#eea412",
+                  color: "#7CC6FE",
                   mb: 2,
                   fontSize: { xs: "1.5rem", md: "2rem" },
                 }}
@@ -303,7 +305,7 @@ const About = () => {
 
       {/* Values Section */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -315,7 +317,7 @@ const About = () => {
               }}
             >
               Our{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Values
               </Box>
             </Typography>
@@ -347,7 +349,7 @@ const About = () => {
                       transform: "translateY(-5px)",
                       boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
                       "& .value-icon": {
-                        backgroundColor: "#eea412",
+                        backgroundColor: "#7CC6FE",
                         color: "white",
                       },
                     },
@@ -358,7 +360,7 @@ const About = () => {
                       className="value-icon"
                       sx={{
                         backgroundColor: "#f8f9fa",
-                        color: "#eea412",
+                        color: "#7CC6FE",
                         p: 2,
                         borderRadius: 0,
                         display: "inline-flex",
@@ -401,7 +403,7 @@ const About = () => {
 
       {/* Skills Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={6}>
               <Box
@@ -427,7 +429,7 @@ const About = () => {
                 }}
               >
                 Our{" "}
-                <Box component="span" sx={{ color: "#eea412" }}>
+                <Box component="span" sx={{ color: "#7CC6FE" }}>
                   Expertise
                 </Box>
               </Typography>
@@ -462,7 +464,7 @@ const About = () => {
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ color: "#eea412", fontWeight: 600 }}
+                        sx={{ color: "#7CC6FE", fontWeight: 600 }}
                       >
                         {skill.progress}%
                       </Typography>
@@ -475,7 +477,7 @@ const About = () => {
                         borderRadius: 0,
                         backgroundColor: "#f0f0f0",
                         "& .MuiLinearProgress-bar": {
-                          backgroundColor: "#eea412",
+                          backgroundColor: "#7CC6FE",
                           borderRadius: 0,
                         },
                       }}
@@ -490,7 +492,7 @@ const About = () => {
 
       {/* Team Section */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -502,7 +504,7 @@ const About = () => {
               }}
             >
               Meet Our{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Team
               </Box>
             </Typography>
@@ -560,7 +562,7 @@ const About = () => {
                         <Typography
                           variant="body1"
                           sx={{
-                            color: "#eea412",
+                            color: "#7CC6FE",
                             fontWeight: 500,
                           }}
                         >
@@ -587,11 +589,11 @@ const About = () => {
                           label={skill}
                           size="small"
                           sx={{
-                            backgroundColor: "#eea412",
-                            color: "white",
+                            backgroundColor: "#5DFDCB",
+                            color: "#08090A",
                             fontWeight: 500,
                             "&:hover": {
-                              backgroundColor: "#d89e0b",
+                              backgroundColor: "#3ffcc1",
                             },
                           }}
                         />
@@ -614,7 +616,7 @@ const About = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Typography
             variant="h2"
             sx={{
@@ -647,15 +649,15 @@ const About = () => {
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Email sx={{ color: "#eea412" }} />
+              <Email sx={{ color: "#7CC6FE" }} />
               <Typography>info@Maalgudi Technolabs.com</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Phone sx={{ color: "#eea412" }} />
+              <Phone sx={{ color: "#7CC6FE" }} />
               <Typography>+91 9876543210</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <LinkedIn sx={{ color: "#eea412" }} />
+              <LinkedIn sx={{ color: "#7CC6FE" }} />
               <Typography>Follow us on LinkedIn</Typography>
             </Box>
           </Box>

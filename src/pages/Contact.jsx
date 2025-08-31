@@ -30,8 +30,10 @@ import {
   School,
   Support,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Contact = () => {
+  const { theme, darkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -151,7 +153,7 @@ const Contact = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Typography
             variant="h1"
             sx={{
@@ -183,7 +185,7 @@ const Contact = () => {
 
       {/* Contact Information Grid */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -287,7 +289,7 @@ const Contact = () => {
 
       {/* Contact Form & Map Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8}>
             {/* Contact Form */}
             <Grid item xs={12} md={6}>
@@ -445,8 +447,8 @@ const Contact = () => {
                       endIcon={<Send />}
                       sx={{
                         background:
-                          "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                        color: "#fff",
+                          "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                        color: "#08090A",
                         px: 4,
                         py: 2,
                         fontSize: "1.1rem",
@@ -454,7 +456,7 @@ const Contact = () => {
                         borderRadius: 0,
                         "&:hover": {
                           background:
-                            "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                            "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                           transform: "translateY(-2px)",
                         },
                       }}
@@ -556,7 +558,7 @@ const Contact = () => {
 
       {/* Services Section */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -671,7 +673,7 @@ const Contact = () => {
 
       {/* FAQ or Additional Info Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="md">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center" }}>
             <Typography
               variant="h2"
@@ -700,8 +702,8 @@ const Contact = () => {
               variant="contained"
               size="large"
               sx={{
-                background: "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                color: "#fff",
+                background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                color: "#08090A",
                 px: 6,
                 py: 2,
                 fontSize: "1.2rem",
@@ -709,7 +711,7 @@ const Contact = () => {
                 borderRadius: 0,
                 "&:hover": {
                   background:
-                    "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                    "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                   transform: "translateY(-2px)",
                 },
               }}

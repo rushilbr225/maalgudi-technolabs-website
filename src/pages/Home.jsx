@@ -10,7 +10,7 @@ import {
   Paper,
   Avatar,
   IconButton,
-  useTheme,
+  useTheme as useMuiTheme,
 } from "@mui/material";
 import {
   ChevronLeft,
@@ -27,9 +27,11 @@ import {
   ArrowForward,
   Star,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Home = () => {
-  const theme = useTheme();
+  const { theme, darkMode } = useTheme();
+  const muiTheme = useMuiTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -153,7 +155,7 @@ const Home = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ width: "100%", overflowX: "hidden" }}>
       {/* Hero Slider Section - Maalgudi Technolabs Style */}
       <Box
         sx={{
@@ -189,10 +191,16 @@ const Home = () => {
 
         {/* Content */}
         <Container
-          maxWidth="lg"
-          sx={{ position: "relative", zIndex: 1, textAlign: "right" }}
+          maxWidth={false}
+          sx={{
+            position: "relative",
+            zIndex: 1,
+            textAlign: "right",
+            width: "100%",
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+          }}
         >
-          <Box sx={{ maxWidth: "600px", ml: "auto", color: "white" }}>
+          <Box sx={{ maxWidth: "100%", ml: "auto", color: "white" }}>
             <Typography
               variant="h1"
               sx={{
@@ -202,7 +210,7 @@ const Home = () => {
                 lineHeight: 1.2,
               }}
             >
-              <Box component="strong" sx={{ color: "#eea412" }}>
+              <Box component="strong" sx={{ color: "#7CC6FE" }}>
                 {heroSlides[currentSlide].title}
               </Box>{" "}
               {heroSlides[currentSlide].subtitle}
@@ -242,21 +250,21 @@ const Home = () => {
                     ...(button.variant === "contained"
                       ? {
                           background:
-                            "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                          color: "#fff",
-                          boxShadow: "0 4px 15px rgba(238, 164, 18, 0.3)",
+                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                          color: "#08090A",
+                          boxShadow: "0 4px 15px rgba(124, 198, 254, 0.3)",
                           "&:hover": {
                             background:
-                              "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                              "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                             transform: "translateY(-2px)",
                           },
                         }
                       : {
-                          borderColor: "#eea412",
-                          color: "#eea412",
+                          borderColor: "#7CC6FE",
+                          color: "#7CC6FE",
                           "&:hover": {
-                            background: "#eea412",
-                            color: "#fff",
+                            background: "#7CC6FE",
+                            color: "#08090A",
                           },
                         }),
                   }}
@@ -276,10 +284,10 @@ const Home = () => {
             left: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(238, 164, 18, 0.8)",
+            backgroundColor: "rgba(124, 198, 254, 0.8)",
             color: "white",
             "&:hover": {
-              backgroundColor: "#eea412",
+              backgroundColor: "#7CC6FE",
             },
           }}
         >
@@ -293,10 +301,10 @@ const Home = () => {
             right: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(238, 164, 18, 0.8)",
+            backgroundColor: "rgba(124, 198, 254, 0.8)",
             color: "white",
             "&:hover": {
-              backgroundColor: "#eea412",
+              backgroundColor: "#7CC6FE",
             },
           }}
         >
@@ -323,7 +331,7 @@ const Home = () => {
                 height: 12,
                 borderRadius: "50%",
                 backgroundColor:
-                  index === currentSlide ? "#eea412" : "rgba(255,255,255,0.5)",
+                  index === currentSlide ? "#5DFDCB" : "rgba(255,255,255,0.5)",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -334,10 +342,20 @@ const Home = () => {
 
       {/* Stats Section */}
       <Box sx={{ py: 8, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
+        <Container
+          maxWidth={false}
+          sx={{
+            width: "100%",
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+          }}
+        >
+          <Grid
+            container
+            spacing={{ xs: 3, sm: 4, md: 6 }}
+            sx={{ alignItems: "stretch" }}
+          >
             {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index}>
+              <Grid item xs={6} md={3} key={index} sx={{ display: "flex" }}>
                 <Paper
                   elevation={0}
                   sx={{
@@ -346,6 +364,10 @@ const Home = () => {
                     backgroundColor: "white",
                     borderRadius: 0,
                     transition: "all 0.3s ease",
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
                     "&:hover": {
                       transform: "translateY(-5px)",
                       boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
@@ -354,7 +376,7 @@ const Home = () => {
                 >
                   <Box
                     sx={{
-                      color: "#eea412",
+                      color: "#7CC6FE",
                       mb: 2,
                       fontSize: { xs: "2rem", md: "3rem" },
                     }}
@@ -390,8 +412,14 @@ const Home = () => {
       </Box>
 
       {/* Services Section */}
-      <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: 10, backgroundColor: darkMode ? "#1a1b1c" : "#f0f8ff" }}>
+        <Container
+          maxWidth={false}
+          sx={{
+            width: "100%",
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+          }}
+        >
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -403,7 +431,7 @@ const Home = () => {
               }}
             >
               Our{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Services
               </Box>
             </Typography>
@@ -422,32 +450,68 @@ const Home = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4}>
+          <Grid
+            container
+            spacing={{ xs: 3, sm: 4, md: 6 }}
+            sx={{
+              alignItems: "stretch",
+              justifyContent: "center",
+              width: "100%",
+            }}
+          >
             {services.map((service, index) => (
-              <Grid item xs={12} md={6} key={index}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "stretch",
+                }}
+              >
                 <Card
-                  elevation={0}
+                  elevation={2}
                   sx={{
                     height: "100%",
+                    width: "100%",
+                    minWidth: "100%",
                     borderRadius: 0,
-                    border: "1px solid #eee",
+                    border: "1px solid #e0e0e0",
+                    backgroundColor: darkMode ? "#242526" : "#f0f8ff",
                     transition: "all 0.3s ease",
+                    display: "flex",
+                    flexDirection: "column",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                      backgroundColor: darkMode ? "#2a2d2e" : "#e6f4ff",
+                      boxShadow: darkMode
+                        ? "0 12px 30px rgba(255,255,255,0.15)"
+                        : "0 12px 30px rgba(124, 198, 254, 0.2)",
                       "& .service-icon": {
-                        backgroundColor: "#eea412",
-                        color: "white",
+                        backgroundColor: "#5DFDCB",
+                        color: "#08090A",
                       },
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 4 }}>
+                  <CardContent
+                    sx={{
+                      p: 4,
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-start",
+                      alignItems: "flex-start",
+                      height: "100%",
+                    }}
+                  >
                     <Box
                       className="service-icon"
                       sx={{
-                        backgroundColor: "#f8f9fa",
-                        color: "#eea412",
+                        backgroundColor: darkMode ? "#242526" : "#f8f9fa",
+                        color: "#7CC6FE",
                         p: 2,
                         borderRadius: 0,
                         display: "inline-flex",
@@ -491,7 +555,13 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container
+          maxWidth={false}
+          sx={{
+            width: "100%",
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+          }}
+        >
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -503,80 +573,112 @@ const Home = () => {
               }}
             >
               Student{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Testimonials
               </Box>
             </Typography>
           </Box>
 
-          <Grid container spacing={4}>
+          <Grid
+            container
+            spacing={{ xs: 3, sm: 4, md: 6 }}
+            sx={{ alignItems: "stretch" }}
+          >
             {testimonials.map((testimonial, index) => (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={4} key={index} sx={{ display: "flex" }}>
                 <Card
-                  elevation={0}
+                  elevation={2}
                   sx={{
                     height: "100%",
+                    width: "100%",
                     borderRadius: 0,
-                    backgroundColor: "white",
+                    border: "1px solid #e0e0e0",
+                    backgroundColor: darkMode ? "#242526" : "#fafafa",
                     transition: "all 0.3s ease",
+                    display: "flex",
+                    flexDirection: "column",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                      boxShadow: darkMode
+                        ? "0 12px 30px rgba(255,255,255,0.15)"
+                        : "0 12px 30px rgba(0,0,0,0.15)",
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 4, textAlign: "center" }}>
-                    <Avatar
-                      src={testimonial.avatar}
-                      sx={{
-                        width: 80,
-                        height: 80,
-                        mx: "auto",
-                        mb: 3,
-                      }}
-                    />
+                  <CardContent
+                    sx={{
+                      p: 4,
+                      textAlign: "center",
+                      flexGrow: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    {/* Top Section - Avatar and Rating */}
+                    <Box sx={{ mb: 3 }}>
+                      <Avatar
+                        src={testimonial.avatar}
+                        sx={{
+                          width: 80,
+                          height: 80,
+                          mx: "auto",
+                          mb: 2,
+                        }}
+                      />
 
-                    <Box sx={{ mb: 2 }}>
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          sx={{ color: "#eea412", fontSize: "1.2rem" }}
-                        />
-                      ))}
+                      <Box sx={{ mb: 2 }}>
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star
+                            key={i}
+                            sx={{ color: "#5DFDCB", fontSize: "1.2rem" }}
+                          />
+                        ))}
+                      </Box>
                     </Box>
 
-                    <Typography
-                      variant="body1"
+                    {/* Middle Section - Testimonial Text (Flexible) */}
+                    <Box
                       sx={{
-                        color: "#666",
-                        mb: 3,
-                        fontStyle: "italic",
-                        lineHeight: 1.7,
+                        flexGrow: 1,
+                        display: "flex",
+                        alignItems: "center",
                       }}
                     >
-                      "{testimonial.content}"
-                    </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "#666",
+                          fontStyle: "italic",
+                          lineHeight: 1.7,
+                        }}
+                      >
+                        "{testimonial.content}"
+                      </Typography>
+                    </Box>
 
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: 600,
-                        color: "#333",
-                        mb: 1,
-                      }}
-                    >
-                      {testimonial.name}
-                    </Typography>
+                    {/* Bottom Section - Name and Role */}
+                    <Box sx={{ mt: 3 }}>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 600,
+                          color: "#333",
+                          mb: 1,
+                        }}
+                      >
+                        {testimonial.name}
+                      </Typography>
 
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: "#eea412",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      {testimonial.role}
-                    </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: "#7CC6FE",
+                          fontSize: "0.9rem",
+                        }}
+                      >
+                        {testimonial.role}
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
@@ -594,7 +696,15 @@ const Home = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="md">
+        <Container
+          maxWidth={false}
+          sx={{
+            width: "100%",
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+            maxWidth: "1200px",
+            mx: "auto",
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
@@ -632,8 +742,8 @@ const Home = () => {
               size="large"
               endIcon={<ArrowForward />}
               sx={{
-                background: "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                color: "#fff",
+                background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                color: "#08090A",
                 px: 4,
                 py: 2,
                 fontSize: { xs: "1rem", xl: "1.2rem" },
@@ -641,7 +751,7 @@ const Home = () => {
                 borderRadius: 0,
                 "&:hover": {
                   background:
-                    "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                    "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                   transform: "translateY(-2px)",
                 },
               }}
@@ -654,16 +764,16 @@ const Home = () => {
               size="large"
               startIcon={<ContactMail />}
               sx={{
-                borderColor: "#eea412",
-                color: "#eea412",
+                borderColor: "#7CC6FE",
+                color: "#7CC6FE",
                 px: 4,
                 py: 2,
                 fontSize: { xs: "1rem", xl: "1.2rem" },
                 fontWeight: 600,
                 borderRadius: 0,
                 "&:hover": {
-                  background: "#eea412",
-                  color: "#fff",
+                  background: "#7CC6FE",
+                  color: "#08090A",
                 },
               }}
             >

@@ -3,12 +3,29 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode theme variables */
+[data-theme="light"] {
+  --bg-primary: #f4faff;
+  --bg-secondary: #ffffff;
+  --text-primary: #08090a;
+  --text-secondary: #4a5568;
+  --accent-primary: #7cc6fe;
+  --accent-secondary: #5dfdcb;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0b0c;
+  --bg-secondary: #1a1b1c;
+  --text-primary: #f4faff;
+  --text-secondary: #b0b3b8;
+  --accent-primary: #7cc6fe;
+  --accent-secondary: #5dfdcb;
 }
 
 /* Enhanced scaling for large displays and presentations */
@@ -28,6 +45,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  width: 100%;
 }
 
 *,
@@ -38,11 +56,18 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #ffffff;
-  color: #213547;
   overflow-x: hidden; /* Prevent horizontal scroll issues */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure root containers take full width */
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Professional typography scaling */
@@ -83,6 +108,22 @@ a:hover {
 /* Smooth scrolling for better presentation */
 html {
   scroll-behavior: smooth;
+}
+
+/* Dark mode transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Dark mode toggle animation */
+.dark-mode-toggle {
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
 }
 
 /* Custom scrollbar for webkit browsers */
