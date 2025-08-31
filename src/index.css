@@ -11,21 +11,21 @@
 
 /* Dark mode theme variables */
 [data-theme="light"] {
-  --bg-primary: #F4FAFF;
+  --bg-primary: #f4faff;
   --bg-secondary: #ffffff;
-  --text-primary: #08090A;
+  --text-primary: #08090a;
   --text-secondary: #4a5568;
-  --accent-primary: #7CC6FE;
-  --accent-secondary: #5DFDCB;
+  --accent-primary: #7cc6fe;
+  --accent-secondary: #5dfdcb;
 }
 
 [data-theme="dark"] {
   --bg-primary: #0a0b0c;
   --bg-secondary: #1a1b1c;
-  --text-primary: #F4FAFF;
+  --text-primary: #f4faff;
   --text-secondary: #b0b3b8;
-  --accent-primary: #7CC6FE;
-  --accent-secondary: #5DFDCB;
+  --accent-primary: #7cc6fe;
+  --accent-secondary: #5dfdcb;
 }
 
 /* Enhanced scaling for large displays and presentations */
@@ -45,6 +45,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  width: 100%;
 }
 
 *,
@@ -55,10 +56,18 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal scroll issues */
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure root containers take full width */
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Professional typography scaling */
@@ -103,7 +112,8 @@ html {
 
 /* Dark mode transitions for all elements */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 /* Dark mode toggle animation */

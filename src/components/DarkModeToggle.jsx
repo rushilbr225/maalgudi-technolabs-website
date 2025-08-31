@@ -1,13 +1,13 @@
-import React from 'react';
-import { IconButton, Tooltip } from '@mui/material';
-import { DarkMode, LightMode } from '@mui/icons-material';
-import { useTheme } from '../contexts/ThemeContext';
+import React from "react";
+import { IconButton, Tooltip } from "@mui/material";
+import { DarkMode, LightMode } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const DarkModeToggle = ({ sx = {} }) => {
   const { darkMode, toggleDarkMode } = useTheme();
 
   return (
-    <Tooltip title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}>
+    <Tooltip title={`Switch to ${darkMode ? "light" : "dark"} mode`}>
       <IconButton
         onClick={toggleDarkMode}
         className="dark-mode-toggle"
@@ -29,7 +29,7 @@ const DarkModeToggle = ({ sx = {} }) => {
           },
           ...sx,
         }}
-        aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+        aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
       >
         {darkMode ? <LightMode /> : <DarkMode />}
       </IconButton>

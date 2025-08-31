@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 // Maalgudi Technolabs theme with modern blue-mint color scheme
-// Primary: #7CC6FE (Light Blue), Secondary: #5DFDCB (Mint Green), 
+// Primary: #7CC6FE (Light Blue), Secondary: #5DFDCB (Mint Green),
 // Background: #F4FAFF (Light Blue/White), Text: #08090A (Near Black)
 const theme = createTheme({
   breakpoints: {

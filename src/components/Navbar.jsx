@@ -124,17 +124,17 @@ const Navbar = () => {
             />
           </ListItem>
         ))}
-        
+
         {/* Dark Mode Toggle in Mobile Drawer */}
         <ListItem sx={{ justifyContent: "center", mt: 2 }}>
-          <DarkModeToggle 
-            sx={{ 
+          <DarkModeToggle
+            sx={{
               color: "#333",
               "&:hover": {
                 backgroundColor: "rgba(124, 198, 254, 0.1)",
                 color: "#7CC6FE",
               },
-            }} 
+            }}
           />
         </ListItem>
       </List>
@@ -226,7 +226,8 @@ const Navbar = () => {
                             transform: "translateX(-50%)",
                             width: "60%",
                             height: "3px",
-                            background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                            background:
+                              "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
                           }
                         : {},
                     }}

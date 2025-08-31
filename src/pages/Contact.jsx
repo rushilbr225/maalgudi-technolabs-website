@@ -153,7 +153,7 @@ const Contact = () => {
           textAlign: "center",
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Typography
             variant="h1"
             sx={{
@@ -185,7 +185,7 @@ const Contact = () => {
 
       {/* Contact Information Grid */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -289,7 +289,7 @@ const Contact = () => {
 
       {/* Contact Form & Map Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8}>
             {/* Contact Form */}
             <Grid item xs={12} md={6}>
@@ -558,7 +558,7 @@ const Contact = () => {
 
       {/* Services Section */}
       <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth="lg">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
               variant="h2"
@@ -673,7 +673,7 @@ const Contact = () => {
 
       {/* FAQ or Additional Info Section */}
       <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth="md">
+        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center" }}>
             <Typography
               variant="h2"
