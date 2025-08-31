@@ -10,7 +10,7 @@ import {
   Paper,
   Avatar,
   IconButton,
-  useTheme,
+  useTheme as useMuiTheme,
 } from "@mui/material";
 import {
   ChevronLeft,
@@ -27,9 +27,11 @@ import {
   ArrowForward,
   Star,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Home = () => {
-  const theme = useTheme();
+  const { theme, darkMode } = useTheme();
+  const muiTheme = useMuiTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -202,7 +204,7 @@ const Home = () => {
                 lineHeight: 1.2,
               }}
             >
-              <Box component="strong" sx={{ color: "#eea412" }}>
+              <Box component="strong" sx={{ color: "#7CC6FE" }}>
                 {heroSlides[currentSlide].title}
               </Box>{" "}
               {heroSlides[currentSlide].subtitle}
@@ -242,21 +244,21 @@ const Home = () => {
                     ...(button.variant === "contained"
                       ? {
                           background:
-                            "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                          color: "#fff",
-                          boxShadow: "0 4px 15px rgba(238, 164, 18, 0.3)",
+                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                          color: "#08090A",
+                          boxShadow: "0 4px 15px rgba(124, 198, 254, 0.3)",
                           "&:hover": {
                             background:
-                              "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                              "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                             transform: "translateY(-2px)",
                           },
                         }
                       : {
-                          borderColor: "#eea412",
-                          color: "#eea412",
+                          borderColor: "#7CC6FE",
+                          color: "#7CC6FE",
                           "&:hover": {
-                            background: "#eea412",
-                            color: "#fff",
+                            background: "#7CC6FE",
+                            color: "#08090A",
                           },
                         }),
                   }}
@@ -276,10 +278,10 @@ const Home = () => {
             left: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(238, 164, 18, 0.8)",
+            backgroundColor: "rgba(124, 198, 254, 0.8)",
             color: "white",
             "&:hover": {
-              backgroundColor: "#eea412",
+              backgroundColor: "#7CC6FE",
             },
           }}
         >
@@ -293,10 +295,10 @@ const Home = () => {
             right: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(238, 164, 18, 0.8)",
+            backgroundColor: "rgba(124, 198, 254, 0.8)",
             color: "white",
             "&:hover": {
-              backgroundColor: "#eea412",
+              backgroundColor: "#7CC6FE",
             },
           }}
         >
@@ -323,7 +325,7 @@ const Home = () => {
                 height: 12,
                 borderRadius: "50%",
                 backgroundColor:
-                  index === currentSlide ? "#eea412" : "rgba(255,255,255,0.5)",
+                  index === currentSlide ? "#5DFDCB" : "rgba(255,255,255,0.5)",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -354,7 +356,7 @@ const Home = () => {
                 >
                   <Box
                     sx={{
-                      color: "#eea412",
+                      color: "#7CC6FE",
                       mb: 2,
                       fontSize: { xs: "2rem", md: "3rem" },
                     }}
@@ -403,7 +405,7 @@ const Home = () => {
               }}
             >
               Our{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Services
               </Box>
             </Typography>
@@ -434,10 +436,12 @@ const Home = () => {
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                      boxShadow: darkMode 
+                        ? "0 8px 25px rgba(255,255,255,0.1)" 
+                        : "0 8px 25px rgba(0,0,0,0.1)",
                       "& .service-icon": {
-                        backgroundColor: "#eea412",
-                        color: "white",
+                        backgroundColor: "#5DFDCB",
+                        color: "#08090A",
                       },
                     },
                   }}
@@ -446,8 +450,8 @@ const Home = () => {
                     <Box
                       className="service-icon"
                       sx={{
-                        backgroundColor: "#f8f9fa",
-                        color: "#eea412",
+                        backgroundColor: darkMode ? "#242526" : "#f8f9fa",
+                        color: "#7CC6FE",
                         p: 2,
                         borderRadius: 0,
                         display: "inline-flex",
@@ -503,7 +507,7 @@ const Home = () => {
               }}
             >
               Student{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box component="span" sx={{ color: "#7CC6FE" }}>
                 Testimonials
               </Box>
             </Typography>
@@ -540,7 +544,7 @@ const Home = () => {
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star
                           key={i}
-                          sx={{ color: "#eea412", fontSize: "1.2rem" }}
+                          sx={{ color: "#5DFDCB", fontSize: "1.2rem" }}
                         />
                       ))}
                     </Box>
@@ -571,7 +575,7 @@ const Home = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: "#eea412",
+                        color: "#7CC6FE",
                         fontSize: "0.9rem",
                       }}
                     >
@@ -632,8 +636,8 @@ const Home = () => {
               size="large"
               endIcon={<ArrowForward />}
               sx={{
-                background: "linear-gradient(45deg, #eea412 0%, #f5c842 100%)",
-                color: "#fff",
+                background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                color: "#08090A",
                 px: 4,
                 py: 2,
                 fontSize: { xs: "1rem", xl: "1.2rem" },
@@ -641,7 +645,7 @@ const Home = () => {
                 borderRadius: 0,
                 "&:hover": {
                   background:
-                    "linear-gradient(45deg, #d89e0b 0%, #eea412 100%)",
+                    "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
                   transform: "translateY(-2px)",
                 },
               }}
@@ -654,16 +658,16 @@ const Home = () => {
               size="large"
               startIcon={<ContactMail />}
               sx={{
-                borderColor: "#eea412",
-                color: "#eea412",
+                borderColor: "#7CC6FE",
+                color: "#7CC6FE",
                 px: 4,
                 py: 2,
                 fontSize: { xs: "1rem", xl: "1.2rem" },
                 fontWeight: 600,
                 borderRadius: 0,
                 "&:hover": {
-                  background: "#eea412",
-                  color: "#fff",
+                  background: "#7CC6FE",
+                  color: "#08090A",
                 },
               }}
             >

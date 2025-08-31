@@ -24,8 +24,10 @@ import {
   Email,
   Phone,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const About = () => {
+  const { theme, darkMode } = useTheme();
   const stats = [
     { icon: <School />, number: "2000+", label: "Students Trained" },
     { icon: <Groups />, number: "150+", label: "Courses Delivered" },
@@ -186,14 +188,14 @@ const About = () => {
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      borderColor: "#eea412",
+                      borderColor: "#7CC6FE",
                       boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
                     },
                   }}
                 >
                   <Box
                     sx={{
-                      color: "#eea412",
+                      color: "#7CC6FE",
                       mb: 2,
                       fontSize: { xs: "2rem", md: "3rem" },
                     }}
@@ -242,7 +244,7 @@ const About = () => {
                 }}
               >
                 Our{" "}
-                <Box component="span" sx={{ color: "#eea412" }}>
+                <Box component="span" sx={{ color: "#7CC6FE" }}>
                   Mission
                 </Box>
               </Typography>
@@ -264,7 +266,7 @@ const About = () => {
                 variant="h4"
                 sx={{
                   fontWeight: 600,
-                  color: "#eea412",
+                  color: "#7CC6FE",
                   mb: 2,
                   fontSize: { xs: "1.5rem", md: "2rem" },
                 }}
