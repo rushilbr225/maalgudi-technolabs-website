@@ -57,7 +57,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw; /* Use viewport width for full width */
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal scroll issues */
@@ -66,8 +66,60 @@ body {
 
 /* Ensure root containers take full width */
 #root {
-  width: 100%;
+  width: 100vw; /* Use viewport width for full width */
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix for ultrawide monitors and external displays */
+.MuiContainer-root {
+  max-width: none !important; /* Override Material-UI container max-width */
+}
+
+/* Additional CSS for body to ensure no constraints */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw; /* Use viewport width for full width */
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: none !important;
+}
+
+/* Ensure the main App container doesn't constrain width */
+#root {
+  width: 100vw; /* Use viewport width for full width */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none !important;
+}
+
+/* Force all containers to allow full width */
+.MuiBox-root {
+  max-width: none !important;
+}
+
+/* Ensure full-width sections - More aggressive approach */
+.hero-section {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+/* Ensure full-width sections */
+.full-width-section {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  position: relative;
 }
 
 /* Professional typography scaling */

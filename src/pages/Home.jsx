@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import {
   Box,
   Container,
@@ -124,31 +124,53 @@ const Home = () => {
   const currentHero = heroSlides[currentSlide];
 
   return (
-    <Box>
-      {/* Hero Section */}
+    <Box sx={{ position: "relative" }}>
+      {/* Hero Section - Back to relative positioning */}
       <Box
+        className="hero-section"
         sx={{
           position: "relative",
+          width: "100vw",
           height: "100vh",
+          marginLeft: "-50vw",
+          marginRight: "-50vw",
+          left: "50%",
+          right: "50%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           backgroundImage: `linear-gradient(rgba(8, 9, 10, 0.7), rgba(8, 9, 10, 0.7)), url(${currentHero.image})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "scroll",
           color: "white",
           textAlign: "center",
         }}
       >
-        <Container maxWidth={false} sx={{ textAlign: "center" }}>
+        <Container
+          maxWidth={false}
+          sx={{
+            textAlign: "center",
+            px: { xs: 1, sm: 2, md: 3 }, // Responsive container padding
+            maxWidth: { xs: "100%", sm: "90%", md: "80%" }, // Responsive max width
+          }}
+        >
           <Typography
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: "2.5rem", md: "4rem" },
+              fontSize: {
+                xs: "1.8rem",
+                sm: "2.5rem",
+                md: "3.5rem",
+                lg: "4rem",
+                xl: "4.5rem",
+              }, // More responsive font sizes
               fontWeight: "bold",
-              mb: 2,
+              mb: { xs: 1, sm: 2, md: 2 }, // Responsive margins
               color: "#5DFDCB",
+              lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 }, // Responsive line height
             }}
           >
             {currentHero.title}
@@ -158,10 +180,17 @@ const Home = () => {
               variant="h2"
               component="h2"
               sx={{
-                fontSize: { xs: "1.5rem", md: "2.5rem" },
+                fontSize: {
+                  xs: "1.2rem",
+                  sm: "1.5rem",
+                  md: "2rem",
+                  lg: "2.5rem",
+                  xl: "3rem",
+                }, // More responsive subtitle sizes
                 fontWeight: "light",
-                mb: 3,
+                mb: { xs: 2, sm: 3, md: 3 }, // Responsive margins
                 color: "#7CC6FE",
+                lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
               }}
             >
               {currentHero.subtitle}
@@ -171,24 +200,42 @@ const Home = () => {
             variant="h5"
             component="p"
             sx={{
-              mb: 4,
-              maxWidth: "800px",
+              mb: { xs: 3, sm: 4, md: 4 }, // Responsive margins
+              maxWidth: { xs: "100%", sm: "90%", md: "800px" }, // Responsive max width
               mx: "auto",
-              lineHeight: 1.6,
+              lineHeight: { xs: 1.4, sm: 1.5, md: 1.6 }, // Responsive line height
+              fontSize: {
+                xs: "0.9rem",
+                sm: "1.1rem",
+                md: "1.25rem",
+                lg: "1.4rem",
+              }, // Responsive description font size
+              px: { xs: 1, sm: 2, md: 0 }, // Extra padding on small screens
             }}
           >
             {currentHero.description}
           </Typography>
-          <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: { xs: 1, sm: 2, md: 2 }, // Responsive button gaps
+              justifyContent: "center",
+              flexDirection: { xs: "column", sm: "row" }, // Stack buttons on mobile
+              alignItems: "center",
+              px: { xs: 2, sm: 0 }, // Extra padding on mobile
+            }}
+          >
             {currentHero.buttons.map((button, index) => (
               <Button
                 key={index}
                 variant={button.variant}
                 size="large"
                 sx={{
-                  px: 4,
-                  py: 1.5,
-                  fontSize: "1.1rem",
+                  px: { xs: 3, sm: 4, md: 4 }, // Responsive padding
+                  py: { xs: 1.2, sm: 1.5, md: 1.5 }, // Responsive padding
+                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" }, // Responsive font size
+                  width: { xs: "100%", sm: "auto" }, // Full width on mobile
+                  maxWidth: { xs: "280px", sm: "none" }, // Max width on mobile
                   ...(button.variant === "contained" && {
                     backgroundColor: "#5DFDCB",
                     color: "#08090A",
@@ -217,12 +264,15 @@ const Home = () => {
           onClick={prevSlide}
           sx={{
             position: "absolute",
-            left: 20,
+            left: { xs: 10, sm: 15, md: 20 }, // Responsive positioning
             top: "50%",
             transform: "translateY(-50%)",
             backgroundColor: "rgba(93, 253, 203, 0.8)",
             color: "#08090A",
             zIndex: 10,
+            width: { xs: 40, sm: 48, md: 56 }, // Responsive size
+            height: { xs: 40, sm: 48, md: 56 }, // Responsive size
+            display: { xs: "none", sm: "flex" }, // Hide on very small screens
             "&:hover": {
               backgroundColor: "rgba(93, 253, 203, 1)",
             },
@@ -234,12 +284,15 @@ const Home = () => {
           onClick={nextSlide}
           sx={{
             position: "absolute",
-            right: 20,
+            right: { xs: 10, sm: 15, md: 20 }, // Responsive positioning
             top: "50%",
             transform: "translateY(-50%)",
             backgroundColor: "rgba(93, 253, 203, 0.8)",
             color: "#08090A",
             zIndex: 10,
+            width: { xs: 40, sm: 48, md: 56 }, // Responsive size
+            height: { xs: 40, sm: 48, md: 56 }, // Responsive size
+            display: { xs: "none", sm: "flex" }, // Hide on very small screens
             "&:hover": {
               backgroundColor: "rgba(93, 253, 203, 1)",
             },
@@ -252,11 +305,11 @@ const Home = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 30,
+            bottom: { xs: 20, sm: 25, md: 30 }, // Responsive bottom position
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
-            gap: 1,
+            gap: { xs: 0.5, sm: 1, md: 1 }, // Responsive gap
             zIndex: 10,
           }}
         >
@@ -265,8 +318,8 @@ const Home = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               sx={{
-                width: 12,
-                height: 12,
+                width: { xs: 8, sm: 10, md: 12 }, // Responsive size
+                height: { xs: 8, sm: 10, md: 12 }, // Responsive size
                 borderRadius: "50%",
                 backgroundColor:
                   index === currentSlide ? "#5DFDCB" : "rgba(255,255,255,0.5)",
@@ -448,4 +501,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;
