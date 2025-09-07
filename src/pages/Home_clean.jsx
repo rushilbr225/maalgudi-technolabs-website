@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Container,
@@ -27,8 +27,8 @@ const Home = () => {
 
   const heroSlides = [
     {
-      title: "Empowering Future Tech Leaders",
-
+      title: "Empowering Future",
+      subtitle: "Tech Leaders",
       description:
         "Comprehensive training programs in emerging technologies. From cloud computing to IoT development, we shape the next generation of technology professionals.",
       image:
@@ -68,7 +68,7 @@ const Home = () => {
       description:
         "Discover the latest in IoT, cloud computing, and digital transformation with our hands-on workshop programs.",
       image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
       buttons: [
         { text: "View Programs", variant: "contained" },
         { text: "Schedule Demo", variant: "outlined" },
@@ -319,82 +319,50 @@ const Home = () => {
           >
             Our Services
           </Typography>
-          <Grid
-            container
-            spacing={4}
-            justifyContent="center"
-            alignItems="stretch"
-          >
+          <Grid container spacing={4}>
             {services.map((service, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card
                   sx={{
-                    height: "100%",
-                    minHeight: 280,
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: mode === "dark" ? "#1A1A1A" : "#F8F9FA",
+                    height: 220,
+                    backgroundColor: mode === "dark" ? "#1A1A1A" : "#FFFFFF",
                     color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                    border: `2px solid ${mode === "dark" ? "#333" : "#E0E0E0"}`,
-                    borderRadius: 2,
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 4px 12px rgba(0, 0, 0, 0.3)"
-                        : "0 4px 12px rgba(0, 0, 0, 0.1)",
-                    transition: "all 0.3s ease-in-out",
+                    border: `1px solid ${mode === "dark" ? "#333" : "#E0E0E0"}`,
+                    transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      backgroundColor: mode === "dark" ? "#2A2A2A" : "#FFFFFF",
-                      boxShadow:
+                      boxShadow: `0 8px 25px ${
                         mode === "dark"
-                          ? "0 12px 30px rgba(93, 253, 203, 0.2)"
-                          : "0 12px 30px rgba(0, 0, 0, 0.15)",
-                      borderColor: "#5DFDCB",
+                          ? "rgba(93, 253, 203, 0.2)"
+                          : "rgba(0, 0, 0, 0.15)"
+                      }`,
                     },
                   }}
                 >
-                  <CardContent
-                    sx={{
-                      textAlign: "center",
-                      p: 3,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: "100%",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Box
+                  <CardContent sx={{ textAlign: "center", p: 3 }}>
+                    <service.icon
                       sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
+                        fontSize: 48,
+                        color: "#5DFDCB",
+                        mb: 2,
+                      }}
+                    />
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{
+                        mb: 2,
+                        fontWeight: "bold",
+                        color: mode === "dark" ? "#F4FAFF" : "#08090A",
                       }}
                     >
-                      <service.icon
-                        sx={{
-                          fontSize: 48,
-                          color: "#5DFDCB",
-                          mb: 2,
-                        }}
-                      />
-                      <Typography
-                        variant="h6"
-                        component="h3"
-                        sx={{
-                          mb: 2,
-                          fontWeight: "bold",
-                          color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                        }}
-                      >
-                        {service.title}
-                      </Typography>
-                    </Box>
+                      {service.title}
+                    </Typography>
                     <Typography
                       variant="body2"
                       sx={{
                         color: mode === "dark" ? "#B0B0B0" : "#555555",
                         lineHeight: 1.5,
-                        textAlign: "center",
                       }}
                     >
                       {service.description}
