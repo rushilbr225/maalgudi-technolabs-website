@@ -52,7 +52,7 @@ const Home = () => {
     },
     {
       title: "Modern Learning Experience",
-
+      subtitle: "",
       description:
         "Advance your career with cutting-edge technology training and industry-recognized certifications.",
       image:
@@ -63,43 +63,43 @@ const Home = () => {
       ],
     },
     {
-      title: "Professional Development Programs",
-
+      title: "Innovative Tech Solutions",
+      subtitle: "",
       description:
-        "Join thousands of professionals who have transformed their careers with our expert-led training programs.",
+        "Discover the latest in IoT, cloud computing, and digital transformation with our hands-on workshop programs.",
       image:
-        "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
       buttons: [
-        { text: "Enroll Now", variant: "contained" },
-        { text: "Learn More", variant: "outlined" },
+        { text: "View Programs", variant: "contained" },
+        { text: "Schedule Demo", variant: "outlined" },
       ],
     },
   ];
 
   const services = [
     {
-      icon: <Engineering />,
-      title: "Software Development & Testing",
+      icon: Engineering,
+      title: "Engineering Excellence",
       description:
-        "Comprehensive training in modern software development methodologies, testing frameworks, and quality assurance practices.",
+        "Comprehensive engineering training programs covering software development, system design, and technical leadership skills.",
     },
     {
-      icon: <Cloud />,
-      title: "Cloud Computing & DevOps",
+      icon: Cloud,
+      title: "Cloud Computing",
       description:
-        "Master cloud platforms like AWS, Azure, and GCP. Learn DevOps practices, containerization, and infrastructure automation.",
+        "Master cloud technologies including AWS, Azure, and Google Cloud with hands-on projects and real-world applications.",
     },
     {
-      icon: <Memory />,
-      title: "IoT & Embedded Systems",
+      icon: Memory,
+      title: "Data Science & AI",
       description:
-        "Hands-on training in Internet of Things development, sensor integration, and embedded systems programming.",
+        "Dive deep into machine learning, artificial intelligence, and data analytics with industry-standard tools and frameworks.",
     },
     {
-      icon: <School />,
+      icon: School,
       title: "Professional Development",
       description:
-        "Personality development, leadership skills, financial management, and communication training for career advancement.",
+        "Build essential soft skills, leadership capabilities, and professional communication for career advancement.",
     },
   ];
 
@@ -114,103 +114,108 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const interval = setInterval(() => {
       nextSlide();
     }, 5000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   const currentHero = heroSlides[currentSlide];
 
   return (
-    <Box sx={{ position: "relative" }}>
-      {/* Hero Section - Back to relative positioning */}
+    <Box sx={{ minHeight: "100vh" }}>
+      {/* Hero Section with Background Image */}
       <Box
         className="hero-section"
         sx={{
-          position: "relative",
+          minHeight: "100vh",
           width: "100vw",
-          height: "100vh",
-          marginLeft: "-50vw",
-          marginRight: "-50vw",
+          position: "relative",
+          margin: "0 calc(-50vw + 50%)",
           left: "50%",
           right: "50%",
+          overflow: "hidden",
+          backgroundImage: `linear-gradient(rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.6)), url(${currentHero.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage: `linear-gradient(rgba(8, 9, 10, 0.7), rgba(8, 9, 10, 0.7)), url(${currentHero.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "scroll",
-          color: "white",
-          textAlign: "center",
         }}
       >
-        <Container
-          maxWidth={false}
+        {/* Navigation Arrows */}
+        <IconButton
+          onClick={prevSlide}
           sx={{
-            textAlign: "center",
-            px: { xs: 1, sm: 2, md: 3 }, // Responsive container padding
-            maxWidth: { xs: "100%", sm: "90%", md: "80%" }, // Responsive max width
+            position: "absolute",
+            left: 20,
+            top: "50%",
+            transform: "translateY(-50%)",
+            backgroundColor: "rgba(93, 253, 203, 0.2)",
+            color: "#5DFDCB",
+            "&:hover": {
+              backgroundColor: "rgba(93, 253, 203, 0.4)",
+            },
+            zIndex: 2,
           }}
         >
+          <ChevronLeft fontSize="large" />
+        </IconButton>
+
+        <IconButton
+          onClick={nextSlide}
+          sx={{
+            position: "absolute",
+            right: 20,
+            top: "50%",
+            transform: "translateY(-50%)",
+            backgroundColor: "rgba(93, 253, 203, 0.2)",
+            color: "#5DFDCB",
+            "&:hover": {
+              backgroundColor: "rgba(93, 253, 203, 0.4)",
+            },
+            zIndex: 2,
+          }}
+        >
+          <ChevronRight fontSize="large" />
+        </IconButton>
+
+        <Container maxWidth="lg" sx={{ textAlign: "center", zIndex: 1 }}>
           <Typography
-            variant="h1"
+            variant="h2"
             component="h1"
             sx={{
-              fontSize: {
-                xs: "1.8rem",
-                sm: "2.5rem",
-                md: "3.5rem",
-                lg: "4rem",
-                xl: "4.5rem",
-              }, // More responsive font sizes
+              color: "#F4FAFF",
               fontWeight: "bold",
-              mb: { xs: 1, sm: 2, md: 2 }, // Responsive margins
-              color: "#5DFDCB",
-              lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 }, // Responsive line height
+              mb: 2,
+              fontSize: { xs: "2.5rem", md: "4rem" },
             }}
           >
             {currentHero.title}
           </Typography>
           {currentHero.subtitle && (
             <Typography
-              variant="h2"
+              variant="h3"
               component="h2"
               sx={{
-                fontSize: {
-                  xs: "1.2rem",
-                  sm: "1.5rem",
-                  md: "2rem",
-                  lg: "2.5rem",
-                  xl: "3rem",
-                }, // More responsive subtitle sizes
-                fontWeight: "light",
-                mb: { xs: 2, sm: 3, md: 3 }, // Responsive margins
-                color: "#7CC6FE",
-                lineHeight: { xs: 1.3, sm: 1.4, md: 1.5 },
+                color: "#5DFDCB",
+                mb: 3,
+                fontSize: { xs: "1.8rem", md: "2.5rem" },
               }}
             >
               {currentHero.subtitle}
             </Typography>
           )}
           <Typography
-            variant="h5"
-            component="p"
+            variant="h6"
             sx={{
-              mb: { xs: 3, sm: 4, md: 4 }, // Responsive margins
-              maxWidth: { xs: "100%", sm: "90%", md: "800px" }, // Responsive max width
+              color: "#F4FAFF",
+              mb: 4,
+              maxWidth: "800px",
               mx: "auto",
-              lineHeight: { xs: 1.4, sm: 1.5, md: 1.6 }, // Responsive line height
-              fontSize: {
-                xs: "0.9rem",
-                sm: "1.1rem",
-                md: "1.25rem",
-                lg: "1.4rem",
-              }, // Responsive description font size
-              px: { xs: 1, sm: 2, md: 0 }, // Extra padding on small screens
+              fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
             {currentHero.description}
@@ -218,11 +223,9 @@ const Home = () => {
           <Box
             sx={{
               display: "flex",
-              gap: { xs: 1, sm: 2, md: 2 }, // Responsive button gaps
+              gap: 2,
               justifyContent: "center",
-              flexDirection: { xs: "column", sm: "row" }, // Stack buttons on mobile
-              alignItems: "center",
-              px: { xs: 2, sm: 0 }, // Extra padding on mobile
+              flexWrap: "wrap",
             }}
           >
             {currentHero.buttons.map((button, index) => (
@@ -231,11 +234,9 @@ const Home = () => {
                 variant={button.variant}
                 size="large"
                 sx={{
-                  px: { xs: 3, sm: 4, md: 4 }, // Responsive padding
-                  py: { xs: 1.2, sm: 1.5, md: 1.5 }, // Responsive padding
-                  fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" }, // Responsive font size
-                  width: { xs: "100%", sm: "auto" }, // Full width on mobile
-                  maxWidth: { xs: "280px", sm: "none" }, // Max width on mobile
+                  px: 4,
+                  py: 1.5,
+                  fontSize: "1.1rem",
                   ...(button.variant === "contained" && {
                     backgroundColor: "#5DFDCB",
                     color: "#08090A",
@@ -244,11 +245,11 @@ const Home = () => {
                     },
                   }),
                   ...(button.variant === "outlined" && {
-                    borderColor: "#7CC6FE",
-                    color: "#7CC6FE",
+                    borderColor: "#5DFDCB",
+                    color: "#5DFDCB",
                     "&:hover": {
-                      borderColor: "#63B4FB",
-                      backgroundColor: "rgba(124, 198, 254, 0.1)",
+                      backgroundColor: "rgba(93, 253, 203, 0.1)",
+                      borderColor: "#4AE3B2",
                     },
                   }),
                 }}
@@ -259,58 +260,16 @@ const Home = () => {
           </Box>
         </Container>
 
-        {/* Navigation Arrows */}
-        <IconButton
-          onClick={prevSlide}
-          sx={{
-            position: "absolute",
-            left: { xs: 10, sm: 15, md: 20 }, // Responsive positioning
-            top: "50%",
-            transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.8)",
-            color: "#08090A",
-            zIndex: 10,
-            width: { xs: 40, sm: 48, md: 56 }, // Responsive size
-            height: { xs: 40, sm: 48, md: 56 }, // Responsive size
-            display: { xs: "none", sm: "flex" }, // Hide on very small screens
-            "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 1)",
-            },
-          }}
-        >
-          <ChevronLeft fontSize="large" />
-        </IconButton>
-        <IconButton
-          onClick={nextSlide}
-          sx={{
-            position: "absolute",
-            right: { xs: 10, sm: 15, md: 20 }, // Responsive positioning
-            top: "50%",
-            transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.8)",
-            color: "#08090A",
-            zIndex: 10,
-            width: { xs: 40, sm: 48, md: 56 }, // Responsive size
-            height: { xs: 40, sm: 48, md: 56 }, // Responsive size
-            display: { xs: "none", sm: "flex" }, // Hide on very small screens
-            "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 1)",
-            },
-          }}
-        >
-          <ChevronRight fontSize="large" />
-        </IconButton>
-
         {/* Slide Indicators */}
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: 20, sm: 25, md: 30 }, // Responsive bottom position
+            bottom: 30,
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
-            gap: { xs: 0.5, sm: 1, md: 1 }, // Responsive gap
-            zIndex: 10,
+            gap: 1,
+            zIndex: 2,
           }}
         >
           {heroSlides.map((_, index) => (
@@ -318,13 +277,21 @@ const Home = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               sx={{
-                width: { xs: 8, sm: 10, md: 12 }, // Responsive size
-                height: { xs: 8, sm: 10, md: 12 }, // Responsive size
+                width: 12,
+                height: 12,
                 borderRadius: "50%",
                 backgroundColor:
-                  index === currentSlide ? "#5DFDCB" : "rgba(255,255,255,0.5)",
+                  currentSlide === index
+                    ? "#5DFDCB"
+                    : "rgba(255, 255, 255, 0.5)",
                 cursor: "pointer",
-                transition: "all 0.3s ease",
+                transition: "background-color 0.3s ease",
+                "&:hover": {
+                  backgroundColor:
+                    currentSlide === index
+                      ? "#5DFDCB"
+                      : "rgba(255, 255, 255, 0.8)",
+                },
               }}
             />
           ))}
@@ -332,126 +299,110 @@ const Home = () => {
       </Box>
 
       {/* Services Section */}
-      <Container maxWidth={false} sx={{ py: 8 }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          textAlign="center"
-          sx={{
-            mb: 6,
-            color: mode === "dark" ? "#5DFDCB" : "#08090A",
-            fontWeight: "bold",
-          }}
-        >
-          Our Services
-        </Typography>
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          alignItems="stretch"
-        >
-          {services.map((service, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={3}
-              key={index}
-              sx={{ display: "flex" }}
-            >
-              <Card
-                sx={{
-                  height: 220, // Reduced height for more compact cards
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  textAlign: "center",
-                  backgroundColor: mode === "dark" ? "#1a1a1a" : "#7CC6FE",
-                  color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                  boxShadow:
-                    mode === "dark"
-                      ? "0 4px 20px rgba(93, 253, 203, 0.1)"
-                      : "0 4px 20px rgba(8, 9, 10, 0.1)",
-                  border:
-                    mode === "dark"
-                      ? "1px solid rgba(93, 253, 203, 0.3)"
-                      : "none",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 8px 40px rgba(93, 253, 203, 0.2)"
-                        : "0 8px 40px rgba(8, 9, 10, 0.15)",
-                  },
-                }}
-              >
-                <CardContent
+      <Box
+        sx={{
+          py: 8,
+          backgroundColor: mode === "dark" ? "#08090A" : "#F4FAFF",
+          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Typography
+            variant="h3"
+            component="h2"
+            textAlign="center"
+            sx={{
+              mb: 6,
+              color: "#5DFDCB",
+              fontWeight: "bold",
+            }}
+          >
+            Our Services
+          </Typography>
+          <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+            {services.map((service, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card
                   sx={{
                     height: "100%",
-                    p: 2, // Reduced padding from 3 to 2
+                    minHeight: 280,
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "space-evenly", // Distribute space evenly
-                    textAlign: "center",
+                    backgroundColor: mode === "dark" ? "#1A1A1A" : "#F8F9FA",
+                    color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                    border: `2px solid ${mode === "dark" ? "#333" : "#E0E0E0"}`,
+                    borderRadius: 2,
+                    boxShadow: mode === "dark" 
+                      ? "0 4px 12px rgba(0, 0, 0, 0.3)" 
+                      : "0 4px 12px rgba(0, 0, 0, 0.1)",
+                    transition: "all 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "translateY(-5px)",
+                      backgroundColor: mode === "dark" ? "#2A2A2A" : "#FFFFFF",
+                      boxShadow: mode === "dark"
+                        ? "0 12px 30px rgba(93, 253, 203, 0.2)"
+                        : "0 12px 30px rgba(0, 0, 0, 0.15)",
+                      borderColor: "#5DFDCB",
+                    },
                   }}
                 >
-                  <Box
-                    sx={{
-                      mb: 0.5, // Reduced margin
+                  <CardContent 
+                    sx={{ 
+                      textAlign: "center", 
+                      p: 3,
                       display: "flex",
-                      justifyContent: "center",
-                      "& svg": {
-                        fontSize: 48, // Reduced icon size from 60 to 48
-                        color: mode === "dark" ? "#5DFDCB" : "#08090A",
-                      },
+                      flexDirection: "column",
+                      height: "100%",
+                      justifyContent: "space-between"
                     }}
                   >
-                    {service.icon}
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{
-                      mb: 0.5, // Reduced margin
-                      fontWeight: "bold",
-                      textAlign: "center",
-                      fontSize: "1.1rem", // Reduced font size
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      lineHeight: 1.3, // Reduced line height
-                      textAlign: "center",
-                      fontSize: "0.8rem", // Reduced font size
-                      flex: 1, // Take remaining space
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <service.icon
+                        sx={{
+                          fontSize: 48,
+                          color: "#5DFDCB",
+                          mb: 2,
+                        }}
+                      />
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        sx={{
+                          mb: 2,
+                          fontWeight: "bold",
+                          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                        }}
+                      >
+                        {service.title}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: mode === "dark" ? "#B0B0B0" : "#555555",
+                        lineHeight: 1.5,
+                        textAlign: "center",
+                      }}
+                    >
+                      {service.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
 
       {/* CTA Section */}
       <Box
         sx={{
-          backgroundColor: "#08090A", // Always black background
           py: 8,
+          backgroundColor: "#08090A", // Always dark background
+          color: "#F4FAFF", // Always light text
         }}
       >
-        <Container maxWidth={false}>
+        <Container maxWidth="lg">
           <Typography
             variant="h3"
             component="h2"
@@ -488,7 +439,7 @@ const Home = () => {
                 backgroundColor: "#5DFDCB", // Always mint green button
                 color: "#08090A", // Always dark text on button
                 "&:hover": {
-                  backgroundColor: "#4AE3B2", // Slightly darker mint on hover
+                  backgroundColor: "#4AE3B2",
                 },
               }}
             >
@@ -501,4 +452,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;
