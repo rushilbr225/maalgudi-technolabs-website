@@ -55,6 +55,45 @@ const NewAbout = () => {
       description:
         "Awarded for sustained excellence and innovation in technical education delivery",
     },
+    {
+      year: "2024",
+      title: "Workshop Series Launch",
+      description:
+        "Conducted comprehensive Python and IoT workshops at premier institutions including DSATM, RVCE, and UVCE in Bengaluru",
+    },
+  ];
+
+  const workshopGallery = [
+    {
+      title: "Python Workshop @ DSATM, Bengaluru",
+      image: "/workshop-photos/workshop1.jpg",
+      description: "Comprehensive Python programming workshop at DSATM",
+    },
+    {
+      title: "IoT Workshop @ RVCE, Bengaluru",
+      image: "/workshop-photos/workshop2.jpg",
+      description: "Internet of Things hands-on workshop at RV College of Engineering",
+    },
+    {
+      title: "IoT Workshop @ UVCE, Bengaluru",
+      image: "/workshop-photos/workshop3.jpg",
+      description: "IoT training session at University Visvesvaraya College of Engineering",
+    },
+    {
+      title: "Hands-on Training Session",
+      image: "/workshop-photos/workshop4.jpg",
+      description: "Students engaging with practical IoT implementations",
+    },
+    {
+      title: "Technical Workshop Activity",
+      image: "/workshop-photos/workshop5.jpg",
+      description: "Interactive learning and project development",
+    },
+    {
+      title: "Maker's Space Collaboration",
+      image: "/workshop-photos/workshop6.jpg",
+      description: "Collaborative workshop at institutional Maker's Space",
+    },
   ];
 
   const team = [
@@ -298,6 +337,156 @@ const NewAbout = () => {
           ))}
         </Box>
       </Container>
+
+      {/* Workshop Gallery Section */}
+      <Box sx={{ bgcolor: "white", py: 10 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{
+                fontWeight: 700,
+                mb: 2,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+              }}
+            >
+              Our Previous{" "}
+              <Box component="span" sx={{ color: "primary.main" }}>
+                Works
+              </Box>
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{
+                maxWidth: "800px",
+                mx: "auto",
+                lineHeight: 1.8,
+                fontSize: "1.1rem",
+              }}
+            >
+              Our team has conducted comprehensive Python and IoT workshops at premier institutions including 
+              DSATM (Dayananda Sagar Academy of Technology and Management) in Bengaluru. 
+              These hands-on workshops, held in collaboration with the institutions' Maker's Spaces, 
+              empowered students with practical skills in embedded systems, IoT, and emerging technologies.
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)'
+              },
+              gap: 4,
+              maxWidth: '1400px',
+              margin: '0 auto',
+              px: { xs: 2, md: 0 },
+            }}
+          >
+            {workshopGallery.map((photo, index) => (
+              <Box
+                key={index}
+                sx={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: 3,
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: "0 12px 40px rgba(25, 118, 210, 0.3)",
+                    '& .photo-overlay': {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={photo.image}
+                  alt={photo.title}
+                  sx={{
+                    width: '100%',
+                    height: 280,
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <Box
+                  sx={{
+                    display: 'none',
+                    width: '100%',
+                    height: 280,
+                    backgroundColor: 'primary.main',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '3rem',
+                    fontWeight: 700,
+                  }}
+                >
+                  {index + 1}
+                </Box>
+                <Box
+                  className="photo-overlay"
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)',
+                    padding: 3,
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: 'white',
+                      fontWeight: 700,
+                      mb: 1,
+                    }}
+                  >
+                    {photo.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.9)',
+                    }}
+                  >
+                    {photo.description}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+
+          <Box sx={{ textAlign: "center", mt: 6 }}>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{
+                fontStyle: 'italic',
+                maxWidth: '700px',
+                mx: 'auto',
+              }}
+            >
+              Through our partnerships with leading educational institutions and their Maker's Spaces, 
+              we continue to foster innovation and hands-on learning experiences for the next generation of technology professionals.
+            </Typography>
+          </Box>
+        </Container>
+      </Box>
 
       {/* Values Section */}
       <Box sx={{ bgcolor: "grey.50", py: 8 }}>
