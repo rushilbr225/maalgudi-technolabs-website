@@ -71,7 +71,7 @@ const Navbar = () => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box
             component="img"
-            src="/maalgudi.jpeg"
+            src="/maalgudi.png"
             alt="Maalgudi Technolabs"
             sx={{
               height: "30px",
@@ -174,7 +174,7 @@ const Navbar = () => {
             >
               <Box
                 component="img"
-                src="/maalgudi.jpeg"
+                src="/maalgudi.png"
                 alt="Maalgudi Technolabs"
                 sx={{
                   height: { xs: "35px", md: "40px", xl: "45px" },
