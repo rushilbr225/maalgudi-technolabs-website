@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Theme</title>
+</head>
+<body>
+    <h1>Clearing theme preference...</h1>
+    <script>
+        localStorage.removeItem('maalgudi-dark-mode');
+        localStorage.setItem('maalgudi-dark-mode', 'false');
+        alert('Theme cleared! The page will reload in light mode.');
+        window.location.href = '/';
+    </script>
+</body>
+</html>

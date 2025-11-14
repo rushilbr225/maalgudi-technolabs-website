@@ -145,36 +145,65 @@ const Contact = () => {
       <Box
         sx={{
           background:
-            'linear-gradient(135deg, rgba(238, 164, 18, 0.9) 0%, rgba(245, 200, 66, 0.9) 100%), url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(135deg, rgba(8, 9, 10, 0.85) 0%, rgba(13, 14, 15, 0.9) 100%), url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           color: "white",
-          py: 15,
+          py: { xs: 12, md: 18 },
           textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background:
+              "radial-gradient(circle at 20% 50%, rgba(93, 253, 203, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(124, 198, 254, 0.1) 0%, transparent 50%)",
+            pointerEvents: "none",
+          },
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+          <Typography
+            variant="overline"
+            sx={{
+              color: "#5DFDCB",
+              fontSize: "1rem",
+              fontWeight: 700,
+              letterSpacing: 3,
+              mb: 2,
+              display: "block",
+            }}
+          >
+            GET IN TOUCH
+          </Typography>
           <Typography
             variant="h1"
             sx={{
-              fontWeight: 700,
+              fontWeight: 800,
               mb: 3,
-              fontSize: { xs: "2.5rem", md: "4rem", xl: "5rem" },
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              background: "linear-gradient(135deg, #F4FAFF 0%, #5DFDCB 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
-            Contact{" "}
-            <Box component="span" sx={{ color: "#fff" }}>
-              Maalgudi Technolabs
-            </Box>
+            Let's Connect
           </Typography>
           <Typography
             variant="h5"
             sx={{
-              maxWidth: "800px",
+              maxWidth: "700px",
               mx: "auto",
-              opacity: 0.95,
-              lineHeight: 1.6,
-              fontSize: { xs: "1.1rem", md: "1.3rem", xl: "1.5rem" },
+              color: "#B0B3B8",
+              lineHeight: 1.8,
+              fontSize: { xs: "1.1rem", md: "1.25rem" },
+              fontWeight: 400,
             }}
           >
             Connect with our expert team to explore strategic pathways for accelerating your technology career and professional growth.
@@ -183,30 +212,60 @@ const Contact = () => {
       </Box>
 
       {/* Contact Information Grid */}
-      <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
+      <Box
+        sx={{
+          py: 10,
+          background:
+            darkMode
+              ? "linear-gradient(180deg, #08090A 0%, #0D0E0F 100%)"
+              : "linear-gradient(180deg, #F9FCFF 0%, #F4FAFF 100%)",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
+              variant="overline"
+              sx={{
+                color: "#5DFDCB",
+                fontSize: "0.95rem",
+                fontWeight: 700,
+                letterSpacing: 2,
+                mb: 2,
+                display: "block",
+              }}
+            >
+              CONTACT INFORMATION
+            </Typography>
+            <Typography
               variant="h2"
               sx={{
-                fontWeight: 700,
-                color: "#333",
+                fontWeight: 800,
+                color: darkMode ? "#F4FAFF" : "#08090A",
                 mb: 2,
-                fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
+                fontSize: { xs: "2rem", md: "3rem" },
               }}
             >
               Get in{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Touch
               </Box>
             </Typography>
             <Typography
               variant="h6"
               sx={{
-                color: "#666",
+                color: darkMode ? "#B0B3B8" : "#666",
                 maxWidth: "600px",
                 mx: "auto",
-                lineHeight: 1.6,
+                lineHeight: 1.8,
+                fontWeight: 400,
               }}
             >
               Expert support for advancing your technology capabilities and professional objectives
@@ -221,16 +280,24 @@ const Contact = () => {
                   sx={{
                     height: "100%",
                     textAlign: "center",
-                    borderRadius: 0,
-                    border: "1px solid #eee",
-                    transition: "all 0.3s ease",
+                    borderRadius: 3,
+                    background: darkMode
+                      ? "rgba(26, 27, 28, 0.6)"
+                      : "rgba(255, 255, 255, 0.8)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: `2px solid ${darkMode
+                      ? "rgba(93, 253, 203, 0.15)"
+                      : "rgba(93, 253, 203, 0.2)"}`,
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                      transform: "translateY(-8px)",
+                      borderColor: "rgba(93, 253, 203, 0.5)",
+                      boxShadow: "0 12px 40px rgba(93, 253, 203, 0.2)",
                       "& .contact-icon": {
-                        backgroundColor: "#eea412",
-                        color: "white",
-                        transform: "scale(1.1)",
+                        background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                        color: "#08090A",
+                        transform: "scale(1.1) rotate(5deg)",
                       },
                     },
                   }}
@@ -239,14 +306,17 @@ const Contact = () => {
                     <Box
                       className="contact-icon"
                       sx={{
-                        backgroundColor: "#f8f9fa",
-                        color: info.color,
-                        p: 2,
-                        borderRadius: 0,
+                        backgroundColor: darkMode
+                          ? "rgba(93, 253, 203, 0.1)"
+                          : "rgba(93, 253, 203, 0.15)",
+                        color: "#5DFDCB",
+                        p: 2.5,
+                        borderRadius: 3,
                         display: "inline-flex",
                         mb: 3,
-                        fontSize: "2rem",
-                        transition: "all 0.3s ease",
+                        fontSize: "2.5rem",
+                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                        border: "2px solid rgba(93, 253, 203, 0.2)",
                       }}
                     >
                       {info.icon}
@@ -255,10 +325,10 @@ const Contact = () => {
                     <Typography
                       variant="h5"
                       sx={{
-                        fontWeight: 600,
-                        color: "#333",
+                        fontWeight: 700,
+                        color: darkMode ? "#F4FAFF" : "#08090A",
                         mb: 2,
-                        fontSize: { xs: "1.3rem", md: "1.5rem" },
+                        fontSize: { xs: "1.3rem", md: "1.4rem" },
                       }}
                     >
                       {info.title}
@@ -269,9 +339,10 @@ const Contact = () => {
                         key={idx}
                         variant="body1"
                         sx={{
-                          color: "#666",
+                          color: darkMode ? "#B0B3B8" : "#555",
                           mb: 0.5,
-                          fontSize: { xs: "0.9rem", md: "1rem" },
+                          fontSize: { xs: "0.95rem", md: "1rem" },
+                          fontWeight: 500,
                         }}
                       >
                         {detail}
@@ -286,7 +357,12 @@ const Contact = () => {
       </Box>
 
       {/* Contact Form & Map Section */}
-      <Box sx={{ py: 10, backgroundColor: "white" }}>
+      <Box
+        sx={{
+          py: 10,
+          backgroundColor: darkMode ? "#08090A" : "white",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8}>
             {/* Contact Form */}
@@ -294,14 +370,22 @@ const Contact = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontWeight: 700,
-                  color: "#333",
+                  fontWeight: 800,
+                  color: darkMode ? "#F4FAFF" : "#08090A",
                   mb: 3,
                   fontSize: { xs: "1.8rem", md: "2.5rem" },
                 }}
               >
                 Send Us a{" "}
-                <Box component="span" sx={{ color: "#eea412" }}>
+                <Box
+                  component="span"
+                  sx={{
+                    background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   Message
                 </Box>
               </Typography>
@@ -325,16 +409,26 @@ const Contact = () => {
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          borderRadius: 0,
+                          borderRadius: 2,
+                          color: darkMode ? "#F4FAFF" : "#08090A",
+                          "& fieldset": {
+                            borderColor: darkMode
+                              ? "rgba(93, 253, 203, 0.3)"
+                              : "rgba(93, 253, 203, 0.4)",
+                          },
                           "&:hover fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
+                            borderWidth: "2px",
                           },
                         },
-                        "& .MuiInputLabel-root.Mui-focused": {
-                          color: "#eea412",
+                        "& .MuiInputLabel-root": {
+                          color: darkMode ? "#B0B3B8" : "#666",
+                          "&.Mui-focused": {
+                            color: "#5DFDCB",
+                          },
                         },
                       }}
                     />
@@ -350,16 +444,26 @@ const Contact = () => {
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          borderRadius: 0,
+                          borderRadius: 2,
+                          color: darkMode ? "#F4FAFF" : "#08090A",
+                          "& fieldset": {
+                            borderColor: darkMode
+                              ? "rgba(93, 253, 203, 0.3)"
+                              : "rgba(93, 253, 203, 0.4)",
+                          },
                           "&:hover fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
+                            borderWidth: "2px",
                           },
                         },
-                        "& .MuiInputLabel-root.Mui-focused": {
-                          color: "#eea412",
+                        "& .MuiInputLabel-root": {
+                          color: darkMode ? "#B0B3B8" : "#666",
+                          "&.Mui-focused": {
+                            color: "#5DFDCB",
+                          },
                         },
                       }}
                     />
@@ -373,16 +477,26 @@ const Contact = () => {
                       onChange={handleInputChange}
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          borderRadius: 0,
+                          borderRadius: 2,
+                          color: darkMode ? "#F4FAFF" : "#08090A",
+                          "& fieldset": {
+                            borderColor: darkMode
+                              ? "rgba(93, 253, 203, 0.3)"
+                              : "rgba(93, 253, 203, 0.4)",
+                          },
                           "&:hover fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
+                            borderWidth: "2px",
                           },
                         },
-                        "& .MuiInputLabel-root.Mui-focused": {
-                          color: "#eea412",
+                        "& .MuiInputLabel-root": {
+                          color: darkMode ? "#B0B3B8" : "#666",
+                          "&.Mui-focused": {
+                            color: "#5DFDCB",
+                          },
                         },
                       }}
                     />
@@ -397,16 +511,26 @@ const Contact = () => {
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          borderRadius: 0,
+                          borderRadius: 2,
+                          color: darkMode ? "#F4FAFF" : "#08090A",
+                          "& fieldset": {
+                            borderColor: darkMode
+                              ? "rgba(93, 253, 203, 0.3)"
+                              : "rgba(93, 253, 203, 0.4)",
+                          },
                           "&:hover fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
+                            borderWidth: "2px",
                           },
                         },
-                        "& .MuiInputLabel-root.Mui-focused": {
-                          color: "#eea412",
+                        "& .MuiInputLabel-root": {
+                          color: darkMode ? "#B0B3B8" : "#666",
+                          "&.Mui-focused": {
+                            color: "#5DFDCB",
+                          },
                         },
                       }}
                     />
@@ -423,16 +547,26 @@ const Contact = () => {
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
-                          borderRadius: 0,
+                          borderRadius: 2,
+                          color: darkMode ? "#F4FAFF" : "#08090A",
+                          "& fieldset": {
+                            borderColor: darkMode
+                              ? "rgba(93, 253, 203, 0.3)"
+                              : "rgba(93, 253, 203, 0.4)",
+                          },
                           "&:hover fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "#eea412",
+                            borderColor: "#5DFDCB",
+                            borderWidth: "2px",
                           },
                         },
-                        "& .MuiInputLabel-root.Mui-focused": {
-                          color: "#eea412",
+                        "& .MuiInputLabel-root": {
+                          color: darkMode ? "#B0B3B8" : "#666",
+                          "&.Mui-focused": {
+                            color: "#5DFDCB",
+                          },
                         },
                       }}
                     />
@@ -471,14 +605,22 @@ const Contact = () => {
               <Typography
                 variant="h3"
                 sx={{
-                  fontWeight: 700,
-                  color: "#333",
+                  fontWeight: 800,
+                  color: darkMode ? "#F4FAFF" : "#08090A",
                   mb: 3,
                   fontSize: { xs: "1.8rem", md: "2.5rem" },
                 }}
               >
                 Visit Our{" "}
-                <Box component="span" sx={{ color: "#eea412" }}>
+                <Box
+                  component="span"
+                  sx={{
+                    background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   Campus
                 </Box>
               </Typography>
@@ -488,21 +630,34 @@ const Contact = () => {
                 sx={{
                   height: 400,
                   background:
-                    "linear-gradient(135deg, #eea412 0%, #f5c842 100%)",
+                    "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "white",
-                  borderRadius: 0,
+                  color: "#08090A",
+                  borderRadius: 3,
                   mb: 3,
+                  border: "3px solid rgba(255, 255, 255, 0.3)",
+                  position: "relative",
+                  overflow: "hidden",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background:
+                      "radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%)",
+                  },
                 }}
               >
-                <Box sx={{ textAlign: "center" }}>
-                  <LocationOn sx={{ fontSize: "4rem", mb: 2 }} />
-                  <Typography variant="h5" sx={{ fontWeight: 600 }}>
+                <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
+                  <LocationOn sx={{ fontSize: "4.5rem", mb: 2 }} />
+                  <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
                     Interactive Map
                   </Typography>
-                  <Typography variant="body1" sx={{ opacity: 0.9 }}>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
                     Bangalore, Karnataka, India
                   </Typography>
                 </Box>
@@ -512,8 +667,8 @@ const Contact = () => {
                 <Typography
                   variant="h5"
                   sx={{
-                    fontWeight: 600,
-                    color: "#333",
+                    fontWeight: 700,
+                    color: darkMode ? "#F4FAFF" : "#08090A",
                     mb: 2,
                   }}
                 >
@@ -524,13 +679,19 @@ const Contact = () => {
                     <IconButton
                       key={index}
                       sx={{
-                        backgroundColor: social.color,
-                        color: "white",
-                        borderRadius: 0,
+                        backgroundColor: darkMode
+                          ? "rgba(93, 253, 203, 0.1)"
+                          : "rgba(93, 253, 203, 0.15)",
+                        color: social.color,
+                        borderRadius: 2,
+                        border: `2px solid ${social.color}40`,
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                         "&:hover": {
                           backgroundColor: social.color,
-                          transform: "translateY(-2px)",
-                          boxShadow: `0 4px 12px ${social.color}40`,
+                          color: "white",
+                          transform: "translateY(-4px) rotate(5deg)",
+                          boxShadow: `0 8px 20px ${social.color}50`,
+                          borderColor: social.color,
                         },
                       }}
                     >
@@ -541,8 +702,8 @@ const Contact = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    color: "#666",
-                    lineHeight: 1.6,
+                    color: darkMode ? "#B0B3B8" : "#666",
+                    lineHeight: 1.8,
                   }}
                 >
                   Stay connected for expert insights, industry updates, and success stories from our professional learning community.
@@ -554,30 +715,58 @@ const Contact = () => {
       </Box>
 
       {/* Services Section */}
-      <Box sx={{ py: 10, backgroundColor: "#f8f9fa" }}>
+      <Box
+        sx={{
+          py: 10,
+          background: darkMode
+            ? "linear-gradient(180deg, #0D0E0F 0%, #08090A 100%)"
+            : "linear-gradient(180deg, #F4FAFF 0%, #F9FCFF 100%)",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
+              variant="overline"
+              sx={{
+                color: "#5DFDCB",
+                fontSize: "0.95rem",
+                fontWeight: 700,
+                letterSpacing: 2,
+                mb: 2,
+                display: "block",
+              }}
+            >
+              WHAT WE OFFER
+            </Typography>
+            <Typography
               variant="h2"
               sx={{
-                fontWeight: 700,
-                color: "#333",
+                fontWeight: 800,
+                color: darkMode ? "#F4FAFF" : "#08090A",
                 mb: 2,
                 fontSize: { xs: "2rem", md: "3rem" },
               }}
             >
               Our{" "}
-              <Box component="span" sx={{ color: "#eea412" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Services
               </Box>
             </Typography>
             <Typography
               variant="h6"
               sx={{
-                color: "#666",
+                color: darkMode ? "#B0B3B8" : "#666",
                 maxWidth: "600px",
                 mx: "auto",
-                lineHeight: 1.6,
+                lineHeight: 1.8,
               }}
             >
               Comprehensive solutions addressing diverse technology training and professional development requirements
@@ -591,15 +780,23 @@ const Contact = () => {
                   elevation={0}
                   sx={{
                     height: "100%",
-                    borderRadius: 0,
-                    border: "1px solid #eee",
-                    transition: "all 0.3s ease",
+                    borderRadius: 3,
+                    background: darkMode
+                      ? "rgba(26, 27, 28, 0.6)"
+                      : "rgba(255, 255, 255, 0.8)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: `2px solid ${darkMode
+                      ? "rgba(93, 253, 203, 0.15)"
+                      : "rgba(93, 253, 203, 0.2)"}`,
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                      transform: "translateY(-8px)",
+                      borderColor: "rgba(93, 253, 203, 0.5)",
+                      boxShadow: "0 12px 40px rgba(93, 253, 203, 0.2)",
                       "& .service-icon": {
-                        backgroundColor: "#eea412",
-                        color: "white",
+                        background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                        color: "#08090A",
                       },
                     },
                   }}
@@ -611,13 +808,16 @@ const Contact = () => {
                       <Box
                         className="service-icon"
                         sx={{
-                          backgroundColor: "#f8f9fa",
-                          color: "#eea412",
+                          backgroundColor: darkMode
+                            ? "rgba(93, 253, 203, 0.1)"
+                            : "rgba(93, 253, 203, 0.15)",
+                          color: "#5DFDCB",
                           p: 2,
-                          borderRadius: 0,
+                          borderRadius: 2,
                           mr: 3,
                           fontSize: "2rem",
-                          transition: "all 0.3s ease",
+                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                          border: "2px solid rgba(93, 253, 203, 0.2)",
                         }}
                       >
                         {service.icon}
@@ -626,10 +826,10 @@ const Contact = () => {
                         <Typography
                           variant="h5"
                           sx={{
-                            fontWeight: 600,
-                            color: "#333",
+                            fontWeight: 700,
+                            color: darkMode ? "#F4FAFF" : "#08090A",
                             mb: 1,
-                            fontSize: { xs: "1.3rem", md: "1.5rem" },
+                            fontSize: { xs: "1.3rem", md: "1.4rem" },
                           }}
                         >
                           {service.title}
@@ -637,8 +837,8 @@ const Contact = () => {
                         <Typography
                           variant="body1"
                           sx={{
-                            color: "#666",
-                            lineHeight: 1.7,
+                            color: darkMode ? "#B0B3B8" : "#555",
+                            lineHeight: 1.8,
                             mb: 2,
                           }}
                         >
@@ -649,12 +849,15 @@ const Contact = () => {
                           label={service.contact}
                           size="small"
                           sx={{
-                            backgroundColor: "#eea412",
-                            color: "white",
-                            fontWeight: 500,
+                            background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                            color: "#08090A",
+                            fontWeight: 600,
+                            border: "none",
                             "&:hover": {
-                              backgroundColor: "#d89e0b",
+                              background: "linear-gradient(135deg, #4AE3B2 0%, #5bb1fe 100%)",
+                              transform: "scale(1.05)",
                             },
+                            transition: "all 0.3s ease",
                           }}
                         />
                       </Box>
@@ -668,26 +871,61 @@ const Contact = () => {
       </Box>
 
       {/* FAQ or Additional Info Section */}
-      <Box sx={{ py: 10, backgroundColor: "white" }}>
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Box sx={{ textAlign: "center" }}>
+      <Box
+        sx={{
+          py: 12,
+          background: darkMode
+            ? "linear-gradient(135deg, #08090A 0%, #0D0E0F 100%)"
+            : "linear-gradient(135deg, #F4FAFF 0%, #FFF 100%)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
+            <Typography
+              variant="overline"
+              sx={{
+                color: "#5DFDCB",
+                fontSize: "0.95rem",
+                fontWeight: 700,
+                letterSpacing: 2,
+                mb: 2,
+                display: "block",
+              }}
+            >
+              JOIN US TODAY
+            </Typography>
             <Typography
               variant="h2"
               sx={{
-                fontWeight: 700,
-                color: "#333",
+                fontWeight: 800,
+                color: darkMode ? "#F4FAFF" : "#08090A",
                 mb: 3,
                 fontSize: { xs: "2rem", md: "3rem" },
               }}
             >
-              Ready to Get Started?
+              Ready to Get{" "}
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Started?
+              </Box>
             </Typography>
             <Typography
               variant="h6"
               sx={{
-                color: "#666",
-                mb: 4,
-                lineHeight: 1.6,
+                color: darkMode ? "#B0B3B8" : "#666",
+                mb: 5,
+                lineHeight: 1.8,
+                maxWidth: "700px",
+                mx: "auto",
               }}
             >
               Join thousands of professionals who have transformed their careers
@@ -698,17 +936,22 @@ const Contact = () => {
               variant="contained"
               size="large"
               sx={{
-                background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
                 color: "#08090A",
-                px: 6,
-                py: 2,
-                fontSize: "1.2rem",
-                fontWeight: 600,
-                borderRadius: 0,
+                px: 7,
+                py: 2.5,
+                fontSize: "1.1rem",
+                fontWeight: 700,
+                borderRadius: 3,
+                textTransform: "uppercase",
+                letterSpacing: 1,
+                boxShadow: "0 8px 30px rgba(93, 253, 203, 0.3)",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 "&:hover": {
                   background:
-                    "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
-                  transform: "translateY(-2px)",
+                    "linear-gradient(135deg, #4AE3B2 0%, #5bb1fe 100%)",
+                  transform: "translateY(-4px) scale(1.05)",
+                  boxShadow: "0 12px 40px rgba(93, 253, 203, 0.4)",
                 },
               }}
             >
@@ -716,6 +959,32 @@ const Contact = () => {
             </Button>
           </Box>
         </Container>
+
+        {/* Decorative Elements */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "-50px",
+            right: "-50px",
+            width: "300px",
+            height: "300px",
+            background:
+              "radial-gradient(circle, rgba(93, 253, 203, 0.1) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-50px",
+            left: "-50px",
+            width: "250px",
+            height: "250px",
+            background:
+              "radial-gradient(circle, rgba(124, 198, 254, 0.1) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
       </Box>
     </Box>
   );

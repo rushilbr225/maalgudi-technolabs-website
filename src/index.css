@@ -2,7 +2,6 @@
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,27 +16,31 @@
   --text-secondary: #4a5568;
   --accent-primary: #7cc6fe;
   --accent-secondary: #5dfdcb;
+  color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0a0b0c;
+  --bg-primary: #08090a;
   --bg-secondary: #1a1b1c;
   --text-primary: #f4faff;
   --text-secondary: #b0b3b8;
   --accent-primary: #7cc6fe;
   --accent-secondary: #5dfdcb;
+  color-scheme: dark;
 }
 
 /* Enhanced scaling for large displays and presentations */
 @media (min-width: 1920px) {
   :root {
-    font-size: 18px; /* Scale base font size for large screens */
+    font-size: 18px;
+    /* Scale base font size for large screens */
   }
 }
 
 @media (min-width: 2560px) {
   :root {
-    font-size: 22px; /* Even larger for 4K displays */
+    font-size: 22px;
+    /* Even larger for 4K displays */
   }
 }
 
@@ -57,16 +60,21 @@ html {
 body {
   margin: 0;
   padding: 0;
-  width: 100vw; /* Use viewport width for full width */
+  width: 100vw;
+  /* Use viewport width for full width */
   min-width: 320px;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll issues */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll issues */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Ensure root containers take full width */
 #root {
-  width: 100vw; /* Use viewport width for full width */
+  width: 100vw;
+  /* Use viewport width for full width */
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -74,24 +82,16 @@ body {
 
 /* Fix for ultrawide monitors and external displays */
 .MuiContainer-root {
-  max-width: none !important; /* Override Material-UI container max-width */
+  max-width: none !important;
+  /* Override Material-UI container max-width */
 }
 
-/* Additional CSS for body to ensure no constraints */
-body {
-  margin: 0;
-  padding: 0;
-  width: 100vw; /* Use viewport width for full width */
-  min-width: 320px;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll issues */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  max-width: none !important;
-}
+
 
 /* Ensure the main App container doesn't constrain width */
 #root {
-  width: 100vw; /* Use viewport width for full width */
+  width: 100vw;
+  /* Use viewport width for full width */
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -162,38 +162,73 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Dark mode transitions for all elements */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
+/* Smooth transitions for theme changes - only for specific properties */
+.MuiPaper-root,
+.MuiCard-root,
+.MuiAppBar-root,
+.MuiDrawer-paper {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Dark mode toggle animation */
 .dark-mode-toggle {
   transform-origin: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.dark-mode-toggle:hover {
-  transform: rotate(180deg) scale(1.1);
+.dark-mode-toggle svg {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode-toggle:hover svg {
+  transform: rotate(20deg);
+}
+
+.dark-mode-toggle:active svg {
+  transform: rotate(180deg) scale(0.9);
+}
+
+/* Prevent layout shift during theme transitions */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure smooth color transitions for common elements */
+.MuiTypography-root,
+.MuiButton-root,
+.MuiIconButton-root,
+.MuiTextField-root,
+.MuiInputBase-root {
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
-::-webkit-scrollbar-track {
+[data-theme="light"] ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #1e3c72;
-  border-radius: 4px;
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #1a1b1c;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #7cc6fe;
+  border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #5dfdcb;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a5298;
+  background: #5dfdcb;
 }
 
 /* Ensure images scale properly */
@@ -219,18 +254,23 @@ button:focus-visible {
   h1 {
     font-size: 24pt;
   }
+
   h2 {
     font-size: 20pt;
   }
+
   h3 {
     font-size: 16pt;
   }
+
   h4 {
     font-size: 14pt;
   }
+
   h5 {
     font-size: 12pt;
   }
+
   h6 {
     font-size: 10pt;
   }

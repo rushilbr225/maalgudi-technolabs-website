@@ -147,13 +147,18 @@ const Navbar = () => {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: scrolled ? "rgba(8, 9, 10, 0.98)" : "#08090A",
-          backdropFilter: scrolled ? "blur(10px)" : "none",
-          borderBottom: "1px solid rgba(124, 198, 254, 0.3)",
-          transition: "all 0.3s ease",
+          backgroundColor: scrolled
+            ? "rgba(8, 9, 10, 0.95)"
+            : "rgba(8, 9, 10, 0.98)",
+          backdropFilter: scrolled ? "blur(20px) saturate(180%)" : "blur(10px)",
+          WebkitBackdropFilter: scrolled ? "blur(20px) saturate(180%)" : "blur(10px)",
+          borderBottom: scrolled
+            ? "1px solid rgba(93, 253, 203, 0.2)"
+            : "1px solid rgba(124, 198, 254, 0.15)",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           boxShadow: scrolled
-            ? "0 2px 10px rgba(0,0,0,0.3)"
-            : "0 2px 5px rgba(0,0,0,0.2)",
+            ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(93, 253, 203, 0.1)"
+            : "0 4px 16px rgba(0, 0, 0, 0.3)",
         }}
       >
         <Container maxWidth="lg">
@@ -166,9 +171,13 @@ const Navbar = () => {
                 display: "flex",
                 alignItems: "center",
                 textDecoration: "none",
-                transition: "all 0.3s ease",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 "&:hover": {
                   transform: "scale(1.05)",
+                  filter: "drop-shadow(0 0 8px rgba(93, 253, 203, 0.6))",
+                  "& img": {
+                    filter: "brightness(1.2)",
+                  },
                 },
               }}
             >
@@ -219,16 +228,16 @@ const Navbar = () => {
                       },
                       "&::after": isActive(item.path)
                         ? {
-                            content: '""',
-                            position: "absolute",
-                            bottom: 0,
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            width: "60%",
-                            height: "3px",
-                            background:
-                              "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-                          }
+                          content: '""',
+                          position: "absolute",
+                          bottom: 0,
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          width: "60%",
+                          height: "3px",
+                          background:
+                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                        }
                         : {},
                     }}
                   >

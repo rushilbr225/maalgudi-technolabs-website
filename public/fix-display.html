@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fixing Display - Maalgudi Technolabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #7CC6FE 0%, #5DFDCB 100%);
+            color: white;
+        }
+        h1 { font-size: 2em; margin-bottom: 20px; }
+        p { font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1> Resetting Display Mode...</h1>
+    <p>Please wait while we fix the display.</p>
+    <script>
+        // Clear all theme-related localStorage
+        localStorage.removeItem('maalgudi-dark-mode');
+        localStorage.removeItem('mode');
+        localStorage.clear();
+        
+        // Force light mode
+        localStorage.setItem('maalgudi-dark-mode', 'false');
+        
+        // Redirect after a brief moment
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 1000);
+    </script>
+</body>
+</html>

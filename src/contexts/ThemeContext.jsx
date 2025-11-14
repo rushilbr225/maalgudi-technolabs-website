@@ -279,13 +279,8 @@ export const ThemeContextProvider = ({ children }) => {
     const savedTheme = localStorage.getItem("maalgudi-dark-mode");
     if (savedTheme !== null) {
       setDarkMode(JSON.parse(savedTheme));
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setDarkMode(prefersDark);
     }
+    // Default to light mode, no system preference check
   }, []);
 
   // Save theme preference to localStorage when it changes
@@ -299,8 +294,16 @@ export const ThemeContextProvider = ({ children }) => {
 
   const theme = getTheme(darkMode);
 
+  // Apply theme to document body
+  useEffect(() => {
+    document.body.style.backgroundColor = darkMode ? "#08090A" : "#F4FAFF";
+    document.body.style.color = darkMode ? "#F4FAFF" : "#08090A";
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   const value = {
     darkMode,
+    mode: darkMode ? "dark" : "light", // Add mode for consistency
     toggleDarkMode,
     theme,
   };

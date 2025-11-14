@@ -46,14 +46,8 @@ const NewAbout = () => {
     },
     {
       year: "2022",
-      title: "1000+ Graduates",
+      title: "Professional Milestone",
       description: "Achieved significant milestone in professional training and career transformation impact",
-    },
-    {
-      year: "2023",
-      title: "Industry Recognition",
-      description:
-        "Awarded for sustained excellence and innovation in technical education delivery",
     },
     {
       year: "2024",

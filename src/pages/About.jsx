@@ -174,7 +174,7 @@ const About = () => {
     },
     {
       name: "Mahith R",
-      role: "AI Specialist",
+      role: "Software Engineer",
       education: "B.Tech in DS, SVIT",
       bio: "Gen AI Intern at Volvo, specializing in artificial intelligence and data science applications.",
       skills: [
@@ -275,7 +275,7 @@ const About = () => {
               About Us
             </Typography>
           </Box>
-          
+
           <Typography
             variant="h1"
             sx={{
@@ -287,9 +287,9 @@ const About = () => {
             }}
           >
             Welcome to{" "}
-            <Box 
-              component="span" 
-              sx={{ 
+            <Box
+              component="span"
+              sx={{
                 color: "#fff",
                 display: 'block',
                 mt: 1,

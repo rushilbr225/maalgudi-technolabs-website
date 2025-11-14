@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Container,
@@ -19,11 +19,24 @@ import {
   ChevronRight,
 } from "@mui/icons-material";
 import { useTheme } from "../contexts/ThemeContext";
+import EventRegistrationForm from "../components/EventRegistrationForm";
 
 const Home = () => {
   const theme = useMuiTheme();
   const { mode } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [registrationOpen, setRegistrationOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
+  const handleRegisterClick = (eventTitle) => {
+    setSelectedEvent(eventTitle);
+    setRegistrationOpen(true);
+  };
+
+  const handleCloseRegistration = () => {
+    setRegistrationOpen(false);
+    setSelectedEvent(null);
+  };
 
   const heroSlides = [
     {
@@ -405,6 +418,354 @@ const Home = () => {
         </Container>
       </Box>
 
+      {/* Events Section */}
+      <Box
+        sx={{
+          py: 8,
+          backgroundColor: mode === "dark" ? "#0D0E0F" : "#F9FCFF",
+          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: "center", mb: 6 }}>
+            <Typography
+              variant="overline"
+              sx={{
+                color: "#5DFDCB",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                letterSpacing: 2,
+                mb: 1,
+                display: "block",
+              }}
+            >
+              WHAT'S HAPPENING
+            </Typography>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                fontWeight: 700,
+                color: mode === "dark" ? "#F4FAFF" : "#333",
+                mb: 2,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+              }}
+            >
+              Upcoming{" "}
+              <Box component="span" sx={{ color: "#5DFDCB" }}>
+                Events
+              </Box>
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: mode === "dark" ? "#B0B3B8" : "#666",
+                maxWidth: "700px",
+                mx: "auto",
+                lineHeight: 1.6,
+              }}
+            >
+              Join us for workshops, seminars, and networking opportunities
+            </Typography>
+          </Box>
+
+          <Grid container spacing={4} sx={{ justifyContent: "center" }}>
+            {[
+              {
+                title: "IoT Workshop with AWS Integration",
+                date: "March 15, 2025",
+                time: "10:00 AM - 4:00 PM",
+                location: "DSATM Campus, Bangalore",
+                description:
+                  "Hands-on workshop covering IoT fundamentals, sensor integration, and AWS IoT Core services.",
+                image:
+                  "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                status: "Registrations Open",
+                color: "#1976d2",
+              },
+              {
+                title: "Java Backend Development Bootcamp",
+                date: "March 22, 2025",
+                time: "9:00 AM - 5:00 PM",
+                location: "RVCE Campus, Bangalore",
+                description:
+                  "Intensive bootcamp on Spring Boot, REST APIs, microservices architecture, and database integration.",
+                image:
+                  "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                status: "Few Seats Left",
+                color: "#2e7d32",
+              },
+              {
+                title: "Data Structures & Algorithms Masterclass",
+                date: "March 29, 2025",
+                time: "2:00 PM - 6:00 PM",
+                location: "UVCE Campus, Bangalore",
+                description:
+                  "Deep dive into DSA concepts with practical problem-solving sessions for technical interviews.",
+                image:
+                  "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                status: "Coming Soon",
+                color: "#d32f2f",
+              },
+            ].map((event, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    minHeight: 580,
+                    display: "flex",
+                    flexDirection: "column",
+                    background:
+                      mode === "dark"
+                        ? "linear-gradient(135deg, rgba(26, 27, 28, 0.98) 0%, rgba(18, 19, 20, 0.95) 100%)"
+                        : "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 252, 255, 0.95) 100%)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: `2px solid ${mode === "dark"
+                      ? "rgba(93, 253, 203, 0.15)"
+                      : "rgba(93, 253, 203, 0.2)"
+                      }`,
+                    borderRadius: 4,
+                    overflow: "hidden",
+                    transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                    boxShadow:
+                      mode === "dark"
+                        ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(93, 253, 203, 0.1)"
+                        : "0 8px 32px rgba(93, 253, 203, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05)",
+                    position: "relative",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: "4px",
+                      background: `linear-gradient(90deg, ${event.color}, #5DFDCB)`,
+                      opacity: 0.8,
+                    },
+                    "&:hover": {
+                      transform: "translateY(-16px)",
+                      borderColor:
+                        mode === "dark"
+                          ? "rgba(93, 253, 203, 0.5)"
+                          : "rgba(93, 253, 203, 0.5)",
+                      boxShadow:
+                        mode === "dark"
+                          ? "0 20px 60px rgba(93, 253, 203, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3)"
+                          : "0 20px 60px rgba(93, 253, 203, 0.3), 0 8px 16px rgba(0, 0, 0, 0.1)",
+                      "& .event-image": {
+                        transform: "scale(1.08)",
+                      },
+                      "& .status-badge": {
+                        transform: "scale(1.05)",
+                      },
+                    },
+                  }}
+                >
+                  {/* Event Image */}
+                  <Box
+                    sx={{
+                      height: 220,
+                      position: "relative",
+                      overflow: "hidden",
+                      backgroundColor: mode === "dark" ? "#0D0E0F" : "#E8F5FE",
+                    }}
+                  >
+                    <Box
+                      className="event-image"
+                      sx={{
+                        height: "100%",
+                        width: "100%",
+                        backgroundImage: `linear-gradient(135deg, rgba(8, 9, 10, 0.4), rgba(8, 9, 10, 0.6)), url(${event.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                      }}
+                    />
+                    <Box
+                      className="status-badge"
+                      sx={{
+                        position: "absolute",
+                        top: 16,
+                        right: 16,
+                        background: `linear-gradient(135deg, ${event.color}, ${event.color}dd)`,
+                        color: "#FFF",
+                        px: 2.5,
+                        py: 1,
+                        borderRadius: 3,
+                        fontSize: "0.75rem",
+                        fontWeight: 700,
+                        letterSpacing: 0.5,
+                        textTransform: "uppercase",
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+                        transition: "transform 0.3s ease",
+                      }}
+                    >
+                      {event.status}
+                    </Box>
+                  </Box>
+
+                  <CardContent
+                    sx={{
+                      flexGrow: 1,
+                      p: 3,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 700,
+                          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                          mb: 2.5,
+                          lineHeight: 1.4,
+                          minHeight: "3.5em",
+                          display: "flex",
+                          alignItems: "center",
+                          fontSize: "1.15rem",
+                        }}
+                      >
+                        {event.title}
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          mb: 2.5,
+                          p: 2,
+                          borderRadius: 2,
+                          backgroundColor:
+                            mode === "dark"
+                              ? "rgba(93, 253, 203, 0.05)"
+                              : "rgba(93, 253, 203, 0.08)",
+                          border: `1px solid ${mode === "dark"
+                            ? "rgba(93, 253, 203, 0.1)"
+                            : "rgba(93, 253, 203, 0.15)"
+                            }`,
+                        }}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                          <Box
+                            sx={{
+                              width: 24,
+                              height: 24,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              mr: 1.5,
+                            }}
+                          >
+                            📅
+                          </Box>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: "#5DFDCB",
+                              fontWeight: 700,
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            {event.date}
+                          </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                          <Box
+                            sx={{
+                              width: 24,
+                              height: 24,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              mr: 1.5,
+                            }}
+                          >
+                            🕐
+                          </Box>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: mode === "dark" ? "#B0B3B8" : "#555",
+                              fontWeight: 500,
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            {event.time}
+                          </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box
+                            sx={{
+                              width: 24,
+                              height: 24,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              mr: 1.5,
+                            }}
+                          >
+                            📍
+                          </Box>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: mode === "dark" ? "#B0B3B8" : "#555",
+                              fontWeight: 500,
+                              fontSize: "0.9rem",
+                            }}
+                          >
+                            {event.location}
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: mode === "dark" ? "#B0B3B8" : "#666",
+                          lineHeight: 1.8,
+                          mb: 2.5,
+                          minHeight: "4.5em",
+                          fontSize: "0.95rem",
+                        }}
+                      >
+                        {event.description}
+                      </Typography>
+                    </Box>
+
+                    <Button
+                      variant="contained"
+                      fullWidth
+                      onClick={() => handleRegisterClick(event.title)}
+                      sx={{
+                        background: "linear-gradient(135deg, #5DFDCB 0%, #4AE3B2 100%)",
+                        color: "#08090A",
+                        fontWeight: 700,
+                        py: 1.5,
+                        fontSize: "0.95rem",
+                        textTransform: "uppercase",
+                        letterSpacing: 0.5,
+                        borderRadius: 2,
+                        boxShadow: "0 4px 14px rgba(93, 253, 203, 0.3)",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          background: "linear-gradient(135deg, #4AE3B2 0%, #5DFDCB 100%)",
+                          transform: "translateY(-2px)",
+                          boxShadow: "0 6px 20px rgba(93, 253, 203, 0.4)",
+                        },
+                      }}
+                    >
+                      Register Now
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+
       {/* CTA Section */}
       <Box
         sx={{
@@ -458,6 +819,13 @@ const Home = () => {
           </Box>
         </Container>
       </Box>
+
+      {/* Event Registration Form */}
+      <EventRegistrationForm
+        open={registrationOpen}
+        onClose={handleCloseRegistration}
+        eventTitle={selectedEvent || ""}
+      />
     </Box>
   );
 };

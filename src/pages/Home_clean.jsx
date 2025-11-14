@@ -22,7 +22,7 @@ import { useTheme } from "../contexts/ThemeContext";
 
 const Home = () => {
   const theme = useMuiTheme();
-  const { mode } = useTheme();
+  const { darkMode } = useTheme();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
@@ -302,8 +302,8 @@ const Home = () => {
       <Box
         sx={{
           py: 8,
-          backgroundColor: mode === "dark" ? "#08090A" : "#F4FAFF",
-          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+          backgroundColor: darkMode ? "#08090A" : "#F4FAFF",
+          color: darkMode ? "#F4FAFF" : "#08090A",
         }}
       >
         <Container maxWidth="lg">
@@ -325,14 +325,14 @@ const Home = () => {
                 <Card
                   sx={{
                     height: 220,
-                    backgroundColor: mode === "dark" ? "#1A1A1A" : "#FFFFFF",
-                    color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                    border: `1px solid ${mode === "dark" ? "#333" : "#E0E0E0"}`,
+                    backgroundColor: darkMode ? "#1A1A1A" : "#FFFFFF",
+                    color: darkMode ? "#F4FAFF" : "#08090A",
+                    border: `1px solid ${darkMode ? "#333" : "#E0E0E0"}`,
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateY(-5px)",
                       boxShadow: `0 8px 25px ${
-                        mode === "dark"
+                        darkMode
                           ? "rgba(93, 253, 203, 0.2)"
                           : "rgba(0, 0, 0, 0.15)"
                       }`,
@@ -353,7 +353,7 @@ const Home = () => {
                       sx={{
                         mb: 2,
                         fontWeight: "bold",
-                        color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                        color: darkMode ? "#F4FAFF" : "#08090A",
                       }}
                     >
                       {service.title}
@@ -361,7 +361,7 @@ const Home = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: mode === "dark" ? "#B0B0B0" : "#555555",
+                        color: darkMode ? "#B0B0B0" : "#555555",
                         lineHeight: 1.5,
                       }}
                     >
