@@ -272,9 +272,9 @@ const Contact = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4}>
+          <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
             {contactInfo.map((info, index) => (
-              <Grid item xs={12} md={6} lg={3} key={index}>
+              <Grid item xs={12} sm={6} md={6} lg={3} key={index} sx={{ display: 'flex' }}>
                 <Card
                   elevation={0}
                   sx={{
@@ -364,9 +364,9 @@ const Contact = () => {
         }}
       >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Grid container spacing={8}>
+          <Grid container spacing={6}>
             {/* Contact Form */}
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
               <Typography
                 variant="h3"
                 sx={{
@@ -374,6 +374,7 @@ const Contact = () => {
                   color: darkMode ? "#F4FAFF" : "#08090A",
                   mb: 3,
                   fontSize: { xs: "1.8rem", md: "2.5rem" },
+                  textAlign: 'center',
                 }}
               >
                 Send Us a{" "}
@@ -397,7 +398,7 @@ const Contact = () => {
                 </Alert>
               )}
 
-              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, maxWidth: '900px', mx: 'auto' }}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <TextField
@@ -572,6 +573,7 @@ const Contact = () => {
                     />
                   </Grid>
                   <Grid item xs={12}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Button
                       type="submit"
                       variant="contained"
@@ -581,27 +583,32 @@ const Contact = () => {
                         background:
                           "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
                         color: "#08090A",
-                        px: 4,
-                        py: 2,
+                        px: 6,
+                        py: 2.5,
                         fontSize: "1.1rem",
-                        fontWeight: 600,
-                        borderRadius: 0,
+                        fontWeight: 700,
+                        borderRadius: 3,
+                        boxShadow: "0 8px 30px rgba(93, 253, 203, 0.3)",
+                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                         "&:hover": {
                           background:
                             "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
-                          transform: "translateY(-2px)",
+                          transform: "translateY(-4px)",
+                          boxShadow: "0 12px 40px rgba(93, 253, 203, 0.4)",
                         },
                       }}
                     >
                       Send Message
                     </Button>
+                    </Box>
                   </Grid>
                 </Grid>
               </Box>
             </Grid>
 
             {/* Map/Location Info */}
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12}>
+              <Box sx={{ maxWidth: '900px', mx: 'auto', mt: 4 }}>
               <Typography
                 variant="h3"
                 sx={{
@@ -609,6 +616,7 @@ const Contact = () => {
                   color: darkMode ? "#F4FAFF" : "#08090A",
                   mb: 3,
                   fontSize: { xs: "1.8rem", md: "2.5rem" },
+                  textAlign: 'center',
                 }}
               >
                 Visit Our{" "}
@@ -663,7 +671,7 @@ const Contact = () => {
                 </Box>
               </Paper>
 
-              <Box>
+              <Box sx={{ textAlign: 'center' }}>
                 <Typography
                   variant="h5"
                   sx={{
@@ -674,7 +682,7 @@ const Contact = () => {
                 >
                   Connect With Us
                 </Typography>
-                <Box sx={{ display: "flex", gap: 1, mb: 3 }}>
+                <Box sx={{ display: "flex", gap: 1, mb: 3, justifyContent: 'center' }}>
                   {socialLinks.map((social, index) => (
                     <IconButton
                       key={index}
@@ -704,10 +712,12 @@ const Contact = () => {
                   sx={{
                     color: darkMode ? "#B0B3B8" : "#666",
                     lineHeight: 1.8,
+                    textAlign: 'center',
                   }}
                 >
                   Stay connected for expert insights, industry updates, and success stories from our professional learning community.
                 </Typography>
+              </Box>
               </Box>
             </Grid>
           </Grid>
@@ -773,9 +783,9 @@ const Contact = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={3}>
+          <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
             {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
+              <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
                 <Card
                   elevation={0}
                   sx={{

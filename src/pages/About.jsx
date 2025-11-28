@@ -189,27 +189,27 @@ const About = () => {
 
   const values = [
     {
-      title: "Excellence in Education",
+      title: "Plan",
       description:
-        "Delivering superior quality training through industry-aligned curriculum and expert-led instruction for measurable results.",
+        "Deciding in advance what to do, how to do it, when to do it, and by whom it is to be done.",
       icon: <School />,
     },
     {
-      title: "Innovation & Technology",
+      title: "Schedule",
       description:
-        "Integrating cutting-edge technologies and modern methodologies to maintain leadership in technical education excellence.",
+        "Maintaining a timetable to achieve planned activities and inform all involved parties in advance.",
       icon: <Code />,
     },
     {
-      title: "Professional Growth",
+      title: "Commit",
       description:
-        "Accelerating career advancement through targeted skill development and strategic professional capabilities enhancement.",
+        "Committing to promises, including agreed activities, meeting participation, and deadlines.",
       icon: <TrendingUp />,
     },
     {
-      title: "Industry Partnerships",
+      title: "Follow Up",
       description:
-        "Strategic collaborations ensuring training programs align with current industry requirements and emerging market demands.",
+        "Following up on all committed activities, with frequencies and timings established during the commitment phase.",
       icon: <Business />,
     },
   ];
@@ -706,246 +706,6 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Team Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#f8f9fa" }}>
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Box sx={{ textAlign: "center", mb: 10 }}>
-            <Box
-              sx={{
-                display: 'inline-block',
-                mb: 2,
-                px: 2,
-                py: 0.5,
-                backgroundColor: 'rgba(25, 118, 210, 0.1)',
-                borderRadius: 2,
-              }}
-            >
-              <Typography
-                variant="overline"
-                sx={{
-                  color: "#1976d2",
-                  fontWeight: 700,
-                  letterSpacing: 1.5,
-                }}
-              >
-                The People Behind Our Success
-              </Typography>
-            </Box>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 800,
-                color: "#333",
-                mb: 3,
-                fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
-              }}
-            >
-              Meet Our{" "}
-              <Box component="span" sx={{ color: "#1976d2" }}>
-                Team
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: "#666",
-                maxWidth: "700px",
-                mx: "auto",
-                lineHeight: 1.7,
-                fontSize: { xs: "1rem", md: "1.15rem" },
-              }}
-            >
-              Expert professionals committed to delivering exceptional learning experiences and measurable career outcomes
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: {
-                xs: '1fr',
-                sm: 'repeat(2, 1fr)',
-                md: 'repeat(3, 1fr)',
-                lg: 'repeat(4, 1fr)'
-              },
-              gap: 3,
-              maxWidth: '1800px',
-              margin: '0 auto',
-              px: { xs: 2, md: 0 },
-            }}
-          >
-            {team.map((member, index) => (
-              <Box
-                key={index}
-                sx={{
-                  minHeight: 420,
-                  background: darkMode
-                    ? "rgba(26, 27, 28, 0.95)"
-                    : "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: 'blur(15px)',
-                  WebkitBackdropFilter: 'blur(15px)',
-                  border: `1px solid ${darkMode
-                    ? "rgba(124, 198, 254, 0.2)"
-                    : "rgba(124, 198, 254, 0.15)"}`,
-                  borderRadius: 3,
-                  padding: 3,
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  position: 'relative',
-                  overflow: 'visible',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  boxShadow: darkMode
-                    ? "0 4px 20px rgba(0, 0, 0, 0.3)"
-                    : "0 4px 20px rgba(124, 198, 254, 0.1)",
-                  '&:hover': {
-                    transform: 'translateY(-12px)',
-                    borderColor: darkMode
-                      ? "rgba(124, 198, 254, 0.4)"
-                      : "rgba(124, 198, 254, 0.3)",
-                    boxShadow: darkMode
-                      ? "0 16px 48px rgba(124, 198, 254, 0.35)"
-                      : "0 16px 48px rgba(124, 198, 254, 0.25)",
-                    background: darkMode
-                      ? "rgba(26, 27, 28, 1)"
-                      : "rgba(255, 255, 255, 1)",
-                    '& .member-avatar': {
-                      transform: 'scale(1.08)',
-                      boxShadow: '0 12px 32px rgba(124, 198, 254, 0.4)',
-                    },
-                  },
-                }}
-              >
-                <Box
-                  sx={{
-                    position: 'relative',
-                    display: 'inline-block',
-                    mb: 3,
-                  }}
-                >
-                  <Avatar
-                    className="member-avatar"
-                    src={member.avatar || undefined}
-                    sx={{
-                      width: 150,
-                      height: 150,
-                      border: '5px solid #7CC6FE',
-                      transition: 'all 0.4s ease',
-                      backgroundColor: member.avatar ? 'transparent' : '#7CC6FE',
-                      fontSize: '3rem',
-                      fontWeight: 700,
-                      color: '#fff',
-                      boxShadow: '0 8px 24px rgba(124, 198, 254, 0.3)',
-                    }}
-                  >
-                    {!member.avatar && member.name.split(' ').map(n => n[0]).join('')}
-                  </Avatar>
-                  {/* Decorative ring */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: -6,
-                      left: -6,
-                      right: -6,
-                      bottom: -6,
-                      borderRadius: '50%',
-                      border: '2px solid #7CC6FE',
-                      opacity: 0.3,
-                    }}
-                  />
-                </Box>
-
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: 700,
-                    color: darkMode ? "#F4FAFF" : "#333",
-                    fontSize: '1.2rem',
-                    mb: 0.5,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {member.name}
-                </Typography>
-
-                <Box
-                  sx={{
-                    backgroundColor: '#7CC6FE',
-                    color: '#fff',
-                    fontWeight: 600,
-                    fontSize: '0.85rem',
-                    padding: '6px 16px',
-                    borderRadius: '20px',
-                    mb: 1,
-                    display: 'inline-block',
-                  }}
-                >
-                  {member.role}
-                </Box>
-
-                {member.education && (
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: darkMode ? "#B0B3B8" : "#666",
-                      fontSize: '0.85rem',
-                      mb: 2,
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    {member.education}
-                  </Typography>
-                )}
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: darkMode ? "#B0B3B8" : "#666",
-                    lineHeight: 1.7,
-                    fontSize: '0.95rem',
-                    mb: 3,
-                    flex: 1,
-                  }}
-                >
-                  {member.bio}
-                </Typography>
-
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 1,
-                    justifyContent: 'center',
-                  }}
-                >
-                  {member.skills.map((skill, idx) => (
-                    <Box
-                      key={idx}
-                      sx={{
-                        backgroundColor: '#5DFDCB',
-                        color: '#08090A',
-                        fontWeight: 600,
-                        fontSize: '0.85rem',
-                        padding: '6px 12px',
-                        borderRadius: '20px',
-                        transition: 'all 0.3s ease',
-                        '&:hover': {
-                          transform: 'scale(1.05)',
-                          backgroundColor: '#3ffcc1',
-                        },
-                      }}
-                    >
-                      {skill}
-                    </Box>
-                  ))}
-                </Box>
-              </Box>
-            ))}
-          </Box>
-        </Container>
-      </Box>
-
       {/* CTA Section */}
       <Box
         sx={{
@@ -986,17 +746,45 @@ const About = () => {
               flexWrap: "wrap",
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Email sx={{ color: "#7CC6FE" }} />
-              <Typography>info@Maalgudi Technolabs.com</Typography>
+            <Box
+              component="a"
+              href="/contact"
+              sx={{
+                px: 4,
+                py: 2,
+                backgroundColor: "white",
+                color: "#333",
+                textDecoration: "none",
+                borderRadius: 2,
+                fontWeight: 600,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
+                },
+              }}
+            >
+              Get in Touch
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <Phone sx={{ color: "#7CC6FE" }} />
-              <Typography>+91 9876543210</Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <LinkedIn sx={{ color: "#7CC6FE" }} />
-              <Typography>Follow us on LinkedIn</Typography>
+            <Box
+              component="a"
+              href="/courses"
+              sx={{
+                px: 4,
+                py: 2,
+                border: "2px solid white",
+                color: "white",
+                textDecoration: "none",
+                borderRadius: 2,
+                fontWeight: 600,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#333",
+                },
+              }}
+            >
+              Explore Opportunities
             </Box>
           </Box>
         </Container>
