@@ -574,32 +574,32 @@ const Contact = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      size="large"
-                      endIcon={<Send />}
-                      sx={{
-                        background:
-                          "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-                        color: "#08090A",
-                        px: 6,
-                        py: 2.5,
-                        fontSize: "1.1rem",
-                        fontWeight: 700,
-                        borderRadius: 3,
-                        boxShadow: "0 8px 30px rgba(93, 253, 203, 0.3)",
-                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                        "&:hover": {
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        size="large"
+                        endIcon={<Send />}
+                        sx={{
                           background:
-                            "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
-                          transform: "translateY(-4px)",
-                          boxShadow: "0 12px 40px rgba(93, 253, 203, 0.4)",
-                        },
-                      }}
-                    >
-                      Send Message
-                    </Button>
+                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                          color: "#08090A",
+                          px: 6,
+                          py: 2.5,
+                          fontSize: "1.1rem",
+                          fontWeight: 700,
+                          borderRadius: 3,
+                          boxShadow: "0 8px 30px rgba(93, 253, 203, 0.3)",
+                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                          "&:hover": {
+                            background:
+                              "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
+                            transform: "translateY(-4px)",
+                            boxShadow: "0 12px 40px rgba(93, 253, 203, 0.4)",
+                          },
+                        }}
+                      >
+                        Send Message
+                      </Button>
                     </Box>
                   </Grid>
                 </Grid>
@@ -609,115 +609,115 @@ const Contact = () => {
             {/* Map/Location Info */}
             <Grid item xs={12}>
               <Box sx={{ maxWidth: '900px', mx: 'auto', mt: 4 }}>
-              <Typography
-                variant="h3"
-                sx={{
-                  fontWeight: 800,
-                  color: darkMode ? "#F4FAFF" : "#08090A",
-                  mb: 3,
-                  fontSize: { xs: "1.8rem", md: "2.5rem" },
-                  textAlign: 'center',
-                }}
-              >
-                Visit Our{" "}
-                <Box
-                  component="span"
-                  sx={{
-                    background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  Campus
-                </Box>
-              </Typography>
-
-              <Paper
-                elevation={0}
-                sx={{
-                  height: 400,
-                  background:
-                    "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#08090A",
-                  borderRadius: 3,
-                  mb: 3,
-                  border: "3px solid rgba(255, 255, 255, 0.3)",
-                  position: "relative",
-                  overflow: "hidden",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background:
-                      "radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%)",
-                  },
-                }}
-              >
-                <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
-                  <LocationOn sx={{ fontSize: "4.5rem", mb: 2 }} />
-                  <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-                    Interactive Map
-                  </Typography>
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                    Bangalore, Karnataka, India
-                  </Typography>
-                </Box>
-              </Paper>
-
-              <Box sx={{ textAlign: 'center' }}>
                 <Typography
-                  variant="h5"
+                  variant="h3"
                   sx={{
-                    fontWeight: 700,
+                    fontWeight: 800,
                     color: darkMode ? "#F4FAFF" : "#08090A",
-                    mb: 2,
-                  }}
-                >
-                  Connect With Us
-                </Typography>
-                <Box sx={{ display: "flex", gap: 1, mb: 3, justifyContent: 'center' }}>
-                  {socialLinks.map((social, index) => (
-                    <IconButton
-                      key={index}
-                      sx={{
-                        backgroundColor: darkMode
-                          ? "rgba(93, 253, 203, 0.1)"
-                          : "rgba(93, 253, 203, 0.15)",
-                        color: social.color,
-                        borderRadius: 2,
-                        border: `2px solid ${social.color}40`,
-                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                        "&:hover": {
-                          backgroundColor: social.color,
-                          color: "white",
-                          transform: "translateY(-4px) rotate(5deg)",
-                          boxShadow: `0 8px 20px ${social.color}50`,
-                          borderColor: social.color,
-                        },
-                      }}
-                    >
-                      {social.icon}
-                    </IconButton>
-                  ))}
-                </Box>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: darkMode ? "#B0B3B8" : "#666",
-                    lineHeight: 1.8,
+                    mb: 3,
+                    fontSize: { xs: "1.8rem", md: "2.5rem" },
                     textAlign: 'center',
                   }}
                 >
-                  Stay connected for expert insights, industry updates, and success stories from our professional learning community.
+                  Visit Our{" "}
+                  <Box
+                    component="span"
+                    sx={{
+                      background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    Campus
+                  </Box>
                 </Typography>
-              </Box>
+
+                <Paper
+                  elevation={0}
+                  sx={{
+                    height: 400,
+                    background:
+                      "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#08090A",
+                    borderRadius: 3,
+                    mb: 3,
+                    border: "3px solid rgba(255, 255, 255, 0.3)",
+                    position: "relative",
+                    overflow: "hidden",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%)",
+                    },
+                  }}
+                >
+                  <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
+                    <LocationOn sx={{ fontSize: "4.5rem", mb: 2 }} />
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                      Interactive Map
+                    </Typography>
+                    <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                      Bangalore, Karnataka, India
+                    </Typography>
+                  </Box>
+                </Paper>
+
+                <Box sx={{ textAlign: 'center' }}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 700,
+                      color: darkMode ? "#F4FAFF" : "#08090A",
+                      mb: 2,
+                    }}
+                  >
+                    Connect With Us
+                  </Typography>
+                  <Box sx={{ display: "flex", gap: 1, mb: 3, justifyContent: 'center' }}>
+                    {socialLinks.map((social, index) => (
+                      <IconButton
+                        key={index}
+                        sx={{
+                          backgroundColor: darkMode
+                            ? "rgba(93, 253, 203, 0.1)"
+                            : "rgba(93, 253, 203, 0.15)",
+                          color: social.color,
+                          borderRadius: 2,
+                          border: `2px solid ${social.color}40`,
+                          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                          "&:hover": {
+                            backgroundColor: social.color,
+                            color: "white",
+                            transform: "translateY(-4px) rotate(5deg)",
+                            boxShadow: `0 8px 20px ${social.color}50`,
+                            borderColor: social.color,
+                          },
+                        }}
+                      >
+                        {social.icon}
+                      </IconButton>
+                    ))}
+                  </Box>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: darkMode ? "#B0B3B8" : "#666",
+                      lineHeight: 1.8,
+                      textAlign: 'center',
+                    }}
+                  >
+                    Stay connected for expert insights, industry updates, and success stories from our professional learning community.
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
           </Grid>
