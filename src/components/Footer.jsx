@@ -75,7 +75,7 @@ const Footer = () => {
             <Container maxWidth="lg">
                 <Grid container spacing={4} sx={{ mb: 6 }}>
                     {/* Company Info */}
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={6}>
                         <Box sx={{ mb: 3 }}>
                             <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                                 <Box
@@ -143,7 +143,7 @@ const Footer = () => {
                     </Grid>
 
                     {/* Quick Links */}
-                    <Grid item xs={12} sm={6} md={2}>
+                    <Grid item xs={12} sm={6} md={3}>
                         <Typography
                             variant="h6"
                             sx={{

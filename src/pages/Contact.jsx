@@ -76,9 +76,7 @@ const Contact = () => {
       icon: <Phone />,
       title: "Call Us",
       details: [
-        "+91 9876543210",
-        "+91 8765432109",
-        "Mon-Fri 9:00 AM - 6:00 PM",
+        "+91 8765432109"
       ],
       color: "#eea412",
     },
@@ -86,9 +84,7 @@ const Contact = () => {
       icon: <Email />,
       title: "Email Us",
       details: [
-        "info@Maalgudi Technolabs.com",
-        "admissions@Maalgudi Technolabs.com",
-        "support@Maalgudi Technolabs.com",
+        "malgudilab@gmail.com"
       ],
       color: "#eea412",
     },
@@ -96,39 +92,11 @@ const Contact = () => {
       icon: <AccessTime />,
       title: "Office Hours",
       details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
+        "Monday - Saturday: 9:00 AM - 6:00 PM",
+        
         "Sunday: Closed",
       ],
       color: "#eea412",
-    },
-  ];
-
-  const services = [
-    {
-      icon: <School />,
-      title: "Training Programs",
-      description:
-        "Specialized technology training with industry-recognized certification pathways",
-      contact: "training@Maalgudi Technolabs.com",
-    },
-    {
-      icon: <Business />,
-      title: "Corporate Solutions",
-      description: "Enterprise-level training programs tailored to organizational objectives",
-      contact: "corporate@Maalgudi Technolabs.com",
-    },
-    {
-      icon: <ContactMail />,
-      title: "Consultation",
-      description: "Strategic guidance for optimal technology adoption and implementation",
-      contact: "consulting@Maalgudi Technolabs.com",
-    },
-    {
-      icon: <Support />,
-      title: "Technical Support",
-      description: "Continuous support services ensuring seamless learning experiences",
-      contact: "support@Maalgudi Technolabs.com",
     },
   ];
 
@@ -272,13 +240,14 @@ const Contact = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
+          <Grid container spacing={4} sx={{ alignItems: 'stretch', justifyContent: 'center' }}>
             {contactInfo.map((info, index) => (
-              <Grid item xs={12} sm={6} md={6} lg={3} key={index} sx={{ display: 'flex' }}>
+              <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: 'flex' }}>
                 <Card
                   elevation={0}
                   sx={{
                     height: "100%",
+                    width: "100%",
                     textAlign: "center",
                     borderRadius: 3,
                     background: darkMode
@@ -361,9 +330,11 @@ const Contact = () => {
         sx={{
           py: 10,
           backgroundColor: darkMode ? "#08090A" : "white",
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
+        <Container maxWidth="lg" sx={{ width: '100%' }}>
           <Grid container spacing={6}>
             {/* Contact Form */}
             <Grid item xs={12}>
@@ -398,19 +369,22 @@ const Contact = () => {
                 </Alert>
               )}
 
-              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, maxWidth: '900px', mx: 'auto' }}>
+              <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3, maxWidth: '900px', mx: 'auto', px: { xs: 2, sm: 3, md: 4 } }}>
                 <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
+                  {/* Row 1: Full Name and Email Address */}
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       name="name"
                       label="Full Name"
+                      placeholder="Enter your full name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: 2,
+                          backgroundColor: darkMode ? "rgba(26, 27, 28, 0.4)" : "rgba(255, 255, 255, 0.8)",
                           color: darkMode ? "#F4FAFF" : "#08090A",
                           "& fieldset": {
                             borderColor: darkMode
@@ -434,11 +408,12 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       name="email"
                       label="Email Address"
+                      placeholder="Enter your email address"
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
@@ -446,6 +421,7 @@ const Contact = () => {
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: 2,
+                          backgroundColor: darkMode ? "rgba(26, 27, 28, 0.4)" : "rgba(255, 255, 255, 0.8)",
                           color: darkMode ? "#F4FAFF" : "#08090A",
                           "& fieldset": {
                             borderColor: darkMode
@@ -469,16 +445,20 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  
+                  {/* Row 2: Phone Number and Subject */}
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       name="phone"
                       label="Phone Number"
+                      placeholder="Enter your phone number"
                       value={formData.phone}
                       onChange={handleInputChange}
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: 2,
+                          backgroundColor: darkMode ? "rgba(26, 27, 28, 0.4)" : "rgba(255, 255, 255, 0.8)",
                           color: darkMode ? "#F4FAFF" : "#08090A",
                           "& fieldset": {
                             borderColor: darkMode
@@ -502,17 +482,19 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} md={6}>
                     <TextField
                       fullWidth
                       name="subject"
                       label="Subject"
+                      placeholder="Enter subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: 2,
+                          backgroundColor: darkMode ? "rgba(26, 27, 28, 0.4)" : "rgba(255, 255, 255, 0.8)",
                           color: darkMode ? "#F4FAFF" : "#08090A",
                           "& fieldset": {
                             borderColor: darkMode
@@ -536,11 +518,14 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
+                  
+                  {/* Row 3: Message (Full Width) */}
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
                       name="message"
                       label="Message"
+                      placeholder="Enter your message"
                       multiline
                       rows={4}
                       value={formData.message}
@@ -549,6 +534,7 @@ const Contact = () => {
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: 2,
+                          backgroundColor: darkMode ? "rgba(26, 27, 28, 0.4)" : "rgba(255, 255, 255, 0.8)",
                           color: darkMode ? "#F4FAFF" : "#08090A",
                           "& fieldset": {
                             borderColor: darkMode
@@ -608,7 +594,7 @@ const Contact = () => {
 
             {/* Map/Location Info */}
             <Grid item xs={12}>
-              <Box sx={{ maxWidth: '900px', mx: 'auto', mt: 4 }}>
+              <Box sx={{ width: '100%', mx: 'auto', mt: 4 }}>
                 <Typography
                   variant="h3"
                   sx={{
@@ -648,6 +634,7 @@ const Contact = () => {
                     border: "3px solid rgba(255, 255, 255, 0.3)",
                     position: "relative",
                     overflow: "hidden",
+                    width: '100%',
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -720,162 +707,6 @@ const Contact = () => {
                 </Box>
               </Box>
             </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Services Section */}
-      <Box
-        sx={{
-          py: 10,
-          background: darkMode
-            ? "linear-gradient(180deg, #0D0E0F 0%, #08090A 100%)"
-            : "linear-gradient(180deg, #F4FAFF 0%, #F9FCFF 100%)",
-        }}
-      >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Box sx={{ textAlign: "center", mb: 8 }}>
-            <Typography
-              variant="overline"
-              sx={{
-                color: "#5DFDCB",
-                fontSize: "0.95rem",
-                fontWeight: 700,
-                letterSpacing: 2,
-                mb: 2,
-                display: "block",
-              }}
-            >
-              WHAT WE OFFER
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 800,
-                color: darkMode ? "#F4FAFF" : "#08090A",
-                mb: 2,
-                fontSize: { xs: "2rem", md: "3rem" },
-              }}
-            >
-              Our{" "}
-              <Box
-                component="span"
-                sx={{
-                  background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Services
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: darkMode ? "#B0B3B8" : "#666",
-                maxWidth: "600px",
-                mx: "auto",
-                lineHeight: 1.8,
-              }}
-            >
-              Comprehensive solutions addressing diverse technology training and professional development requirements
-            </Typography>
-          </Box>
-
-          <Grid container spacing={4} sx={{ alignItems: 'stretch' }}>
-            {services.map((service, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
-                <Card
-                  elevation={0}
-                  sx={{
-                    height: "100%",
-                    borderRadius: 3,
-                    background: darkMode
-                      ? "rgba(26, 27, 28, 0.6)"
-                      : "rgba(255, 255, 255, 0.8)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: `2px solid ${darkMode
-                      ? "rgba(93, 253, 203, 0.15)"
-                      : "rgba(93, 253, 203, 0.2)"}`,
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    "&:hover": {
-                      transform: "translateY(-8px)",
-                      borderColor: "rgba(93, 253, 203, 0.5)",
-                      boxShadow: "0 12px 40px rgba(93, 253, 203, 0.2)",
-                      "& .service-icon": {
-                        background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                        color: "#08090A",
-                      },
-                    },
-                  }}
-                >
-                  <CardContent sx={{ p: 4 }}>
-                    <Box
-                      sx={{ display: "flex", alignItems: "flex-start", mb: 3 }}
-                    >
-                      <Box
-                        className="service-icon"
-                        sx={{
-                          backgroundColor: darkMode
-                            ? "rgba(93, 253, 203, 0.1)"
-                            : "rgba(93, 253, 203, 0.15)",
-                          color: "#5DFDCB",
-                          p: 2,
-                          borderRadius: 2,
-                          mr: 3,
-                          fontSize: "2rem",
-                          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                          border: "2px solid rgba(93, 253, 203, 0.2)",
-                        }}
-                      >
-                        {service.icon}
-                      </Box>
-                      <Box sx={{ flex: 1 }}>
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            fontWeight: 700,
-                            color: darkMode ? "#F4FAFF" : "#08090A",
-                            mb: 1,
-                            fontSize: { xs: "1.3rem", md: "1.4rem" },
-                          }}
-                        >
-                          {service.title}
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          sx={{
-                            color: darkMode ? "#B0B3B8" : "#555",
-                            lineHeight: 1.8,
-                            mb: 2,
-                          }}
-                        >
-                          {service.description}
-                        </Typography>
-                        <Chip
-                          icon={<Email />}
-                          label={service.contact}
-                          size="small"
-                          sx={{
-                            background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                            color: "#08090A",
-                            fontWeight: 600,
-                            border: "none",
-                            "&:hover": {
-                              background: "linear-gradient(135deg, #4AE3B2 0%, #5bb1fe 100%)",
-                              transform: "scale(1.05)",
-                            },
-                            transition: "all 0.3s ease",
-                          }}
-                        />
-                      </Box>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
           </Grid>
         </Container>
       </Box>
