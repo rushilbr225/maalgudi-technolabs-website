@@ -96,15 +96,15 @@ const getTheme = (darkMode) =>
     palette: {
       mode: darkMode ? "dark" : "light",
       primary: {
-        main: "#7CC6FE", // Light blue
-        light: "#a3d5fe",
-        dark: "#5bb1fe",
+        main: "#ff9800", // Orange
+        light: "#ffb74d",
+        dark: "#f57c00",
         contrastText: darkMode ? "#F4FAFF" : "#08090A",
       },
       secondary: {
-        main: "#5DFDCB", // Bright mint green
-        light: "#7ffdd5",
-        dark: "#3ffcc1",
+        main: "#ffa726", // Amber
+        light: "#ffb74d",
+        dark: "#f57c00",
         contrastText: darkMode ? "#F4FAFF" : "#08090A",
       },
       background: {
@@ -116,8 +116,8 @@ const getTheme = (darkMode) =>
         secondary: darkMode ? "#b0b3b8" : "#4a5568",
       },
       accent: {
-        main: "#5DFDCB", // Mint green accent
-        light: "#7ffdd5",
+        main: "#ff9800", // Orange accent
+        light: "#ffb74d",
         dark: "#3ffcc1",
       },
       dark: {

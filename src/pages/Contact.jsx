@@ -93,7 +93,7 @@ const Contact = () => {
       title: "Office Hours",
       details: [
         "Monday - Saturday: 9:00 AM - 6:00 PM",
-        
+
         "Sunday: Closed",
       ],
       color: "#eea412",
@@ -445,7 +445,7 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  
+
                   {/* Row 2: Phone Number and Subject */}
                   <Grid item xs={12} md={6}>
                     <TextField
@@ -518,7 +518,7 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  
+
                   {/* Row 3: Message (Full Width) */}
                   <Grid item xs={12}>
                     <TextField
@@ -591,241 +591,8 @@ const Contact = () => {
                 </Grid>
               </Box>
             </Grid>
-
-            {/* Map/Location Info */}
-            <Grid item xs={12}>
-              <Box sx={{ width: '100%', mx: 'auto', mt: 4 }}>
-                <Typography
-                  variant="h3"
-                  sx={{
-                    fontWeight: 800,
-                    color: darkMode ? "#F4FAFF" : "#08090A",
-                    mb: 3,
-                    fontSize: { xs: "1.8rem", md: "2.5rem" },
-                    textAlign: 'center',
-                  }}
-                >
-                  Visit Our{" "}
-                  <Box
-                    component="span"
-                    sx={{
-                      background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    Campus
-                  </Box>
-                </Typography>
-
-                <Paper
-                  elevation={0}
-                  sx={{
-                    height: 400,
-                    background:
-                      "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#08090A",
-                    borderRadius: 3,
-                    mb: 3,
-                    border: "3px solid rgba(255, 255, 255, 0.3)",
-                    position: "relative",
-                    overflow: "hidden",
-                    width: '100%',
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background:
-                        "radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%)",
-                    },
-                  }}
-                >
-                  <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
-                    <LocationOn sx={{ fontSize: "4.5rem", mb: 2 }} />
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-                      Interactive Map
-                    </Typography>
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                      Bangalore, Karnataka, India
-                    </Typography>
-                  </Box>
-                </Paper>
-
-                <Box sx={{ textAlign: 'center' }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      fontWeight: 700,
-                      color: darkMode ? "#F4FAFF" : "#08090A",
-                      mb: 2,
-                    }}
-                  >
-                    Connect With Us
-                  </Typography>
-                  <Box sx={{ display: "flex", gap: 1, mb: 3, justifyContent: 'center' }}>
-                    {socialLinks.map((social, index) => (
-                      <IconButton
-                        key={index}
-                        sx={{
-                          backgroundColor: darkMode
-                            ? "rgba(93, 253, 203, 0.1)"
-                            : "rgba(93, 253, 203, 0.15)",
-                          color: social.color,
-                          borderRadius: 2,
-                          border: `2px solid ${social.color}40`,
-                          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                          "&:hover": {
-                            backgroundColor: social.color,
-                            color: "white",
-                            transform: "translateY(-4px) rotate(5deg)",
-                            boxShadow: `0 8px 20px ${social.color}50`,
-                            borderColor: social.color,
-                          },
-                        }}
-                      >
-                        {social.icon}
-                      </IconButton>
-                    ))}
-                  </Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: darkMode ? "#B0B3B8" : "#666",
-                      lineHeight: 1.8,
-                      textAlign: 'center',
-                    }}
-                  >
-                    Stay connected for expert insights, industry updates, and success stories from our professional learning community.
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
           </Grid>
         </Container>
-      </Box>
-
-      {/* FAQ or Additional Info Section */}
-      <Box
-        sx={{
-          py: 12,
-          background: darkMode
-            ? "linear-gradient(135deg, #08090A 0%, #0D0E0F 100%)"
-            : "linear-gradient(135deg, #F4FAFF 0%, #FFF 100%)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", position: "relative", zIndex: 1 }}>
-            <Typography
-              variant="overline"
-              sx={{
-                color: "#5DFDCB",
-                fontSize: "0.95rem",
-                fontWeight: 700,
-                letterSpacing: 2,
-                mb: 2,
-                display: "block",
-              }}
-            >
-              JOIN US TODAY
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                fontWeight: 800,
-                color: darkMode ? "#F4FAFF" : "#08090A",
-                mb: 3,
-                fontSize: { xs: "2rem", md: "3rem" },
-              }}
-            >
-              Ready to Get{" "}
-              <Box
-                component="span"
-                sx={{
-                  background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Started?
-              </Box>
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                color: darkMode ? "#B0B3B8" : "#666",
-                mb: 5,
-                lineHeight: 1.8,
-                maxWidth: "700px",
-                mx: "auto",
-              }}
-            >
-              Join thousands of professionals who have transformed their careers
-              with Maalgudi Technolabs. Take the first step towards your
-              technology goals today.
-            </Typography>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                background: "linear-gradient(135deg, #5DFDCB 0%, #7CC6FE 100%)",
-                color: "#08090A",
-                px: 7,
-                py: 2.5,
-                fontSize: "1.1rem",
-                fontWeight: 700,
-                borderRadius: 3,
-                textTransform: "uppercase",
-                letterSpacing: 1,
-                boxShadow: "0 8px 30px rgba(93, 253, 203, 0.3)",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                "&:hover": {
-                  background:
-                    "linear-gradient(135deg, #4AE3B2 0%, #5bb1fe 100%)",
-                  transform: "translateY(-4px) scale(1.05)",
-                  boxShadow: "0 12px 40px rgba(93, 253, 203, 0.4)",
-                },
-              }}
-            >
-              Enroll Now
-            </Button>
-          </Box>
-        </Container>
-
-        {/* Decorative Elements */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: "-50px",
-            right: "-50px",
-            width: "300px",
-            height: "300px",
-            background:
-              "radial-gradient(circle, rgba(93, 253, 203, 0.1) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "-50px",
-            left: "-50px",
-            width: "250px",
-            height: "250px",
-            background:
-              "radial-gradient(circle, rgba(124, 198, 254, 0.1) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
       </Box>
     </Box>
   );

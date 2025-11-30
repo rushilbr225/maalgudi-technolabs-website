@@ -10,12 +10,12 @@
 
 /* Dark mode theme variables */
 [data-theme="light"] {
-  --bg-primary: #f4faff;
+  --bg-primary: #fffaf5;
   --bg-secondary: #ffffff;
   --text-primary: #08090a;
   --text-secondary: #4a5568;
-  --accent-primary: #7cc6fe;
-  --accent-secondary: #5dfdcb;
+  --accent-primary: #ff9800;
+  --accent-secondary: #ffa726;
   color-scheme: light;
 }
 
@@ -24,8 +24,8 @@
   --bg-secondary: #1a1b1c;
   --text-primary: #f4faff;
   --text-secondary: #b0b3b8;
-  --accent-primary: #7cc6fe;
-  --accent-secondary: #5dfdcb;
+  --accent-primary: #ff9800;
+  --accent-secondary: #ffb74d;
   color-scheme: dark;
 }
 
@@ -218,17 +218,17 @@ html {
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #7cc6fe;
+  background: #ff9800;
   border-radius: 5px;
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: #5dfdcb;
+  background: #ff9800;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5dfdcb;
+  background: #ffa726;
 }
 
 /* Ensure images scale properly */
