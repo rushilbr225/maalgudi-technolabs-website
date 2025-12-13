@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
@@ -14,8 +14,8 @@ export const useTheme = () => {
   return context;
 };
 
-// Light and Dark theme configurations
-const getTheme = (darkMode) =>
+// Dark theme configuration
+const getTheme = () =>
   createTheme({
     breakpoints: {
       values: {
@@ -94,26 +94,26 @@ const getTheme = (darkMode) =>
       },
     },
     palette: {
-      mode: darkMode ? "dark" : "light",
+      mode: "dark",
       primary: {
         main: "#ff9800", // Orange
         light: "#ffb74d",
         dark: "#f57c00",
-        contrastText: darkMode ? "#F4FAFF" : "#08090A",
+        contrastText: "#F4FAFF",
       },
       secondary: {
         main: "#ffa726", // Amber
         light: "#ffb74d",
         dark: "#f57c00",
-        contrastText: darkMode ? "#F4FAFF" : "#08090A",
+        contrastText: "#F4FAFF",
       },
       background: {
-        default: darkMode ? "#0a0b0c" : "#F4FAFF", // Very dark vs very light blue/white
-        paper: darkMode ? "#1a1b1c" : "#ffffff",
+        default: "#0a0b0c",
+        paper: "#1a1b1c",
       },
       text: {
-        primary: darkMode ? "#F4FAFF" : "#08090A", // Light text in dark mode, dark text in light mode
-        secondary: darkMode ? "#b0b3b8" : "#4a5568",
+        primary: "#F4FAFF",
+        secondary: "#b0b3b8",
       },
       accent: {
         main: "#ff9800", // Orange accent
@@ -121,16 +121,16 @@ const getTheme = (darkMode) =>
         dark: "#3ffcc1",
       },
       dark: {
-        main: darkMode ? "#F4FAFF" : "#08090A", // Inverted for dark mode
-        light: darkMode ? "#ffffff" : "#2d3748",
-        dark: darkMode ? "#e0e0e0" : "#000000",
-        contrastText: darkMode ? "#08090A" : "#F4FAFF",
+        main: "#F4FAFF",
+        light: "#ffffff",
+        dark: "#e0e0e0",
+        contrastText: "#08090A",
       },
-      // Custom colors for different modes
+      // Custom colors for dark mode
       surface: {
-        main: darkMode ? "#242526" : "#ffffff",
-        light: darkMode ? "#3a3b3c" : "#f8f9fa",
-        dark: darkMode ? "#18191a" : "#e9ecef",
+        main: "#242526",
+        light: "#3a3b3c",
+        dark: "#18191a",
       },
     },
     shape: {
@@ -140,8 +140,8 @@ const getTheme = (darkMode) =>
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            backgroundColor: darkMode ? "#0a0b0c" : "#F4FAFF",
-            color: darkMode ? "#F4FAFF" : "#08090A",
+            backgroundColor: "#0a0b0c",
+            color: "#F4FAFF",
             transition: "background-color 0.3s ease, color 0.3s ease",
           },
         },
@@ -163,21 +163,21 @@ const getTheme = (darkMode) =>
             },
           },
           contained: {
-            background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-            color: "#08090A",
-            boxShadow: "0 4px 15px rgba(124, 198, 254, 0.3)",
+            background: "linear-gradient(45deg, #2563EB 0%, #FF8C00 100%)",
+            color: "#F4FAFF",
+            boxShadow: "0 4px 15px rgba(37, 99, 235, 0.3)",
             "&:hover": {
-              background: "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
+              background: "linear-gradient(45deg, #1E40AF 0%, #FF6500 100%)",
               transform: "translateY(-2px)",
-              boxShadow: "0 6px 20px rgba(93, 253, 203, 0.4)",
+              boxShadow: "0 6px 20px rgba(255, 140, 0, 0.4)",
             },
           },
           outlined: {
-            border: "2px solid #7CC6FE",
-            color: "#7CC6FE",
+            border: "2px solid #2563EB",
+            color: "#2563EB",
             "&:hover": {
-              background: "#7CC6FE",
-              color: "#08090A",
+              background: "#2563EB",
+              color: "#F4FAFF",
               transform: "translateY(-2px)",
             },
           },
@@ -212,16 +212,12 @@ const getTheme = (darkMode) =>
         styleOverrides: {
           root: {
             borderRadius: 0,
-            backgroundColor: darkMode ? "#1a1b1c" : "#ffffff",
-            boxShadow: darkMode
-              ? "0 2px 10px rgba(255,255,255,0.05)"
-              : "0 2px 10px rgba(0,0,0,0.1)",
+            backgroundColor: "#1a1b1c",
+            boxShadow: "0 2px 10px rgba(255,255,255,0.05)",
             transition: "all 0.3s ease",
             "&:hover": {
               transform: "translateY(-5px)",
-              boxShadow: darkMode
-                ? "0 8px 25px rgba(255,255,255,0.1)"
-                : "0 8px 25px rgba(0,0,0,0.15)",
+              boxShadow: "0 8px 25px rgba(255,255,255,0.1)",
             },
           },
         },
@@ -238,7 +234,7 @@ const getTheme = (darkMode) =>
       MuiPaper: {
         styleOverrides: {
           root: {
-            backgroundColor: darkMode ? "#1a1b1c" : "#ffffff",
+            backgroundColor: "#1a1b1c",
             transition: "background-color 0.3s ease",
           },
         },
@@ -247,21 +243,21 @@ const getTheme = (darkMode) =>
         styleOverrides: {
           root: {
             "& .MuiOutlinedInput-root": {
-              backgroundColor: darkMode ? "#242526" : "#ffffff",
+              backgroundColor: "#242526",
               "& fieldset": {
-                borderColor: darkMode ? "#3a3b3c" : "#e0e0e0",
+                borderColor: "#3a3b3c",
               },
               "&:hover fieldset": {
-                borderColor: "#7CC6FE",
+                borderColor: "#2563EB",
               },
               "&.Mui-focused fieldset": {
-                borderColor: "#7CC6FE",
+                borderColor: "#2563EB",
               },
             },
             "& .MuiInputLabel-root": {
-              color: darkMode ? "#b0b3b8" : "#4a5568",
+              color: "#b0b3b8",
               "&.Mui-focused": {
-                color: "#7CC6FE",
+                color: "#2563EB",
               },
             },
           },
@@ -272,39 +268,18 @@ const getTheme = (darkMode) =>
 
 // Theme Context Provider Component
 export const ThemeContextProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const theme = getTheme();
 
-  // Load theme preference from localStorage on mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("maalgudi-dark-mode");
-    if (savedTheme !== null) {
-      setDarkMode(JSON.parse(savedTheme));
-    }
-    // Default to light mode, no system preference check
+  // Apply dark theme to document body
+  React.useEffect(() => {
+    document.body.style.backgroundColor = "#08090A";
+    document.body.style.color = "#F4FAFF";
+    document.documentElement.setAttribute('data-theme', 'dark');
   }, []);
 
-  // Save theme preference to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem("maalgudi-dark-mode", JSON.stringify(darkMode));
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-  };
-
-  const theme = getTheme(darkMode);
-
-  // Apply theme to document body
-  useEffect(() => {
-    document.body.style.backgroundColor = darkMode ? "#08090A" : "#F4FAFF";
-    document.body.style.color = darkMode ? "#F4FAFF" : "#08090A";
-    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
-
   const value = {
-    darkMode,
-    mode: darkMode ? "dark" : "light", // Add mode for consistency
-    toggleDarkMode,
+    darkMode: true,
+    mode: "dark",
     theme,
   };
 

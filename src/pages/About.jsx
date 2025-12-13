@@ -27,7 +27,7 @@ import {
 import { useTheme } from "../contexts/ThemeContext";
 
 const About = () => {
-  const { theme, darkMode } = useTheme();
+  const { theme, mode } = useTheme();
   const team = [
     {
       name: "Raghu Nila",
@@ -230,7 +230,7 @@ const About = () => {
         sx={{
           position: 'relative',
           background:
-            'linear-gradient(135deg, rgba(25, 118, 210, 0.95) 0%, rgba(93, 253, 203, 0.85) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -245,7 +245,7 @@ const About = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'radial-gradient(circle at 30% 50%, rgba(124, 198, 254, 0.3) 0%, transparent 50%)',
+            background: 'radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%)',
             pointerEvents: 'none',
           },
         }}
@@ -257,16 +257,16 @@ const About = () => {
               mb: 3,
               px: 3,
               py: 1,
-              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              backgroundColor: 'rgba(255, 140, 0, 0.2)',
               backdropFilter: 'blur(10px)',
               borderRadius: 50,
-              border: '1px solid rgba(255, 255, 255, 0.3)',
+              border: '1px solid rgba(255, 140, 0, 0.3)',
             }}
           >
             <Typography
               variant="overline"
               sx={{
-                color: 'white',
+                color: '#FF8C00',
                 fontWeight: 700,
                 letterSpacing: 2,
                 fontSize: '0.9rem',
@@ -284,18 +284,16 @@ const About = () => {
               fontSize: { xs: "2.5rem", md: "4.5rem", xl: "5.5rem" },
               textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
               lineHeight: 1.2,
+              color: '#F4FAFF',
             }}
           >
             Welcome to{" "}
             <Box
               component="span"
               sx={{
-                color: "#fff",
+                color: "#FF8C00",
                 display: 'block',
                 mt: 1,
-                background: 'linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.8) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
               }}
             >
               Maalgudi Technolabs
@@ -311,6 +309,7 @@ const About = () => {
               fontSize: { xs: "1.1rem", md: "1.4rem", xl: "1.6rem" },
               fontWeight: 400,
               textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+              color: '#F4FAFF',
             }}
           >
             Pioneering excellence in technology education through comprehensive training solutions and strategic professional development initiatives.
@@ -319,7 +318,7 @@ const About = () => {
       </Box>
 
       {/* Mission & Vision Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "white", position: 'relative' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF", position: 'relative' }}>
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={6}>
@@ -334,7 +333,7 @@ const About = () => {
                     top: 0,
                     bottom: 0,
                     width: 4,
-                    background: 'linear-gradient(180deg, #1976d2 0%, #5DFDCB 100%)',
+                    background: 'linear-gradient(180deg, #2563EB 0%, #FF8C00 100%)',
                     borderRadius: 2,
                     display: { xs: 'none', md: 'block' },
                   },
@@ -347,14 +346,14 @@ const About = () => {
                       mb: 2,
                       px: 2,
                       py: 0.5,
-                      backgroundColor: 'rgba(25, 118, 210, 0.1)',
+                      backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
                       borderRadius: 2,
                     }}
                   >
                     <Typography
                       variant="overline"
                       sx={{
-                        color: "#1976d2",
+                        color: "#2563EB",
                         fontWeight: 700,
                         letterSpacing: 1.5,
                       }}
@@ -366,21 +365,21 @@ const About = () => {
                     variant="h2"
                     sx={{
                       fontWeight: 800,
-                      color: "#333",
+                      color: mode === "dark" ? "#FFFFFF" : "#000000",
                       mb: 3,
                       fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
                       lineHeight: 1.2,
                     }}
                   >
                     Our{" "}
-                    <Box component="span" sx={{ color: "#1976d2" }}>
+                    <Box component="span" sx={{ color: "#FF8C00" }}>
                       Mission
                     </Box>
                   </Typography>
                   <Typography
                     variant="h6"
                     sx={{
-                      color: "#555",
+                      color: mode === "dark" ? "#B0B3B8" : "#666",
                       lineHeight: 1.8,
                       fontSize: { xs: "1rem", md: "1.2rem" },
                       fontWeight: 400,
@@ -393,16 +392,16 @@ const About = () => {
                 <Box
                   sx={{
                     p: 4,
-                    backgroundColor: 'rgba(93, 253, 203, 0.1)',
+                    backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.1)' : 'rgba(37, 99, 235, 0.1)',
                     borderRadius: 3,
-                    border: '1px solid rgba(93, 253, 203, 0.3)',
+                    border: `1px solid ${mode === "dark" ? 'rgba(37, 99, 235, 0.3)' : 'rgba(37, 99, 235, 0.3)'}`,
                   }}
                 >
                   <Typography
                     variant="h4"
                     sx={{
                       fontWeight: 700,
-                      color: "#1976d2",
+                      color: "#2563EB",
                       mb: 2,
                       fontSize: { xs: "1.5rem", md: "2rem" },
                     }}
@@ -412,7 +411,7 @@ const About = () => {
                   <Typography
                     variant="body1"
                     sx={{
-                      color: "#555",
+                      color: mode === "dark" ? "#B0B3B8" : "#666",
                       lineHeight: 1.8,
                       fontSize: { xs: "1rem", md: "1.1rem" },
                     }}
@@ -433,7 +432,7 @@ const About = () => {
                     right: -20,
                     width: 200,
                     height: 200,
-                    background: 'linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(93, 253, 203, 0.1) 100%)',
+                    background: mode === "dark" ? 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%)' : 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%)',
                     borderRadius: '50%',
                     zIndex: 0,
                   },
@@ -463,7 +462,7 @@ const About = () => {
       </Box>
 
       {/* Values Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#f8f9fa", position: 'relative' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#0A0A0A" : "#F8F9FA", position: 'relative' }}>
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 10 }}>
             <Box
@@ -472,14 +471,14 @@ const About = () => {
                 mb: 2,
                 px: 2,
                 py: 0.5,
-                backgroundColor: 'rgba(25, 118, 210, 0.1)',
+                backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
                 borderRadius: 2,
               }}
             >
               <Typography
                 variant="overline"
                 sx={{
-                  color: "#1976d2",
+                  color: "#2563EB",
                   fontWeight: 700,
                   letterSpacing: 1.5,
                 }}
@@ -491,20 +490,20 @@ const About = () => {
               variant="h2"
               sx={{
                 fontWeight: 800,
-                color: "#333",
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
                 mb: 3,
                 fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
               }}
             >
               Our Core{" "}
-              <Box component="span" sx={{ color: "#1976d2" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Values
               </Box>
             </Typography>
             <Typography
               variant="h6"
               sx={{
-                color: "#666",
+                color: mode === "dark" ? "#B0B3B8" : "#666",
                 maxWidth: "700px",
                 mx: "auto",
                 lineHeight: 1.7,
@@ -534,14 +533,14 @@ const About = () => {
                 key={index}
                 sx={{
                   minHeight: 280,
-                  background: darkMode
-                    ? "rgba(26, 27, 28, 0.95)"
+                  background: mode === "dark"
+                    ? "rgba(10, 10, 10, 0.95)"
                     : "rgba(255, 255, 255, 0.95)",
                   backdropFilter: 'blur(15px)',
                   WebkitBackdropFilter: 'blur(15px)',
-                  border: `1px solid ${darkMode
-                    ? "rgba(124, 198, 254, 0.2)"
-                    : "rgba(124, 198, 254, 0.15)"}`,
+                  border: `1px solid ${mode === "dark"
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"}`,
                   borderRadius: 3,
                   padding: 3,
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -549,19 +548,19 @@ const About = () => {
                   overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  boxShadow: darkMode
-                    ? "0 4px 20px rgba(0, 0, 0, 0.3)"
-                    : "0 4px 20px rgba(124, 198, 254, 0.1)",
+                  boxShadow: mode === "dark"
+                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
                   '&:hover': {
                     transform: 'translateY(-8px) scale(1.02)',
-                    borderColor: darkMode
-                      ? "rgba(124, 198, 254, 0.4)"
-                      : "rgba(124, 198, 254, 0.3)",
-                    boxShadow: darkMode
-                      ? "0 12px 40px rgba(124, 198, 254, 0.25)"
-                      : "0 12px 40px rgba(124, 198, 254, 0.2)",
-                    background: darkMode
-                      ? "rgba(26, 27, 28, 1)"
+                    borderColor: mode === "dark"
+                      ? "rgba(255, 140, 0, 0.6)"
+                      : "rgba(255, 140, 0, 0.4)",
+                    boxShadow: mode === "dark"
+                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                    background: mode === "dark"
+                      ? "rgba(10, 10, 10, 1)"
                       : "rgba(255, 255, 255, 1)",
                   },
                 }}
@@ -577,7 +576,7 @@ const About = () => {
                   <Box
                     sx={{
                       fontSize: '3rem',
-                      color: "#7CC6FE",
+                      color: "#FF8C00",
                       transition: 'all 0.3s ease',
                     }}
                   >
@@ -589,7 +588,7 @@ const About = () => {
                   variant="h6"
                   sx={{
                     fontWeight: 700,
-                    color: darkMode ? "#F4FAFF" : "#333",
+                    color: mode === "dark" ? "#F4FAFF" : "#08090A",
                     fontSize: '1.2rem',
                     minHeight: '2.4em',
                     display: 'flex',
@@ -606,7 +605,7 @@ const About = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: darkMode ? "#B0B3B8" : "#666",
+                    color: mode === "dark" ? "#B0B3B8" : "#666",
                     lineHeight: 1.7,
                     textAlign: 'center',
                     fontSize: '0.95rem',
@@ -625,7 +624,7 @@ const About = () => {
       </Box>
 
       {/* Skills/Expertise Section - Grid Layout */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "white", position: 'relative' }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF", position: 'relative' }}>
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 10 }}>
             <Box
@@ -634,14 +633,14 @@ const About = () => {
                 mb: 2,
                 px: 2,
                 py: 0.5,
-                backgroundColor: 'rgba(25, 118, 210, 0.1)',
+                backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
                 borderRadius: 2,
               }}
             >
               <Typography
                 variant="overline"
                 sx={{
-                  color: "#1976d2",
+                  color: "#2563EB",
                   fontWeight: 700,
                   letterSpacing: 1.5,
                 }}
@@ -653,20 +652,20 @@ const About = () => {
               variant="h2"
               sx={{
                 fontWeight: 800,
-                color: "#333",
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
                 mb: 3,
                 fontSize: { xs: "2rem", md: "3rem" },
               }}
             >
               Areas of{" "}
-              <Box component="span" sx={{ color: "#1976d2" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Expertise
               </Box>
             </Typography>
             <Typography
               variant="h6"
               sx={{
-                color: "#666",
+                color: mode === "dark" ? "#B0B3B8" : "#666",
                 maxWidth: "700px",
                 mx: "auto",
                 lineHeight: 1.7,
@@ -710,8 +709,8 @@ const About = () => {
       <Box
         sx={{
           py: 10,
-          backgroundColor: "#333",
-          color: "white",
+          backgroundColor: "#000000",
+          color: "#FFFFFF",
           textAlign: "center",
         }}
       >
@@ -722,6 +721,7 @@ const About = () => {
               fontWeight: 700,
               mb: 3,
               fontSize: { xs: "2rem", md: "3rem" },
+              color: "#FF8C00",
             }}
           >
             Advance Your Professional Excellence
@@ -733,6 +733,7 @@ const About = () => {
               mb: 4,
               opacity: 0.9,
               lineHeight: 1.6,
+              color: "#FFFFFF",
             }}
           >
             Strategic career development opportunities designed for ambitious technology professionals. Connect with us today.
@@ -752,15 +753,16 @@ const About = () => {
               sx={{
                 px: 4,
                 py: 2,
-                backgroundColor: "white",
-                color: "#333",
+                backgroundColor: "#FF8C00",
+                color: "#FFFFFF",
                 textDecoration: "none",
                 borderRadius: 2,
                 fontWeight: 600,
                 transition: "all 0.3s ease",
                 "&:hover": {
+                  backgroundColor: "#FF6500",
                   transform: "translateY(-3px)",
-                  boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
+                  boxShadow: "0 8px 16px rgba(255, 140, 0, 0.4)",
                 },
               }}
             >
@@ -772,15 +774,15 @@ const About = () => {
               sx={{
                 px: 4,
                 py: 2,
-                border: "2px solid white",
-                color: "white",
+                border: "2px solid #FF8C00",
+                color: "#FF8C00",
                 textDecoration: "none",
                 borderRadius: 2,
                 fontWeight: 600,
                 transition: "all 0.3s ease",
                 "&:hover": {
-                  backgroundColor: "white",
-                  color: "#333",
+                  backgroundColor: "#FF8C00",
+                  color: "#FFFFFF",
                 },
               }}
             >

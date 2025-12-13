@@ -58,7 +58,7 @@
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
-  border: 1px solid rgba(124, 198, 254, 0.2) !important;
+  border: 1px solid rgba(37, 99, 235, 0.2) !important;
   border-radius: 12px !important;
   padding: 25px !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -66,13 +66,13 @@
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
-  box-shadow: 0 4px 20px rgba(124, 198, 254, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15) !important;
 }
 
 .about-expertise-item:hover {
   transform: translateY(-8px) scale(1.02) !important;
-  border-color: rgba(124, 198, 254, 0.4) !important;
-  box-shadow: 0 12px 40px rgba(124, 198, 254, 0.25) !important;
+  border-color: rgba(255, 140, 0, 0.5) !important;
+  box-shadow: 0 12px 40px rgba(255, 140, 0, 0.3) !important;
   background: rgba(255, 255, 255, 1) !important;
 }
 
@@ -88,14 +88,14 @@
 
 .expertise-progress {
   font-size: 1rem !important;
-  color: #7CC6FE !important;
+  color: #FF8C00 !important;
   font-weight: 700 !important;
 }
 
 .expertise-bar {
   width: 100% !important;
   height: 12px !important;
-  background: rgba(124, 198, 254, 0.1) !important;
+  background: rgba(37, 99, 235, 0.1) !important;
   border-radius: 6px !important;
   margin-bottom: 20px !important;
   overflow: hidden !important;
@@ -104,7 +104,7 @@
 
 .expertise-fill {
   height: 100% !important;
-  background: linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%) !important;
+  background: linear-gradient(135deg, #2563EB 0%, #FF8C00 100%) !important;
   border-radius: 6px !important;
   transition: all 0.8s ease !important;
   position: relative !important;
@@ -131,17 +131,17 @@
 
 /* Dark mode support for Expertise */
 [data-theme="dark"] .about-expertise-item {
-  background: rgba(26, 27, 28, 0.95) !important;
-  border-color: rgba(124, 198, 254, 0.3) !important;
+  background: rgba(10, 10, 10, 0.95) !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
 }
 
 [data-theme="dark"] .about-expertise-item:hover {
-  background: rgba(26, 27, 28, 1) !important;
-  border-color: rgba(124, 198, 254, 0.5) !important;
+  background: rgba(10, 10, 10, 1) !important;
+  border-color: rgba(255, 140, 0, 0.6) !important;
 }
 
 [data-theme="dark"] .expertise-skill-name {
-  color: #F4FAFF !important;
+  color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .expertise-description {

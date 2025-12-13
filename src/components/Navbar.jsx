@@ -17,7 +17,6 @@ import {
 } from "@mui/material";
 import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
 import { Link, useLocation } from "react-router-dom";
-import DarkModeToggle from "./DarkModeToggle";
 import { useTheme } from "../contexts/ThemeContext";
 
 const Navbar = () => {
@@ -31,6 +30,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
+    { name: "Blogs", path: "/blogs" },
     { name: "Our Story", path: "/newabout" },
     { name: "Contact", path: "/contact" },
   ];
@@ -83,7 +83,7 @@ const Navbar = () => {
             variant="h6"
             sx={{
               fontWeight: 700,
-              color: "#7CC6FE",
+              color: "#2563EB",
               fontSize: { xs: "1.1rem", sm: "1.25rem" },
             }}
           >
@@ -108,7 +108,7 @@ const Navbar = () => {
               color: "#333",
               borderRadius: 0,
               "&:hover": {
-                backgroundColor: "rgba(124, 198, 254, 0.1)",
+                backgroundColor: "rgba(37, 99, 235, 0.1)",
               },
             }}
           >
@@ -118,25 +118,12 @@ const Navbar = () => {
                 "& .MuiTypography-root": {
                   fontWeight: isActive(item.path) ? 600 : 400,
                   fontSize: { xs: "1rem", sm: "1.1rem" },
-                  color: isActive(item.path) ? "#7CC6FE" : "#333",
+                  color: isActive(item.path) ? "#2563EB" : "#333",
                 },
               }}
             />
           </ListItem>
         ))}
-
-        {/* Dark Mode Toggle in Mobile Drawer */}
-        <ListItem sx={{ justifyContent: "center", mt: 2 }}>
-          <DarkModeToggle
-            sx={{
-              color: "#333",
-              "&:hover": {
-                backgroundColor: "rgba(124, 198, 254, 0.1)",
-                color: "#7CC6FE",
-              },
-            }}
-          />
-        </ListItem>
       </List>
     </Box>
   );
@@ -195,7 +182,7 @@ const Navbar = () => {
                 variant="h6"
                 sx={{
                   fontWeight: 700,
-                  color: "#F4FAFF",
+                  color: "#FFFFFF",
                   ml: 2,
                   fontSize: { xs: "1.1rem", md: "1.3rem", xl: "1.5rem" },
                   transition: "all 0.3s ease",
@@ -214,7 +201,7 @@ const Navbar = () => {
                     component={Link}
                     to={item.path}
                     sx={{
-                      color: isActive(item.path) ? "#5DFDCB" : "#F4FAFF",
+                      color: isActive(item.path) ? "#FF8C00" : "#FFFFFF",
                       fontWeight: isActive(item.path) ? 600 : 400,
                       px: 3,
                       py: 2,
@@ -223,8 +210,8 @@ const Navbar = () => {
                       fontSize: { xs: "1rem", xl: "1.1rem" },
                       position: "relative",
                       "&:hover": {
-                        color: "#5DFDCB",
-                        backgroundColor: "rgba(93, 253, 203, 0.1)",
+                        color: "#FF8C00",
+                        backgroundColor: "rgba(255, 140, 0, 0.1)",
                       },
                       "&::after": isActive(item.path)
                         ? {
@@ -236,7 +223,7 @@ const Navbar = () => {
                           width: "60%",
                           height: "3px",
                           background:
-                            "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
+                            "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
                         }
                         : {},
                     }}
@@ -244,32 +231,27 @@ const Navbar = () => {
                     {item.name}
                   </Button>
                 ))}
-                {/* Dark Mode Toggle */}
-                <DarkModeToggle sx={{ ml: 2 }} />
               </Stack>
             )}
 
             {/* Mobile Menu Button */}
             {isMobile && (
-              <Stack direction="row" spacing={1} alignItems="center">
-                <DarkModeToggle />
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    color: "#e0e0e0",
-                    backgroundColor: "transparent",
-                    "&:hover": {
-                      backgroundColor: "rgba(93, 253, 203, 0.1)",
-                      color: "#5DFDCB",
-                    },
-                  }}
-                >
-                  <MenuIcon />
-                </IconButton>
-              </Stack>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{
+                  color: "#e0e0e0",
+                  backgroundColor: "transparent",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 140, 0, 0.15)",
+                    color: "#FF8C00",
+                  },
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
             )}
           </Toolbar>
         </Container>

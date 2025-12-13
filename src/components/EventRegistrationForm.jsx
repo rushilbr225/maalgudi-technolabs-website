@@ -126,14 +126,14 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                 : "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 252, 255, 0.95) 100%)",
                         backdropFilter: "blur(20px)",
                         border: `2px solid ${mode === "dark"
-                            ? "rgba(93, 253, 203, 0.2)"
-                            : "rgba(93, 253, 203, 0.3)"
+                            ? "rgba(255, 140, 0, 0.2)"
+                            : "rgba(255, 140, 0, 0.3)"
                             }`,
                         borderRadius: 3,
                         boxShadow:
                             mode === "dark"
                                 ? "0 20px 60px rgba(0, 0, 0, 0.5)"
-                                : "0 20px 60px rgba(93, 253, 203, 0.2)",
+                                : "0 20px 60px rgba(255, 140, 0, 0.2)",
                     },
                 }}
             >
@@ -144,8 +144,8 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                         alignItems: "center",
                         pb: 2,
                         borderBottom: `1px solid ${mode === "dark"
-                            ? "rgba(93, 253, 203, 0.1)"
-                            : "rgba(93, 253, 203, 0.2)"
+                            ? "rgba(255, 140, 0, 0.1)"
+                            : "rgba(255, 140, 0, 0.2)"
                             }`,
                     }}
                 >
@@ -163,7 +163,7 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                         <Typography
                             variant="body2"
                             sx={{
-                                color: "#5DFDCB",
+                                color: "#FF8C00",
                                 fontWeight: 600,
                             }}
                         >
@@ -177,8 +177,8 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                             "&:hover": {
                                 backgroundColor:
                                     mode === "dark"
-                                        ? "rgba(93, 253, 203, 0.1)"
-                                        : "rgba(93, 253, 203, 0.15)",
+                                        ? "rgba(255, 140, 0, 0.1)"
+                                        : "rgba(255, 140, 0, 0.15)",
                             },
                         }}
                     >
@@ -205,20 +205,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -242,20 +242,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -278,20 +278,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -314,20 +314,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -348,20 +348,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -382,20 +382,20 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                                             "& fieldset": {
                                                 borderColor:
                                                     mode === "dark"
-                                                        ? "rgba(93, 253, 203, 0.3)"
-                                                        : "rgba(93, 253, 203, 0.4)",
+                                                        ? "rgba(255, 140, 0, 0.3)"
+                                                        : "rgba(255, 140, 0, 0.4)",
                                             },
                                             "&:hover fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                             "&.Mui-focused fieldset": {
-                                                borderColor: "#5DFDCB",
+                                                borderColor: "#FF8C00",
                                             },
                                         },
                                         "& .MuiInputLabel-root": {
                                             color: mode === "dark" ? "#B0B3B8" : "#666",
                                             "&.Mui-focused": {
-                                                color: "#5DFDCB",
+                                                color: "#FF8C00",
                                             },
                                         },
                                     }}
@@ -419,17 +419,17 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                         sx={{
                             borderColor:
                                 mode === "dark"
-                                    ? "rgba(93, 253, 203, 0.3)"
-                                    : "rgba(93, 253, 203, 0.5)",
+                                    ? "rgba(255, 140, 0, 0.3)"
+                                    : "rgba(255, 140, 0, 0.5)",
                             color: mode === "dark" ? "#F4FAFF" : "#08090A",
                             fontWeight: 600,
                             px: 3,
                             "&:hover": {
-                                borderColor: "#5DFDCB",
+                                borderColor: "#FF8C00",
                                 backgroundColor:
                                     mode === "dark"
-                                        ? "rgba(93, 253, 203, 0.1)"
-                                        : "rgba(93, 253, 203, 0.15)",
+                                        ? "rgba(255, 140, 0, 0.1)"
+                                        : "rgba(255, 140, 0, 0.15)",
                             },
                         }}
                     >
@@ -439,14 +439,14 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                         onClick={handleSubmit}
                         variant="contained"
                         sx={{
-                            background: "linear-gradient(135deg, #5DFDCB 0%, #4AE3B2 100%)",
-                            color: "#08090A",
+                            background: "linear-gradient(135deg, #FF8C00 0%, #FF6500 100%)",
+                            color: "#F4FAFF",
                             fontWeight: 700,
                             px: 4,
-                            boxShadow: "0 4px 14px rgba(93, 253, 203, 0.3)",
+                            boxShadow: "0 4px 14px rgba(255, 140, 0, 0.3)",
                             "&:hover": {
-                                background: "linear-gradient(135deg, #4AE3B2 0%, #5DFDCB 100%)",
-                                boxShadow: "0 6px 20px rgba(93, 253, 203, 0.4)",
+                                background: "linear-gradient(135deg, #FF6500 0%, #FF8C00 100%)",
+                                boxShadow: "0 6px 20px rgba(255, 140, 0, 0.4)",
                             },
                         }}
                     >
@@ -466,8 +466,8 @@ const EventRegistrationForm = ({ open, onClose, eventTitle }) => {
                     severity="success"
                     sx={{
                         width: "100%",
-                        backgroundColor: "#5DFDCB",
-                        color: "#08090A",
+                        backgroundColor: "#FF8C00",
+                        color: "#F4FAFF",
                         fontWeight: 600,
                         "& .MuiAlert-icon": {
                             color: "#08090A",

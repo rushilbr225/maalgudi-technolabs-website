@@ -153,10 +153,10 @@ const Home = () => {
             left: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.2)",
-            color: "#5DFDCB",
+            backgroundColor: "rgba(255, 140, 0, 0.2)",
+            color: "#FF8C00",
             "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 0.4)",
+              backgroundColor: "rgba(255, 140, 0, 0.4)",
             },
             zIndex: 2,
           }}
@@ -171,10 +171,10 @@ const Home = () => {
             right: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.2)",
-            color: "#5DFDCB",
+            backgroundColor: "rgba(255, 140, 0, 0.2)",
+            color: "#FF8C00",
             "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 0.4)",
+              backgroundColor: "rgba(255, 140, 0, 0.4)",
             },
             zIndex: 2,
           }}
@@ -200,7 +200,7 @@ const Home = () => {
               variant="h3"
               component="h2"
               sx={{
-                color: "#5DFDCB",
+                color: "#FF8C00",
                 mb: 3,
                 fontSize: { xs: "1.8rem", md: "2.5rem" },
               }}
@@ -238,18 +238,18 @@ const Home = () => {
                   py: 1.5,
                   fontSize: "1.1rem",
                   ...(button.variant === "contained" && {
-                    backgroundColor: "#5DFDCB",
-                    color: "#08090A",
+                    backgroundColor: "#FF8C00",
+                    color: "#F4FAFF",
                     "&:hover": {
-                      backgroundColor: "#4AE3B2",
+                      backgroundColor: "#FF6500",
                     },
                   }),
                   ...(button.variant === "outlined" && {
-                    borderColor: "#5DFDCB",
-                    color: "#5DFDCB",
+                    borderColor: "#FF8C00",
+                    color: "#FF8C00",
                     "&:hover": {
-                      backgroundColor: "rgba(93, 253, 203, 0.1)",
-                      borderColor: "#4AE3B2",
+                      backgroundColor: "rgba(255, 140, 0, 0.1)",
+                      borderColor: "#FF6500",
                     },
                   }),
                 }}
@@ -282,14 +282,14 @@ const Home = () => {
                 borderRadius: "50%",
                 backgroundColor:
                   currentSlide === index
-                    ? "#5DFDCB"
+                    ? "#FF8C00"
                     : "rgba(255, 255, 255, 0.5)",
                 cursor: "pointer",
                 transition: "background-color 0.3s ease",
                 "&:hover": {
                   backgroundColor:
                     currentSlide === index
-                      ? "#5DFDCB"
+                      ? "#FF8C00"
                       : "rgba(255, 255, 255, 0.8)",
                 },
               }}
@@ -313,7 +313,7 @@ const Home = () => {
             textAlign="center"
             sx={{
               mb: 6,
-              color: "#5DFDCB",
+              color: "#FF8C00",
               fontWeight: "bold",
             }}
           >
@@ -331,11 +331,10 @@ const Home = () => {
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
                       transform: "translateY(-5px)",
-                      boxShadow: `0 8px 25px ${
-                        darkMode
-                          ? "rgba(93, 253, 203, 0.2)"
+                      boxShadow: `0 8px 25px ${darkMode
+                          ? "rgba(255, 140, 0, 0.2)"
                           : "rgba(0, 0, 0, 0.15)"
-                      }`,
+                        }`,
                     },
                   }}
                 >
@@ -343,7 +342,7 @@ const Home = () => {
                     <service.icon
                       sx={{
                         fontSize: 48,
-                        color: "#5DFDCB",
+                        color: "#FF8C00",
                         mb: 2,
                       }}
                     />
@@ -390,7 +389,7 @@ const Home = () => {
             textAlign="center"
             sx={{
               mb: 4,
-              color: "#5DFDCB", // Always mint green text
+              color: "#FF8C00", // Always orange text
               fontWeight: "bold",
             }}
           >
@@ -417,10 +416,10 @@ const Home = () => {
                 px: 6,
                 py: 2,
                 fontSize: "1.2rem",
-                backgroundColor: "#5DFDCB", // Always mint green button
-                color: "#08090A", // Always dark text on button
+                backgroundColor: "#FF8C00", // Always orange button
+                color: "#F4FAFF", // Always light text on button
                 "&:hover": {
-                  backgroundColor: "#4AE3B2",
+                  backgroundColor: "#FF6500",
                 },
               }}
             >

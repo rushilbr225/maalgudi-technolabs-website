@@ -39,13 +39,13 @@ const DarkModeToggle = ({ sx = {} }) => {
             width: "100%",
             height: "100%",
             borderRadius: "50%",
-            background: "rgba(93, 253, 203, 0.2)",
+            background: "rgba(255, 140, 0, 0.2)",
             opacity: 0,
             transition: "all 0.3s ease",
           },
           "&:hover": {
-            backgroundColor: "rgba(93, 253, 203, 0.15)",
-            color: "#5DFDCB",
+            backgroundColor: "rgba(255, 140, 0, 0.15)",
+            color: "#FF8C00",
             transform: "scale(1.15) rotate(15deg)",
             "&::before": {
               opacity: 1,
@@ -60,7 +60,7 @@ const DarkModeToggle = ({ sx = {} }) => {
             transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
             filter: darkMode
               ? "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))"
-              : "drop-shadow(0 0 8px rgba(93, 253, 203, 0.3))",
+              : "drop-shadow(0 0 8px rgba(255, 140, 0, 0.3))",
           },
           ...sx,
         }}

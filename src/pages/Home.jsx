@@ -149,15 +149,31 @@ const Home = () => {
           left: "50%",
           right: "50%",
           overflow: "hidden",
-          backgroundImage: `linear-gradient(rgba(8, 9, 10, 0.6), rgba(8, 9, 10, 0.6)), url(${currentHero.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
+        {/* Background Images with Crossfade */}
+        {heroSlides.map((slide, index) => (
+          <Box
+            key={index}
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${slide.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              opacity: currentSlide === index ? 1 : 0,
+              transition: "opacity 1s ease-in-out",
+              zIndex: 0,
+            }}
+          />
+        ))}
         {/* Navigation Arrows */}
         <IconButton
           onClick={prevSlide}
@@ -166,10 +182,11 @@ const Home = () => {
             left: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.2)",
-            color: "#5DFDCB",
+            backgroundColor: "rgba(37, 99, 235, 0.3)",
+            color: "#2563EB",
             "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 0.4)",
+              backgroundColor: "rgba(255, 140, 0, 0.5)",
+              color: "#FF8C00",
             },
             zIndex: 2,
           }}
@@ -184,10 +201,11 @@ const Home = () => {
             right: 20,
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(93, 253, 203, 0.2)",
-            color: "#5DFDCB",
+            backgroundColor: "rgba(37, 99, 235, 0.3)",
+            color: "#2563EB",
             "&:hover": {
-              backgroundColor: "rgba(93, 253, 203, 0.4)",
+              backgroundColor: "rgba(255, 140, 0, 0.5)",
+              color: "#FF8C00",
             },
             zIndex: 2,
           }}
@@ -195,7 +213,14 @@ const Home = () => {
           <ChevronRight fontSize="large" />
         </IconButton>
 
-        <Container maxWidth="lg" sx={{ textAlign: "center", zIndex: 1 }}>
+        <Container
+          maxWidth="lg"
+          sx={{
+            textAlign: "center",
+            zIndex: 1,
+            position: "relative",
+          }}
+        >
           <Typography
             variant="h2"
             component="h1"
@@ -213,7 +238,7 @@ const Home = () => {
               variant="h3"
               component="h2"
               sx={{
-                color: "#5DFDCB",
+                color: "#FF8C00",
                 mb: 3,
                 fontSize: { xs: "1.8rem", md: "2.5rem" },
               }}
@@ -257,14 +282,14 @@ const Home = () => {
                 borderRadius: "50%",
                 backgroundColor:
                   currentSlide === index
-                    ? "#5DFDCB"
+                    ? "#FF8C00"
                     : "rgba(255, 255, 255, 0.5)",
                 cursor: "pointer",
                 transition: "background-color 0.3s ease",
                 "&:hover": {
                   backgroundColor:
                     currentSlide === index
-                      ? "#5DFDCB"
+                      ? "#FF8C00"
                       : "rgba(255, 255, 255, 0.8)",
                 },
               }}
@@ -277,8 +302,8 @@ const Home = () => {
       <Box
         sx={{
           py: 8,
-          backgroundColor: mode === "dark" ? "#08090A" : "#F4FAFF",
-          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+          backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
+          color: mode === "dark" ? "#FFFFFF" : "#000000",
         }}
       >
         <Container maxWidth="lg">
@@ -288,13 +313,13 @@ const Home = () => {
               component="h2"
               sx={{
                 fontWeight: 700,
-                color: mode === "dark" ? "#F4FAFF" : "#333",
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
                 mb: 2,
                 fontSize: { xs: "2rem", md: "2.5rem" },
               }}
             >
               Our{" "}
-              <Box component="span" sx={{ color: "#5DFDCB" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Services
               </Box>
             </Typography>
@@ -331,13 +356,13 @@ const Home = () => {
                 sx={{
                   minHeight: 280,
                   background: mode === "dark"
-                    ? "rgba(26, 27, 28, 0.95)"
+                    ? "rgba(10, 10, 10, 0.95)"
                     : "rgba(255, 255, 255, 0.95)",
                   backdropFilter: 'blur(15px)',
                   WebkitBackdropFilter: 'blur(15px)',
                   border: `1px solid ${mode === "dark"
-                    ? "rgba(93, 253, 203, 0.2)"
-                    : "rgba(93, 253, 203, 0.15)"}`,
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"}`,
                   borderRadius: 3,
                   padding: 3,
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -346,18 +371,18 @@ const Home = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   boxShadow: mode === "dark"
-                    ? "0 4px 20px rgba(0, 0, 0, 0.3)"
-                    : "0 4px 20px rgba(93, 253, 203, 0.1)",
+                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
                   '&:hover': {
                     transform: 'translateY(-8px) scale(1.02)',
                     borderColor: mode === "dark"
-                      ? "rgba(93, 253, 203, 0.4)"
-                      : "rgba(93, 253, 203, 0.3)",
+                      ? "rgba(255, 140, 0, 0.6)"
+                      : "rgba(255, 140, 0, 0.4)",
                     boxShadow: mode === "dark"
-                      ? "0 12px 40px rgba(93, 253, 203, 0.25)"
-                      : "0 12px 40px rgba(93, 253, 203, 0.2)",
+                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
                     background: mode === "dark"
-                      ? "rgba(26, 27, 28, 1)"
+                      ? "rgba(10, 10, 10, 1)"
                       : "rgba(255, 255, 255, 1)",
                   },
                 }}
@@ -373,7 +398,7 @@ const Home = () => {
                   <service.icon
                     sx={{
                       fontSize: 48,
-                      color: "#5DFDCB",
+                      color: "#FF8C00",
                       transition: 'all 0.3s ease',
                     }}
                   />
@@ -422,8 +447,8 @@ const Home = () => {
       <Box
         sx={{
           py: 8,
-          backgroundColor: mode === "dark" ? "#0D0E0F" : "#F9FCFF",
-          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+          backgroundColor: mode === "dark" ? "#0A0A0A" : "#F8F9FA",
+          color: mode === "dark" ? "#FFFFFF" : "#000000",
         }}
       >
         <Container maxWidth="lg">
@@ -431,7 +456,7 @@ const Home = () => {
             <Typography
               variant="overline"
               sx={{
-                color: "#5DFDCB",
+                color: "#FF8C00",
                 fontSize: "0.9rem",
                 fontWeight: 600,
                 letterSpacing: 2,
@@ -446,13 +471,13 @@ const Home = () => {
               component="h2"
               sx={{
                 fontWeight: 700,
-                color: mode === "dark" ? "#F4FAFF" : "#333",
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
                 mb: 2,
                 fontSize: { xs: "2rem", md: "2.5rem" },
               }}
             >
               Upcoming{" "}
-              <Box component="span" sx={{ color: "#5DFDCB" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Events
               </Box>
             </Typography>
@@ -517,21 +542,21 @@ const Home = () => {
                     flexDirection: "column",
                     background:
                       mode === "dark"
-                        ? "linear-gradient(135deg, rgba(26, 27, 28, 0.98) 0%, rgba(18, 19, 20, 0.95) 100%)"
-                        : "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 252, 255, 0.95) 100%)",
+                        ? "linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(5, 5, 5, 0.95) 100%)"
+                        : "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%)",
                     backdropFilter: "blur(20px)",
                     WebkitBackdropFilter: "blur(20px)",
                     border: `2px solid ${mode === "dark"
-                      ? "rgba(93, 253, 203, 0.15)"
-                      : "rgba(93, 253, 203, 0.2)"
+                      ? "rgba(37, 99, 235, 0.2)"
+                      : "rgba(37, 99, 235, 0.25)"
                       }`,
                     borderRadius: 4,
                     overflow: "hidden",
                     transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                     boxShadow:
                       mode === "dark"
-                        ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(93, 253, 203, 0.1)"
-                        : "0 8px 32px rgba(93, 253, 203, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05)",
+                        ? "0 8px 32px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(37, 99, 235, 0.15)"
+                        : "0 8px 32px rgba(37, 99, 235, 0.2), 0 2px 8px rgba(0, 0, 0, 0.05)",
                     position: "relative",
                     "&::before": {
                       content: '""',
@@ -540,19 +565,19 @@ const Home = () => {
                       left: 0,
                       right: 0,
                       height: "4px",
-                      background: `linear-gradient(90deg, ${event.color}, #5DFDCB)`,
+                      background: `linear-gradient(90deg, ${event.color}, #FF8C00)`,
                       opacity: 0.8,
                     },
                     "&:hover": {
                       transform: "translateY(-16px)",
                       borderColor:
                         mode === "dark"
-                          ? "rgba(93, 253, 203, 0.5)"
-                          : "rgba(93, 253, 203, 0.5)",
+                          ? "rgba(255, 140, 0, 0.6)"
+                          : "rgba(255, 140, 0, 0.6)",
                       boxShadow:
                         mode === "dark"
-                          ? "0 20px 60px rgba(93, 253, 203, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3)"
-                          : "0 20px 60px rgba(93, 253, 203, 0.3), 0 8px 16px rgba(0, 0, 0, 0.1)",
+                          ? "0 20px 60px rgba(255, 140, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.4)"
+                          : "0 20px 60px rgba(255, 140, 0, 0.35), 0 8px 16px rgba(0, 0, 0, 0.1)",
                       "& .event-image": {
                         transform: "scale(1.08)",
                       },
@@ -619,7 +644,7 @@ const Home = () => {
                         variant="h6"
                         sx={{
                           fontWeight: 700,
-                          color: mode === "dark" ? "#F4FAFF" : "#08090A",
+                          color: mode === "dark" ? "#FFFFFF" : "#000000",
                           mb: 2.5,
                           lineHeight: 1.4,
                           minHeight: "3.5em",
@@ -638,11 +663,11 @@ const Home = () => {
                           borderRadius: 2,
                           backgroundColor:
                             mode === "dark"
-                              ? "rgba(93, 253, 203, 0.05)"
-                              : "rgba(93, 253, 203, 0.08)",
+                              ? "rgba(37, 99, 235, 0.08)"
+                              : "rgba(37, 99, 235, 0.1)",
                           border: `1px solid ${mode === "dark"
-                            ? "rgba(93, 253, 203, 0.1)"
-                            : "rgba(93, 253, 203, 0.15)"
+                            ? "rgba(37, 99, 235, 0.15)"
+                            : "rgba(37, 99, 235, 0.2)"
                             }`,
                         }}
                       >
@@ -662,7 +687,7 @@ const Home = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              color: "#5DFDCB",
+                              color: "#FF8C00",
                               fontWeight: 700,
                               fontSize: "0.9rem",
                             }}
@@ -739,20 +764,20 @@ const Home = () => {
                       fullWidth
                       onClick={() => handleRegisterClick(event.title)}
                       sx={{
-                        background: "linear-gradient(135deg, #5DFDCB 0%, #4AE3B2 100%)",
-                        color: "#08090A",
+                        background: "linear-gradient(135deg, #FF8C00 0%, #FF6500 100%)",
+                        color: "#FFFFFF",
                         fontWeight: 700,
                         py: 1.5,
                         fontSize: "0.95rem",
                         textTransform: "uppercase",
                         letterSpacing: 0.5,
                         borderRadius: 2,
-                        boxShadow: "0 4px 14px rgba(93, 253, 203, 0.3)",
+                        boxShadow: "0 4px 14px rgba(255, 140, 0, 0.4)",
                         transition: "all 0.3s ease",
                         "&:hover": {
-                          background: "linear-gradient(135deg, #4AE3B2 0%, #5DFDCB 100%)",
+                          background: "linear-gradient(135deg, #FF6500 0%, #FF8C00 100%)",
                           transform: "translateY(-2px)",
-                          boxShadow: "0 6px 20px rgba(93, 253, 203, 0.4)",
+                          boxShadow: "0 6px 20px rgba(255, 140, 0, 0.6)",
                         },
                       }}
                     >
@@ -770,8 +795,8 @@ const Home = () => {
       <Box
         sx={{
           py: 8,
-          backgroundColor: "#08090A", // Always dark background
-          color: "#F4FAFF", // Always light text
+          backgroundColor: "#000000", // Always dark background
+          color: "#FFFFFF", // Always light text
         }}
       >
         <Container maxWidth="lg">
@@ -781,7 +806,7 @@ const Home = () => {
             textAlign="center"
             sx={{
               mb: 4,
-              color: "#5DFDCB", // Always mint green text
+              color: "#FF8C00", // Orange text
               fontWeight: "bold",
             }}
           >
@@ -792,7 +817,7 @@ const Home = () => {
             textAlign="center"
             sx={{
               mb: 4,
-              color: "#F4FAFF", // Always light text
+              color: "#FFFFFF", // Always light text
               maxWidth: "600px",
               mx: "auto",
             }}
@@ -807,10 +832,10 @@ const Home = () => {
                 px: 6,
                 py: 2,
                 fontSize: "1.2rem",
-                backgroundColor: "#5DFDCB", // Always mint green button
-                color: "#08090A", // Always dark text on button
+                backgroundColor: "#FF8C00", // Orange button
+                color: "#FFFFFF", // White text on button
                 "&:hover": {
-                  backgroundColor: "#4AE3B2",
+                  backgroundColor: "#FF6500",
                 },
               }}
             >

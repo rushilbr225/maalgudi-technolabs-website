@@ -10,22 +10,22 @@
 
 /* Dark mode theme variables */
 [data-theme="light"] {
-  --bg-primary: #fffaf5;
-  --bg-secondary: #ffffff;
-  --text-primary: #08090a;
-  --text-secondary: #4a5568;
-  --accent-primary: #ff9800;
-  --accent-secondary: #ffa726;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --text-primary: #000000;
+  --text-secondary: #4A5568;
+  --accent-primary: #2563EB;
+  --accent-secondary: #FF8C00;
   color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #08090a;
-  --bg-secondary: #1a1b1c;
-  --text-primary: #f4faff;
-  --text-secondary: #b0b3b8;
-  --accent-primary: #ff9800;
-  --accent-secondary: #ffb74d;
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0AEC0;
+  --accent-primary: #2563EB;
+  --accent-secondary: #FF8C00;
   color-scheme: dark;
 }
 

@@ -18,8 +18,11 @@ import {
   Psychology,
   Groups,
 } from "@mui/icons-material";
+import { useTheme } from "../contexts/ThemeContext";
 
 const NewAbout = () => {
+  const { mode } = useTheme();
+
   const achievements = [
     {
       year: "2018",
@@ -70,7 +73,7 @@ const NewAbout = () => {
         "/workshop-photos/DSATM/3.jpg",
         "/workshop-photos/DSATM/4.jpg",
       ],
-      color: "#1976d2",
+      color: "#2563EB",
     },
     {
       institution: "RVCE",
@@ -86,7 +89,7 @@ const NewAbout = () => {
         "/workshop-photos/RVCE/5.jpg",
         "/workshop-photos/RVCE/6.jpg",
       ],
-      color: "#2e7d32",
+      color: "#FF8C00",
     },
     {
       institution: "UVCE",
@@ -97,7 +100,7 @@ const NewAbout = () => {
       photos: [
         "/workshop-photos/UVCE/1.jpg",
       ],
-      color: "#d32f2f",
+      color: "#2563EB",
     },
   ];
 
@@ -204,10 +207,11 @@ const NewAbout = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          bgcolor: "primary.main",
           color: "white",
           py: 8,
-          background: "linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)",
+          background: mode === "dark"
+            ? "linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(37, 99, 235, 0.2) 100%)"
+            : "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
         }}
       >
         <Container maxWidth="lg">
@@ -217,10 +221,18 @@ const NewAbout = () => {
             gutterBottom
             fontWeight="bold"
             textAlign="center"
+            sx={{ color: '#F4FAFF' }}
           >
             Our Journey
           </Typography>
-          <Typography variant="h5" textAlign="center" sx={{ opacity: 0.9 }}>
+          <Typography
+            variant="h5"
+            textAlign="center"
+            sx={{
+              opacity: 0.9,
+              color: '#F4FAFF'
+            }}
+          >
             Strategic evolution in technology education excellence
           </Typography>
         </Container>
@@ -236,20 +248,21 @@ const NewAbout = () => {
               fontWeight: 700,
               mb: 2,
               fontSize: { xs: "2rem", md: "2.5rem" },
+              color: mode === "dark" ? "#FFFFFF" : "#000000",
             }}
           >
             Our{" "}
-            <Box component="span" sx={{ color: "primary.main" }}>
+            <Box component="span" sx={{ color: "#FF8C00" }}>
               Story
             </Box>
           </Typography>
           <Typography
             variant="body1"
-            color="text.secondary"
             sx={{
               maxWidth: "700px",
               mx: "auto",
               lineHeight: 1.6,
+              color: mode === "dark" ? "#B0B3B8" : "#666",
             }}
           >
             Progressive milestones defining our path to educational excellence
@@ -275,10 +288,14 @@ const NewAbout = () => {
               key={index}
               sx={{
                 minHeight: 240,
-                background: "rgba(255, 255, 255, 0.95)",
+                background: mode === "dark"
+                  ? "rgba(10, 10, 10, 0.95)"
+                  : "rgba(255, 255, 255, 0.95)",
                 backdropFilter: 'blur(15px)',
                 WebkitBackdropFilter: 'blur(15px)',
-                border: "1px solid rgba(25, 118, 210, 0.15)",
+                border: `1px solid ${mode === "dark"
+                  ? "rgba(37, 99, 235, 0.3)"
+                  : "rgba(37, 99, 235, 0.2)"}`,
                 borderRadius: 3,
                 padding: 3,
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -286,12 +303,20 @@ const NewAbout = () => {
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                boxShadow: "0 4px 20px rgba(25, 118, 210, 0.1)",
+                boxShadow: mode === "dark"
+                  ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                  : "0 4px 20px rgba(37, 99, 235, 0.15)",
                 '&:hover': {
                   transform: 'translateY(-8px) scale(1.02)',
-                  borderColor: "rgba(25, 118, 210, 0.3)",
-                  boxShadow: "0 12px 40px rgba(25, 118, 210, 0.2)",
-                  background: "rgba(255, 255, 255, 1)",
+                  borderColor: mode === "dark"
+                    ? "rgba(255, 140, 0, 0.6)"
+                    : "rgba(255, 140, 0, 0.4)",
+                  boxShadow: mode === "dark"
+                    ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                    : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                  background: mode === "dark"
+                    ? "rgba(10, 10, 10, 1)"
+                    : "rgba(255, 255, 255, 1)",
                 },
               }}
             >
@@ -299,7 +324,7 @@ const NewAbout = () => {
                 variant="h6"
                 sx={{
                   fontWeight: 800,
-                  color: "primary.main",
+                  color: "#2563EB",
                   fontSize: '1.5rem',
                   mb: 2,
                   textAlign: 'center',
@@ -319,13 +344,13 @@ const NewAbout = () => {
                   justifyContent: 'center',
                   textAlign: 'center',
                   lineHeight: 1.3,
+                  color: mode === "dark" ? "#F4FAFF" : "#08090A",
                 }}
               >
                 {achievement.title}
               </Typography>
               <Typography
                 variant="body2"
-                color="text.secondary"
                 sx={{
                   lineHeight: 1.7,
                   textAlign: 'center',
@@ -334,6 +359,7 @@ const NewAbout = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  color: mode === "dark" ? "#B0B3B8" : "#666",
                 }}
               >
                 {achievement.description}
@@ -344,7 +370,7 @@ const NewAbout = () => {
       </Container>
 
       {/* Workshop Gallery Section */}
-      <Box sx={{ bgcolor: "grey.50", py: 10 }}>
+      <Box sx={{ bgcolor: mode === "dark" ? "#0A0A0A" : "#F8F9FA", py: 10 }}>
         <Container maxWidth="xl">
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
@@ -354,21 +380,22 @@ const NewAbout = () => {
                 fontWeight: 700,
                 mb: 2,
                 fontSize: { xs: "2rem", md: "2.5rem" },
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
               }}
             >
               Our Previous{" "}
-              <Box component="span" sx={{ color: "primary.main" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Works
               </Box>
             </Typography>
             <Typography
               variant="body1"
-              color="text.secondary"
               sx={{
                 maxWidth: "900px",
                 mx: "auto",
                 lineHeight: 1.8,
                 fontSize: "1.05rem",
+                color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
               We have conducted comprehensive technical workshops at premier educational institutions across Bengaluru,
@@ -548,7 +575,7 @@ const NewAbout = () => {
                       boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
                       transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                       cursor: 'pointer',
-                      bgcolor: 'white',
+                      bgcolor: mode === "dark" ? "#000000" : "white",
                       '&:hover': {
                         transform: 'translateY(-4px)',
                         boxShadow: `0 16px 48px ${workshop.color}50`,
@@ -561,9 +588,9 @@ const NewAbout = () => {
                     <Box
                       sx={{
                         position: 'relative',
-                        paddingTop: '50%', // 2:1 aspect ratio for single photo
+                        paddingTop: '50%',
                         overflow: 'hidden',
-                        bgcolor: 'grey.100',
+                        bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
                       }}
                     >
                       <Box
@@ -633,7 +660,7 @@ const NewAbout = () => {
                         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
                         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                         cursor: 'pointer',
-                        bgcolor: 'white',
+                        bgcolor: mode === "dark" ? "#000000" : "white",
                         '&:hover': {
                           transform: 'translateY(-8px) scale(1.02)',
                           boxShadow: `0 12px 40px ${workshop.color}40`,
@@ -651,7 +678,7 @@ const NewAbout = () => {
                           position: 'relative',
                           paddingTop: '75%',
                           overflow: 'hidden',
-                          bgcolor: 'grey.100',
+                          bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
                         }}
                       >
                         <Box
@@ -714,11 +741,16 @@ const NewAbout = () => {
           ))}
 
           {/* Footer Message */}
-          <Box sx={{ textAlign: "center", mt: 10, pt: 6, borderTop: '2px solid rgba(0,0,0,0.08)' }}>
+          <Box sx={{
+            textAlign: "center",
+            mt: 10,
+            pt: 6,
+            borderTop: `2px solid ${mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"}`
+          }}>
             <Typography
               variant="h6"
               sx={{
-                color: 'text.primary',
+                color: mode === "dark" ? "#F4FAFF" : "#000000",
                 fontWeight: 600,
                 mb: 2,
               }}
@@ -727,12 +759,12 @@ const NewAbout = () => {
             </Typography>
             <Typography
               variant="body1"
-              color="text.secondary"
               sx={{
                 maxWidth: '800px',
                 mx: 'auto',
                 lineHeight: 1.8,
                 fontSize: '1.05rem',
+                color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
               Through our partnerships with leading educational institutions and their Maker's Spaces,
@@ -740,8 +772,10 @@ const NewAbout = () => {
             </Typography>
           </Box>
         </Container>
-      </Box>      {/* Values Section */}
-      <Box sx={{ bgcolor: "grey.50", py: 8 }}>
+      </Box>
+
+      {/* Values Section */}
+      <Box sx={{ bgcolor: mode === "dark" ? "#000000" : "#FFFFFF", py: 8 }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center", mb: 6 }}>
             <Typography
@@ -751,20 +785,21 @@ const NewAbout = () => {
                 fontWeight: 700,
                 mb: 2,
                 fontSize: { xs: "2rem", md: "2.5rem" },
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
               }}
             >
               Our Core{" "}
-              <Box component="span" sx={{ color: "primary.main" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Values
               </Box>
             </Typography>
             <Typography
               variant="body1"
-              color="text.secondary"
               sx={{
                 maxWidth: "700px",
                 mx: "auto",
                 lineHeight: 1.6,
+                color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
               Core principles driving our educational excellence and professional impact
@@ -790,10 +825,14 @@ const NewAbout = () => {
                 key={index}
                 sx={{
                   minHeight: 240,
-                  background: "rgba(255, 255, 255, 0.95)",
+                  background: mode === "dark"
+                    ? "rgba(10, 10, 10, 0.95)"
+                    : "rgba(255, 255, 255, 0.95)",
                   backdropFilter: 'blur(15px)',
                   WebkitBackdropFilter: 'blur(15px)',
-                  border: "1px solid rgba(0, 0, 0, 0.08)",
+                  border: `1px solid ${mode === "dark"
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"}`,
                   borderRadius: 3,
                   padding: 3,
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -803,12 +842,20 @@ const NewAbout = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
+                  boxShadow: mode === "dark"
+                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
                   '&:hover': {
                     transform: 'translateY(-8px) scale(1.02)',
-                    borderColor: "rgba(0, 0, 0, 0.12)",
-                    boxShadow: "0 12px 40px rgba(0, 0, 0, 0.12)",
-                    background: "rgba(255, 255, 255, 1)",
+                    borderColor: mode === "dark"
+                      ? "rgba(255, 140, 0, 0.6)"
+                      : "rgba(255, 140, 0, 0.4)",
+                    boxShadow: mode === "dark"
+                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                    background: mode === "dark"
+                      ? "rgba(10, 10, 10, 1)"
+                      : "rgba(255, 255, 255, 1)",
                   },
                 }}
               >
@@ -821,22 +868,23 @@ const NewAbout = () => {
                     fontWeight: "bold",
                     fontSize: "1rem",
                     py: 2,
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      transform: 'scale(1.05)',
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
                     },
                   }}
                 />
+
                 <Typography
                   variant="body1"
-                  color="text.secondary"
                   sx={{
                     lineHeight: 1.7,
-                    fontSize: '0.95rem',
+                    fontSize: "0.95rem",
                     flex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: mode === "dark" ? "#B0B3B8" : "#666",
                   }}
                 >
                   {value.description}
@@ -848,7 +896,7 @@ const NewAbout = () => {
       </Box>
 
       {/* Team Section */}
-      <Box sx={{ bgcolor: "white", py: 10 }}>
+      <Box sx={{ bgcolor: mode === "dark" ? "#0A0A0A" : "#FFFFFF", py: 10 }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center", mb: 8 }}>
             <Typography
@@ -858,21 +906,23 @@ const NewAbout = () => {
                 fontWeight: 700,
                 mb: 2,
                 fontSize: { xs: "2rem", md: "2.5rem" },
+                color: mode === "dark" ? "#FFFFFF" : "#000000",
               }}
             >
               Meet Our{" "}
-              <Box component="span" sx={{ color: "primary.main" }}>
+              <Box component="span" sx={{ color: "#FF8C00" }}>
                 Team
               </Box>
             </Typography>
+
             <Typography
               variant="body1"
-              color="text.secondary"
               sx={{
                 maxWidth: "700px",
                 mx: "auto",
                 lineHeight: 1.6,
                 fontSize: "1.05rem",
+                color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
               Expert professionals driving innovation and excellence in technology education
@@ -888,72 +938,49 @@ const NewAbout = () => {
                     textAlign: "center",
                     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     borderRadius: 3,
-                    background: "rgba(255, 255, 255, 0.9)",
-                    border: "1px solid rgba(25, 118, 210, 0.1)",
-                    overflow: 'visible',
-                    position: 'relative',
-                    '&:hover': {
+                    background: mode === "dark"
+                      ? "rgba(10,10,10,0.95)"
+                      : "rgba(255,255,255,0.95)",
+                    border: `1px solid ${mode === "dark"
+                        ? "rgba(37, 99, 235, 0.3)"
+                        : "rgba(37, 99, 235, 0.15)"
+                      }`,
+                    "&:hover": {
                       transform: "translateY(-12px)",
-                      boxShadow: "0 16px 48px rgba(25, 118, 210, 0.2)",
-                      borderColor: "rgba(25, 118, 210, 0.3)",
-                      '& .member-avatar': {
-                        transform: 'scale(1.08)',
-                        boxShadow: '0 12px 32px rgba(25, 118, 210, 0.4)',
-                      },
+                      boxShadow: mode === "dark"
+                        ? "0 16px 48px rgba(255, 140, 0, 0.3)"
+                        : "0 16px 48px rgba(37, 99, 235, 0.25)",
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 4, pt: 5 }}>
-                    <Box
+                  <CardContent sx={{ p: 4 }}>
+                    <Avatar
+                      src={member.image || undefined}
+                      alt={member.name}
                       sx={{
-                        position: 'relative',
-                        display: 'inline-block',
+                        width: 140,
+                        height: 140,
+                        mx: "auto",
                         mb: 3,
+                        border: "5px solid #FF8C00",
+                        backgroundColor: member.image ? "transparent" : "#2563EB",
+                        fontSize: "2.5rem",
+                        fontWeight: 700,
                       }}
                     >
-                      <Avatar
-                        className="member-avatar"
-                        src={member.image || undefined}
-                        alt={member.name}
-                        sx={{
-                          width: 150,
-                          height: 150,
-                          mx: "auto",
-                          border: "5px solid",
-                          borderColor: "primary.main",
-                          backgroundColor: member.image ? 'transparent' : 'primary.main',
-                          fontSize: '3rem',
-                          fontWeight: 700,
-                          color: '#fff',
-                          boxShadow: '0 8px 24px rgba(25, 118, 210, 0.3)',
-                          transition: 'all 0.4s ease',
-                        }}
-                      >
-                        {!member.image && member.name.split(' ').map(n => n[0]).join('')}
-                      </Avatar>
-                      {/* Decorative ring */}
-                      <Box
-                        sx={{
-                          position: 'absolute',
-                          top: -6,
-                          left: -6,
-                          right: -6,
-                          bottom: -6,
-                          borderRadius: '50%',
-                          border: '2px solid',
-                          borderColor: 'primary.light',
-                          opacity: 0.3,
-                        }}
-                      />
-                    </Box>
+                      {!member.image &&
+                        member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                    </Avatar>
 
                     <Typography
                       variant="h6"
                       sx={{
                         fontWeight: 700,
                         mb: 0.5,
-                        fontSize: '1.2rem',
-                        color: 'text.primary',
+                        color: mode === "dark" ? "#F4FAFF" : "#000",
                       }}
                     >
                       {member.name}
@@ -961,22 +988,19 @@ const NewAbout = () => {
 
                     <Chip
                       label={member.role}
-                      color="primary"
-                      size="small"
                       sx={{
-                        fontWeight: 600,
-                        fontSize: '0.85rem',
                         mb: 2,
-                        height: 28,
+                        backgroundColor: "#2563EB",
+                        color: "white",
+                        fontWeight: 600,
                       }}
                     />
 
                     <Typography
                       variant="body2"
                       sx={{
-                        color: "text.secondary",
+                        color: mode === "dark" ? "#B0B3B8" : "#666",
                         lineHeight: 1.6,
-                        fontSize: '0.95rem',
                       }}
                     >
                       {member.expertise}
@@ -990,39 +1014,11 @@ const NewAbout = () => {
       </Box>
 
       {/* Footer */}
-      <Box
-        component="footer"
-        sx={{ bgcolor: "grey.900", color: "white", py: 6 }}
-      >
+      <Box sx={{ bgcolor: "#000000", color: "white", py: 6 }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 4 }}>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                gap: 3,
-                mb: 3,
-                flexWrap: "wrap",
-              }}
-            >
-              {["Home", "Features", "Pricing", "FAQs", "About"].map((item) => (
-                <Typography
-                  key={item}
-                  variant="body2"
-                  component="a"
-                  href="#"
-                  sx={{
-                    color: "grey.300",
-                    textDecoration: "none",
-                    "&:hover": { color: "white" },
-                  }}
-                >
-                  {item}
-                </Typography>
-              ))}
-            </Box>
-            <Typography variant="body2" color="grey.400">
-              © 2023 Maalgudi Technolabs. All rights reserved.
+          <Box sx={{ textAlign: "center" }}>
+            <Typography variant="body2" sx={{ color: "#B0B3B8" }}>
+              © 2024 Maalgudi Technolabs. All rights reserved.
             </Typography>
           </Box>
         </Container>

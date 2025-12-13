@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 
-// Maalgudi Technolabs theme with modern blue-mint color scheme
-// Primary: #7CC6FE (Light Blue), Secondary: #5DFDCB (Mint Green),
-// Background: #F4FAFF (Light Blue/White), Text: #08090A (Near Black)
+// Maalgudi Technolabs theme with modern black, blue, and orange color scheme
+// Primary: #2563EB (Royal Blue), Secondary: #FF8C00 (Dark Orange),
+// Background: #000000 (Black), Text: #FFFFFF (White)
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -82,35 +82,35 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#7CC6FE", // Light blue
-      light: "#a3d5fe",
-      dark: "#5bb1fe",
-      contrastText: "#08090A",
+      main: "#2563EB", // Royal blue
+      light: "#60A5FA",
+      dark: "#1E40AF",
+      contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#5DFDCB", // Bright mint green
-      light: "#7ffdd5",
-      dark: "#3ffcc1",
-      contrastText: "#08090A",
+      main: "#FF8C00", // Dark orange
+      light: "#FFA500",
+      dark: "#FF6500",
+      contrastText: "#FFFFFF",
     },
     background: {
-      default: "#F4FAFF", // Very light blue/white
-      paper: "#ffffff",
+      default: "#000000", // Black
+      paper: "#0A0A0A",
     },
     text: {
-      primary: "#08090A", // Near black
-      secondary: "#4a5568",
+      primary: "#FFFFFF", // White
+      secondary: "#A0AEC0",
     },
     accent: {
-      main: "#5DFDCB", // Mint green accent
-      light: "#7ffdd5",
-      dark: "#3ffcc1",
+      main: "#FF8C00", // Orange accent
+      light: "#FFA500",
+      dark: "#FF6500",
     },
     dark: {
-      main: "#08090A", // Near black for dark elements
-      light: "#2d3748",
+      main: "#000000", // Black for dark elements
+      light: "#1A1A1A",
       dark: "#000000",
-      contrastText: "#F4FAFF",
+      contrastText: "#FFFFFF",
     },
   },
   shape: {
@@ -134,22 +134,23 @@ const theme = createTheme({
           },
         },
         contained: {
-          background: "linear-gradient(45deg, #7CC6FE 0%, #5DFDCB 100%)",
-          color: "#08090A",
-          boxShadow: "0 4px 15px rgba(124, 198, 254, 0.3)",
+          background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+          color: "#FFFFFF",
+          boxShadow: "0 4px 15px rgba(255, 140, 0, 0.4)",
           "&:hover": {
-            background: "linear-gradient(45deg, #5bb1fe 0%, #3ffcc1 100%)",
+            background: "linear-gradient(135deg, #1E40AF 0%, #FF6500 100%)",
             transform: "translateY(-2px)",
-            boxShadow: "0 6px 20px rgba(93, 253, 203, 0.4)",
+            boxShadow: "0 6px 20px rgba(255, 140, 0, 0.6)",
           },
         },
         outlined: {
-          border: "2px solid #7CC6FE",
-          color: "#7CC6FE",
+          border: "2px solid #2563EB",
+          color: "#2563EB",
           "&:hover": {
-            background: "#7CC6FE",
-            color: "#08090A",
+            background: "#2563EB",
+            color: "#FFFFFF",
             transform: "translateY(-2px)",
+            borderColor: "#2563EB",
           },
         },
       },
@@ -179,9 +180,9 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#08090A",
-          color: "#F4FAFF",
-          boxShadow: "0 2px 10px rgba(8, 9, 10, 0.3)",
+          backgroundColor: "#000000",
+          color: "#FFFFFF",
+          boxShadow: "0 2px 10px rgba(37, 99, 235, 0.3)",
         },
       },
     },

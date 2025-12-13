@@ -54,9 +54,9 @@ const Footer = () => {
             sx={{
                 background:
                     mode === "dark"
-                        ? "linear-gradient(180deg, #08090A 0%, #0D0E0F 100%)"
-                        : "linear-gradient(180deg, #1a1b1c 0%, #08090A 100%)",
-                color: "#F4FAFF",
+                        ? "linear-gradient(180deg, #000000 0%, #0A0A0A 100%)"
+                        : "linear-gradient(180deg, #1A1A1A 0%, #000000 100%)",
+                color: "#FFFFFF",
                 pt: 8,
                 pb: 3,
                 position: "relative",
@@ -68,7 +68,7 @@ const Footer = () => {
                     left: 0,
                     right: 0,
                     height: "1px",
-                    background: "linear-gradient(90deg, transparent, #5DFDCB, transparent)",
+                    background: "linear-gradient(90deg, transparent, #FF8C00, transparent)",
                 },
             }}
         >
@@ -92,7 +92,7 @@ const Footer = () => {
                                     variant="h6"
                                     sx={{
                                         fontWeight: 700,
-                                        background: "linear-gradient(135deg, #7CC6FE 0%, #5DFDCB 100%)",
+                                        background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent",
                                         backgroundClip: "text",
@@ -122,9 +122,9 @@ const Footer = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         sx={{
-                                            backgroundColor: "rgba(93, 253, 203, 0.1)",
-                                            color: "#5DFDCB",
-                                            border: "1px solid rgba(93, 253, 203, 0.2)",
+                                            backgroundColor: "rgba(255, 140, 0, 0.1)",
+                                            color: "#FF8C00",
+                                            border: "1px solid rgba(255, 140, 0, 0.2)",
                                             transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                                             "&:hover": {
                                                 backgroundColor: social.color,
@@ -148,7 +148,7 @@ const Footer = () => {
                             variant="h6"
                             sx={{
                                 fontWeight: 700,
-                                color: "#5DFDCB",
+                                color: "#FF8C00",
                                 mb: 3,
                                 fontSize: "1.1rem",
                             }}
@@ -169,7 +169,7 @@ const Footer = () => {
                                         transition: "all 0.3s ease",
                                         fontSize: "0.95rem",
                                         "&:hover": {
-                                            color: "#5DFDCB",
+                                            color: "#FF8C00",
                                             transform: "translateX(5px)",
                                             "& .arrow-icon": {
                                                 opacity: 1,
@@ -199,7 +199,7 @@ const Footer = () => {
                             variant="h6"
                             sx={{
                                 fontWeight: 700,
-                                color: "#5DFDCB",
+                                color: "#FF8C00",
                                 mb: 3,
                                 fontSize: "1.1rem",
                             }}
@@ -217,7 +217,7 @@ const Footer = () => {
                                         alignItems: "center",
                                         fontSize: "0.95rem",
                                         "&:hover": {
-                                            color: "#5DFDCB",
+                                            color: "#FF8C00",
                                         },
                                     }}
                                 >
@@ -227,7 +227,7 @@ const Footer = () => {
                                             width: 6,
                                             height: 6,
                                             borderRadius: "50%",
-                                            backgroundColor: "#5DFDCB",
+                                            backgroundColor: "#FF8C00",
                                             mr: 1.5,
                                             display: "inline-block",
                                         }}
@@ -244,7 +244,7 @@ const Footer = () => {
                             variant="h6"
                             sx={{
                                 fontWeight: 700,
-                                color: "#5DFDCB",
+                                color: "#FF8C00",
                                 mb: 3,
                                 fontSize: "1.1rem",
                             }}
@@ -255,7 +255,7 @@ const Footer = () => {
                             <Box sx={{ display: "flex", alignItems: "flex-start" }}>
                                 <LocationOn
                                     sx={{
-                                        color: "#5DFDCB",
+                                        color: "#FF8C00",
                                         fontSize: "1.2rem",
                                         mr: 1.5,
                                         mt: 0.3,
@@ -279,7 +279,7 @@ const Footer = () => {
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <Phone
                                     sx={{
-                                        color: "#5DFDCB",
+                                        color: "#FF8C00",
                                         fontSize: "1.2rem",
                                         mr: 1.5,
                                     }}
@@ -297,7 +297,7 @@ const Footer = () => {
                             <Box sx={{ display: "flex", alignItems: "center" }}>
                                 <Email
                                     sx={{
-                                        color: "#5DFDCB",
+                                        color: "#FF8C00",
                                         fontSize: "1.2rem",
                                         mr: 1.5,
                                     }}
@@ -318,7 +318,7 @@ const Footer = () => {
 
                 <Divider
                     sx={{
-                        borderColor: "rgba(93, 253, 203, 0.1)",
+                        borderColor: "rgba(255, 140, 0, 0.1)",
                         mb: 3,
                     }}
                 />
@@ -359,7 +359,7 @@ const Footer = () => {
                                 fontSize: "0.9rem",
                                 transition: "color 0.3s ease",
                                 "&:hover": {
-                                    color: "#5DFDCB",
+                                    color: "#FF8C00",
                                 },
                             }}
                         >
@@ -373,7 +373,7 @@ const Footer = () => {
                                 fontSize: "0.9rem",
                                 transition: "color 0.3s ease",
                                 "&:hover": {
-                                    color: "#5DFDCB",
+                                    color: "#FF8C00",
                                 },
                             }}
                         >
@@ -387,7 +387,7 @@ const Footer = () => {
                                 fontSize: "0.9rem",
                                 transition: "color 0.3s ease",
                                 "&:hover": {
-                                    color: "#5DFDCB",
+                                    color: "#FF8C00",
                                 },
                             }}
                         >
@@ -406,7 +406,7 @@ const Footer = () => {
                     width: "300px",
                     height: "300px",
                     background:
-                        "radial-gradient(circle, rgba(93, 253, 203, 0.08) 0%, transparent 70%)",
+                        "radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -418,7 +418,7 @@ const Footer = () => {
                     width: "200px",
                     height: "200px",
                     background:
-                        "radial-gradient(circle, rgba(124, 198, 254, 0.08) 0%, transparent 70%)",
+                        "radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
