@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -24,6 +25,7 @@ import EventRegistrationForm from "../components/EventRegistrationForm";
 const Home = () => {
   const theme = useMuiTheme();
   const { mode } = useTheme();
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [registrationOpen, setRegistrationOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -92,25 +94,25 @@ const Home = () => {
   const services = [
     {
       icon: Engineering,
-      title: "Java Programming",
+      title: "Software Development",
       description:
-        "Master Java fundamentals, object-oriented programming concepts, and build robust applications with industry-standard best practices.",
+        "Master Java fundamentals, object-oriented programming concepts, Deep dive into Data Structures and Algorithms and build robust applications with industry-standard best practices.",
     },
     {
       icon: Memory,
-      title: "DSA in Java",
+      title: "IoT",
       description:
-        "Deep dive into Data Structures and Algorithms using Java. Learn arrays, linked lists, trees, graphs, sorting, and searching techniques.",
+        "Explore IoT development with AWS IoT Core, device connectivity, real-time data processing, and cloud-based IoT solutions.",
     },
     {
       icon: Cloud,
-      title: "Java Backend Development",
+      title: "Electronics & Embedded Systems",
       description:
-        "Build scalable backend systems with Spring Boot, REST APIs, microservices architecture, and database integration using Java.",
+        "Designing reliable hardware and intelligent embedded solutions that seamlessly integrate electronics with real-time software for efficient, scalable applications.",
     },
     {
       icon: School,
-      title: "IoT & AWS Services",
+      title: "AWS Services",
       description:
         "Explore IoT development with AWS IoT Core, device connectivity, real-time data processing, and cloud-based IoT solutions.",
     },
@@ -828,6 +830,7 @@ const Home = () => {
             <Button
               variant="contained"
               size="large"
+              onClick={() => navigate("/contact")}
               sx={{
                 px: 6,
                 py: 2,

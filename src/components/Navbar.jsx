@@ -54,7 +54,8 @@ const Navbar = () => {
   const drawer = (
     <Box
       sx={{
-        width: { xs: 250, sm: 280 },
+        width: { xs: "85vw", sm: 280 },
+        maxWidth: 300,
         height: "100%",
         backgroundColor: "#fff",
       }}
@@ -74,9 +75,9 @@ const Navbar = () => {
             src="/maalgudi.png"
             alt="Maalgudi Technolabs"
             sx={{
-              height: "30px",
-              width: "auto",
-              mr: 2,
+              height: { xs: "14px", sm: "26px" },
+              width: { xs: "14px", sm: "26px" },
+              mr: { xs: 0.5, sm: 2 },
             }}
           />
           <Typography
@@ -84,10 +85,22 @@ const Navbar = () => {
             sx={{
               fontWeight: 700,
               color: "#2563EB",
-              fontSize: { xs: "1.1rem", sm: "1.25rem" },
+              fontSize: { xs: "0.75rem", sm: "1.1rem", md: "1.25rem" },
+              display: { xs: "none", sm: "block" },
             }}
           >
             Maalgudi Technolabs
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 700,
+              color: "#2563EB",
+              fontSize: "0.7rem",
+              display: { xs: "block", sm: "none" },
+            }}
+          >
+            Maalgudi
           </Typography>
         </Box>
         <IconButton onClick={handleDrawerToggle} sx={{ color: "#333" }}>
@@ -149,7 +162,7 @@ const Navbar = () => {
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ px: 0, py: 1, justifyContent: "space-between" }}>
+          <Toolbar sx={{ px: { xs: 1, sm: 0 }, py: { xs: 0.5, sm: 1 }, justifyContent: "space-between", minHeight: { xs: "56px", sm: "64px" } }}>
             {/* Logo */}
             <Box
               component={Link}
@@ -173,8 +186,8 @@ const Navbar = () => {
                 src="/maalgudi.png"
                 alt="Maalgudi Technolabs"
                 sx={{
-                  height: { xs: "35px", md: "40px", xl: "45px" },
-                  width: "auto",
+                  height: { xs: "14px", sm: "28px", md: "35px", xl: "40px" },
+                  width: { xs: "14px", sm: "28px", md: "35px", xl: "40px" },
                   transition: "all 0.3s ease",
                 }}
               />
@@ -183,12 +196,26 @@ const Navbar = () => {
                 sx={{
                   fontWeight: 700,
                   color: "#FFFFFF",
-                  ml: 2,
-                  fontSize: { xs: "1.1rem", md: "1.3rem", xl: "1.5rem" },
+                  ml: { xs: 0.5, sm: 1.5, md: 2 },
+                  fontSize: { xs: "0.7rem", sm: "1.05rem", md: "1.2rem", xl: "1.4rem" },
                   transition: "all 0.3s ease",
+                  display: { xs: "none", sm: "block" },
                 }}
               >
                 Maalgudi Technolabs
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 700,
+                  color: "#FFFFFF",
+                  ml: 0.5,
+                  fontSize: "0.7rem",
+                  transition: "all 0.3s ease",
+                  display: { xs: "block", sm: "none" },
+                }}
+              >
+                Maalgudi
               </Typography>
             </Box>
 
@@ -270,7 +297,8 @@ const Navbar = () => {
           display: { xs: "block", md: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            width: { xs: 250, sm: 280 },
+            width: { xs: "85vw", sm: 280 },
+            maxWidth: 300,
             backgroundColor: "#fff",
           },
         }}

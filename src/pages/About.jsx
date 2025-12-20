@@ -144,7 +144,7 @@ const About = () => {
         "Agile Methodologies",
         "Innovation",
       ],
-      avatar: "",
+      avatar: "/TeamPhotos/Atrinandan.jpg",
     },
     {
       name: "Ashray A",
@@ -220,7 +220,6 @@ const About = () => {
     { name: "Corporate Consulting", progress: 88 },
     { name: "Digital Transformation", progress: 92 },
     { name: "Project Management", progress: 85 },
-    { name: "Innovation Strategy", progress: 90 },
   ];
 
   return (
@@ -681,7 +680,6 @@ const About = () => {
               <Box key={index} className="about-expertise-item">
                 <Box className="expertise-skill-name">
                   <span>{skill.name}</span>
-                  <span className="expertise-progress">{skill.progress}%</span>
                 </Box>
                 <Box className="expertise-bar">
                   <Box
@@ -697,7 +695,6 @@ const About = () => {
                   {skill.name === "Corporate Consulting" && "Expert guidance for seamless technology integration and optimization"}
                   {skill.name === "Digital Transformation" && "Comprehensive modernization strategies and implementation excellence"}
                   {skill.name === "Project Management" && "Advanced methodologies for successful project execution and delivery"}
-                  {skill.name === "Innovation Strategy" && "Forward-thinking strategic frameworks for sustained competitive advantage"}
                 </Typography>
               </Box>
             ))}
@@ -767,26 +764,6 @@ const About = () => {
               }}
             >
               Get in Touch
-            </Box>
-            <Box
-              component="a"
-              href="/courses"
-              sx={{
-                px: 4,
-                py: 2,
-                border: "2px solid #FF8C00",
-                color: "#FF8C00",
-                textDecoration: "none",
-                borderRadius: 2,
-                fontWeight: 600,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "#FF8C00",
-                  color: "#FFFFFF",
-                },
-              }}
-            >
-              Explore Opportunities
             </Box>
           </Box>
         </Container>

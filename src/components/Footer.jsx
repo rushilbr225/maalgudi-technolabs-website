@@ -33,12 +33,10 @@ const Footer = () => {
     ];
 
     const services = [
-        "Java Programming",
-        "DSA in Java",
-        "Backend Development",
-        "IoT & AWS Services",
-        "Cloud Computing",
-        "Technical Training",
+        "Software Development",
+        "IoT",
+        "Electronics & Embedded Systems",
+        "AWS Services",
     ];
 
     const socialLinks = [
@@ -61,6 +59,7 @@ const Footer = () => {
                 pb: 3,
                 position: "relative",
                 overflow: "hidden",
+                px: { xs: 2, sm: 3, md: 0 },
                 "&::before": {
                     content: '""',
                     position: "absolute",
@@ -72,20 +71,20 @@ const Footer = () => {
                 },
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 3 } }}>
                 <Grid container spacing={4} sx={{ mb: 6 }}>
                     {/* Company Info */}
                     <Grid item xs={12} md={6}>
                         <Box sx={{ mb: 3 }}>
-                            <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                            <Box sx={{ display: "flex", alignItems: "center", mb: 2, flexWrap: "wrap" }}>
                                 <Box
                                     component="img"
                                     src="/maalgudi.png"
                                     alt="Maalgudi Technolabs"
                                     sx={{
-                                        height: "40px",
-                                        width: "auto",
-                                        mr: 2,
+                                        height: { xs: "20px", sm: "30px", md: "40px" },
+                                        width: { xs: "20px", sm: "30px", md: "40px" },
+                                        mr: { xs: 1, sm: 2 },
                                     }}
                                 />
                                 <Typography
@@ -96,6 +95,7 @@ const Footer = () => {
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent",
                                         backgroundClip: "text",
+                                        fontSize: { xs: "0.85rem", sm: "1.05rem", md: "1.25rem" },
                                     }}
                                 >
                                     Maalgudi Technolabs
@@ -107,13 +107,14 @@ const Footer = () => {
                                     color: "#B0B3B8",
                                     lineHeight: 1.8,
                                     mb: 3,
+                                    fontSize: { xs: "0.9rem", sm: "0.95rem" },
                                 }}
                             >
                                 Delivering excellence in technology training and professional development.
                                 Empowering the next generation of tech leaders through industry-aligned
                                 curriculum and expert mentorship.
                             </Typography>
-                            <Stack direction="row" spacing={1}>
+                            <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", gap: 1 }}>
                                 {socialLinks.map((social, index) => (
                                     <IconButton
                                         key={index}
@@ -150,7 +151,8 @@ const Footer = () => {
                                 fontWeight: 700,
                                 color: "#FF8C00",
                                 mb: 3,
-                                fontSize: "1.1rem",
+                                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
+                                mt: { xs: 2, md: 0 },
                             }}
                         >
                             Quick Links
@@ -201,7 +203,8 @@ const Footer = () => {
                                 fontWeight: 700,
                                 color: "#FF8C00",
                                 mb: 3,
-                                fontSize: "1.1rem",
+                                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
+                                mt: { xs: 2, md: 0 },
                             }}
                         >
                             Our Services
@@ -246,7 +249,8 @@ const Footer = () => {
                                 fontWeight: 700,
                                 color: "#FF8C00",
                                 mb: 3,
-                                fontSize: "1.1rem",
+                                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
+                                mt: { xs: 2, md: 0 },
                             }}
                         >
                             Get in Touch
@@ -349,6 +353,7 @@ const Footer = () => {
                         sx={{
                             flexWrap: "wrap",
                             justifyContent: "center",
+                            gap: { xs: 1, sm: 0 },
                         }}
                     >
                         <Link
@@ -356,7 +361,7 @@ const Footer = () => {
                             sx={{
                                 color: "#B0B3B8",
                                 textDecoration: "none",
-                                fontSize: "0.9rem",
+                                fontSize: { xs: "0.85rem", sm: "0.9rem" },
                                 transition: "color 0.3s ease",
                                 "&:hover": {
                                     color: "#FF8C00",
@@ -370,7 +375,7 @@ const Footer = () => {
                             sx={{
                                 color: "#B0B3B8",
                                 textDecoration: "none",
-                                fontSize: "0.9rem",
+                                fontSize: { xs: "0.85rem", sm: "0.9rem" },
                                 transition: "color 0.3s ease",
                                 "&:hover": {
                                     color: "#FF8C00",
@@ -384,7 +389,7 @@ const Footer = () => {
                             sx={{
                                 color: "#B0B3B8",
                                 textDecoration: "none",
-                                fontSize: "0.9rem",
+                                fontSize: { xs: "0.85rem", sm: "0.9rem" },
                                 transition: "color 0.3s ease",
                                 "&:hover": {
                                     color: "#FF8C00",
