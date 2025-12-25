@@ -68,9 +68,9 @@ const NewAbout = () => {
       topic: "IOT + AWS Workshop",
       description: "Comprehensive Python programming workshop conducted at DSATM in collaboration with their Maker's Space, empowering students with practical coding skills and real-world applications.",
       photos: [
-        "/workshop-photos/DSATM/1.jpg",
+        "/workshop-photos/DSATM/5.jpg",
+        "/workshop-photos/DSATM/6.jpg",
         "/workshop-photos/DSATM/2.jpg",
-        "/workshop-photos/DSATM/3.jpg",
         "/workshop-photos/DSATM/4.jpg",
       ],
       color: "#2563EB",
@@ -86,8 +86,7 @@ const NewAbout = () => {
         "/workshop-photos/RVCE/2.jpg",
         "/workshop-photos/RVCE/3.jpg",
         "/workshop-photos/RVCE/4.jpg",
-        "/workshop-photos/RVCE/5.jpg",
-        "/workshop-photos/RVCE/6.jpg",
+
       ],
       color: "#FF8C00",
     },
@@ -108,73 +107,76 @@ const NewAbout = () => {
     {
       name: "Raghu Nila",
       role: "Founder",
-      expertise: "System Architecture, Automotive Technology",
+      
       image: "/TeamPhotos/Raghu Nila.jpg",
     },
     {
       name: "Pratham G",
       role: "CEO",
-      expertise: "Digital Engineering, Leadership",
       image: "/TeamPhotos/Pratham.jpg",
     },
     {
       name: "Rushil B R",
       role: "CTO",
-      expertise: "Software Engineering, System Architecture",
+
       image: "/TeamPhotos/Rushil.jpg",
     },
     {
       name: "Pradyumna S Athreya",
       role: "CMO",
-      expertise: "Marketing Strategy, Yield Engineering",
       image: "/TeamPhotos/1RV21EC119_PRADYUMNA S ATHREYA.jpg",
     },
     {
       name: "Pavan Kumar C Banasode",
       role: "CFO",
-      expertise: "Financial Strategy, Technology Integration",
       image: "/TeamPhotos/Pavan Kumar.jpg",
     },
     {
       name: "Adarsh G B",
       role: "Technical Specialist",
-      expertise: "Technical Solutions, Product Development",
+
       image: "/TeamPhotos/Adarsh.jpg",
     },
     {
       name: "Shreyas S",
       role: "Technical Specialist",
-      expertise: "Energy Systems, Technical Design",
+
       image: "/TeamPhotos/Shreyas.jpg",
     },
     {
       name: "Paavani Nayak",
       role: "Technical Specialist",
-      expertise: "Semiconductor Design, Technical Excellence",
+
+      image: "/TeamPhotos/PavaniNayak.png",
+    },
+    {
+      name: "Jayanth C",
+      role: "Software Engineer",
+
       image: "",
     },
     {
       name: "Atrinandan J",
       role: "Software Engineer",
-      expertise: "Software Development, Problem Solving",
-      image: "",
+
+      image: "/TeamPhotos/Atrinandan.jpg",
     },
     {
       name: "Ashray A",
       role: "Software Engineer",
-      expertise: "Enterprise Solutions, Cloud Technologies",
-      image: "",
+
+      image: "/TeamPhotos/Ashray.jpeg",
     },
     {
       name: "Pavani A M",
       role: "Software Engineer",
-      expertise: "Quality Assurance, Testing Automation",
-      image: "",
+
+      image: "/TeamPhotos/Pavani.jpeg",
     },
     {
       name: "Mahith R",
       role: "Software Engineer",
-      expertise: "Generative AI, Data Science",
+
       image: "",
     },
   ];

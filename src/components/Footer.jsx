@@ -40,10 +40,9 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { icon: <LinkedIn />, name: "LinkedIn", url: "#", color: "#0077b5" },
-        { icon: <Twitter />, name: "Twitter", url: "#", color: "#1da1f2" },
-        { icon: <Facebook />, name: "Facebook", url: "#", color: "#1877f2" },
-        { icon: <Instagram />, name: "Instagram", url: "#", color: "#e4405f" },
+        { icon: <LinkedIn />, name: "LinkedIn", url: "https://www.linkedin.com/company/maalgudi-technolabs-llp/", color: "#0077b5" },
+       
+        { icon: <Instagram />, name: "Instagram", url: "https://www.instagram.com/maalgudi_technolabs?igsh=MTlxdGkyNjI2b2xicw==", color: "#e4405f" },
     ];
 
     return (
@@ -295,7 +294,7 @@ const Footer = () => {
                                         fontSize: "0.95rem",
                                     }}
                                 >
-                                    +91 9876543210
+                                    +91 99453 46124
                                 </Typography>
                             </Box>
                             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -313,7 +312,7 @@ const Footer = () => {
                                         fontSize: "0.95rem",
                                     }}
                                 >
-                                    info@maalgudi.com
+                                    admin@malguditechnolabs.com
                                 </Typography>
                             </Box>
                         </Stack>

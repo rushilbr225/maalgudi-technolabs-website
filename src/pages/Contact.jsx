@@ -59,22 +59,22 @@ const Contact = () => {
     {
       icon: LocationOn,
       title: "Visit Our Campus",
-      details: ["Maalgudi Technolabs", "Bangalore, Karnataka 560001", "India"],
+      details: ["Maalgudi Technolabs", "Bangalore, Karnataka ", "India"],
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 8765432109"],
+      details: ["+91 99453 46124"],
     },
     {
       icon: Email,
       title: "Email Us",
-      details: ["malgudilab@gmail.com"],
+      details: ["admin@malguditechnolabs.com"],
     },
     {
       icon: AccessTime,
       title: "Office Hours",
-      details: ["Monday - Saturday: 9:00 AM - 6:00 PM", "Sunday: Closed"],
+      details: ["Monday - Sunday: 9:00 AM - 6:00 PM"],
     },
   ];
 
@@ -534,37 +534,9 @@ const Contact = () => {
                 mb: 3,
               }}
             >
-              Connect With Us
+            
             </Typography>
-            <Box sx={{ display: "flex", gap: 2, justifyContent: "center" }}>
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <Box
-                    key={index}
-                    component="a"
-                    href={social.url}
-                    sx={{
-                      width: 50,
-                      height: 50,
-                      borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backgroundColor: social.color,
-                      color: "#FFFFFF",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        transform: "translateY(-4px) scale(1.1)",
-                        boxShadow: `0 8px 20px ${social.color}66`,
-                      },
-                    }}
-                  >
-                    <IconComponent />
-                  </Box>
-                );
-              })}
-            </Box>
+            
           </Box>
         </Container>
       </Box>
