@@ -74,7 +74,7 @@ const Contact = () => {
     {
       icon: AccessTime,
       title: "Office Hours",
-      details: ["Monday - Sunday: 9:00 AM - 6:00 PM"],
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM"],
     },
   ];
 
@@ -141,7 +141,8 @@ const Contact = () => {
               fontWeight: 400,
             }}
           >
-            Connect with our expert team to explore strategic pathways for accelerating your technology career and professional growth.
+            Connect with our expert team to explore strategic pathways for
+            accelerating your technology career and professional growth.
           </Typography>
         </Container>
       </Box>
@@ -184,7 +185,8 @@ const Contact = () => {
               <Box
                 component="span"
                 sx={{
-                  background: "linear-gradient(135deg, #FF8C00 0%, #2563EB 100%)",
+                  background:
+                    "linear-gradient(135deg, #FF8C00 0%, #2563EB 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -206,12 +208,15 @@ const Contact = () => {
                       height: "100%",
                       textAlign: "center",
                       borderRadius: 3,
-                      background: mode === "dark"
-                        ? "rgba(10, 10, 10, 0.95)"
-                        : "rgba(255, 255, 255, 0.95)",
-                      border: `2px solid ${mode === "dark"
-                        ? "rgba(37, 99, 235, 0.2)"
-                        : "rgba(37, 99, 235, 0.25)"}`,
+                      background:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.95)"
+                          : "rgba(255, 255, 255, 0.95)",
+                      border: `2px solid ${
+                        mode === "dark"
+                          ? "rgba(37, 99, 235, 0.2)"
+                          : "rgba(37, 99, 235, 0.25)"
+                      }`,
                       transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       "&:hover": {
                         transform: "translateY(-8px)",
@@ -223,9 +228,10 @@ const Contact = () => {
                     <CardContent sx={{ p: 4 }}>
                       <Box
                         sx={{
-                          backgroundColor: mode === "dark"
-                            ? "rgba(255, 140, 0, 0.1)"
-                            : "rgba(255, 140, 0, 0.15)",
+                          backgroundColor:
+                            mode === "dark"
+                              ? "rgba(255, 140, 0, 0.1)"
+                              : "rgba(255, 140, 0, 0.15)",
                           color: "#FF8C00",
                           p: 2.5,
                           borderRadius: 3,
@@ -303,12 +309,20 @@ const Contact = () => {
           </Typography>
 
           {showSuccess && (
-            <Alert severity="success" sx={{ mb: 3, maxWidth: 900, mx: "auto" }} icon={<CheckCircle />}>
+            <Alert
+              severity="success"
+              sx={{ mb: 3, maxWidth: 900, mx: "auto" }}
+              icon={<CheckCircle />}
+            >
               Thank you for your message! We'll get back to you within 24 hours.
             </Alert>
           )}
 
-          <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 900, mx: "auto" }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{ maxWidth: 900, mx: "auto" }}
+          >
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <TextField
@@ -322,12 +336,16 @@ const Contact = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: 2,
-                      backgroundColor: mode === "dark" ? "rgba(10, 10, 10, 0.4)" : "rgba(255, 255, 255, 0.8)",
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.4)"
+                          : "rgba(255, 255, 255, 0.8)",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
-                        borderColor: mode === "dark"
-                          ? "rgba(255, 140, 0, 0.3)"
-                          : "rgba(255, 140, 0, 0.4)",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 140, 0, 0.3)"
+                            : "rgba(255, 140, 0, 0.4)",
                       },
                       "&:hover fieldset": {
                         borderColor: "#FF8C00",
@@ -359,12 +377,16 @@ const Contact = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: 2,
-                      backgroundColor: mode === "dark" ? "rgba(10, 10, 10, 0.4)" : "rgba(255, 255, 255, 0.8)",
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.4)"
+                          : "rgba(255, 255, 255, 0.8)",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
-                        borderColor: mode === "dark"
-                          ? "rgba(255, 140, 0, 0.3)"
-                          : "rgba(255, 140, 0, 0.4)",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 140, 0, 0.3)"
+                            : "rgba(255, 140, 0, 0.4)",
                       },
                       "&:hover fieldset": {
                         borderColor: "#FF8C00",
@@ -395,12 +417,16 @@ const Contact = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: 2,
-                      backgroundColor: mode === "dark" ? "rgba(10, 10, 10, 0.4)" : "rgba(255, 255, 255, 0.8)",
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.4)"
+                          : "rgba(255, 255, 255, 0.8)",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
-                        borderColor: mode === "dark"
-                          ? "rgba(255, 140, 0, 0.3)"
-                          : "rgba(255, 140, 0, 0.4)",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 140, 0, 0.3)"
+                            : "rgba(255, 140, 0, 0.4)",
                       },
                       "&:hover fieldset": {
                         borderColor: "#FF8C00",
@@ -431,12 +457,16 @@ const Contact = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: 2,
-                      backgroundColor: mode === "dark" ? "rgba(10, 10, 10, 0.4)" : "rgba(255, 255, 255, 0.8)",
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.4)"
+                          : "rgba(255, 255, 255, 0.8)",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
-                        borderColor: mode === "dark"
-                          ? "rgba(255, 140, 0, 0.3)"
-                          : "rgba(255, 140, 0, 0.4)",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 140, 0, 0.3)"
+                            : "rgba(255, 140, 0, 0.4)",
                       },
                       "&:hover fieldset": {
                         borderColor: "#FF8C00",
@@ -469,12 +499,16 @@ const Contact = () => {
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: 2,
-                      backgroundColor: mode === "dark" ? "rgba(10, 10, 10, 0.4)" : "rgba(255, 255, 255, 0.8)",
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(10, 10, 10, 0.4)"
+                          : "rgba(255, 255, 255, 0.8)",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
-                        borderColor: mode === "dark"
-                          ? "rgba(255, 140, 0, 0.3)"
-                          : "rgba(255, 140, 0, 0.4)",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 140, 0, 0.3)"
+                            : "rgba(255, 140, 0, 0.4)",
                       },
                       "&:hover fieldset": {
                         borderColor: "#FF8C00",
@@ -501,7 +535,8 @@ const Contact = () => {
                     size="large"
                     endIcon={<Send />}
                     sx={{
-                      background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                      background:
+                        "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
                       color: "#FFFFFF",
                       px: 6,
                       py: 2,
@@ -511,7 +546,8 @@ const Contact = () => {
                       boxShadow: "0 8px 30px rgba(255, 140, 0, 0.4)",
                       transition: "all 0.4s ease",
                       "&:hover": {
-                        background: "linear-gradient(135deg, #1E40AF 0%, #FF6500 100%)",
+                        background:
+                          "linear-gradient(135deg, #1E40AF 0%, #FF6500 100%)",
                         transform: "translateY(-4px)",
                         boxShadow: "0 12px 40px rgba(255, 140, 0, 0.6)",
                       },
@@ -533,10 +569,7 @@ const Contact = () => {
                 color: mode === "dark" ? "#FFFFFF" : "#000000",
                 mb: 3,
               }}
-            >
-            
-            </Typography>
-            
+            ></Typography>
           </Box>
         </Container>
       </Box>

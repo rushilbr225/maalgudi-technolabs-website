@@ -25,32 +25,34 @@ const NewAbout = () => {
 
   const achievements = [
     {
-      year: "2018",
+      year: "2021",
       title: "Founded Maalgudi Technolabs",
       description:
         "Established to deliver industry-aligned education and accelerate professional development",
     },
     {
-      year: "2019",
+      year: "2022",
       title: "First 100 Students",
       description:
         "Successfully delivered transformative training programs to inaugural cohort of technology professionals",
     },
     {
-      year: "2020",
+      year: "2023",
       title: "Expanded to IoT & Cloud",
-      description: "Integrated advanced technology specializations into comprehensive curriculum framework",
+      description:
+        "Integrated advanced technology specializations into comprehensive curriculum framework",
     },
     {
-      year: "2021",
+      year: "2023",
       title: "Leadership Training",
       description:
         "Launched strategic leadership and executive development program suite",
     },
     {
-      year: "2022",
+      year: "2024",
       title: "Professional Milestone",
-      description: "Achieved significant milestone in professional training and career transformation impact",
+      description:
+        "Achieved significant milestone in professional training and career transformation impact",
     },
     {
       year: "2024",
@@ -66,7 +68,8 @@ const NewAbout = () => {
       fullName: "Dayananda Sagar Academy of Technology and Management",
       location: "Bengaluru",
       topic: "IOT + AWS Workshop",
-      description: "Comprehensive Python programming workshop conducted at DSATM in collaboration with their Maker's Space, empowering students with practical coding skills and real-world applications.",
+      description:
+        "Comprehensive Python programming workshop conducted at DSATM in collaboration with their Maker's Space, empowering students with practical coding skills and real-world applications.",
       photos: [
         "/workshop-photos/DSATM/5.jpg",
         "/workshop-photos/DSATM/6.jpg",
@@ -80,13 +83,13 @@ const NewAbout = () => {
       fullName: "RV College of Engineering",
       location: "Bengaluru",
       topic: "IOT + AWS Workshop",
-      description: "Intensive Internet of Things workshop at RVCE, providing hands-on experience with IoT devices, sensor integration, and real-world IoT project implementations.",
+      description:
+        "Intensive Internet of Things workshop at RVCE, providing hands-on experience with IoT devices, sensor integration, and real-world IoT project implementations.",
       photos: [
         "/workshop-photos/RVCE/1.jpg",
         "/workshop-photos/RVCE/2.jpg",
         "/workshop-photos/RVCE/3.jpg",
         "/workshop-photos/RVCE/4.jpg",
-
       ],
       color: "#FF8C00",
     },
@@ -95,10 +98,9 @@ const NewAbout = () => {
       fullName: "University Visvesvaraya College of Engineering",
       location: "Bengaluru",
       topic: "IOT + AWS Workshop",
-      description: "Advanced IoT workshop at UVCE focusing on embedded systems, wireless communication, and practical IoT solutions for modern engineering challenges.",
-      photos: [
-        "/workshop-photos/UVCE/1.jpg",
-      ],
+      description:
+        "Advanced IoT workshop at UVCE focusing on embedded systems, wireless communication, and practical IoT solutions for modern engineering challenges.",
+      photos: ["/workshop-photos/UVCE/1.jpg"],
       color: "#2563EB",
     },
   ];
@@ -107,7 +109,7 @@ const NewAbout = () => {
     {
       name: "Raghu Nila",
       role: "Founder",
-      
+
       image: "/TeamPhotos/Raghu Nila.jpg",
     },
     {
@@ -116,15 +118,15 @@ const NewAbout = () => {
       image: "/TeamPhotos/Pratham.jpg",
     },
     {
+      name: "Pradyumna S Athreya",
+      role: "CMO",
+      image: "/TeamPhotos/Pradyumna.png",
+    },
+    {
       name: "Rushil B R",
       role: "CTO",
 
       image: "/TeamPhotos/Rushil.jpg",
-    },
-    {
-      name: "Pradyumna S Athreya",
-      role: "CMO",
-      image: "/TeamPhotos/1RV21EC119_PRADYUMNA S ATHREYA.jpg",
     },
     {
       name: "Pavan Kumar C Banasode",
@@ -152,8 +154,8 @@ const NewAbout = () => {
     {
       name: "Jayanth C",
       role: "Software Engineer",
-
-      image: "",
+      image: "/TeamPhotos/Jayanth.jpeg",
+      photoPosition: "center 10%",
     },
     {
       name: "Atrinandan J",
@@ -176,30 +178,34 @@ const NewAbout = () => {
     {
       name: "Mahith R",
       role: "Software Engineer",
-
-      image: "",
+      image: "/TeamPhotos/Mahith.jpeg",
+      photoPosition: "center 20%",
     },
   ];
 
   const values = [
     {
       title: "Innovation",
-      description: "Continuous advancement through emerging technology integration and progressive methodologies",
+      description:
+        "Continuous advancement through emerging technology integration and progressive methodologies",
       color: "primary",
     },
     {
       title: "Excellence",
-      description: "Unwavering commitment to superior training quality and measurable learning outcomes",
+      description:
+        "Unwavering commitment to superior training quality and measurable learning outcomes",
       color: "secondary",
     },
     {
       title: "Integrity",
-      description: "Establishing trust through transparent operations and principled professional conduct",
+      description:
+        "Establishing trust through transparent operations and principled professional conduct",
       color: "success",
     },
     {
       title: "Empowerment",
-      description: "Catalyzing professional growth and maximizing individual career potential",
+      description:
+        "Catalyzing professional growth and maximizing individual career potential",
       color: "warning",
     },
   ];
@@ -211,9 +217,10 @@ const NewAbout = () => {
         sx={{
           color: "white",
           py: 8,
-          background: mode === "dark"
-            ? "linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(37, 99, 235, 0.2) 100%)"
-            : "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+          background:
+            mode === "dark"
+              ? "linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(37, 99, 235, 0.2) 100%)"
+              : "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
         }}
       >
         <Container maxWidth="lg">
@@ -223,7 +230,7 @@ const NewAbout = () => {
             gutterBottom
             fontWeight="bold"
             textAlign="center"
-            sx={{ color: '#F4FAFF' }}
+            sx={{ color: "#F4FAFF" }}
           >
             Our Journey
           </Typography>
@@ -232,7 +239,7 @@ const NewAbout = () => {
             textAlign="center"
             sx={{
               opacity: 0.9,
-              color: '#F4FAFF'
+              color: "#F4FAFF",
             }}
           >
             Strategic evolution in technology education excellence
@@ -273,15 +280,15 @@ const NewAbout = () => {
 
         <Box
           sx={{
-            display: 'grid',
+            display: "grid",
             gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)'
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
             },
             gap: 3,
-            maxWidth: '1600px',
-            margin: '0 auto',
+            maxWidth: "1600px",
+            margin: "0 auto",
             px: { xs: 2, md: 0 },
           }}
         >
@@ -290,35 +297,42 @@ const NewAbout = () => {
               key={index}
               sx={{
                 minHeight: 240,
-                background: mode === "dark"
-                  ? "rgba(10, 10, 10, 0.95)"
-                  : "rgba(255, 255, 255, 0.95)",
-                backdropFilter: 'blur(15px)',
-                WebkitBackdropFilter: 'blur(15px)',
-                border: `1px solid ${mode === "dark"
-                  ? "rgba(37, 99, 235, 0.3)"
-                  : "rgba(37, 99, 235, 0.2)"}`,
+                background:
+                  mode === "dark"
+                    ? "rgba(10, 10, 10, 0.95)"
+                    : "rgba(255, 255, 255, 0.95)",
+                backdropFilter: "blur(15px)",
+                WebkitBackdropFilter: "blur(15px)",
+                border: `1px solid ${
+                  mode === "dark"
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"
+                }`,
                 borderRadius: 3,
                 padding: 3,
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                position: 'relative',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: mode === "dark"
-                  ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                  : "0 4px 20px rgba(37, 99, 235, 0.15)",
-                '&:hover': {
-                  transform: 'translateY(-8px) scale(1.02)',
-                  borderColor: mode === "dark"
-                    ? "rgba(255, 140, 0, 0.6)"
-                    : "rgba(255, 140, 0, 0.4)",
-                  boxShadow: mode === "dark"
-                    ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                    : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                  background: mode === "dark"
-                    ? "rgba(10, 10, 10, 1)"
-                    : "rgba(255, 255, 255, 1)",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                position: "relative",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                boxShadow:
+                  mode === "dark"
+                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
+                "&:hover": {
+                  transform: "translateY(-8px) scale(1.02)",
+                  borderColor:
+                    mode === "dark"
+                      ? "rgba(255, 140, 0, 0.6)"
+                      : "rgba(255, 140, 0, 0.4)",
+                  boxShadow:
+                    mode === "dark"
+                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                  background:
+                    mode === "dark"
+                      ? "rgba(10, 10, 10, 1)"
+                      : "rgba(255, 255, 255, 1)",
                 },
               }}
             >
@@ -327,9 +341,9 @@ const NewAbout = () => {
                 sx={{
                   fontWeight: 800,
                   color: "#2563EB",
-                  fontSize: '1.5rem',
+                  fontSize: "1.5rem",
                   mb: 2,
-                  textAlign: 'center',
+                  textAlign: "center",
                 }}
               >
                 {achievement.year}
@@ -339,12 +353,12 @@ const NewAbout = () => {
                 sx={{
                   fontWeight: 700,
                   mb: 2,
-                  fontSize: '1.2rem',
-                  minHeight: '2.4em',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
+                  fontSize: "1.2rem",
+                  minHeight: "2.4em",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
                   lineHeight: 1.3,
                   color: mode === "dark" ? "#F4FAFF" : "#08090A",
                 }}
@@ -355,12 +369,12 @@ const NewAbout = () => {
                 variant="body2"
                 sx={{
                   lineHeight: 1.7,
-                  textAlign: 'center',
-                  fontSize: '0.95rem',
+                  textAlign: "center",
+                  fontSize: "0.95rem",
                   flex: 1,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   color: mode === "dark" ? "#B0B3B8" : "#666",
                 }}
               >
@@ -400,8 +414,10 @@ const NewAbout = () => {
                 color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
-              We have conducted comprehensive technical workshops at premier educational institutions across Bengaluru,
-              collaborating with their Maker's Spaces to deliver hands-on training in Python programming and IoT technologies.
+              We have conducted comprehensive technical workshops at premier
+              educational institutions across Bengaluru, collaborating with
+              their Maker's Spaces to deliver hands-on training in Python
+              programming and IoT technologies.
             </Typography>
           </Box>
 
@@ -411,7 +427,7 @@ const NewAbout = () => {
               key={workshopIndex}
               sx={{
                 mb: 10,
-                '&:last-child': { mb: 0 },
+                "&:last-child": { mb: 0 },
               }}
             >
               {/* Workshop Header */}
@@ -419,23 +435,29 @@ const NewAbout = () => {
                 sx={{
                   background: `linear-gradient(135deg, ${workshop.color}f5 0%, ${workshop.color}dd 100%)`,
                   borderRadius: 4,
-                  overflow: 'hidden',
+                  overflow: "hidden",
                   mb: 5,
                   boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  position: 'relative',
-                  '&::before': {
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  position: "relative",
+                  "&::before": {
                     content: '""',
-                    position: 'absolute',
+                    position: "absolute",
                     top: 0,
                     left: 0,
                     right: 0,
-                    height: '4px',
-                    background: 'rgba(255, 255, 255, 0.3)',
+                    height: "4px",
+                    background: "rgba(255, 255, 255, 0.3)",
                   },
                 }}
               >
-                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, width: '100%' }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
+                    width: "100%",
+                  }}
+                >
                   {/* Left Section - Main Content */}
                   <Box sx={{ flex: 1, p: { xs: 4, md: 5 }, pr: { md: 4 } }}>
                     {/* Workshop Topic Badge */}
@@ -448,11 +470,11 @@ const NewAbout = () => {
                           fontWeight: 700,
                           fontSize: "0.75rem",
                           letterSpacing: 1.2,
-                          textTransform: 'uppercase',
+                          textTransform: "uppercase",
                           height: 32,
                           borderRadius: 2,
                           backdropFilter: "blur(10px)",
-                          border: '1px solid rgba(255, 255, 255, 0.4)',
+                          border: "1px solid rgba(255, 255, 255, 0.4)",
                           px: 2,
                         }}
                       />
@@ -467,7 +489,7 @@ const NewAbout = () => {
                         mb: 1.5,
                         fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
                         lineHeight: 1.2,
-                        textShadow: '0 2px 10px rgba(0,0,0,0.2)',
+                        textShadow: "0 2px 10px rgba(0,0,0,0.2)",
                       }}
                     >
                       {workshop.institution}
@@ -505,31 +527,31 @@ const NewAbout = () => {
                   {/* Right Section - Location Badge */}
                   <Box
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: { xs: 'flex-start', md: 'center' },
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: { xs: "flex-start", md: "center" },
                       p: { xs: 4, md: 4 },
                       pt: { xs: 0, md: 4 },
-                      minWidth: { md: '220px' },
+                      minWidth: { md: "220px" },
                       background: {
-                        xs: 'transparent',
-                        md: 'rgba(0, 0, 0, 0.1)'
+                        xs: "transparent",
+                        md: "rgba(0, 0, 0, 0.1)",
                       },
                       borderLeft: {
-                        xs: 'none',
-                        md: '1px solid rgba(255, 255, 255, 0.2)'
+                        xs: "none",
+                        md: "1px solid rgba(255, 255, 255, 0.2)",
                       },
                     }}
                   >
                     <Box
                       sx={{
-                        textAlign: 'center',
+                        textAlign: "center",
                         p: 3,
                         borderRadius: 3,
                         backgroundColor: "rgba(255, 255, 255, 0.15)",
                         backdropFilter: "blur(15px)",
-                        border: '2px solid rgba(255, 255, 255, 0.3)',
-                        minWidth: { xs: 'auto', md: '140px' },
+                        border: "2px solid rgba(255, 255, 255, 0.3)",
+                        minWidth: { xs: "auto", md: "140px" },
                       }}
                     >
                       <Typography
@@ -539,8 +561,8 @@ const NewAbout = () => {
                           fontWeight: 600,
                           fontSize: "0.7rem",
                           letterSpacing: 1,
-                          textTransform: 'uppercase',
-                          display: 'block',
+                          textTransform: "uppercase",
+                          display: "block",
                           mb: 1,
                         }}
                       >
@@ -571,27 +593,27 @@ const NewAbout = () => {
                 >
                   <Box
                     sx={{
-                      position: 'relative',
-                      overflow: 'hidden',
+                      position: "relative",
+                      overflow: "hidden",
                       borderRadius: 3,
                       boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
-                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                      cursor: 'pointer',
+                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      cursor: "pointer",
                       bgcolor: mode === "dark" ? "#000000" : "white",
-                      '&:hover': {
-                        transform: 'translateY(-4px)',
+                      "&:hover": {
+                        transform: "translateY(-4px)",
                         boxShadow: `0 16px 48px ${workshop.color}50`,
-                        '& img': {
-                          transform: 'scale(1.05)',
+                        "& img": {
+                          transform: "scale(1.05)",
                         },
                       },
                     }}
                   >
                     <Box
                       sx={{
-                        position: 'relative',
-                        paddingTop: '50%',
-                        overflow: 'hidden',
+                        position: "relative",
+                        paddingTop: "50%",
+                        overflow: "hidden",
                         bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
                       }}
                     >
@@ -600,35 +622,36 @@ const NewAbout = () => {
                         src={workshop.photos[0]}
                         alt={`${workshop.institution} Workshop`}
                         sx={{
-                          position: 'absolute',
+                          position: "absolute",
                           top: 0,
                           left: 0,
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          transition: 'transform 0.6s ease',
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          transition: "transform 0.6s ease",
                         }}
                         onError={(e) => {
-                          e.target.style.display = 'none';
+                          e.target.style.display = "none";
                         }}
                       />
                       {/* Overlay gradient for better text visibility */}
                       <Box
                         sx={{
-                          position: 'absolute',
+                          position: "absolute",
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%)',
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%)",
                           p: 4,
                         }}
                       >
                         <Typography
                           variant="h5"
                           sx={{
-                            color: 'white',
+                            color: "white",
                             fontWeight: 700,
-                            textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                            textShadow: "0 2px 10px rgba(0,0,0,0.5)",
                           }}
                         >
                           {workshop.topic} at {workshop.institution}
@@ -641,12 +664,18 @@ const NewAbout = () => {
                 // Grid layout for multiple photos
                 <Box
                   sx={{
-                    display: 'grid',
+                    display: "grid",
                     gridTemplateColumns: {
-                      xs: '1fr',
-                      sm: 'repeat(2, 1fr)',
-                      md: workshop.photos.length >= 4 ? 'repeat(3, 1fr)' : 'repeat(2, 1fr)',
-                      lg: workshop.photos.length >= 4 ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)',
+                      xs: "1fr",
+                      sm: "repeat(2, 1fr)",
+                      md:
+                        workshop.photos.length >= 4
+                          ? "repeat(3, 1fr)"
+                          : "repeat(2, 1fr)",
+                      lg:
+                        workshop.photos.length >= 4
+                          ? "repeat(4, 1fr)"
+                          : "repeat(3, 1fr)",
                     },
                     gap: 3,
                     px: { xs: 0, md: 2 },
@@ -656,69 +685,71 @@ const NewAbout = () => {
                     <Box
                       key={photoIndex}
                       sx={{
-                        position: 'relative',
-                        overflow: 'hidden',
+                        position: "relative",
+                        overflow: "hidden",
                         borderRadius: 2,
                         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
-                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                        cursor: 'pointer',
+                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                        cursor: "pointer",
                         bgcolor: mode === "dark" ? "#000000" : "white",
-                        '&:hover': {
-                          transform: 'translateY(-8px) scale(1.02)',
+                        "&:hover": {
+                          transform: "translateY(-8px) scale(1.02)",
                           boxShadow: `0 12px 40px ${workshop.color}40`,
-                          '& .photo-number': {
+                          "& .photo-number": {
                             opacity: 0,
                           },
-                          '& img': {
-                            transform: 'scale(1.1)',
+                          "& img": {
+                            transform: "scale(1.1)",
                           },
                         },
                       }}
                     >
                       <Box
                         sx={{
-                          position: 'relative',
-                          paddingTop: '75%',
-                          overflow: 'hidden',
+                          position: "relative",
+                          paddingTop: "75%",
+                          overflow: "hidden",
                           bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
                         }}
                       >
                         <Box
                           component="img"
                           src={photo}
-                          alt={`${workshop.institution} Workshop ${photoIndex + 1}`}
+                          alt={`${workshop.institution} Workshop ${
+                            photoIndex + 1
+                          }`}
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             top: 0,
                             left: 0,
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            transition: 'transform 0.4s ease',
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            transition: "transform 0.4s ease",
                           }}
                           onError={(e) => {
-                            e.target.style.display = 'none';
+                            e.target.style.display = "none";
                           }}
                         />
                         <Box
                           className="photo-number"
                           sx={{
-                            position: 'absolute',
+                            position: "absolute",
                             top: 12,
                             right: 12,
                             width: 36,
                             height: 36,
-                            borderRadius: '50%',
+                            borderRadius: "50%",
                             backgroundColor: workshop.color,
-                            color: 'white',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            color: "white",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                             fontWeight: 700,
-                            fontSize: '0.9rem',
-                            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                            fontSize: "0.9rem",
+                            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
                             opacity: 1,
-                            transition: 'opacity 0.3s ease',
+                            transition: "opacity 0.3s ease",
                           }}
                         >
                           {photoIndex + 1}
@@ -743,12 +774,16 @@ const NewAbout = () => {
           ))}
 
           {/* Footer Message */}
-          <Box sx={{
-            textAlign: "center",
-            mt: 10,
-            pt: 6,
-            borderTop: `2px solid ${mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"}`
-          }}>
+          <Box
+            sx={{
+              textAlign: "center",
+              mt: 10,
+              pt: 6,
+              borderTop: `2px solid ${
+                mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
+              }`,
+            }}
+          >
             <Typography
               variant="h6"
               sx={{
@@ -762,15 +797,17 @@ const NewAbout = () => {
             <Typography
               variant="body1"
               sx={{
-                maxWidth: '800px',
-                mx: 'auto',
+                maxWidth: "800px",
+                mx: "auto",
                 lineHeight: 1.8,
-                fontSize: '1.05rem',
+                fontSize: "1.05rem",
                 color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
-              Through our partnerships with leading educational institutions and their Maker's Spaces,
-              we continue to foster innovation and deliver hands-on learning experiences for the next generation of technology professionals.
+              Through our partnerships with leading educational institutions and
+              their Maker's Spaces, we continue to foster innovation and deliver
+              hands-on learning experiences for the next generation of
+              technology professionals.
             </Typography>
           </Box>
         </Container>
@@ -804,21 +841,22 @@ const NewAbout = () => {
                 color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
-              Core principles driving our educational excellence and professional impact
+              Core principles driving our educational excellence and
+              professional impact
             </Typography>
           </Box>
 
           <Box
             sx={{
-              display: 'grid',
+              display: "grid",
               gridTemplateColumns: {
-                xs: '1fr',
-                sm: 'repeat(2, 1fr)',
-                md: 'repeat(4, 1fr)'
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(4, 1fr)",
               },
               gap: 3,
-              maxWidth: '1600px',
-              margin: '0 auto',
+              maxWidth: "1600px",
+              margin: "0 auto",
               px: { xs: 2, md: 0 },
             }}
           >
@@ -827,37 +865,44 @@ const NewAbout = () => {
                 key={index}
                 sx={{
                   minHeight: 240,
-                  background: mode === "dark"
-                    ? "rgba(10, 10, 10, 0.95)"
-                    : "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: 'blur(15px)',
-                  WebkitBackdropFilter: 'blur(15px)',
-                  border: `1px solid ${mode === "dark"
-                    ? "rgba(37, 99, 235, 0.3)"
-                    : "rgba(37, 99, 235, 0.2)"}`,
+                  background:
+                    mode === "dark"
+                      ? "rgba(10, 10, 10, 0.95)"
+                      : "rgba(255, 255, 255, 0.95)",
+                  backdropFilter: "blur(15px)",
+                  WebkitBackdropFilter: "blur(15px)",
+                  border: `1px solid ${
+                    mode === "dark"
+                      ? "rgba(37, 99, 235, 0.3)"
+                      : "rgba(37, 99, 235, 0.2)"
+                  }`,
                   borderRadius: 3,
                   padding: 3,
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  boxShadow: mode === "dark"
-                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
-                  '&:hover': {
-                    transform: 'translateY(-8px) scale(1.02)',
-                    borderColor: mode === "dark"
-                      ? "rgba(255, 140, 0, 0.6)"
-                      : "rgba(255, 140, 0, 0.4)",
-                    boxShadow: mode === "dark"
-                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                    background: mode === "dark"
-                      ? "rgba(10, 10, 10, 1)"
-                      : "rgba(255, 255, 255, 1)",
+                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  position: "relative",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                  boxShadow:
+                    mode === "dark"
+                      ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                      : "0 4px 20px rgba(37, 99, 235, 0.15)",
+                  "&:hover": {
+                    transform: "translateY(-8px) scale(1.02)",
+                    borderColor:
+                      mode === "dark"
+                        ? "rgba(255, 140, 0, 0.6)"
+                        : "rgba(255, 140, 0, 0.4)",
+                    boxShadow:
+                      mode === "dark"
+                        ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                        : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                    background:
+                      mode === "dark"
+                        ? "rgba(10, 10, 10, 1)"
+                        : "rgba(255, 255, 255, 1)",
                   },
                 }}
               >
@@ -927,7 +972,8 @@ const NewAbout = () => {
                 color: mode === "dark" ? "#B0B3B8" : "#666",
               }}
             >
-              Expert professionals driving innovation and excellence in technology education
+              Expert professionals driving innovation and excellence in
+              technology education
             </Typography>
           </Box>
 
@@ -940,18 +986,21 @@ const NewAbout = () => {
                     textAlign: "center",
                     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                     borderRadius: 3,
-                    background: mode === "dark"
-                      ? "rgba(10,10,10,0.95)"
-                      : "rgba(255,255,255,0.95)",
-                    border: `1px solid ${mode === "dark"
+                    background:
+                      mode === "dark"
+                        ? "rgba(10,10,10,0.95)"
+                        : "rgba(255,255,255,0.95)",
+                    border: `1px solid ${
+                      mode === "dark"
                         ? "rgba(37, 99, 235, 0.3)"
                         : "rgba(37, 99, 235, 0.15)"
-                      }`,
+                    }`,
                     "&:hover": {
                       transform: "translateY(-12px)",
-                      boxShadow: mode === "dark"
-                        ? "0 16px 48px rgba(255, 140, 0, 0.3)"
-                        : "0 16px 48px rgba(37, 99, 235, 0.25)",
+                      boxShadow:
+                        mode === "dark"
+                          ? "0 16px 48px rgba(255, 140, 0, 0.3)"
+                          : "0 16px 48px rgba(37, 99, 235, 0.25)",
                     },
                   }}
                 >
@@ -965,9 +1014,15 @@ const NewAbout = () => {
                         mx: "auto",
                         mb: 3,
                         border: "5px solid #FF8C00",
-                        backgroundColor: member.image ? "transparent" : "#2563EB",
+                        backgroundColor: member.image
+                          ? "transparent"
+                          : "#2563EB",
                         fontSize: "2.5rem",
                         fontWeight: 700,
+                        "& img": {
+                          objectFit: "cover",
+                          objectPosition: member.photoPosition || "center top",
+                        },
                       }}
                     >
                       {!member.image &&
@@ -1020,7 +1075,7 @@ const NewAbout = () => {
         <Container maxWidth="lg">
           <Box sx={{ textAlign: "center" }}>
             <Typography variant="body2" sx={{ color: "#B0B3B8" }}>
-              © 2024 Maalgudi Technolabs. All rights reserved.
+              © 2025 Maalgudi Technolabs. All rights reserved.
             </Typography>
           </Box>
         </Container>
