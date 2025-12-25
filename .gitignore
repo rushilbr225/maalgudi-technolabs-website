@@ -22,3 +22,32 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Temporary files and folders
+*.tmp
+.cache
+temp/
+tmp/
+
+# Screenshots and test images
+Screenshot*.png
+gap.png
+test-*.png
+
+# Build and deployment
+.vercel
+.netlify
+.firebase

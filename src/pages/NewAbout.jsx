@@ -1073,11 +1073,7 @@ const NewAbout = () => {
       {/* Footer */}
       <Box sx={{ bgcolor: "#000000", color: "white", py: 6 }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center" }}>
-            <Typography variant="body2" sx={{ color: "#B0B3B8" }}>
-              © 2025 Maalgudi Technolabs. All rights reserved.
-            </Typography>
-          </Box>
+          <Box sx={{ textAlign: "center" }}></Box>
         </Container>
       </Box>
     </Box>
