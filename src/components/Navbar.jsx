@@ -30,7 +30,6 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Blogs", path: "/blogs" },
     { name: "Our Story", path: "/newabout" },
     { name: "Contact", path: "/contact" },
   ];
@@ -100,7 +99,7 @@ const Navbar = () => {
               display: { xs: "block", sm: "none" },
             }}
           >
-            Maalgudi
+            Maalgudi Technolabs
           </Typography>
         </Box>
         <IconButton onClick={handleDrawerToggle} sx={{ color: "#333" }}>
@@ -215,7 +214,7 @@ const Navbar = () => {
                   display: { xs: "block", sm: "none" },
                 }}
               >
-                Maalgudi
+                Maalgudi Technolabs
               </Typography>
             </Box>
 

@@ -181,11 +181,14 @@ const Home = () => {
           onClick={prevSlide}
           sx={{
             position: "absolute",
-            left: 20,
+            left: { xs: 8, sm: 20 },
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(37, 99, 235, 0.3)",
+            backgroundColor: "rgba(37, 99, 235, 0.4)",
             color: "#2563EB",
+            width: { xs: 40, sm: 48 },
+            height: { xs: 40, sm: 48 },
+            backdropFilter: "blur(10px)",
             "&:hover": {
               backgroundColor: "rgba(255, 140, 0, 0.5)",
               color: "#FF8C00",
@@ -200,11 +203,14 @@ const Home = () => {
           onClick={nextSlide}
           sx={{
             position: "absolute",
-            right: 20,
+            right: { xs: 8, sm: 20 },
             top: "50%",
             transform: "translateY(-50%)",
-            backgroundColor: "rgba(37, 99, 235, 0.3)",
+            backgroundColor: "rgba(37, 99, 235, 0.4)",
             color: "#2563EB",
+            width: { xs: 40, sm: 48 },
+            height: { xs: 40, sm: 48 },
+            backdropFilter: "blur(10px)",
             "&:hover": {
               backgroundColor: "rgba(255, 140, 0, 0.5)",
               color: "#FF8C00",
@@ -229,8 +235,10 @@ const Home = () => {
             sx={{
               color: "#F4FAFF",
               fontWeight: "bold",
-              mb: 2,
-              fontSize: { xs: "2.5rem", md: "4rem" },
+              mb: { xs: 2, md: 3 },
+              fontSize: { xs: "1.75rem", sm: "2.5rem", md: "4rem" },
+              lineHeight: { xs: 1.2, md: 1.1 },
+              px: { xs: 2, sm: 0 },
             }}
           >
             {currentHero.title}
@@ -241,8 +249,10 @@ const Home = () => {
               component="h2"
               sx={{
                 color: "#FF8C00",
-                mb: 3,
-                fontSize: { xs: "1.8rem", md: "2.5rem" },
+                mb: { xs: 2, md: 3 },
+                fontSize: { xs: "1.25rem", sm: "1.8rem", md: "2.5rem" },
+                lineHeight: { xs: 1.3, md: 1.2 },
+                px: { xs: 2, sm: 0 },
               }}
             >
               {currentHero.subtitle}
@@ -252,10 +262,12 @@ const Home = () => {
             variant="h6"
             sx={{
               color: "#F4FAFF",
-              mb: 4,
+              mb: { xs: 3, md: 4 },
               maxWidth: "800px",
               mx: "auto",
-              fontSize: { xs: "1rem", md: "1.25rem" },
+              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
+              lineHeight: { xs: 1.6, md: 1.8 },
+              px: { xs: 3, sm: 2, md: 0 },
             }}
           >
             {currentHero.description}
@@ -266,12 +278,16 @@ const Home = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 30,
+            bottom: { xs: 20, sm: 30 },
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
-            gap: 1,
+            gap: { xs: 1.5, sm: 1 },
             zIndex: 2,
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            backdropFilter: "blur(10px)",
+            padding: { xs: "8px 16px", sm: "6px 12px" },
+            borderRadius: 3,
           }}
         >
           {heroSlides.map((_, index) => (
@@ -279,20 +295,21 @@ const Home = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               sx={{
-                width: 12,
-                height: 12,
+                width: { xs: 10, sm: 12 },
+                height: { xs: 10, sm: 12 },
                 borderRadius: "50%",
                 backgroundColor:
                   currentSlide === index
                     ? "#FF8C00"
                     : "rgba(255, 255, 255, 0.5)",
                 cursor: "pointer",
-                transition: "background-color 0.3s ease",
+                transition: "all 0.3s ease",
                 "&:hover": {
                   backgroundColor:
                     currentSlide === index
                       ? "#FF8C00"
                       : "rgba(255, 255, 255, 0.8)",
+                  transform: "scale(1.2)",
                 },
               }}
             />
@@ -492,307 +509,45 @@ const Home = () => {
                 lineHeight: 1.6,
               }}
             >
-              Join us for workshops, seminars, and networking opportunities
+              We will update soon with exciting workshops and training programs
             </Typography>
           </Box>
 
-          <Grid container spacing={4} sx={{ justifyContent: "center" }}>
-            {[
-              {
-                title: "IoT Workshop with AWS Integration",
-                date: "March 15, 2025",
-                time: "10:00 AM - 4:00 PM",
-                location: "DSATM Campus, Bangalore",
-                description:
-                  "Hands-on workshop covering IoT fundamentals, sensor integration, and AWS IoT Core services.",
-                image:
-                  "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                status: "Registrations Open",
-                color: "#1976d2",
-              },
-              {
-                title: "Java Backend Development Bootcamp",
-                date: "March 22, 2025",
-                time: "9:00 AM - 5:00 PM",
-                location: "RVCE Campus, Bangalore",
-                description:
-                  "Intensive bootcamp on Spring Boot, REST APIs, microservices architecture, and database integration.",
-                image:
-                  "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                status: "Few Seats Left",
-                color: "#2e7d32",
-              },
-              {
-                title: "Data Structures & Algorithms Masterclass",
-                date: "March 29, 2025",
-                time: "2:00 PM - 6:00 PM",
-                location: "UVCE Campus, Bangalore",
-                description:
-                  "Deep dive into DSA concepts with practical problem-solving sessions for technical interviews.",
-                image:
-                  "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                status: "Coming Soon",
-                color: "#d32f2f",
-              },
-            ].map((event, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    minHeight: 580,
-                    display: "flex",
-                    flexDirection: "column",
-                    background:
-                      mode === "dark"
-                        ? "linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(5, 5, 5, 0.95) 100%)"
-                        : "linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: `2px solid ${mode === "dark"
-                      ? "rgba(37, 99, 235, 0.2)"
-                      : "rgba(37, 99, 235, 0.25)"
-                      }`,
-                    borderRadius: 4,
-                    overflow: "hidden",
-                    transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 8px 32px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(37, 99, 235, 0.15)"
-                        : "0 8px 32px rgba(37, 99, 235, 0.2), 0 2px 8px rgba(0, 0, 0, 0.05)",
-                    position: "relative",
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: "4px",
-                      background: `linear-gradient(90deg, ${event.color}, #FF8C00)`,
-                      opacity: 0.8,
-                    },
-                    "&:hover": {
-                      transform: "translateY(-16px)",
-                      borderColor:
-                        mode === "dark"
-                          ? "rgba(255, 140, 0, 0.6)"
-                          : "rgba(255, 140, 0, 0.6)",
-                      boxShadow:
-                        mode === "dark"
-                          ? "0 20px 60px rgba(255, 140, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.4)"
-                          : "0 20px 60px rgba(255, 140, 0, 0.35), 0 8px 16px rgba(0, 0, 0, 0.1)",
-                      "& .event-image": {
-                        transform: "scale(1.08)",
-                      },
-                      "& .status-badge": {
-                        transform: "scale(1.05)",
-                      },
-                    },
-                  }}
-                >
-                  {/* Event Image */}
-                  <Box
-                    sx={{
-                      height: 220,
-                      position: "relative",
-                      overflow: "hidden",
-                      backgroundColor: mode === "dark" ? "#0D0E0F" : "#E8F5FE",
-                    }}
-                  >
-                    <Box
-                      className="event-image"
-                      sx={{
-                        height: "100%",
-                        width: "100%",
-                        backgroundImage: `linear-gradient(135deg, rgba(8, 9, 10, 0.4), rgba(8, 9, 10, 0.6)), url(${event.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                      }}
-                    />
-                    <Box
-                      className="status-badge"
-                      sx={{
-                        position: "absolute",
-                        top: 16,
-                        right: 16,
-                        background: `linear-gradient(135deg, ${event.color}, ${event.color}dd)`,
-                        color: "#FFF",
-                        px: 2.5,
-                        py: 1,
-                        borderRadius: 3,
-                        fontSize: "0.75rem",
-                        fontWeight: 700,
-                        letterSpacing: 0.5,
-                        textTransform: "uppercase",
-                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
-                        transition: "transform 0.3s ease",
-                      }}
-                    >
-                      {event.status}
-                    </Box>
-                  </Box>
-
-                  <CardContent
-                    sx={{
-                      flexGrow: 1,
-                      p: 3,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Box>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: 700,
-                          color: mode === "dark" ? "#FFFFFF" : "#000000",
-                          mb: 2.5,
-                          lineHeight: 1.4,
-                          minHeight: "3.5em",
-                          display: "flex",
-                          alignItems: "center",
-                          fontSize: "1.15rem",
-                        }}
-                      >
-                        {event.title}
-                      </Typography>
-
-                      <Box
-                        sx={{
-                          mb: 2.5,
-                          p: 2,
-                          borderRadius: 2,
-                          backgroundColor:
-                            mode === "dark"
-                              ? "rgba(37, 99, 235, 0.08)"
-                              : "rgba(37, 99, 235, 0.1)",
-                          border: `1px solid ${mode === "dark"
-                            ? "rgba(37, 99, 235, 0.15)"
-                            : "rgba(37, 99, 235, 0.2)"
-                            }`,
-                        }}
-                      >
-                        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                          <Box
-                            sx={{
-                              width: 24,
-                              height: 24,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              mr: 1.5,
-                            }}
-                          >
-                            📅
-                          </Box>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: "#FF8C00",
-                              fontWeight: 700,
-                              fontSize: "0.9rem",
-                            }}
-                          >
-                            {event.date}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                          <Box
-                            sx={{
-                              width: 24,
-                              height: 24,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              mr: 1.5,
-                            }}
-                          >
-                            🕐
-                          </Box>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: mode === "dark" ? "#B0B3B8" : "#555",
-                              fontWeight: 500,
-                              fontSize: "0.9rem",
-                            }}
-                          >
-                            {event.time}
-                          </Typography>
-                        </Box>
-                        <Box sx={{ display: "flex", alignItems: "center" }}>
-                          <Box
-                            sx={{
-                              width: 24,
-                              height: 24,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              mr: 1.5,
-                            }}
-                          >
-                            📍
-                          </Box>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: mode === "dark" ? "#B0B3B8" : "#555",
-                              fontWeight: 500,
-                              fontSize: "0.9rem",
-                            }}
-                          >
-                            {event.location}
-                          </Typography>
-                        </Box>
-                      </Box>
-
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          color: mode === "dark" ? "#B0B3B8" : "#666",
-                          lineHeight: 1.8,
-                          mb: 2.5,
-                          minHeight: "4.5em",
-                          fontSize: "0.95rem",
-                        }}
-                      >
-                        {event.description}
-                      </Typography>
-                    </Box>
-
-                    <Button
-                      variant="contained"
-                      fullWidth
-                      onClick={() => handleRegisterClick(event.title)}
-                      sx={{
-                        background: "linear-gradient(135deg, #FF8C00 0%, #FF6500 100%)",
-                        color: "#FFFFFF",
-                        fontWeight: 700,
-                        py: 1.5,
-                        fontSize: "0.95rem",
-                        textTransform: "uppercase",
-                        letterSpacing: 0.5,
-                        borderRadius: 2,
-                        boxShadow: "0 4px 14px rgba(255, 140, 0, 0.4)",
-                        transition: "all 0.3s ease",
-                        "&:hover": {
-                          background: "linear-gradient(135deg, #FF6500 0%, #FF8C00 100%)",
-                          transform: "translateY(-2px)",
-                          boxShadow: "0 6px 20px rgba(255, 140, 0, 0.6)",
-                        },
-                      }}
-                    >
-                      Register Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+          <Box
+            sx={{
+              textAlign: "center",
+              py: 8,
+              minHeight: 300,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                color: mode === "dark" ? "#FF8C00" : "#2563EB",
+                fontWeight: 600,
+                mb: 2,
+              }}
+            >
+              Coming Soon
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: mode === "dark" ? "#B0B3B8" : "#666",
+                maxWidth: "600px",
+                fontSize: "1.1rem",
+              }}
+            >
+              Stay tuned for our upcoming workshops, bootcamps, and technical training sessions.
+              Subscribe to our newsletter or contact us to get notified about future events.
+            </Typography>
+          </Box>
         </Container>
       </Box>
-
       {/* CTA Section */}
       <Box
         sx={{

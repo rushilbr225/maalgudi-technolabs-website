@@ -34,6 +34,11 @@ const Contact = () => {
     message: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // AWS API Gateway endpoint URL
+  const API_ENDPOINT = "https://7zmrj9690j.execute-api.eu-north-1.amazonaws.com/prod/send-email";
 
   const handleInputChange = (e) => {
     setFormData({
@@ -42,17 +47,50 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 5000);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    setLoading(true);
+    setShowError(false);
+    setShowSuccess(false);
+
+    try {
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      const data = await response.json();
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 5000);
+
+      // Clear form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setShowError(true);
+      setTimeout(() => setShowError(false), 5000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -197,14 +235,15 @@ const Contact = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item key={index} sx={{ display: "flex" }}>
                   <Card
                     elevation={0}
                     sx={{
+                      width: 300,
                       height: "100%",
                       textAlign: "center",
                       borderRadius: 3,
@@ -212,11 +251,10 @@ const Contact = () => {
                         mode === "dark"
                           ? "rgba(10, 10, 10, 0.95)"
                           : "rgba(255, 255, 255, 0.95)",
-                      border: `2px solid ${
-                        mode === "dark"
-                          ? "rgba(37, 99, 235, 0.2)"
-                          : "rgba(37, 99, 235, 0.25)"
-                      }`,
+                      border: `2px solid ${mode === "dark"
+                        ? "rgba(37, 99, 235, 0.2)"
+                        : "rgba(37, 99, 235, 0.25)"
+                        }`,
                       transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       "&:hover": {
                         transform: "translateY(-8px)",
@@ -315,6 +353,15 @@ const Contact = () => {
               icon={<CheckCircle />}
             >
               Thank you for your message! We'll get back to you within 24 hours.
+            </Alert>
+          )}
+
+          {showError && (
+            <Alert
+              severity="error"
+              sx={{ mb: 3, maxWidth: 900, mx: "auto" }}
+            >
+              Failed to send message. Please try again or contact us directly.
             </Alert>
           )}
 
@@ -534,6 +581,7 @@ const Contact = () => {
                     variant="contained"
                     size="large"
                     endIcon={<Send />}
+                    disabled={loading}
                     sx={{
                       background:
                         "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
@@ -551,9 +599,13 @@ const Contact = () => {
                         transform: "translateY(-4px)",
                         boxShadow: "0 12px 40px rgba(255, 140, 0, 0.6)",
                       },
+                      "&:disabled": {
+                        background: "rgba(128, 128, 128, 0.3)",
+                        color: "rgba(255, 255, 255, 0.5)",
+                      },
                     }}
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </Box>
               </Grid>

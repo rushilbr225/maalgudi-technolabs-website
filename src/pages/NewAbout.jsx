@@ -115,7 +115,7 @@ const NewAbout = () => {
     {
       name: "Pratham G",
       role: "CEO",
-      image: "/TeamPhotos/Pratham.jpg",
+      image: "/TeamPhotos/Pratham_Gowtham.jpg",
     },
     {
       name: "Pradyumna S Athreya",
@@ -129,15 +129,15 @@ const NewAbout = () => {
       image: "/TeamPhotos/Rushil.jpg",
     },
     {
-      name: "Pavan Kumar C Banasode",
-      role: "CFO",
-      image: "/TeamPhotos/Pavan Kumar.jpg",
-    },
-    {
       name: "Adarsh G B",
-      role: "Technical Specialist",
+      role: "CFO",
 
       image: "/TeamPhotos/Adarsh.jpg",
+    },
+    {
+      name: "Pavan Kumar C Banasode",
+      role: "Technical Specialist",
+      image: "/TeamPhotos/Pavan Kumar.jpg",
     },
     {
       name: "Shreyas S",
@@ -303,11 +303,10 @@ const NewAbout = () => {
                     : "rgba(255, 255, 255, 0.95)",
                 backdropFilter: "blur(15px)",
                 WebkitBackdropFilter: "blur(15px)",
-                border: `1px solid ${
-                  mode === "dark"
-                    ? "rgba(37, 99, 235, 0.3)"
-                    : "rgba(37, 99, 235, 0.2)"
-                }`,
+                border: `1px solid ${mode === "dark"
+                  ? "rgba(37, 99, 235, 0.3)"
+                  : "rgba(37, 99, 235, 0.2)"
+                  }`,
                 borderRadius: 3,
                 padding: 3,
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -715,9 +714,8 @@ const NewAbout = () => {
                         <Box
                           component="img"
                           src={photo}
-                          alt={`${workshop.institution} Workshop ${
-                            photoIndex + 1
-                          }`}
+                          alt={`${workshop.institution} Workshop ${photoIndex + 1
+                            }`}
                           sx={{
                             position: "absolute",
                             top: 0,
@@ -779,9 +777,8 @@ const NewAbout = () => {
               textAlign: "center",
               mt: 10,
               pt: 6,
-              borderTop: `2px solid ${
-                mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
-              }`,
+              borderTop: `2px solid ${mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
+                }`,
             }}
           >
             <Typography
@@ -871,11 +868,10 @@ const NewAbout = () => {
                       : "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(15px)",
                   WebkitBackdropFilter: "blur(15px)",
-                  border: `1px solid ${
-                    mode === "dark"
-                      ? "rgba(37, 99, 235, 0.3)"
-                      : "rgba(37, 99, 235, 0.2)"
-                  }`,
+                  border: `1px solid ${mode === "dark"
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"
+                    }`,
                   borderRadius: 3,
                   padding: 3,
                   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -979,89 +975,157 @@ const NewAbout = () => {
 
           <Grid container spacing={4} justifyContent="center">
             {team.map((member, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Grid
+                item
+                key={index}
+                sx={{ display: "flex", justifyContent: "center" }}
+              >
                 <Card
                   elevation={0}
                   sx={{
-                    textAlign: "center",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    borderRadius: 3,
+                    width: 300,
+                    height: 280,
+                    borderRadius: 4,
+                    position: "relative",
+                    overflow: "hidden",
                     background:
                       mode === "dark"
-                        ? "rgba(10,10,10,0.95)"
-                        : "rgba(255,255,255,0.95)",
-                    border: `1px solid ${
+                        ? "linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(20,20,30,0.95) 100%)"
+                        : "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(249,250,251,0.95) 100%)",
+                    border: `2px solid ${mode === "dark"
+                      ? "rgba(37,99,235,0.25)"
+                      : "rgba(37,99,235,0.12)"
+                      }`,
+                    boxShadow:
                       mode === "dark"
-                        ? "rgba(37, 99, 235, 0.3)"
-                        : "rgba(37, 99, 235, 0.15)"
-                    }`,
+                        ? "0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)"
+                        : "0 8px 32px rgba(37,99,235,0.12), inset 0 1px 0 rgba(255,255,255,0.8)",
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: "4px",
+                      background: "linear-gradient(90deg, #2563EB 0%, #FF8C00 100%)",
+                      opacity: 0,
+                      transition: "opacity 0.4s ease",
+                    },
                     "&:hover": {
-                      transform: "translateY(-12px)",
+                      transform: "translateY(-12px) scale(1.03)",
+                      borderColor: "#FF8C00",
                       boxShadow:
                         mode === "dark"
-                          ? "0 16px 48px rgba(255, 140, 0, 0.3)"
-                          : "0 16px 48px rgba(37, 99, 235, 0.25)",
+                          ? "0 24px 64px rgba(255,140,0,0.4), 0 0 0 1px rgba(255,140,0,0.2)"
+                          : "0 24px 64px rgba(255,140,0,0.3), 0 0 0 1px rgba(255,140,0,0.15)",
+                      "&::before": {
+                        opacity: 1,
+                      },
+                      "& .avatar-ring": {
+                        transform: "rotate(180deg) scale(1.1)",
+                      },
                     },
                   }}
                 >
-                  <CardContent sx={{ p: 4 }}>
-                    <Avatar
-                      src={member.image || undefined}
-                      alt={member.name}
-                      sx={{
-                        width: 140,
-                        height: 140,
-                        mx: "auto",
-                        mb: 3,
-                        border: "5px solid #FF8C00",
-                        backgroundColor: member.image
-                          ? "transparent"
-                          : "#2563EB",
-                        fontSize: "2.5rem",
-                        fontWeight: 700,
-                        "& img": {
-                          objectFit: "cover",
-                          objectPosition: member.photoPosition || "center top",
-                        },
-                      }}
-                    >
-                      {!member.image &&
-                        member.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                    </Avatar>
+                  <CardContent
+                    sx={{
+                      height: "100%",
+                      display: "grid",
+                      gridTemplateRows: "auto 50px 1fr auto",
+                      alignItems: "center",
+                      textAlign: "center",
+                      px: 2,
+                      py: 2.5,
+                    }}
+                  >
+                    {/* Avatar with animated ring */}
+                    <Box sx={{ position: "relative", mx: "auto" }}>
+                      <Box
+                        className="avatar-ring"
+                        sx={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          width: 110,
+                          height: 110,
+                          borderRadius: "50%",
+                          background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                          opacity: 0.15,
+                          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                        }}
+                      />
+                      <Avatar
+                        src={member.image}
+                        alt={member.name}
+                        sx={{
+                          width: 100,
+                          height: 100,
+                          position: "relative",
+                          border: "4px solid",
+                          borderColor: mode === "dark" ? "#FF8C00" : "#2563EB",
+                          boxShadow: mode === "dark"
+                            ? "0 12px 32px rgba(255,140,0,0.4), 0 0 0 8px rgba(255,140,0,0.1)"
+                            : "0 12px 32px rgba(37,99,235,0.3), 0 0 0 8px rgba(37,99,235,0.08)",
+                          transition: "all 0.4s ease",
+                          "& img": {
+                            objectFit: "cover",
+                            objectPosition: member.photoPosition || "center top",
+                          },
+                        }}
+                      />
+                    </Box>
 
+                    {/* Name */}
                     <Typography
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        mb: 0.5,
-                        color: mode === "dark" ? "#F4FAFF" : "#000",
+                        fontSize: "1rem",
+                        lineHeight: 1.3,
+                        height: 50,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        px: 1,
+                        background: mode === "dark"
+                          ? "linear-gradient(135deg, #F4FAFF 0%, #E0E7FF 100%)"
+                          : "linear-gradient(135deg, #1E293B 0%, #334155 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
                       }}
                     >
                       {member.name}
                     </Typography>
 
-                    <Chip
-                      label={member.role}
-                      sx={{
-                        mb: 2,
-                        backgroundColor: "#2563EB",
-                        color: "white",
-                        fontWeight: 600,
-                      }}
-                    />
+                    {/* Spacer */}
+                    <Box />
 
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: mode === "dark" ? "#B0B3B8" : "#666",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {member.expertise}
-                    </Typography>
+                    {/* Role Badge */}
+                    <Box sx={{ display: "flex", justifyContent: "center", mb: 0.5 }}>
+                      <Chip
+                        label={member.role}
+                        sx={{
+                          background: "linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)",
+                          color: "white",
+                          fontWeight: 700,
+                          fontSize: "0.8rem",
+                          height: 30,
+                          px: 2,
+                          borderRadius: 2,
+                          boxShadow: "0 6px 20px rgba(37,99,235,0.35)",
+                          border: "1px solid rgba(255,255,255,0.1)",
+                          letterSpacing: "0.5px",
+                          transition: "all 0.3s ease",
+                          "&:hover": {
+                            transform: "scale(1.05)",
+                            boxShadow: "0 8px 24px rgba(37,99,235,0.45)",
+                          },
+                        }}
+                      />
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
