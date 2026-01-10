@@ -32,7 +32,7 @@ const NewAbout = () => {
     },
     {
       year: "2022",
-      title: "First 100 Students",
+      title: "First 10 Students",
       description:
         "Successfully delivered transformative training programs to inaugural cohort of technology professionals",
     },
