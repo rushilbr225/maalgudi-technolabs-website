@@ -38,7 +38,8 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // AWS API Gateway endpoint URL
-  const API_ENDPOINT = "https://7zmrj9690j.execute-api.eu-north-1.amazonaws.com/prod/send-email";
+  const API_ENDPOINT =
+    "https://7zmrj9690j.execute-api.eu-north-1.amazonaws.com/prod/send-email";
 
   const handleInputChange = (e) => {
     setFormData({
@@ -235,26 +236,36 @@ const Contact = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={3} justifyContent="center">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <Grid item key={index} sx={{ display: "flex" }}>
+                <Grid
+                  item
+                  key={index}
+                  xs={12}
+                  sm={6}
+                  md={3}
+                  sx={{ display: "flex" }}
+                >
                   <Card
                     elevation={0}
                     sx={{
-                      width: 300,
-                      height: "100%",
+                      width: "100%",
+                      minHeight: 240,
+                      display: "flex",
+                      flexDirection: "column",
                       textAlign: "center",
                       borderRadius: 3,
                       background:
                         mode === "dark"
                           ? "rgba(10, 10, 10, 0.95)"
                           : "rgba(255, 255, 255, 0.95)",
-                      border: `2px solid ${mode === "dark"
-                        ? "rgba(37, 99, 235, 0.2)"
-                        : "rgba(37, 99, 235, 0.25)"
-                        }`,
+                      border: `2px solid ${
+                        mode === "dark"
+                          ? "rgba(37, 99, 235, 0.2)"
+                          : "rgba(37, 99, 235, 0.25)"
+                      }`,
                       transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       "&:hover": {
                         transform: "translateY(-8px)",
@@ -263,7 +274,16 @@ const Contact = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
+                    <CardContent
+                      sx={{
+                        p: 3,
+                        flex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
                       <Box
                         sx={{
                           backgroundColor:
@@ -271,23 +291,26 @@ const Contact = () => {
                               ? "rgba(255, 140, 0, 0.1)"
                               : "rgba(255, 140, 0, 0.15)",
                           color: "#FF8C00",
-                          p: 2.5,
-                          borderRadius: 3,
-                          display: "inline-flex",
-                          mb: 3,
-                          fontSize: "2.5rem",
+                          width: 80,
+                          height: 80,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: 2,
+                          mb: 2,
                           transition: "all 0.4s ease",
                         }}
                       >
-                        <IconComponent sx={{ fontSize: 40 }} />
+                        <IconComponent sx={{ fontSize: 36 }} />
                       </Box>
 
                       <Typography
-                        variant="h5"
+                        variant="h6"
                         sx={{
                           fontWeight: 700,
                           color: mode === "dark" ? "#FFFFFF" : "#000000",
-                          mb: 2,
+                          mb: 1.5,
+                          fontSize: "1.1rem",
                         }}
                       >
                         {info.title}
@@ -296,10 +319,11 @@ const Contact = () => {
                       {info.details.map((detail, idx) => (
                         <Typography
                           key={idx}
-                          variant="body1"
+                          variant="body2"
                           sx={{
                             color: mode === "dark" ? "#B0B3B8" : "#555",
                             mb: 0.5,
+                            fontSize: "0.9rem",
                           }}
                         >
                           {detail}
@@ -357,10 +381,7 @@ const Contact = () => {
           )}
 
           {showError && (
-            <Alert
-              severity="error"
-              sx={{ mb: 3, maxWidth: 900, mx: "auto" }}
-            >
+            <Alert severity="error" sx={{ mb: 3, maxWidth: 900, mx: "auto" }}>
               Failed to send message. Please try again or contact us directly.
             </Alert>
           )}
@@ -368,44 +389,47 @@ const Contact = () => {
           <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ maxWidth: 900, mx: "auto" }}
+            sx={{ maxWidth: 1000, mx: "auto" }}
           >
-            <Grid container spacing={3}>
+            <Grid container spacing={2.5}>
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   name="name"
-                  label="Full Name"
-                  placeholder="Enter your full name"
+                  label="Name"
+                  placeholder="Name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      borderRadius: 2,
+                      borderRadius: 0,
                       backgroundColor:
                         mode === "dark"
-                          ? "rgba(10, 10, 10, 0.4)"
-                          : "rgba(255, 255, 255, 0.8)",
+                          ? "rgba(255, 255, 255, 0.05)"
+                          : "#FFFFFF",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
                         borderColor:
                           mode === "dark"
-                            ? "rgba(255, 140, 0, 0.3)"
-                            : "rgba(255, 140, 0, 0.4)",
+                            ? "rgba(255, 255, 255, 0.1)"
+                            : "#E0E0E0",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#FF8C00",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 255, 255, 0.2)"
+                            : "#BDBDBD",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#FF8C00",
-                        borderWidth: "2px",
+                        borderColor: mode === "dark" ? "#FF8C00" : "#000000",
+                        borderWidth: "1px",
                       },
                     },
                     "& .MuiInputLabel-root": {
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
+                      color: mode === "dark" ? "#B0B3B8" : "#757575",
                       "&.Mui-focused": {
-                        color: "#FF8C00",
+                        color: mode === "dark" ? "#FF8C00" : "#000000",
                       },
                     },
                   }}
@@ -416,117 +440,83 @@ const Contact = () => {
                   fullWidth
                   name="email"
                   type="email"
-                  label="Email Address"
-                  placeholder="Enter your email address"
+                  label="Email"
+                  placeholder="Email"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      borderRadius: 2,
+                      borderRadius: 0,
                       backgroundColor:
                         mode === "dark"
-                          ? "rgba(10, 10, 10, 0.4)"
-                          : "rgba(255, 255, 255, 0.8)",
+                          ? "rgba(255, 255, 255, 0.05)"
+                          : "#FFFFFF",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
                         borderColor:
                           mode === "dark"
-                            ? "rgba(255, 140, 0, 0.3)"
-                            : "rgba(255, 140, 0, 0.4)",
+                            ? "rgba(255, 255, 255, 0.1)"
+                            : "#E0E0E0",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#FF8C00",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 255, 255, 0.2)"
+                            : "#BDBDBD",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#FF8C00",
-                        borderWidth: "2px",
+                        borderColor: mode === "dark" ? "#FF8C00" : "#000000",
+                        borderWidth: "1px",
                       },
                     },
                     "& .MuiInputLabel-root": {
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
+                      color: mode === "dark" ? "#B0B3B8" : "#757575",
                       "&.Mui-focused": {
-                        color: "#FF8C00",
+                        color: mode === "dark" ? "#FF8C00" : "#000000",
                       },
                     },
                   }}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  fullWidth
-                  name="phone"
-                  type="tel"
-                  label="Phone Number"
-                  placeholder="Enter your phone number"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: 2,
-                      backgroundColor:
-                        mode === "dark"
-                          ? "rgba(10, 10, 10, 0.4)"
-                          : "rgba(255, 255, 255, 0.8)",
-                      color: mode === "dark" ? "#FFFFFF" : "#000000",
-                      "& fieldset": {
-                        borderColor:
-                          mode === "dark"
-                            ? "rgba(255, 140, 0, 0.3)"
-                            : "rgba(255, 140, 0, 0.4)",
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#FF8C00",
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#FF8C00",
-                        borderWidth: "2px",
-                      },
-                    },
-                    "& .MuiInputLabel-root": {
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
-                      "&.Mui-focused": {
-                        color: "#FF8C00",
-                      },
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12}>
                 <TextField
                   fullWidth
                   name="subject"
                   label="Subject"
-                  placeholder="Enter subject"
+                  placeholder="Subject"
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      borderRadius: 2,
+                      borderRadius: 0,
                       backgroundColor:
                         mode === "dark"
-                          ? "rgba(10, 10, 10, 0.4)"
-                          : "rgba(255, 255, 255, 0.8)",
+                          ? "rgba(255, 255, 255, 0.05)"
+                          : "#FFFFFF",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
                         borderColor:
                           mode === "dark"
-                            ? "rgba(255, 140, 0, 0.3)"
-                            : "rgba(255, 140, 0, 0.4)",
+                            ? "rgba(255, 255, 255, 0.1)"
+                            : "#E0E0E0",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#FF8C00",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 255, 255, 0.2)"
+                            : "#BDBDBD",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#FF8C00",
-                        borderWidth: "2px",
+                        borderColor: mode === "dark" ? "#FF8C00" : "#000000",
+                        borderWidth: "1px",
                       },
                     },
                     "& .MuiInputLabel-root": {
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
+                      color: mode === "dark" ? "#B0B3B8" : "#757575",
                       "&.Mui-focused": {
-                        color: "#FF8C00",
+                        color: mode === "dark" ? "#FF8C00" : "#000000",
                       },
                     },
                   }}
@@ -537,77 +527,72 @@ const Contact = () => {
                   fullWidth
                   name="message"
                   label="Message"
-                  placeholder="Enter your message"
-                  multiline
-                  rows={6}
+                  placeholder="Message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   sx={{
                     "& .MuiOutlinedInput-root": {
-                      borderRadius: 2,
+                      borderRadius: 0,
                       backgroundColor:
                         mode === "dark"
-                          ? "rgba(10, 10, 10, 0.4)"
-                          : "rgba(255, 255, 255, 0.8)",
+                          ? "rgba(255, 255, 255, 0.05)"
+                          : "#FFFFFF",
                       color: mode === "dark" ? "#FFFFFF" : "#000000",
                       "& fieldset": {
                         borderColor:
                           mode === "dark"
-                            ? "rgba(255, 140, 0, 0.3)"
-                            : "rgba(255, 140, 0, 0.4)",
+                            ? "rgba(255, 255, 255, 0.1)"
+                            : "#E0E0E0",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#FF8C00",
+                        borderColor:
+                          mode === "dark"
+                            ? "rgba(255, 255, 255, 0.2)"
+                            : "#BDBDBD",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#FF8C00",
-                        borderWidth: "2px",
+                        borderColor: mode === "dark" ? "#FF8C00" : "#000000",
+                        borderWidth: "1px",
                       },
                     },
                     "& .MuiInputLabel-root": {
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
+                      color: mode === "dark" ? "#B0B3B8" : "#757575",
                       "&.Mui-focused": {
-                        color: "#FF8C00",
+                        color: mode === "dark" ? "#FF8C00" : "#000000",
                       },
                     },
                   }}
                 />
               </Grid>
               <Grid item xs={12}>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    endIcon={<Send />}
-                    disabled={loading}
-                    sx={{
-                      background:
-                        "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
-                      color: "#FFFFFF",
-                      px: 6,
-                      py: 2,
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      borderRadius: 3,
-                      boxShadow: "0 8px 30px rgba(255, 140, 0, 0.4)",
-                      transition: "all 0.4s ease",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(135deg, #1E40AF 0%, #FF6500 100%)",
-                        transform: "translateY(-4px)",
-                        boxShadow: "0 12px 40px rgba(255, 140, 0, 0.6)",
-                      },
-                      "&:disabled": {
-                        background: "rgba(128, 128, 128, 0.3)",
-                        color: "rgba(255, 255, 255, 0.5)",
-                      },
-                    }}
-                  >
-                    {loading ? "Sending..." : "Send Message"}
-                  </Button>
-                </Box>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  disabled={loading}
+                  sx={{
+                    background: mode === "dark" ? "#FFFFFF" : "#000000",
+                    color: mode === "dark" ? "#000000" : "#FFFFFF",
+                    py: 1.75,
+                    fontSize: "1.05rem",
+                    fontWeight: 600,
+                    borderRadius: 0,
+                    textTransform: "none",
+                    boxShadow: "none",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      background: mode === "dark" ? "#F0F0F0" : "#1A1A1A",
+                      boxShadow: "none",
+                    },
+                    "&:disabled": {
+                      background: "rgba(128, 128, 128, 0.3)",
+                      color: "rgba(255, 255, 255, 0.5)",
+                    },
+                  }}
+                >
+                  {loading ? "Sending..." : "Send"}
+                </Button>
               </Grid>
             </Grid>
           </Box>

@@ -227,7 +227,7 @@ const About = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          position: 'relative',
+          position: "relative",
           background:
             'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: "cover",
@@ -236,39 +236,47 @@ const About = () => {
           color: "white",
           py: { xs: 12, md: 18 },
           textAlign: "center",
-          overflow: 'hidden',
-          '&::before': {
+          overflow: "hidden",
+          "&::before": {
             content: '""',
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%)',
-            pointerEvents: 'none',
+            background:
+              "radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%)",
+            pointerEvents: "none",
           },
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 }, position: 'relative', zIndex: 1 }}>
+        <Container
+          maxWidth={false}
+          sx={{
+            px: { xs: 3, sm: 4, md: 6, lg: 8 },
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
           <Box
             sx={{
-              display: 'inline-block',
+              display: "inline-block",
               mb: 3,
               px: 3,
               py: 1,
-              backgroundColor: 'rgba(255, 140, 0, 0.2)',
-              backdropFilter: 'blur(10px)',
+              backgroundColor: "rgba(255, 140, 0, 0.2)",
+              backdropFilter: "blur(10px)",
               borderRadius: 50,
-              border: '1px solid rgba(255, 140, 0, 0.3)',
+              border: "1px solid rgba(255, 140, 0, 0.3)",
             }}
           >
             <Typography
               variant="overline"
               sx={{
-                color: '#FF8C00',
+                color: "#FF8C00",
                 fontWeight: 700,
                 letterSpacing: 2,
-                fontSize: '0.9rem',
+                fontSize: "0.9rem",
               }}
             >
               About Us
@@ -281,9 +289,9 @@ const About = () => {
               fontWeight: 800,
               mb: 3,
               fontSize: { xs: "2.5rem", md: "4.5rem", xl: "5.5rem" },
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+              textShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
               lineHeight: 1.2,
-              color: '#F4FAFF',
+              color: "#F4FAFF",
             }}
           >
             Welcome to{" "}
@@ -291,7 +299,7 @@ const About = () => {
               component="span"
               sx={{
                 color: "#FF8C00",
-                display: 'block',
+                display: "block",
                 mt: 1,
               }}
             >
@@ -307,45 +315,57 @@ const About = () => {
               lineHeight: 1.8,
               fontSize: { xs: "1.1rem", md: "1.4rem", xl: "1.6rem" },
               fontWeight: 400,
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-              color: '#F4FAFF',
+              textShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
+              color: "#F4FAFF",
             }}
           >
-            Pioneering excellence in technology education through comprehensive training solutions and strategic professional development initiatives.
+            Pioneering excellence in technology education through comprehensive
+            training solutions and strategic professional development
+            initiatives.
           </Typography>
         </Container>
       </Box>
 
       {/* Mission & Vision Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF", position: 'relative' }}>
+      <Box
+        sx={{
+          py: { xs: 8, md: 12 },
+          backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
+          position: "relative",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={6}>
               <Box
                 sx={{
-                  position: 'relative',
+                  position: "relative",
                   pl: { md: 4 },
-                  '&::before': {
+                  "&::before": {
                     content: '""',
-                    position: 'absolute',
+                    position: "absolute",
                     left: 0,
                     top: 0,
                     bottom: 0,
                     width: 4,
-                    background: 'linear-gradient(180deg, #2563EB 0%, #FF8C00 100%)',
+                    background:
+                      "linear-gradient(180deg, #2563EB 0%, #FF8C00 100%)",
                     borderRadius: 2,
-                    display: { xs: 'none', md: 'block' },
+                    display: { xs: "none", md: "block" },
                   },
                 }}
               >
                 <Box sx={{ mb: 6 }}>
                   <Box
                     sx={{
-                      display: 'inline-block',
+                      display: "inline-block",
                       mb: 2,
                       px: 2,
                       py: 0.5,
-                      backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
+                      backgroundColor:
+                        mode === "dark"
+                          ? "rgba(37, 99, 235, 0.2)"
+                          : "rgba(37, 99, 235, 0.1)",
                       borderRadius: 2,
                     }}
                   >
@@ -384,16 +404,26 @@ const About = () => {
                       fontWeight: 400,
                     }}
                   >
-                    Empowering professionals through comprehensive development in personality, leadership, technical expertise, financial acumen, and collaborative excellence for sustained career success.
+                    Empowering professionals through comprehensive development
+                    in personality, leadership, technical expertise, financial
+                    acumen, and collaborative excellence for sustained career
+                    success.
                   </Typography>
                 </Box>
 
                 <Box
                   sx={{
                     p: 4,
-                    backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.1)' : 'rgba(37, 99, 235, 0.1)',
+                    backgroundColor:
+                      mode === "dark"
+                        ? "rgba(37, 99, 235, 0.1)"
+                        : "rgba(37, 99, 235, 0.1)",
                     borderRadius: 3,
-                    border: `1px solid ${mode === "dark" ? 'rgba(37, 99, 235, 0.3)' : 'rgba(37, 99, 235, 0.3)'}`,
+                    border: `1px solid ${
+                      mode === "dark"
+                        ? "rgba(37, 99, 235, 0.3)"
+                        : "rgba(37, 99, 235, 0.3)"
+                    }`,
                   }}
                 >
                   <Typography
@@ -415,7 +445,10 @@ const About = () => {
                       fontSize: { xs: "1rem", md: "1.1rem" },
                     }}
                   >
-                    Establishing global leadership in technology education through innovation-driven programs that cultivate exceptional professionals and drive technological advancement.
+                    Establishing global leadership in technology education
+                    through innovation-driven programs that cultivate
+                    exceptional professionals and drive technological
+                    advancement.
                   </Typography>
                 </Box>
               </Box>
@@ -423,54 +456,48 @@ const About = () => {
             <Grid item xs={12} md={6}>
               <Box
                 sx={{
-                  position: 'relative',
-                  '&::before': {
+                  position: "relative",
+                  "&::before": {
                     content: '""',
-                    position: 'absolute',
+                    position: "absolute",
                     top: -20,
                     right: -20,
                     width: 200,
                     height: 200,
-                    background: mode === "dark" ? 'linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%)' : 'linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%)',
-                    borderRadius: '50%',
+                    background:
+                      mode === "dark"
+                        ? "linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%)"
+                        : "linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%)",
+                    borderRadius: "50%",
                     zIndex: 0,
                   },
                 }}
-              >
-                <Box
-                  component="img"
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Our Mission"
-                  sx={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: 3,
-                    boxShadow: "0 16px 48px rgba(0,0,0,0.15)",
-                    position: 'relative',
-                    zIndex: 1,
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'scale(1.02)',
-                    },
-                  }}
-                />
-              </Box>
+              ></Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
       {/* Values Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#0A0A0A" : "#F8F9FA", position: 'relative' }}>
+      <Box
+        sx={{
+          py: { xs: 6, md: 8 },
+          backgroundColor: mode === "dark" ? "#0A0A0A" : "#F8F9FA",
+          position: "relative",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 10 }}>
             <Box
               sx={{
-                display: 'inline-block',
+                display: "inline-block",
                 mb: 2,
                 px: 2,
                 py: 0.5,
-                backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
+                backgroundColor:
+                  mode === "dark"
+                    ? "rgba(37, 99, 235, 0.2)"
+                    : "rgba(37, 99, 235, 0.1)",
                 borderRadius: 2,
               }}
             >
@@ -509,21 +536,22 @@ const About = () => {
                 fontSize: { xs: "1rem", md: "1.15rem" },
               }}
             >
-              Foundational principles driving our commitment to educational excellence and transformative professional development
+              Foundational principles driving our commitment to educational
+              excellence and transformative professional development
             </Typography>
           </Box>
 
           <Box
             sx={{
-              display: 'grid',
+              display: "grid",
               gridTemplateColumns: {
-                xs: '1fr',
-                sm: 'repeat(2, 1fr)',
-                md: 'repeat(4, 1fr)'
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(4, 1fr)",
               },
               gap: 3,
-              maxWidth: '1600px',
-              margin: '0 auto',
+              maxWidth: "1600px",
+              margin: "0 auto",
               px: { xs: 2, md: 0 },
             }}
           >
@@ -532,51 +560,58 @@ const About = () => {
                 key={index}
                 sx={{
                   minHeight: 280,
-                  background: mode === "dark"
-                    ? "rgba(10, 10, 10, 0.95)"
-                    : "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: 'blur(15px)',
-                  WebkitBackdropFilter: 'blur(15px)',
-                  border: `1px solid ${mode === "dark"
-                    ? "rgba(37, 99, 235, 0.3)"
-                    : "rgba(37, 99, 235, 0.2)"}`,
+                  background:
+                    mode === "dark"
+                      ? "rgba(10, 10, 10, 0.95)"
+                      : "rgba(255, 255, 255, 0.95)",
+                  backdropFilter: "blur(15px)",
+                  WebkitBackdropFilter: "blur(15px)",
+                  border: `1px solid ${
+                    mode === "dark"
+                      ? "rgba(37, 99, 235, 0.3)"
+                      : "rgba(37, 99, 235, 0.2)"
+                  }`,
                   borderRadius: 3,
                   padding: 3,
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  boxShadow: mode === "dark"
-                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
-                  '&:hover': {
-                    transform: 'translateY(-8px) scale(1.02)',
-                    borderColor: mode === "dark"
-                      ? "rgba(255, 140, 0, 0.6)"
-                      : "rgba(255, 140, 0, 0.4)",
-                    boxShadow: mode === "dark"
-                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                    background: mode === "dark"
-                      ? "rgba(10, 10, 10, 1)"
-                      : "rgba(255, 255, 255, 1)",
+                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  position: "relative",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow:
+                    mode === "dark"
+                      ? "0 4px 20px rgba(0, 0, 0, 0.5)"
+                      : "0 4px 20px rgba(37, 99, 235, 0.15)",
+                  "&:hover": {
+                    transform: "translateY(-8px) scale(1.02)",
+                    borderColor:
+                      mode === "dark"
+                        ? "rgba(255, 140, 0, 0.6)"
+                        : "rgba(255, 140, 0, 0.4)",
+                    boxShadow:
+                      mode === "dark"
+                        ? "0 12px 40px rgba(255, 140, 0, 0.3)"
+                        : "0 12px 40px rgba(255, 140, 0, 0.25)",
+                    background:
+                      mode === "dark"
+                        ? "rgba(10, 10, 10, 1)"
+                        : "rgba(255, 255, 255, 1)",
                   },
                 }}
               >
                 <Box
                   sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     mb: 2,
                   }}
                 >
                   <Box
                     sx={{
-                      fontSize: '3rem',
+                      fontSize: "3rem",
                       color: "#FF8C00",
-                      transition: 'all 0.3s ease',
+                      transition: "all 0.3s ease",
                     }}
                   >
                     {value.icon}
@@ -588,12 +623,12 @@ const About = () => {
                   sx={{
                     fontWeight: 700,
                     color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                    fontSize: '1.2rem',
-                    minHeight: '2.4em',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center',
+                    fontSize: "1.2rem",
+                    minHeight: "2.4em",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textAlign: "center",
                     mb: 2,
                     lineHeight: 1.3,
                   }}
@@ -606,12 +641,12 @@ const About = () => {
                   sx={{
                     color: mode === "dark" ? "#B0B3B8" : "#666",
                     lineHeight: 1.7,
-                    textAlign: 'center',
-                    fontSize: '0.95rem',
+                    textAlign: "center",
+                    fontSize: "0.95rem",
                     flex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
                   {value.description}
@@ -623,16 +658,25 @@ const About = () => {
       </Box>
 
       {/* Skills/Expertise Section - Grid Layout */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF", position: 'relative' }}>
+      <Box
+        sx={{
+          py: { xs: 8, md: 12 },
+          backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
+          position: "relative",
+        }}
+      >
         <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
           <Box sx={{ textAlign: "center", mb: 10 }}>
             <Box
               sx={{
-                display: 'inline-block',
+                display: "inline-block",
                 mb: 2,
                 px: 2,
                 py: 0.5,
-                backgroundColor: mode === "dark" ? 'rgba(37, 99, 235, 0.2)' : 'rgba(37, 99, 235, 0.1)',
+                backgroundColor:
+                  mode === "dark"
+                    ? "rgba(37, 99, 235, 0.2)"
+                    : "rgba(37, 99, 235, 0.1)",
                 borderRadius: 2,
               }}
             >
@@ -671,7 +715,8 @@ const About = () => {
                 fontSize: { xs: "1rem", md: "1.15rem" },
               }}
             >
-              Proven capabilities across diverse technology domains developed through sustained excellence and continuous innovation
+              Proven capabilities across diverse technology domains developed
+              through sustained excellence and continuous innovation
             </Typography>
           </Box>
 
@@ -690,11 +735,16 @@ const About = () => {
                   />
                 </Box>
                 <Typography className="expertise-description">
-                  {skill.name === "Technology Training" && "Specialized programs delivering cutting-edge technical competencies"}
-                  {skill.name === "Leadership Development" && "Strategic executive coaching and advanced team leadership capabilities"}
-                  {skill.name === "Corporate Consulting" && "Expert guidance for seamless technology integration and optimization"}
-                  {skill.name === "Digital Transformation" && "Comprehensive modernization strategies and implementation excellence"}
-                  {skill.name === "Project Management" && "Advanced methodologies for successful project execution and delivery"}
+                  {skill.name === "Technology Training" &&
+                    "Specialized programs delivering cutting-edge technical competencies"}
+                  {skill.name === "Leadership Development" &&
+                    "Strategic executive coaching and advanced team leadership capabilities"}
+                  {skill.name === "Corporate Consulting" &&
+                    "Expert guidance for seamless technology integration and optimization"}
+                  {skill.name === "Digital Transformation" &&
+                    "Comprehensive modernization strategies and implementation excellence"}
+                  {skill.name === "Project Management" &&
+                    "Advanced methodologies for successful project execution and delivery"}
                 </Typography>
               </Box>
             ))}
@@ -733,7 +783,8 @@ const About = () => {
               color: "#FFFFFF",
             }}
           >
-            Strategic career development opportunities designed for ambitious technology professionals. Connect with us today.
+            Strategic career development opportunities designed for ambitious
+            technology professionals. Connect with us today.
           </Typography>
 
           <Box
