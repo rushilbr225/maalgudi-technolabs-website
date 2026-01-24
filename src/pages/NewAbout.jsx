@@ -110,7 +110,7 @@ const NewAbout = () => {
       name: "Raghu Nila",
       role: "Founder",
 
-      image: "/TeamPhotos/Raghu Nila.jpg",
+      image: "/TeamPhotos/Raghu_Nila.jpg",
     },
     {
       name: "Pratham G",
@@ -137,7 +137,7 @@ const NewAbout = () => {
     {
       name: "Pavan Kumar C Banasode",
       role: "Technical Specialist",
-      image: "/TeamPhotos/Pavan Kumar.jpg",
+      image: "/TeamPhotos/Pavan_Kumar.jpg",
     },
     {
       name: "Shreyas S",
@@ -303,10 +303,11 @@ const NewAbout = () => {
                     : "rgba(255, 255, 255, 0.95)",
                 backdropFilter: "blur(15px)",
                 WebkitBackdropFilter: "blur(15px)",
-                border: `1px solid ${mode === "dark"
-                  ? "rgba(37, 99, 235, 0.3)"
-                  : "rgba(37, 99, 235, 0.2)"
-                  }`,
+                border: `1px solid ${
+                  mode === "dark"
+                    ? "rgba(37, 99, 235, 0.3)"
+                    : "rgba(37, 99, 235, 0.2)"
+                }`,
                 borderRadius: 3,
                 padding: 3,
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -714,8 +715,9 @@ const NewAbout = () => {
                         <Box
                           component="img"
                           src={photo}
-                          alt={`${workshop.institution} Workshop ${photoIndex + 1
-                            }`}
+                          alt={`${workshop.institution} Workshop ${
+                            photoIndex + 1
+                          }`}
                           sx={{
                             position: "absolute",
                             top: 0,
@@ -777,8 +779,9 @@ const NewAbout = () => {
               textAlign: "center",
               mt: 10,
               pt: 6,
-              borderTop: `2px solid ${mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
-                }`,
+              borderTop: `2px solid ${
+                mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
+              }`,
             }}
           >
             <Typography
@@ -868,10 +871,11 @@ const NewAbout = () => {
                       : "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(15px)",
                   WebkitBackdropFilter: "blur(15px)",
-                  border: `1px solid ${mode === "dark"
-                    ? "rgba(37, 99, 235, 0.3)"
-                    : "rgba(37, 99, 235, 0.2)"
-                    }`,
+                  border: `1px solid ${
+                    mode === "dark"
+                      ? "rgba(37, 99, 235, 0.3)"
+                      : "rgba(37, 99, 235, 0.2)"
+                  }`,
                   borderRadius: 3,
                   padding: 3,
                   transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -992,10 +996,11 @@ const NewAbout = () => {
                       mode === "dark"
                         ? "linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(20,20,30,0.95) 100%)"
                         : "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(249,250,251,0.95) 100%)",
-                    border: `2px solid ${mode === "dark"
-                      ? "rgba(37,99,235,0.25)"
-                      : "rgba(37,99,235,0.12)"
-                      }`,
+                    border: `2px solid ${
+                      mode === "dark"
+                        ? "rgba(37,99,235,0.25)"
+                        : "rgba(37,99,235,0.12)"
+                    }`,
                     boxShadow:
                       mode === "dark"
                         ? "0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)"
@@ -1008,7 +1013,8 @@ const NewAbout = () => {
                       left: 0,
                       right: 0,
                       height: "4px",
-                      background: "linear-gradient(90deg, #2563EB 0%, #FF8C00 100%)",
+                      background:
+                        "linear-gradient(90deg, #2563EB 0%, #FF8C00 100%)",
                       opacity: 0,
                       transition: "opacity 0.4s ease",
                     },
@@ -1051,7 +1057,8 @@ const NewAbout = () => {
                           width: 110,
                           height: 110,
                           borderRadius: "50%",
-                          background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                          background:
+                            "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
                           opacity: 0.15,
                           transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
                         }}
@@ -1065,13 +1072,15 @@ const NewAbout = () => {
                           position: "relative",
                           border: "4px solid",
                           borderColor: mode === "dark" ? "#FF8C00" : "#2563EB",
-                          boxShadow: mode === "dark"
-                            ? "0 12px 32px rgba(255,140,0,0.4), 0 0 0 8px rgba(255,140,0,0.1)"
-                            : "0 12px 32px rgba(37,99,235,0.3), 0 0 0 8px rgba(37,99,235,0.08)",
+                          boxShadow:
+                            mode === "dark"
+                              ? "0 12px 32px rgba(255,140,0,0.4), 0 0 0 8px rgba(255,140,0,0.1)"
+                              : "0 12px 32px rgba(37,99,235,0.3), 0 0 0 8px rgba(37,99,235,0.08)",
                           transition: "all 0.4s ease",
                           "& img": {
                             objectFit: "cover",
-                            objectPosition: member.photoPosition || "center top",
+                            objectPosition:
+                              member.photoPosition || "center top",
                           },
                         }}
                       />
@@ -1089,9 +1098,10 @@ const NewAbout = () => {
                         alignItems: "center",
                         justifyContent: "center",
                         px: 1,
-                        background: mode === "dark"
-                          ? "linear-gradient(135deg, #F4FAFF 0%, #E0E7FF 100%)"
-                          : "linear-gradient(135deg, #1E293B 0%, #334155 100%)",
+                        background:
+                          mode === "dark"
+                            ? "linear-gradient(135deg, #F4FAFF 0%, #E0E7FF 100%)"
+                            : "linear-gradient(135deg, #1E293B 0%, #334155 100%)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                         backgroundClip: "text",
@@ -1104,11 +1114,18 @@ const NewAbout = () => {
                     <Box />
 
                     {/* Role Badge */}
-                    <Box sx={{ display: "flex", justifyContent: "center", mb: 0.5 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        mb: 0.5,
+                      }}
+                    >
                       <Chip
                         label={member.role}
                         sx={{
-                          background: "linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)",
+                          background:
+                            "linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)",
                           color: "white",
                           fontWeight: 700,
                           fontSize: "0.8rem",
