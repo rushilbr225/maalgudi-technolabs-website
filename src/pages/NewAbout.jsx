@@ -71,10 +71,10 @@ const NewAbout = () => {
       description:
         "Comprehensive Python programming workshop conducted at DSATM in collaboration with their Maker's Space, empowering students with practical coding skills and real-world applications.",
       photos: [
-        "/workshop-photos/DSATM/5.jpg",
-        "/workshop-photos/DSATM/6.jpg",
-        "/workshop-photos/DSATM/2.jpg",
-        "/workshop-photos/DSATM/4.jpg",
+        "/workshop-photos/DSATM/d5.jpg",
+        "/workshop-photos/DSATM/d6.jpg",
+        "/workshop-photos/DSATM/d2.jpg",
+        "/workshop-photos/DSATM/d4.jpg",
       ],
       color: "#2563EB",
     },
@@ -86,10 +86,10 @@ const NewAbout = () => {
       description:
         "Intensive Internet of Things workshop at RVCE, providing hands-on experience with IoT devices, sensor integration, and real-world IoT project implementations.",
       photos: [
-        "/workshop-photos/RVCE/1.jpg",
-        "/workshop-photos/RVCE/2.jpg",
-        "/workshop-photos/RVCE/3.jpg",
-        "/workshop-photos/RVCE/4.jpg",
+        "/workshop-photos/RVCE/r1.jpg",
+        "/workshop-photos/RVCE/r2.jpg",
+        "/workshop-photos/RVCE/r3.jpg",
+        "/workshop-photos/RVCE/r4.jpg",
       ],
       color: "#FF8C00",
     },
@@ -100,7 +100,7 @@ const NewAbout = () => {
       topic: "IOT + AWS Workshop",
       description:
         "Advanced IoT workshop at UVCE focusing on embedded systems, wireless communication, and practical IoT solutions for modern engineering challenges.",
-      photos: ["/workshop-photos/UVCE/1.jpg"],
+      photos: ["/workshop-photos/UVCE/u1.jpg"],
       color: "#2563EB",
     },
   ];
