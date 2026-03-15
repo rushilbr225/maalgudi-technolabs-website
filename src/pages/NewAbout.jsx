@@ -112,11 +112,11 @@ const NewAbout = () => {
 
       image: "/TeamPhotos/Raghu_Nila.jpg",
     },
-    {
-      name: "Pratham G",
-      role: "CEO",
-      image: "/TeamPhotos/Pratham_Gowtham.jpg",
-    },
+    // {
+    //   name: "Pratham G",
+    //   role: "CEO",
+    //   image: "/TeamPhotos/Pratham_Gowtham.jpg",
+    // },
     {
       name: "Pradyumna S Athreya",
       role: "CMO",
@@ -151,18 +151,18 @@ const NewAbout = () => {
 
       image: "/TeamPhotos/PavaniNayak.png",
     },
-    {
-      name: "Jayanth C",
-      role: "Software Engineer",
-      image: "/TeamPhotos/Jayanth.jpeg",
-      photoPosition: "center 10%",
-    },
-    {
-      name: "Atrinandan J",
-      role: "Software Engineer",
+    // {
+    //   name: "Jayanth C",
+    //   role: "Software Engineer",
+    //   image: "/TeamPhotos/Jayanth.jpeg",
+    //   photoPosition: "center 10%",
+    // },
+    // {
+    //   name: "Atrinandan J",
+    //   role: "Software Engineer",
 
-      image: "/TeamPhotos/Atrinandan.jpg",
-    },
+    //   image: "/TeamPhotos/Atrinandan.jpg",
+    // },
     {
       name: "Ashray A",
       role: "Software Engineer",
