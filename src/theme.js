@@ -1,8 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 // Maalgudi Technolabs theme with modern black, blue, and orange color scheme
-// Primary: #2563EB (Royal Blue), Secondary: #FF8C00 (Dark Orange),
-// Background: #000000 (Black), Text: #FFFFFF (White)
+// Primary: #2563EB (Royal Blue), Secondary: #FF8C00 (Dark Orange)
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -14,152 +13,146 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Rubik", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     fontSize: 14,
     htmlFontSize: 16,
     h1: {
-      fontSize: "2.5rem",
-      fontWeight: 700,
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "2.75rem",
+      fontWeight: 800,
+      lineHeight: 1.15,
+      letterSpacing: "-0.02em",
+      "@media (min-width:960px)": {
+        fontSize: "3.75rem",
+      },
+      "@media (min-width:1920px)": {
+        fontSize: "4.5rem",
+      },
+    },
+    h2: {
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "2.25rem",
+      fontWeight: 800,
       lineHeight: 1.2,
+      letterSpacing: "-0.015em",
+      "@media (min-width:960px)": {
+        fontSize: "2.75rem",
+      },
       "@media (min-width:1920px)": {
         fontSize: "3.5rem",
       },
     },
-    h2: {
-      fontSize: "2.2rem",
-      fontWeight: 600,
-      lineHeight: 1.2,
-      "@media (min-width:1920px)": {
-        fontSize: "3rem",
-      },
-    },
     h3: {
-      fontSize: "1.8rem",
-      fontWeight: 600,
-      lineHeight: 1.3,
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "1.75rem",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      letterSpacing: "-0.01em",
+      "@media (min-width:960px)": {
+        fontSize: "2.2rem",
+      },
       "@media (min-width:1920px)": {
-        fontSize: "2.4rem",
+        fontSize: "2.6rem",
       },
     },
     h4: {
-      fontSize: "1.5rem",
-      fontWeight: 500,
-      lineHeight: 1.4,
-      "@media (min-width:1920px)": {
-        fontSize: "2rem",
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "1.4rem",
+      fontWeight: 700,
+      lineHeight: 1.35,
+      "@media (min-width:960px)": {
+        fontSize: "1.75rem",
       },
     },
     h5: {
-      fontSize: "1.25rem",
-      fontWeight: 500,
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "1.2rem",
+      fontWeight: 600,
       lineHeight: 1.4,
-      "@media (min-width:1920px)": {
-        fontSize: "1.6rem",
-      },
     },
     h6: {
-      fontSize: "1.1rem",
-      fontWeight: 500,
-      lineHeight: 1.4,
-      "@media (min-width:1920px)": {
-        fontSize: "1.4rem",
-      },
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontSize: "1.05rem",
+      fontWeight: 600,
+      lineHeight: 1.45,
     },
     body1: {
       fontSize: "1rem",
-      lineHeight: 1.8,
-      "@media (min-width:1920px)": {
-        fontSize: "1.2rem",
-      },
+      lineHeight: 1.75,
+      color: "#CBD5E1",
     },
     body2: {
-      fontSize: "0.875rem",
-      lineHeight: 1.7,
-      "@media (min-width:1920px)": {
-        fontSize: "1rem",
-      },
+      fontSize: "0.925rem",
+      lineHeight: 1.65,
+      color: "#94A3B8",
+    },
+    button: {
+      fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+      fontWeight: 600,
+      letterSpacing: "0.01em",
     },
   },
   palette: {
+    mode: "dark",
     primary: {
       main: "#2563EB", // Royal blue
       light: "#60A5FA",
-      dark: "#1E40AF",
+      dark: "#1D4ED8",
       contrastText: "#FFFFFF",
     },
     secondary: {
       main: "#FF8C00", // Dark orange
       light: "#FFA500",
-      dark: "#FF6500",
+      dark: "#EA580C",
       contrastText: "#FFFFFF",
     },
     background: {
-      default: "#000000", // Black
-      paper: "#0A0A0A",
+      default: "#08090A",
+      paper: "#11141C",
     },
     text: {
-      primary: "#FFFFFF", // White
-      secondary: "#A0AEC0",
+      primary: "#F8FAFC",
+      secondary: "#94A3B8",
     },
     accent: {
-      main: "#FF8C00", // Orange accent
+      main: "#FF8C00",
       light: "#FFA500",
-      dark: "#FF6500",
-    },
-    dark: {
-      main: "#000000", // Black for dark elements
-      light: "#1A1A1A",
-      dark: "#000000",
-      contrastText: "#FFFFFF",
+      dark: "#EA580C",
     },
   },
   shape: {
-    borderRadius: 0, // Maalgudi Technolabs uses sharp corners mostly
+    borderRadius: 12,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: "none",
-          fontWeight: 500,
-          borderRadius: 0,
-          padding: "12px 30px",
-          fontSize: "1rem",
-          position: "relative",
-          overflow: "hidden",
-          transition: "all 0.3s ease",
-          "@media (min-width:1920px)": {
-            padding: "16px 40px",
-            fontSize: "1.2rem",
-          },
+          fontWeight: 600,
+          borderRadius: 10,
+          padding: "10px 24px",
+          fontSize: "0.95rem",
+          transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
         },
         contained: {
           background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
           color: "#FFFFFF",
-          boxShadow: "0 4px 15px rgba(255, 140, 0, 0.4)",
+          boxShadow: "0 4px 14px rgba(37, 99, 235, 0.35)",
           "&:hover": {
-            background: "linear-gradient(135deg, #1E40AF 0%, #FF6500 100%)",
+            background: "linear-gradient(135deg, #1D4ED8 0%, #EA580C 100%)",
             transform: "translateY(-2px)",
-            boxShadow: "0 6px 20px rgba(255, 140, 0, 0.6)",
+            boxShadow: "0 6px 20px rgba(255, 140, 0, 0.45)",
           },
         },
         outlined: {
-          border: "2px solid #2563EB",
-          color: "#2563EB",
+          border: "1.5px solid rgba(255, 255, 255, 0.2)",
+          color: "#F8FAFC",
+          backdropFilter: "blur(8px)",
           "&:hover": {
-            background: "#2563EB",
-            color: "#FFFFFF",
+            border: "1.5px solid #FF8C00",
+            background: "rgba(255, 140, 0, 0.08)",
+            color: "#FF8C00",
             transform: "translateY(-2px)",
-            borderColor: "#2563EB",
-          },
-        },
-      },
-    },
-    MuiContainer: {
-      styleOverrides: {
-        root: {
-          "@media (min-width:1920px)": {
-            maxWidth: "1800px",
           },
         },
       },
@@ -167,12 +160,15 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 0,
-          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-          transition: "all 0.3s ease",
+          borderRadius: 16,
+          backgroundColor: "#11141C",
+          border: "1px solid rgba(255, 255, 255, 0.07)",
+          boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           "&:hover": {
-            transform: "translateY(-5px)",
-            boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+            transform: "translateY(-4px)",
+            borderColor: "rgba(255, 140, 0, 0.4)",
+            boxShadow: "0 20px 40px -15px rgba(255, 140, 0, 0.25)",
           },
         },
       },
@@ -180,9 +176,11 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#000000",
-          color: "#FFFFFF",
-          boxShadow: "0 2px 10px rgba(37, 99, 235, 0.3)",
+          backgroundColor: "rgba(8, 9, 10, 0.85)",
+          backdropFilter: "blur(16px)",
+          color: "#F8FAFC",
+          boxShadow: "none",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         },
       },
     },
