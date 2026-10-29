@@ -134,11 +134,6 @@ const NewAbout = () => {
       image: "/TeamPhotos/PavaniNayak.png",
     },
     {
-      name: "Ashray A",
-      role: "Software Engineer",
-      image: "/TeamPhotos/Ashray.jpeg",
-    },
-    {
       name: "Pavani A M",
       role: "Software Engineer",
       image: "/TeamPhotos/Pavani.jpeg",
@@ -890,12 +885,12 @@ const NewAbout = () => {
             sx={{
               display: "grid",
               gridTemplateColumns: {
-                xs: "repeat(2, 1fr)",
+                xs: "repeat(1, 1fr)",
                 sm: "repeat(3, 1fr)",
-                lg: "repeat(5, 1fr)",
+                md: "repeat(3, 1fr)",
               },
-              gap: { xs: 1.5, sm: 2.5, md: 3 },
-              maxWidth: "1480px",
+              gap: { xs: 2.5, sm: 3, md: 3.5 },
+              maxWidth: { xs: "360px", sm: "1080px" },
               mx: "auto",
             }}
           >
@@ -906,7 +901,7 @@ const NewAbout = () => {
                 sx={{
                   width: "100%",
                   height: "100%",
-                  minHeight: { xs: 230, sm: 290 },
+                  minHeight: { xs: 250, sm: 290 },
                   borderRadius: { xs: "14px", sm: "18px" },
                   background: "rgba(17, 20, 28, 0.85)",
                   backdropFilter: "blur(16px)",
@@ -944,7 +939,7 @@ const NewAbout = () => {
               >
                 <CardContent
                   sx={{
-                    p: { xs: 1.5, sm: 3 },
+                    p: { xs: 2, sm: 3 },
                     flex: 1,
                     display: "flex",
                     flexDirection: "column",
@@ -960,8 +955,8 @@ const NewAbout = () => {
                       src={member.image}
                       alt={member.name}
                       sx={{
-                        width: { xs: 72, sm: 96 },
-                        height: { xs: 72, sm: 96 },
+                        width: { xs: 80, sm: 96 },
+                        height: { xs: 80, sm: 96 },
                         border: "3px solid #2563EB",
                         boxShadow: "0 8px 24px rgba(37, 99, 235, 0.3)",
                         transition: "all 0.35s ease",
@@ -976,7 +971,7 @@ const NewAbout = () => {
                   {/* Member Name with strictly fixed uniform container height */}
                   <Box
                     sx={{
-                      height: { xs: 44, sm: 50 },
+                      height: { xs: 46, sm: 52 },
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -989,7 +984,7 @@ const NewAbout = () => {
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        fontSize: { xs: "0.82rem", sm: "0.96rem" },
+                        fontSize: { xs: "0.9rem", sm: "1.05rem" },
                         color: "#F8FAFC",
                         lineHeight: 1.25,
                         textAlign: "center",
@@ -1007,8 +1002,8 @@ const NewAbout = () => {
                         background: "linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)",
                         color: "#FFFFFF",
                         fontWeight: 600,
-                        fontSize: { xs: "0.68rem", sm: "0.78rem" },
-                        height: { xs: 24, sm: 28 },
+                        fontSize: { xs: "0.72rem", sm: "0.8rem" },
+                        height: { xs: 26, sm: 28 },
                         px: { xs: 1, sm: 1.5 },
                         borderRadius: "8px",
                         border: "1px solid rgba(255, 255, 255, 0.15)",
