@@ -15,14 +15,12 @@ import {
   Container,
   Stack,
 } from "@mui/material";
-import { Menu as MenuIcon, Close as CloseIcon } from "@mui/icons-material";
+import { Menu as MenuIcon, Close as CloseIcon, ArrowForward, Phone, Email } from "@mui/icons-material";
 import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, darkMode } = useTheme();
   const muiTheme = useMuiTheme();
   const isMobile = useMediaQuery(muiTheme.breakpoints.down("md"));
   const location = useLocation();
@@ -36,7 +34,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
+      const isScrolled = window.scrollY > 20;
       setScrolled(isScrolled);
     };
 
@@ -53,90 +51,142 @@ const Navbar = () => {
   const drawer = (
     <Box
       sx={{
-        width: { xs: "85vw", sm: 280 },
-        maxWidth: 300,
+        width: { xs: "85vw", sm: 320 },
+        maxWidth: 340,
         height: "100%",
-        backgroundColor: "#fff",
+        backgroundColor: "#0B0E17",
+        backgroundImage: "radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.15), transparent 70%)",
+        color: "#F8FAFC",
+        display: "flex",
+        flexDirection: "column",
+        p: 3,
       }}
     >
+      {/* Drawer Header */}
       <Box
         sx={{
-          p: { xs: 2, sm: 3 },
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          borderBottom: "1px solid #eee",
+          pb: 2.5,
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
           <Box
             component="img"
             src="/maalgudi.png"
             alt="Maalgudi Technolabs"
             sx={{
-              height: { xs: "14px", sm: "26px" },
-              width: { xs: "14px", sm: "26px" },
-              mr: { xs: 0.5, sm: 2 },
+              height: 32,
+              width: 32,
+              borderRadius: "6px",
             }}
           />
           <Typography
             variant="h6"
             sx={{
-              fontWeight: 700,
-              color: "#2563EB",
-              fontSize: { xs: "0.75rem", sm: "1.1rem", md: "1.25rem" },
-              display: { xs: "none", sm: "block" },
-            }}
-          >
-            Maalgudi Technolabs
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              color: "#2563EB",
-              fontSize: "0.7rem",
-              display: { xs: "block", sm: "none" },
+              fontWeight: 800,
+              fontSize: "1.05rem",
+              background: "linear-gradient(135deg, #FFFFFF 60%, #FF8C00 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              letterSpacing: "-0.01em",
             }}
           >
             Maalgudi Technolabs
           </Typography>
         </Box>
-        <IconButton onClick={handleDrawerToggle} sx={{ color: "#333" }}>
+        <IconButton
+          onClick={handleDrawerToggle}
+          sx={{
+            color: "#94A3B8",
+            "&:hover": { color: "#FFFFFF", backgroundColor: "rgba(255, 255, 255, 0.08)" },
+          }}
+        >
           <CloseIcon />
         </IconButton>
       </Box>
 
-      <List sx={{ px: { xs: 1, sm: 2 } }}>
-        {menuItems.map((item) => (
-          <ListItem
-            key={item.name}
-            component={Link}
-            to={item.path}
-            onClick={handleDrawerToggle}
-            sx={{
-              mb: 1,
-              textDecoration: "none",
-              color: "#333",
-              borderRadius: 0,
-              "&:hover": {
-                backgroundColor: "rgba(37, 99, 235, 0.1)",
-              },
-            }}
-          >
-            <ListItemText
-              primary={item.name}
+      {/* Drawer Menu Items */}
+      <List sx={{ py: 3, flex: 1 }}>
+        {menuItems.map((item) => {
+          const active = isActive(item.path);
+          return (
+            <ListItem
+              key={item.name}
+              component={Link}
+              to={item.path}
+              onClick={handleDrawerToggle}
               sx={{
-                "& .MuiTypography-root": {
-                  fontWeight: isActive(item.path) ? 600 : 400,
-                  fontSize: { xs: "1rem", sm: "1.1rem" },
-                  color: isActive(item.path) ? "#2563EB" : "#333",
+                mb: 1.5,
+                borderRadius: "10px",
+                px: 2,
+                py: 1.25,
+                backgroundColor: active ? "rgba(255, 140, 0, 0.12)" : "transparent",
+                border: active ? "1px solid rgba(255, 140, 0, 0.3)" : "1px solid transparent",
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.06)",
+                  transform: "translateX(4px)",
                 },
               }}
-            />
-          </ListItem>
-        ))}
+            >
+              <ListItemText
+                primary={item.name}
+                sx={{
+                  "& .MuiTypography-root": {
+                    fontWeight: active ? 700 : 500,
+                    fontSize: "1.05rem",
+                    color: active ? "#FF8C00" : "#F8FAFC",
+                  },
+                }}
+              />
+              {active && (
+                <Box
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    backgroundColor: "#FF8C00",
+                    boxShadow: "0 0 10px #FF8C00",
+                  }}
+                />
+              )}
+            </ListItem>
+          );
+        })}
       </List>
+
+      {/* Drawer Contact Info */}
+      <Box
+        sx={{
+          pt: 3,
+          borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+        }}
+      >
+        <Button
+          component={Link}
+          to="/contact"
+          onClick={handleDrawerToggle}
+          variant="contained"
+          fullWidth
+          sx={{
+            py: 1.4,
+            fontSize: "0.95rem",
+            mb: 2,
+            boxShadow: "0 4px 16px rgba(255, 140, 0, 0.3)",
+          }}
+        >
+          Get in Touch
+        </Button>
+        <Typography
+          variant="caption"
+          sx={{ color: "#64748B", display: "block", textAlign: "center" }}
+        >
+          admin@malguditechnolabs.com
+        </Typography>
+      </Box>
     </Box>
   );
 
@@ -147,22 +197,29 @@ const Navbar = () => {
         elevation={0}
         sx={{
           backgroundColor: scrolled
-            ? "rgba(8, 9, 10, 0.95)"
-            : "rgba(8, 9, 10, 0.98)",
-          backdropFilter: scrolled ? "blur(20px) saturate(180%)" : "blur(10px)",
-          WebkitBackdropFilter: scrolled ? "blur(20px) saturate(180%)" : "blur(10px)",
+            ? "rgba(8, 9, 10, 0.88)"
+            : "rgba(8, 9, 10, 0.7)",
+          backdropFilter: "blur(18px)",
+          WebkitBackdropFilter: "blur(18px)",
           borderBottom: scrolled
-            ? "1px solid rgba(93, 253, 203, 0.2)"
-            : "1px solid rgba(124, 198, 254, 0.15)",
-          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+            ? "1px solid rgba(255, 255, 255, 0.1)"
+            : "1px solid rgba(255, 255, 255, 0.04)",
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
           boxShadow: scrolled
-            ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(93, 253, 203, 0.1)"
-            : "0 4px 16px rgba(0, 0, 0, 0.3)",
+            ? "0 10px 30px -10px rgba(0, 0, 0, 0.8)"
+            : "none",
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ px: { xs: 1, sm: 0 }, py: { xs: 0.5, sm: 1 }, justifyContent: "space-between", minHeight: { xs: "56px", sm: "64px" } }}>
-            {/* Logo */}
+          <Toolbar
+            disableGutters
+            sx={{
+              justifyContent: "space-between",
+              minHeight: { xs: "64px", md: "72px" },
+              px: { xs: 2, sm: 1, md: 0 },
+            }}
+          >
+            {/* Logo + Brand Name */}
             <Box
               component={Link}
               to="/"
@@ -170,13 +227,10 @@ const Navbar = () => {
                 display: "flex",
                 alignItems: "center",
                 textDecoration: "none",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                gap: 1.5,
+                transition: "transform 0.25s ease",
                 "&:hover": {
-                  transform: "scale(1.05)",
-                  filter: "drop-shadow(0 0 8px rgba(93, 253, 203, 0.6))",
-                  "& img": {
-                    filter: "brightness(1.2)",
-                  },
+                  transform: "scale(1.02)",
                 },
               }}
             >
@@ -185,93 +239,126 @@ const Navbar = () => {
                 src="/maalgudi.png"
                 alt="Maalgudi Technolabs"
                 sx={{
-                  height: { xs: "14px", sm: "28px", md: "35px", xl: "40px" },
-                  width: { xs: "14px", sm: "28px", md: "35px", xl: "40px" },
-                  transition: "all 0.3s ease",
+                  height: { xs: 34, sm: 38, md: 42 },
+                  width: { xs: 34, sm: 38, md: 42 },
+                  filter: "drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3))",
                 }}
               />
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  ml: { xs: 0.5, sm: 1.5, md: 2 },
-                  fontSize: { xs: "0.7rem", sm: "1.05rem", md: "1.2rem", xl: "1.4rem" },
-                  transition: "all 0.3s ease",
-                  display: { xs: "none", sm: "block" },
-                }}
-              >
-                Maalgudi Technolabs
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  ml: 0.5,
-                  fontSize: "0.7rem",
-                  transition: "all 0.3s ease",
-                  display: { xs: "block", sm: "none" },
-                }}
-              >
-                Maalgudi Technolabs
-              </Typography>
-            </Box>
-
-            {/* Desktop Menu */}
-            {!isMobile && (
-              <Stack direction="row" spacing={0} alignItems="center">
-                {menuItems.map((item) => (
-                  <Button
-                    key={item.name}
-                    component={Link}
-                    to={item.path}
+              <Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 800,
+                    color: "#FFFFFF",
+                    fontSize: { xs: "1.05rem", sm: "1.2rem", md: "1.3rem" },
+                    lineHeight: 1.1,
+                    letterSpacing: "-0.015em",
+                  }}
+                >
+                  Maalgudi{" "}
+                  <Box
+                    component="span"
                     sx={{
-                      color: isActive(item.path) ? "#FF8C00" : "#FFFFFF",
-                      fontWeight: isActive(item.path) ? 600 : 400,
-                      px: 3,
-                      py: 2,
-                      borderRadius: 0,
-                      textTransform: "none",
-                      fontSize: { xs: "1rem", xl: "1.1rem" },
-                      position: "relative",
-                      "&:hover": {
-                        color: "#FF8C00",
-                        backgroundColor: "rgba(255, 140, 0, 0.1)",
-                      },
-                      "&::after": isActive(item.path)
-                        ? {
-                          content: '""',
-                          position: "absolute",
-                          bottom: 0,
-                          left: "50%",
-                          transform: "translateX(-50%)",
-                          width: "60%",
-                          height: "3px",
-                          background:
-                            "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
-                        }
-                        : {},
+                      background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
                     }}
                   >
-                    {item.name}
-                  </Button>
-                ))}
+                    Technolabs
+                  </Box>
+                </Typography>
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "#94A3B8",
+                    fontSize: "0.68rem",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    display: { xs: "none", sm: "block" },
+                    lineHeight: 1,
+                  }}
+                >
+                  Innovate • Educate • Elevate
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* Desktop Navigation Links + CTA */}
+            {!isMobile && (
+              <Stack direction="row" spacing={1} alignItems="center">
+                {menuItems.map((item) => {
+                  const active = isActive(item.path);
+                  return (
+                    <Button
+                      key={item.name}
+                      component={Link}
+                      to={item.path}
+                      sx={{
+                        color: active ? "#FF8C00" : "#E2E8F0",
+                        fontWeight: active ? 700 : 500,
+                        px: 2.2,
+                        py: 0.9,
+                        borderRadius: "8px",
+                        fontSize: "0.95rem",
+                        backgroundColor: active
+                          ? "rgba(255, 140, 0, 0.1)"
+                          : "transparent",
+                        border: active
+                          ? "1px solid rgba(255, 140, 0, 0.3)"
+                          : "1px solid transparent",
+                        transition: "all 0.25s ease",
+                        "&:hover": {
+                          color: "#FF8C00",
+                          backgroundColor: "rgba(255, 140, 0, 0.08)",
+                          borderColor: "rgba(255, 140, 0, 0.2)",
+                        },
+                      }}
+                    >
+                      {item.name}
+                    </Button>
+                  );
+                })}
+
+                <Button
+                  component={Link}
+                  to="/contact"
+                  variant="contained"
+                  sx={{
+                    ml: 1.5,
+                    px: 2.5,
+                    py: 0.9,
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    borderRadius: "8px",
+                    background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                    boxShadow: "0 4px 15px rgba(255, 140, 0, 0.3)",
+                    "&:hover": {
+                      background: "linear-gradient(135deg, #1D4ED8 0%, #EA580C 100%)",
+                      boxShadow: "0 6px 20px rgba(255, 140, 0, 0.5)",
+                      transform: "translateY(-1px)",
+                    },
+                  }}
+                >
+                  Get Started
+                </Button>
               </Stack>
             )}
 
             {/* Mobile Menu Button */}
             {isMobile && (
               <IconButton
-                color="inherit"
                 aria-label="open drawer"
-                edge="start"
+                edge="end"
                 onClick={handleDrawerToggle}
                 sx={{
-                  color: "#e0e0e0",
-                  backgroundColor: "transparent",
+                  color: "#F8FAFC",
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "10px",
+                  p: 1,
                   "&:hover": {
                     backgroundColor: "rgba(255, 140, 0, 0.15)",
+                    borderColor: "rgba(255, 140, 0, 0.4)",
                     color: "#FF8C00",
                   },
                 }}
@@ -296,9 +383,10 @@ const Navbar = () => {
           display: { xs: "block", md: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            width: { xs: "85vw", sm: 280 },
-            maxWidth: 300,
-            backgroundColor: "#fff",
+            width: { xs: "85vw", sm: 320 },
+            maxWidth: 340,
+            backgroundColor: "#0B0E17",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.08)",
           },
         }}
       >
@@ -306,7 +394,7 @@ const Navbar = () => {
       </Drawer>
 
       {/* Spacer for fixed navbar */}
-      <Toolbar />
+      <Toolbar sx={{ minHeight: { xs: "64px", md: "72px" } }} />
     </>
   );
 };

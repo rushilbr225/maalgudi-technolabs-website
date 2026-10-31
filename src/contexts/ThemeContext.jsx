@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
@@ -14,8 +14,8 @@ export const useTheme = () => {
   return context;
 };
 
-// Dark theme configuration
-const getTheme = () =>
+// Theme configuration
+const createAppTheme = (mode = "dark") =>
   createTheme({
     breakpoints: {
       values: {
@@ -27,122 +27,135 @@ const getTheme = () =>
       },
     },
     typography: {
-      fontFamily: '"Rubik", "Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       fontSize: 14,
       htmlFontSize: 16,
       h1: {
-        fontSize: "2.5rem",
-        fontWeight: 700,
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "2.75rem",
+        fontWeight: 800,
+        lineHeight: 1.15,
+        letterSpacing: "-0.02em",
+        "@media (min-width:960px)": {
+          fontSize: "3.75rem",
+        },
+        "@media (min-width:1920px)": {
+          fontSize: "4.5rem",
+        },
+      },
+      h2: {
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "2.25rem",
+        fontWeight: 800,
         lineHeight: 1.2,
+        letterSpacing: "-0.015em",
+        "@media (min-width:960px)": {
+          fontSize: "2.75rem",
+        },
         "@media (min-width:1920px)": {
           fontSize: "3.5rem",
         },
       },
-      h2: {
-        fontSize: "2.2rem",
-        fontWeight: 600,
-        lineHeight: 1.2,
-        "@media (min-width:1920px)": {
-          fontSize: "3rem",
-        },
-      },
       h3: {
-        fontSize: "1.8rem",
-        fontWeight: 600,
-        lineHeight: 1.3,
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "1.75rem",
+        fontWeight: 700,
+        lineHeight: 1.25,
+        letterSpacing: "-0.01em",
+        "@media (min-width:960px)": {
+          fontSize: "2.2rem",
+        },
         "@media (min-width:1920px)": {
-          fontSize: "2.4rem",
+          fontSize: "2.6rem",
         },
       },
       h4: {
-        fontSize: "1.5rem",
-        fontWeight: 500,
-        lineHeight: 1.4,
-        "@media (min-width:1920px)": {
-          fontSize: "2rem",
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "1.4rem",
+        fontWeight: 700,
+        lineHeight: 1.35,
+        "@media (min-width:960px)": {
+          fontSize: "1.75rem",
         },
       },
       h5: {
-        fontSize: "1.25rem",
-        fontWeight: 500,
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "1.2rem",
+        fontWeight: 600,
         lineHeight: 1.4,
-        "@media (min-width:1920px)": {
-          fontSize: "1.6rem",
-        },
       },
       h6: {
-        fontSize: "1.1rem",
-        fontWeight: 500,
-        lineHeight: 1.4,
-        "@media (min-width:1920px)": {
-          fontSize: "1.4rem",
-        },
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontSize: "1.05rem",
+        fontWeight: 600,
+        lineHeight: 1.45,
       },
       body1: {
         fontSize: "1rem",
-        lineHeight: 1.8,
-        "@media (min-width:1920px)": {
-          fontSize: "1.2rem",
-        },
+        lineHeight: 1.75,
+        color: mode === "dark" ? "#CBD5E1" : "#334155",
       },
       body2: {
-        fontSize: "0.875rem",
-        lineHeight: 1.7,
-        "@media (min-width:1920px)": {
-          fontSize: "1rem",
-        },
+        fontSize: "0.925rem",
+        lineHeight: 1.65,
+        color: mode === "dark" ? "#94A3B8" : "#64748B",
+      },
+      button: {
+        fontFamily: '"Plus Jakarta Sans", "Inter", sans-serif',
+        fontWeight: 600,
+        letterSpacing: "0.01em",
       },
     },
     palette: {
       mode: "dark",
       primary: {
-        main: "#ff9800", // Orange
-        light: "#ffb74d",
-        dark: "#f57c00",
-        contrastText: "#F4FAFF",
+        main: "#2563EB", // Royal Blue
+        light: "#60A5FA",
+        dark: "#1D4ED8",
+        contrastText: "#FFFFFF",
       },
       secondary: {
-        main: "#ffa726", // Amber
-        light: "#ffb74d",
-        dark: "#f57c00",
-        contrastText: "#F4FAFF",
+        main: "#FF8C00", // Dark Orange / Brand Amber
+        light: "#FFA500",
+        dark: "#EA580C",
+        contrastText: "#FFFFFF",
       },
       background: {
-        default: "#0a0b0c",
-        paper: "#1a1b1c",
+        default: "#08090A",
+        paper: "#11141C",
       },
       text: {
-        primary: "#F4FAFF",
-        secondary: "#b0b3b8",
+        primary: "#F8FAFC",
+        secondary: "#94A3B8",
       },
       accent: {
-        main: "#ff9800", // Orange accent
-        light: "#ffb74d",
-        dark: "#3ffcc1",
+        main: "#FF8C00",
+        light: "#FFA500",
+        dark: "#EA580C",
       },
       dark: {
-        main: "#F4FAFF",
-        light: "#ffffff",
-        dark: "#e0e0e0",
+        main: "#F8FAFC",
+        light: "#FFFFFF",
+        dark: "#CBD5E1",
         contrastText: "#08090A",
       },
-      // Custom colors for dark mode
       surface: {
-        main: "#242526",
-        light: "#3a3b3c",
-        dark: "#18191a",
+        main: "#161B26",
+        light: "#1E2536",
+        dark: "#0F131C",
       },
     },
     shape: {
-      borderRadius: 0,
+      borderRadius: 12,
     },
     components: {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            backgroundColor: "#0a0b0c",
-            color: "#F4FAFF",
+            backgroundColor: "#08090A",
+            color: "#F8FAFC",
             transition: "background-color 0.3s ease, color 0.3s ease",
+            overflowX: "hidden",
           },
         },
       },
@@ -150,60 +163,31 @@ const getTheme = () =>
         styleOverrides: {
           root: {
             textTransform: "none",
-            fontWeight: 500,
-            borderRadius: 0,
-            padding: "12px 30px",
-            fontSize: "1rem",
-            position: "relative",
-            overflow: "hidden",
-            transition: "all 0.3s ease",
-            "@media (min-width:1920px)": {
-              padding: "16px 40px",
-              fontSize: "1.2rem",
-            },
+            fontWeight: 600,
+            borderRadius: 10,
+            padding: "10px 24px",
+            fontSize: "0.95rem",
+            transition: "all 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
           },
           contained: {
-            background: "linear-gradient(45deg, #2563EB 0%, #FF8C00 100%)",
-            color: "#F4FAFF",
-            boxShadow: "0 4px 15px rgba(37, 99, 235, 0.3)",
+            background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+            color: "#FFFFFF",
+            boxShadow: "0 4px 14px rgba(37, 99, 235, 0.35)",
             "&:hover": {
-              background: "linear-gradient(45deg, #1E40AF 0%, #FF6500 100%)",
+              background: "linear-gradient(135deg, #1D4ED8 0%, #EA580C 100%)",
               transform: "translateY(-2px)",
-              boxShadow: "0 6px 20px rgba(255, 140, 0, 0.4)",
+              boxShadow: "0 6px 20px rgba(255, 140, 0, 0.45)",
             },
           },
           outlined: {
-            border: "2px solid #2563EB",
-            color: "#2563EB",
+            border: "1.5px solid rgba(255, 255, 255, 0.2)",
+            color: "#F8FAFC",
+            backdropFilter: "blur(8px)",
             "&:hover": {
-              background: "#2563EB",
-              color: "#F4FAFF",
+              border: "1.5px solid #FF8C00",
+              background: "rgba(255, 140, 0, 0.08)",
+              color: "#FF8C00",
               transform: "translateY(-2px)",
-            },
-          },
-        },
-      },
-      MuiContainer: {
-        styleOverrides: {
-          root: {
-            "&.MuiContainer-maxWidthLg": {
-              maxWidth: "1200px",
-            },
-            "&.MuiContainer-maxWidthXl": {
-              maxWidth: "1536px",
-            },
-            "@media (min-width:1920px)": {
-              "&.MuiContainer-maxWidthLg": {
-                maxWidth: "1600px",
-              },
-              "&.MuiContainer-maxWidthXl": {
-                maxWidth: "1800px",
-              },
-            },
-            // Full width containers
-            "&.MuiContainer-maxWidthFalse": {
-              maxWidth: "none",
-              width: "100%",
             },
           },
         },
@@ -211,13 +195,15 @@ const getTheme = () =>
       MuiCard: {
         styleOverrides: {
           root: {
-            borderRadius: 0,
-            backgroundColor: "#1a1b1c",
-            boxShadow: "0 2px 10px rgba(255,255,255,0.05)",
-            transition: "all 0.3s ease",
+            borderRadius: 16,
+            backgroundColor: "#11141C",
+            border: "1px solid rgba(255, 255, 255, 0.07)",
+            boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             "&:hover": {
-              transform: "translateY(-5px)",
-              boxShadow: "0 8px 25px rgba(255,255,255,0.1)",
+              transform: "translateY(-4px)",
+              borderColor: "rgba(255, 140, 0, 0.4)",
+              boxShadow: "0 20px 40px -15px rgba(255, 140, 0, 0.25)",
             },
           },
         },
@@ -225,17 +211,19 @@ const getTheme = () =>
       MuiAppBar: {
         styleOverrides: {
           root: {
-            backgroundColor: "#08090A",
-            color: "#F4FAFF",
-            boxShadow: "0 2px 10px rgba(8, 9, 10, 0.3)",
+            backgroundColor: "rgba(8, 9, 10, 0.85)",
+            backdropFilter: "blur(16px)",
+            color: "#F8FAFC",
+            boxShadow: "none",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           },
         },
       },
       MuiPaper: {
         styleOverrides: {
           root: {
-            backgroundColor: "#1a1b1c",
-            transition: "background-color 0.3s ease",
+            backgroundColor: "#11141C",
+            backgroundImage: "none",
           },
         },
       },
@@ -243,21 +231,24 @@ const getTheme = () =>
         styleOverrides: {
           root: {
             "& .MuiOutlinedInput-root": {
-              backgroundColor: "#242526",
+              backgroundColor: "rgba(255, 255, 255, 0.03)",
+              borderRadius: 10,
               "& fieldset": {
-                borderColor: "#3a3b3c",
+                borderColor: "rgba(255, 255, 255, 0.12)",
+                transition: "border-color 0.2s ease",
               },
               "&:hover fieldset": {
-                borderColor: "#2563EB",
+                borderColor: "rgba(37, 99, 235, 0.5)",
               },
               "&.Mui-focused fieldset": {
-                borderColor: "#2563EB",
+                borderColor: "#FF8C00",
+                borderWidth: "1.5px",
               },
             },
             "& .MuiInputLabel-root": {
-              color: "#b0b3b8",
+              color: "#94A3B8",
               "&.Mui-focused": {
-                color: "#2563EB",
+                color: "#FF8C00",
               },
             },
           },
@@ -268,13 +259,12 @@ const getTheme = () =>
 
 // Theme Context Provider Component
 export const ThemeContextProvider = ({ children }) => {
-  const theme = getTheme();
+  const theme = createAppTheme("dark");
 
-  // Apply dark theme to document body
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.backgroundColor = "#08090A";
-    document.body.style.color = "#F4FAFF";
-    document.documentElement.setAttribute('data-theme', 'dark');
+    document.body.style.color = "#F8FAFC";
+    document.documentElement.setAttribute("data-theme", "dark");
   }, []);
 
   const value = {

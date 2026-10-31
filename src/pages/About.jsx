@@ -4,121 +4,127 @@ import {
   Typography,
   Box,
   Grid,
-  Card,
-  CardContent,
-  Avatar,
-  Chip,
-  LinearProgress,
-  Paper,
+  Button,
+  Stack,
 } from "@mui/material";
 import {
   School,
   TrendingUp,
-  Groups,
-  EmojiEvents,
-  Psychology,
-  Engineering,
-  Code,
   Business,
-  LinkedIn,
-  Email,
-  Phone,
+  Code,
+  ArrowForward,
+  Visibility,
+  Flag,
 } from "@mui/icons-material";
-import { useTheme } from "../contexts/ThemeContext";
+import { Link } from "react-router-dom";
 
 const About = () => {
-  const { mode } = useTheme();
-
   const values = [
     {
+      step: "01",
       title: "Plan",
       description:
         "Deciding in advance what to do, how to do it, when to do it, and by whom it is to be done.",
-      icon: <School />,
+      icon: <School sx={{ fontSize: 28 }} />,
     },
     {
+      step: "02",
       title: "Schedule",
       description:
         "Maintaining a timetable to achieve planned activities and inform all involved parties in advance.",
-      icon: <Code />,
+      icon: <Code sx={{ fontSize: 28 }} />,
     },
     {
+      step: "03",
       title: "Commit",
       description:
         "Committing to promises, including agreed activities, meeting participation, and deadlines.",
-      icon: <TrendingUp />,
+      icon: <TrendingUp sx={{ fontSize: 28 }} />,
     },
     {
+      step: "04",
       title: "Follow Up",
       description:
         "Following up on all committed activities, with frequencies and timings established during the commitment phase.",
-      icon: <Business />,
+      icon: <Business sx={{ fontSize: 28 }} />,
     },
   ];
 
   const skills = [
-    { name: "Technology Training", progress: 95 },
-    { name: "Leadership Development", progress: 90 },
-    { name: "Corporate Consulting", progress: 88 },
-    { name: "Digital Transformation", progress: 92 },
-    { name: "Project Management", progress: 85 },
+    {
+      name: "Technology Training",
+      progress: 95,
+      description: "Specialized programs delivering cutting-edge technical competencies",
+    },
+    {
+      name: "Leadership Development",
+      progress: 90,
+      description: "Strategic executive coaching and advanced team leadership capabilities",
+    },
+    {
+      name: "Corporate Consulting",
+      progress: 88,
+      description: "Expert guidance for seamless technology integration and optimization",
+    },
+    {
+      name: "Digital Transformation",
+      progress: 92,
+      description: "Comprehensive modernization strategies and implementation excellence",
+    },
+    {
+      name: "Project Management",
+      progress: 85,
+      description: "Advanced methodologies for successful project execution and delivery",
+    },
   ];
 
   return (
-    <Box>
+    <Box sx={{ width: "100%", overflow: "hidden" }}>
       {/* Hero Section */}
       <Box
         sx={{
           position: "relative",
           background:
-            'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
+            'linear-gradient(180deg, rgba(8, 9, 10, 0.78) 0%, rgba(8, 9, 10, 0.92) 100%), radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.2) 0%, transparent 60%), url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          color: "white",
-          py: { xs: 12, md: 18 },
+          py: { xs: 10, md: 16 },
           textAlign: "center",
           overflow: "hidden",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              "radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%)",
-            pointerEvents: "none",
-          },
         }}
       >
-        <Container
-          maxWidth={false}
-          sx={{
-            px: { xs: 3, sm: 4, md: 6, lg: 8 },
-            position: "relative",
-            zIndex: 1,
-          }}
-        >
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
           <Box
             sx={{
-              display: "inline-block",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1,
               mb: 3,
-              px: 3,
-              py: 1,
-              backgroundColor: "rgba(255, 140, 0, 0.2)",
+              px: 2.2,
+              py: 0.8,
+              backgroundColor: "rgba(255, 140, 0, 0.12)",
               backdropFilter: "blur(10px)",
-              borderRadius: 50,
-              border: "1px solid rgba(255, 140, 0, 0.3)",
+              borderRadius: "50px",
+              border: "1px solid rgba(255, 140, 0, 0.35)",
             }}
           >
+            <Box
+              sx={{
+                width: 7,
+                height: 7,
+                borderRadius: "50%",
+                backgroundColor: "#FF8C00",
+                boxShadow: "0 0 10px #FF8C00",
+              }}
+            />
             <Typography
               variant="overline"
               sx={{
-                color: "#FF8C00",
+                color: "#FFA500",
                 fontWeight: 700,
-                letterSpacing: 2,
-                fontSize: "0.9rem",
+                letterSpacing: "0.15em",
+                fontSize: "0.82rem",
+                textTransform: "uppercase",
               }}
             >
               About Us
@@ -129,41 +135,40 @@ const About = () => {
             variant="h1"
             sx={{
               fontWeight: 800,
-              mb: 3,
-              fontSize: { xs: "2.5rem", md: "4.5rem", xl: "5.5rem" },
-              textShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
-              lineHeight: 1.2,
-              color: "#F4FAFF",
+              mb: { xs: 2, md: 3 },
+              fontSize: { xs: "1.95rem", sm: "3rem", md: "4.5rem" },
+              lineHeight: 1.15,
+              color: "#F8FAFC",
+              letterSpacing: "-0.02em",
+              px: { xs: 1, sm: 0 },
             }}
           >
             Welcome to{" "}
             <Box
               component="span"
               sx={{
-                color: "#FF8C00",
-                display: "block",
-                mt: 1,
+                background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
               Maalgudi Technolabs
             </Box>
           </Typography>
+
           <Typography
-            variant="h5"
+            variant="body1"
             sx={{
-              maxWidth: "900px",
+              maxWidth: "850px",
               mx: "auto",
-              opacity: 0.95,
-              lineHeight: 1.8,
-              fontSize: { xs: "1.1rem", md: "1.4rem", xl: "1.6rem" },
-              fontWeight: 400,
-              textShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
-              color: "#F4FAFF",
+              color: "#CBD5E1",
+              lineHeight: { xs: 1.65, md: 1.8 },
+              fontSize: { xs: "0.95rem", sm: "1.15rem", md: "1.25rem" },
+              px: { xs: 1, sm: 0 },
             }}
           >
             Pioneering excellence in technology education through comprehensive
-            training solutions and strategic professional development
-            initiatives.
+            training solutions and strategic professional development initiatives.
           </Typography>
         </Container>
       </Box>
@@ -171,211 +176,282 @@ const About = () => {
       {/* Mission & Vision Section */}
       <Box
         sx={{
-          py: { xs: 8, md: 12 },
-          backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
+          py: { xs: 10, md: 14 },
+          backgroundColor: "#08090A",
           position: "relative",
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Grid container spacing={8} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  position: "relative",
-                  pl: { md: 4 },
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                    width: 4,
-                    background:
-                      "linear-gradient(180deg, #2563EB 0%, #FF8C00 100%)",
-                    borderRadius: 2,
-                    display: { xs: "none", md: "block" },
-                  },
-                }}
-              >
-                <Box sx={{ mb: 6 }}>
-                  <Box
-                    sx={{
-                      display: "inline-block",
-                      mb: 2,
-                      px: 2,
-                      py: 0.5,
-                      backgroundColor:
-                        mode === "dark"
-                          ? "rgba(37, 99, 235, 0.2)"
-                          : "rgba(37, 99, 235, 0.1)",
-                      borderRadius: 2,
-                    }}
-                  >
-                    <Typography
-                      variant="overline"
-                      sx={{
-                        color: "#2563EB",
-                        fontWeight: 700,
-                        letterSpacing: 1.5,
-                      }}
-                    >
-                      Our Purpose
-                    </Typography>
-                  </Box>
-                  <Typography
-                    variant="h2"
-                    sx={{
-                      fontWeight: 800,
-                      color: mode === "dark" ? "#FFFFFF" : "#000000",
-                      mb: 3,
-                      fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Our{" "}
-                    <Box component="span" sx={{ color: "#FF8C00" }}>
-                      Mission
-                    </Box>
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
-                      lineHeight: 1.8,
-                      fontSize: { xs: "1rem", md: "1.2rem" },
-                      fontWeight: 400,
-                    }}
-                  >
-                    Empowering professionals through comprehensive development
-                    in personality, leadership, technical expertise, financial
-                    acumen, and collaborative excellence for sustained career
-                    success.
-                  </Typography>
-                </Box>
-
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+              gap: { xs: 3, md: 4 },
+              alignItems: "stretch",
+            }}
+          >
+            {/* Mission Card */}
+            <Box
+              sx={{
+                height: "100%",
+                p: { xs: 4, sm: 5 },
+                background: "rgba(17, 20, 28, 0.8)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(37, 99, 235, 0.25)",
+                borderRadius: "20px",
+                boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.35s ease",
+                display: "flex",
+                flexDirection: "column",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  background: "linear-gradient(90deg, #2563EB, #60A5FA)",
+                },
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                  borderColor: "rgba(37, 99, 235, 0.5)",
+                  boxShadow: "0 20px 40px -15px rgba(37, 99, 235, 0.3)",
+                },
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2.5 }}>
                 <Box
                   sx={{
-                    p: 4,
-                    backgroundColor:
-                      mode === "dark"
-                        ? "rgba(37, 99, 235, 0.1)"
-                        : "rgba(37, 99, 235, 0.1)",
-                    borderRadius: 3,
-                    border: `1px solid ${
-                      mode === "dark"
-                        ? "rgba(37, 99, 235, 0.3)"
-                        : "rgba(37, 99, 235, 0.3)"
-                    }`,
+                    width: 50,
+                    height: 50,
+                    borderRadius: "12px",
+                    backgroundColor: "rgba(37, 99, 235, 0.15)",
+                    border: "1px solid rgba(37, 99, 235, 0.3)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#3B82F6",
+                  }}
+                >
+                  <Flag sx={{ fontSize: 26 }} />
+                </Box>
+                <Box
+                  sx={{
+                    px: 2,
+                    py: 0.5,
+                    borderRadius: "20px",
+                    backgroundColor: "rgba(37, 99, 235, 0.15)",
                   }}
                 >
                   <Typography
-                    variant="h4"
-                    sx={{
-                      fontWeight: 700,
-                      color: "#2563EB",
-                      mb: 2,
-                      fontSize: { xs: "1.5rem", md: "2rem" },
-                    }}
+                    variant="overline"
+                    sx={{ color: "#60A5FA", fontWeight: 700, letterSpacing: "0.1em" }}
                   >
-                    Our Vision
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: mode === "dark" ? "#B0B3B8" : "#666",
-                      lineHeight: 1.8,
-                      fontSize: { xs: "1rem", md: "1.1rem" },
-                    }}
-                  >
-                    Establishing global leadership in technology education
-                    through innovation-driven programs that cultivate
-                    exceptional professionals and drive technological
-                    advancement.
+                    Our Purpose
                   </Typography>
                 </Box>
               </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
+
+              <Typography
+                variant="h3"
                 sx={{
-                  position: "relative",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: -20,
-                    right: -20,
-                    width: 200,
-                    height: 200,
-                    background:
-                      mode === "dark"
-                        ? "linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%)"
-                        : "linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%)",
-                    borderRadius: "50%",
-                    zIndex: 0,
-                  },
+                  fontWeight: 800,
+                  color: "#F8FAFC",
+                  mb: 2.5,
+                  fontSize: { xs: "1.8rem", sm: "2.3rem" },
                 }}
-              ></Box>
-            </Grid>
-          </Grid>
+              >
+                Our{" "}
+                <Box
+                  component="span"
+                  sx={{
+                    background: "linear-gradient(135deg, #2563EB 0%, #60A5FA 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Mission
+                </Box>
+              </Typography>
+
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#94A3B8",
+                  lineHeight: 1.8,
+                  fontSize: "1.05rem",
+                  flex: 1,
+                }}
+              >
+                Empowering professionals through comprehensive development in
+                personality, leadership, technical expertise, financial acumen,
+                and collaborative excellence for sustained career success.
+              </Typography>
+            </Box>
+
+            {/* Vision Card */}
+            <Box
+              sx={{
+                height: "100%",
+                p: { xs: 4, sm: 5 },
+                background: "rgba(17, 20, 28, 0.8)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(255, 140, 0, 0.25)",
+                borderRadius: "20px",
+                boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.35s ease",
+                display: "flex",
+                flexDirection: "column",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  background: "linear-gradient(90deg, #FF8C00, #FFA500)",
+                },
+                "&:hover": {
+                  transform: "translateY(-6px)",
+                  borderColor: "rgba(255, 140, 0, 0.5)",
+                  boxShadow: "0 20px 40px -15px rgba(255, 140, 0, 0.3)",
+                },
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2.5 }}>
+                <Box
+                  sx={{
+                    width: 50,
+                    height: 50,
+                    borderRadius: "12px",
+                    backgroundColor: "rgba(255, 140, 0, 0.15)",
+                    border: "1px solid rgba(255, 140, 0, 0.3)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#FFA500",
+                  }}
+                >
+                  <Visibility sx={{ fontSize: 26 }} />
+                </Box>
+                <Box
+                  sx={{
+                    px: 2,
+                    py: 0.5,
+                    borderRadius: "20px",
+                    backgroundColor: "rgba(255, 140, 0, 0.15)",
+                  }}
+                >
+                  <Typography
+                    variant="overline"
+                    sx={{ color: "#FFA500", fontWeight: 700, letterSpacing: "0.1em" }}
+                  >
+                    Our Direction
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  color: "#F8FAFC",
+                  mb: 2.5,
+                  fontSize: { xs: "1.8rem", sm: "2.3rem" },
+                }}
+              >
+                Our{" "}
+                <Box
+                  component="span"
+                  sx={{
+                    background: "linear-gradient(135deg, #FF8C00 0%, #FFA500 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Vision
+                </Box>
+              </Typography>
+
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#94A3B8",
+                  lineHeight: 1.8,
+                  fontSize: "1.05rem",
+                  flex: 1,
+                }}
+              >
+                Establishing global leadership in technology education through
+                innovation-driven programs that cultivate exceptional
+                professionals and drive technological advancement.
+              </Typography>
+            </Box>
+          </Box>
         </Container>
       </Box>
 
       {/* Values Section */}
       <Box
         sx={{
-          py: { xs: 6, md: 8 },
-          backgroundColor: mode === "dark" ? "#0A0A0A" : "#F8F9FA",
+          py: { xs: 10, md: 14 },
+          backgroundColor: "#0B0E17",
           position: "relative",
+          backgroundImage: "radial-gradient(ellipse at 50% 0%, rgba(255, 140, 0, 0.08), transparent 70%)",
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Box sx={{ textAlign: "center", mb: 10 }}>
-            <Box
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
+            <Typography
+              variant="overline"
               sx={{
-                display: "inline-block",
-                mb: 2,
-                px: 2,
-                py: 0.5,
-                backgroundColor:
-                  mode === "dark"
-                    ? "rgba(37, 99, 235, 0.2)"
-                    : "rgba(37, 99, 235, 0.1)",
-                borderRadius: 2,
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
               }}
             >
-              <Typography
-                variant="overline"
-                sx={{
-                  color: "#2563EB",
-                  fontWeight: 700,
-                  letterSpacing: 1.5,
-                }}
-              >
-                What We Stand For
-              </Typography>
-            </Box>
+              WHAT WE STAND FOR
+            </Typography>
             <Typography
               variant="h2"
+              component="h2"
               sx={{
                 fontWeight: 800,
-                color: mode === "dark" ? "#FFFFFF" : "#000000",
-                mb: 3,
-                fontSize: { xs: "2rem", md: "3rem", xl: "4rem" },
+                color: "#F8FAFC",
+                mb: 2,
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
               }}
             >
               Our Core{" "}
-              <Box component="span" sx={{ color: "#FF8C00" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Values
               </Box>
             </Typography>
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{
-                color: mode === "dark" ? "#B0B3B8" : "#666",
-                maxWidth: "700px",
+                color: "#94A3B8",
+                maxWidth: "680px",
                 mx: "auto",
                 lineHeight: 1.7,
-                fontSize: { xs: "1rem", md: "1.15rem" },
+                fontSize: { xs: "1rem", md: "1.1rem" },
               }}
             >
               Foundational principles driving our commitment to educational
@@ -392,87 +468,99 @@ const About = () => {
                 md: "repeat(4, 1fr)",
               },
               gap: 3,
-              maxWidth: "1600px",
-              margin: "0 auto",
-              px: { xs: 2, md: 0 },
             }}
           >
             {values.map((value, index) => (
               <Box
                 key={index}
                 sx={{
-                  minHeight: 280,
-                  background:
-                    mode === "dark"
-                      ? "rgba(10, 10, 10, 0.95)"
-                      : "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: "blur(15px)",
-                  WebkitBackdropFilter: "blur(15px)",
-                  border: `1px solid ${
-                    mode === "dark"
-                      ? "rgba(37, 99, 235, 0.3)"
-                      : "rgba(37, 99, 235, 0.2)"
-                  }`,
-                  borderRadius: 3,
-                  padding: 3,
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  minHeight: 260,
+                  background: "rgba(17, 20, 28, 0.8)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  borderRadius: "16px",
+                  p: { xs: 3, sm: 3.5 },
+                  transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
                   position: "relative",
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
-                  boxShadow:
-                    mode === "dark"
-                      ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                      : "0 4px 20px rgba(37, 99, 235, 0.15)",
+                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    background: "linear-gradient(90deg, #2563EB, #FF8C00)",
+                    opacity: 0,
+                    transition: "opacity 0.35s ease",
+                  },
                   "&:hover": {
-                    transform: "translateY(-8px) scale(1.02)",
-                    borderColor:
-                      mode === "dark"
-                        ? "rgba(255, 140, 0, 0.6)"
-                        : "rgba(255, 140, 0, 0.4)",
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                        : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                    background:
-                      mode === "dark"
-                        ? "rgba(10, 10, 10, 1)"
-                        : "rgba(255, 255, 255, 1)",
+                    transform: "translateY(-8px)",
+                    borderColor: "rgba(255, 140, 0, 0.4)",
+                    boxShadow: "0 20px 45px -15px rgba(255, 140, 0, 0.25)",
+                    background: "rgba(22, 27, 38, 0.95)",
+                    "&::before": {
+                      opacity: 1,
+                    },
+                    "& .value-icon": {
+                      transform: "scale(1.1)",
+                      color: "#FF8C00",
+                      borderColor: "rgba(255, 140, 0, 0.4)",
+                      backgroundColor: "rgba(255, 140, 0, 0.12)",
+                    },
                   },
                 }}
               >
+                {/* Header with Icon + Step */}
                 <Box
                   sx={{
                     display: "flex",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                     alignItems: "center",
-                    mb: 2,
+                    mb: 3,
                   }}
                 >
                   <Box
+                    className="value-icon"
                     sx={{
-                      fontSize: "3rem",
-                      color: "#FF8C00",
-                      transition: "all 0.3s ease",
+                      width: 52,
+                      height: 52,
+                      borderRadius: "12px",
+                      backgroundColor: "rgba(37, 99, 235, 0.12)",
+                      border: "1px solid rgba(37, 99, 235, 0.25)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#3B82F6",
+                      transition: "all 0.35s ease",
                     }}
                   >
                     {value.icon}
                   </Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: "1.1rem",
+                      color: "rgba(255, 255, 255, 0.2)",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {value.step}
+                  </Typography>
                 </Box>
 
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   sx={{
                     fontWeight: 700,
-                    color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                    fontSize: "1.2rem",
-                    minHeight: "2.4em",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    mb: 2,
-                    lineHeight: 1.3,
+                    color: "#F8FAFC",
+                    fontSize: "1.25rem",
+                    mb: 1.5,
                   }}
                 >
                   {value.title}
@@ -481,14 +569,10 @@ const About = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: mode === "dark" ? "#B0B3B8" : "#666",
+                    color: "#94A3B8",
                     lineHeight: 1.7,
-                    textAlign: "center",
-                    fontSize: "0.95rem",
+                    fontSize: "0.92rem",
                     flex: 1,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                   }}
                 >
                   {value.description}
@@ -499,62 +583,60 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* Skills/Expertise Section - Grid Layout */}
+      {/* Skills/Expertise Section */}
       <Box
         sx={{
-          py: { xs: 8, md: 12 },
-          backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
+          py: { xs: 10, md: 14 },
+          backgroundColor: "#08090A",
           position: "relative",
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Box sx={{ textAlign: "center", mb: 10 }}>
-            <Box
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
+            <Typography
+              variant="overline"
               sx={{
-                display: "inline-block",
-                mb: 2,
-                px: 2,
-                py: 0.5,
-                backgroundColor:
-                  mode === "dark"
-                    ? "rgba(37, 99, 235, 0.2)"
-                    : "rgba(37, 99, 235, 0.1)",
-                borderRadius: 2,
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
               }}
             >
-              <Typography
-                variant="overline"
-                sx={{
-                  color: "#2563EB",
-                  fontWeight: 700,
-                  letterSpacing: 1.5,
-                }}
-              >
-                Our Capabilities
-              </Typography>
-            </Box>
+              OUR CAPABILITIES
+            </Typography>
             <Typography
               variant="h2"
+              component="h2"
               sx={{
                 fontWeight: 800,
-                color: mode === "dark" ? "#FFFFFF" : "#000000",
-                mb: 3,
-                fontSize: { xs: "2rem", md: "3rem" },
+                color: "#F8FAFC",
+                mb: 2,
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
               }}
             >
               Areas of{" "}
-              <Box component="span" sx={{ color: "#FF8C00" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Expertise
               </Box>
             </Typography>
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{
-                color: mode === "dark" ? "#B0B3B8" : "#666",
-                maxWidth: "700px",
+                color: "#94A3B8",
+                maxWidth: "680px",
                 mx: "auto",
                 lineHeight: 1.7,
-                fontSize: { xs: "1rem", md: "1.15rem" },
+                fontSize: { xs: "1rem", md: "1.1rem" },
               }}
             >
               Proven capabilities across diverse technology domains developed
@@ -567,6 +649,7 @@ const About = () => {
               <Box key={index} className="about-expertise-item">
                 <Box className="expertise-skill-name">
                   <span>{skill.name}</span>
+                  <span className="expertise-progress">{skill.progress}%</span>
                 </Box>
                 <Box className="expertise-bar">
                   <Box
@@ -577,16 +660,7 @@ const About = () => {
                   />
                 </Box>
                 <Typography className="expertise-description">
-                  {skill.name === "Technology Training" &&
-                    "Specialized programs delivering cutting-edge technical competencies"}
-                  {skill.name === "Leadership Development" &&
-                    "Strategic executive coaching and advanced team leadership capabilities"}
-                  {skill.name === "Corporate Consulting" &&
-                    "Expert guidance for seamless technology integration and optimization"}
-                  {skill.name === "Digital Transformation" &&
-                    "Comprehensive modernization strategies and implementation excellence"}
-                  {skill.name === "Project Management" &&
-                    "Advanced methodologies for successful project execution and delivery"}
+                  {skill.description}
                 </Typography>
               </Box>
             ))}
@@ -597,67 +671,77 @@ const About = () => {
       {/* CTA Section */}
       <Box
         sx={{
-          py: 10,
-          backgroundColor: "#000000",
-          color: "#FFFFFF",
-          textAlign: "center",
+          py: { xs: 10, md: 14 },
+          backgroundColor: "#0B0E17",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Container maxWidth={false} sx={{ px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: "2rem", md: "3rem" },
-              color: "#FF8C00",
-            }}
-          >
-            Advance Your Professional Excellence
-          </Typography>
-
-          <Typography
-            variant="h6"
-            sx={{
-              mb: 4,
-              opacity: 0.9,
-              lineHeight: 1.6,
-              color: "#FFFFFF",
-            }}
-          >
-            Strategic career development opportunities designed for ambitious
-            technology professionals. Connect with us today.
-          </Typography>
-
+        <Container maxWidth="lg">
           <Box
             sx={{
-              display: "flex",
-              gap: 3,
-              justifyContent: "center",
-              flexWrap: "wrap",
+              background: "linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "24px",
+              p: { xs: 5, md: 8 },
+              textAlign: "center",
+              position: "relative",
+              overflow: "hidden",
+              boxShadow: "0 25px 60px -20px rgba(0, 0, 0, 0.8)",
             }}
           >
-            <Box
-              component="a"
-              href="/contact"
+            <Typography
+              variant="h2"
+              component="h2"
               sx={{
-                px: 4,
-                py: 2,
-                backgroundColor: "#FF8C00",
+                mb: 2.5,
+                color: "#FF8C00",
+                fontWeight: 800,
+                fontSize: { xs: "2rem", sm: "2.6rem", md: "3.2rem" },
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Advance Your Professional Excellence
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 4.5,
+                color: "#E2E8F0",
+                maxWidth: "650px",
+                mx: "auto",
+                fontSize: { xs: "1rem", sm: "1.15rem" },
+                lineHeight: 1.75,
+              }}
+            >
+              Strategic career development opportunities designed for ambitious
+              technology professionals. Connect with us today.
+            </Typography>
+
+            <Button
+              component={Link}
+              to="/contact"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForward />}
+              sx={{
+                px: 5,
+                py: 1.6,
+                fontSize: "1.05rem",
+                borderRadius: "10px",
+                background: "linear-gradient(135deg, #FF8C00 0%, #EA580C 100%)",
                 color: "#FFFFFF",
-                textDecoration: "none",
-                borderRadius: 2,
-                fontWeight: 600,
-                transition: "all 0.3s ease",
+                boxShadow: "0 8px 30px rgba(255, 140, 0, 0.45)",
                 "&:hover": {
-                  backgroundColor: "#FF6500",
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 8px 16px rgba(255, 140, 0, 0.4)",
+                  background: "linear-gradient(135deg, #FF6500 0%, #C2410C 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 12px 35px rgba(255, 140, 0, 0.6)",
                 },
               }}
             >
               Get in Touch
-            </Box>
+            </Button>
           </Box>
         </Container>
       </Box>

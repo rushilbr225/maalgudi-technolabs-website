@@ -4,25 +4,17 @@ import {
   Typography,
   Box,
   Grid,
-  Paper,
   Chip,
   Avatar,
   Card,
   CardContent,
+  Stack,
 } from "@mui/material";
 import {
-  Rocket,
-  TrendingUp,
-  School,
-  Engineering,
-  Psychology,
-  Groups,
+  LocationOn,
 } from "@mui/icons-material";
-import { useTheme } from "../contexts/ThemeContext";
 
 const NewAbout = () => {
-  const { mode } = useTheme();
-
   const achievements = [
     {
       year: "2021",
@@ -109,14 +101,8 @@ const NewAbout = () => {
     {
       name: "Raghu Nila",
       role: "Founder",
-
       image: "/TeamPhotos/Raghu_Nila.jpg",
     },
-    // {
-    //   name: "Pratham G",
-    //   role: "CEO",
-    //   image: "/TeamPhotos/Pratham_Gowtham.jpg",
-    // },
     {
       name: "Pradyumna S Athreya",
       role: "CMO",
@@ -125,13 +111,11 @@ const NewAbout = () => {
     {
       name: "Rushil B R",
       role: "CTO",
-
       image: "/TeamPhotos/Rushil.jpg",
     },
     {
       name: "Adarsh G B",
       role: "CFO",
-
       image: "/TeamPhotos/Adarsh.jpg",
     },
     {
@@ -142,37 +126,16 @@ const NewAbout = () => {
     {
       name: "Shreyas S",
       role: "Technical Specialist",
-
       image: "/TeamPhotos/Shreyas.jpg",
     },
     {
       name: "Paavani Nayak",
       role: "Technical Specialist",
-
       image: "/TeamPhotos/PavaniNayak.png",
-    },
-    // {
-    //   name: "Jayanth C",
-    //   role: "Software Engineer",
-    //   image: "/TeamPhotos/Jayanth.jpeg",
-    //   photoPosition: "center 10%",
-    // },
-    // {
-    //   name: "Atrinandan J",
-    //   role: "Software Engineer",
-
-    //   image: "/TeamPhotos/Atrinandan.jpg",
-    // },
-    {
-      name: "Ashray A",
-      role: "Software Engineer",
-
-      image: "/TeamPhotos/Ashray.jpeg",
     },
     {
       name: "Pavani A M",
       role: "Software Engineer",
-
       image: "/TeamPhotos/Pavani.jpeg",
     },
     {
@@ -188,58 +151,111 @@ const NewAbout = () => {
       title: "Innovation",
       description:
         "Continuous advancement through emerging technology integration and progressive methodologies",
-      color: "primary",
+      color: "#3B82F6",
     },
     {
       title: "Excellence",
       description:
         "Unwavering commitment to superior training quality and measurable learning outcomes",
-      color: "secondary",
+      color: "#FF8C00",
     },
     {
       title: "Integrity",
       description:
         "Establishing trust through transparent operations and principled professional conduct",
-      color: "success",
+      color: "#10B981",
     },
     {
       title: "Empowerment",
       description:
         "Catalyzing professional growth and maximizing individual career potential",
-      color: "warning",
+      color: "#F59E0B",
     },
   ];
 
   return (
-    <Box>
+    <Box sx={{ width: "100%", overflow: "hidden" }}>
       {/* Hero Section */}
       <Box
         sx={{
-          color: "white",
-          py: 8,
+          py: { xs: 10, md: 16 },
+          textAlign: "center",
           background:
-            mode === "dark"
-              ? "linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(37, 99, 235, 0.2) 100%)"
-              : "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+            'linear-gradient(180deg, rgba(8, 9, 10, 0.8) 0%, rgba(8, 9, 10, 0.95) 100%), radial-gradient(ellipse at 50% 20%, rgba(37, 99, 235, 0.22) 0%, transparent 70%)',
+          position: "relative",
         }}
       >
         <Container maxWidth="lg">
-          <Typography
-            variant="h2"
-            component="h1"
-            gutterBottom
-            fontWeight="bold"
-            textAlign="center"
-            sx={{ color: "#F4FAFF" }}
+          <Box
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1,
+              mb: 3,
+              px: 2.2,
+              py: 0.8,
+              backgroundColor: "rgba(255, 140, 0, 0.12)",
+              backdropFilter: "blur(10px)",
+              borderRadius: "50px",
+              border: "1px solid rgba(255, 140, 0, 0.35)",
+            }}
           >
-            Our Journey
+            <Box
+              sx={{
+                width: 7,
+                height: 7,
+                borderRadius: "50%",
+                backgroundColor: "#FF8C00",
+                boxShadow: "0 0 10px #FF8C00",
+              }}
+            />
+            <Typography
+              variant="overline"
+              sx={{
+                color: "#FFA500",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                fontSize: "0.82rem",
+                textTransform: "uppercase",
+              }}
+            >
+              Our History & Culture
+            </Typography>
+          </Box>
+
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{
+              fontWeight: 800,
+              color: "#F8FAFC",
+              fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+              letterSpacing: "-0.02em",
+              mb: 2.5,
+            }}
+          >
+            Our{" "}
+            <Box
+              component="span"
+              sx={{
+                background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Journey
+            </Box>
           </Typography>
+
           <Typography
             variant="h5"
-            textAlign="center"
             sx={{
-              opacity: 0.9,
-              color: "#F4FAFF",
+              color: "#CBD5E1",
+              maxWidth: "700px",
+              mx: "auto",
+              fontSize: { xs: "1.1rem", md: "1.3rem" },
+              fontWeight: 400,
+              lineHeight: 1.7,
             }}
           >
             Strategic evolution in technology education excellence
@@ -247,171 +263,202 @@ const NewAbout = () => {
         </Container>
       </Box>
 
-      {/* Timeline Section */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Box sx={{ textAlign: "center", mb: 6 }}>
-          <Typography
-            variant="h4"
-            component="h2"
-            sx={{
-              fontWeight: 700,
-              mb: 2,
-              fontSize: { xs: "2rem", md: "2.5rem" },
-              color: mode === "dark" ? "#FFFFFF" : "#000000",
-            }}
-          >
-            Our{" "}
-            <Box component="span" sx={{ color: "#FF8C00" }}>
-              Story
-            </Box>
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              maxWidth: "700px",
-              mx: "auto",
-              lineHeight: 1.6,
-              color: mode === "dark" ? "#B0B3B8" : "#666",
-            }}
-          >
-            Progressive milestones defining our path to educational excellence
-          </Typography>
-        </Box>
-
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              sm: "repeat(2, 1fr)",
-              md: "repeat(3, 1fr)",
-            },
-            gap: 3,
-            maxWidth: "1600px",
-            margin: "0 auto",
-            px: { xs: 2, md: 0 },
-          }}
-        >
-          {achievements.map((achievement, index) => (
-            <Box
-              key={index}
+      {/* Timeline / Achievements Section */}
+      <Box sx={{ py: { xs: 10, md: 14 }, backgroundColor: "#08090A" }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
+            <Typography
+              variant="overline"
               sx={{
-                minHeight: 240,
-                background:
-                  mode === "dark"
-                    ? "rgba(10, 10, 10, 0.95)"
-                    : "rgba(255, 255, 255, 0.95)",
-                backdropFilter: "blur(15px)",
-                WebkitBackdropFilter: "blur(15px)",
-                border: `1px solid ${
-                  mode === "dark"
-                    ? "rgba(37, 99, 235, 0.3)"
-                    : "rgba(37, 99, 235, 0.2)"
-                }`,
-                borderRadius: 3,
-                padding: 3,
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                position: "relative",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                boxShadow:
-                  mode === "dark"
-                    ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                    : "0 4px 20px rgba(37, 99, 235, 0.15)",
-                "&:hover": {
-                  transform: "translateY(-8px) scale(1.02)",
-                  borderColor:
-                    mode === "dark"
-                      ? "rgba(255, 140, 0, 0.6)"
-                      : "rgba(255, 140, 0, 0.4)",
-                  boxShadow:
-                    mode === "dark"
-                      ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                      : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                  background:
-                    mode === "dark"
-                      ? "rgba(10, 10, 10, 1)"
-                      : "rgba(255, 255, 255, 1)",
-                },
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
               }}
             >
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 800,
-                  color: "#2563EB",
-                  fontSize: "1.5rem",
-                  mb: 2,
-                  textAlign: "center",
-                }}
-              >
-                {achievement.year}
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  mb: 2,
-                  fontSize: "1.2rem",
-                  minHeight: "2.4em",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  lineHeight: 1.3,
-                  color: mode === "dark" ? "#F4FAFF" : "#08090A",
-                }}
-              >
-                {achievement.title}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  lineHeight: 1.7,
-                  textAlign: "center",
-                  fontSize: "0.95rem",
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: mode === "dark" ? "#B0B3B8" : "#666",
-                }}
-              >
-                {achievement.description}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
-      </Container>
-
-      {/* Workshop Gallery Section */}
-      <Box sx={{ bgcolor: mode === "dark" ? "#0A0A0A" : "#F8F9FA", py: 10 }}>
-        <Container maxWidth="xl">
-          <Box sx={{ textAlign: "center", mb: 8 }}>
+              MILESTONES
+            </Typography>
             <Typography
-              variant="h4"
+              variant="h2"
               component="h2"
               sx={{
-                fontWeight: 700,
+                fontWeight: 800,
+                color: "#F8FAFC",
                 mb: 2,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                color: mode === "dark" ? "#FFFFFF" : "#000000",
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Our{" "}
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Story
+              </Box>
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#94A3B8",
+                maxWidth: "680px",
+                mx: "auto",
+                lineHeight: 1.7,
+                fontSize: { xs: "1rem", md: "1.1rem" },
+              }}
+            >
+              Progressive milestones defining our path to educational excellence
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
+              gap: 3,
+            }}
+          >
+            {achievements.map((achievement, index) => (
+              <Box
+                key={index}
+                sx={{
+                  background: "rgba(17, 20, 28, 0.8)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  borderRadius: "16px",
+                  p: { xs: 3, md: 3.5 },
+                  transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+                  position: "relative",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    background: "linear-gradient(90deg, #2563EB, #FF8C00)",
+                    opacity: 0,
+                    transition: "opacity 0.35s ease",
+                  },
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    borderColor: "rgba(255, 140, 0, 0.4)",
+                    boxShadow: "0 20px 45px -15px rgba(255, 140, 0, 0.25)",
+                    background: "rgba(22, 27, 38, 0.95)",
+                    "&::before": {
+                      opacity: 1,
+                    },
+                  },
+                }}
+              >
+                {/* Year Badge */}
+                <Box sx={{ mb: 2 }}>
+                  <Chip
+                    label={achievement.year}
+                    sx={{
+                      backgroundColor: "rgba(37, 99, 235, 0.15)",
+                      color: "#60A5FA",
+                      fontWeight: 800,
+                      fontSize: "0.95rem",
+                      border: "1px solid rgba(37, 99, 235, 0.3)",
+                      px: 1,
+                    }}
+                  />
+                </Box>
+
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 700,
+                    color: "#F8FAFC",
+                    fontSize: "1.2rem",
+                    mb: 1.5,
+                    lineHeight: 1.35,
+                  }}
+                >
+                  {achievement.title}
+                </Typography>
+
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "#94A3B8",
+                    lineHeight: 1.7,
+                    fontSize: "0.92rem",
+                    flex: 1,
+                  }}
+                >
+                  {achievement.description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+
+      {/* Workshop Gallery Section */}
+      <Box sx={{ backgroundColor: "#0B0E17", py: { xs: 10, md: 14 } }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
+            <Typography
+              variant="overline"
+              sx={{
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
+              }}
+            >
+              ACADEMIC COLLABORATIONS
+            </Typography>
+            <Typography
+              variant="h2"
+              component="h2"
+              sx={{
+                fontWeight: 800,
+                color: "#F8FAFC",
+                mb: 2,
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
               }}
             >
               Our Previous{" "}
-              <Box component="span" sx={{ color: "#FF8C00" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Works
               </Box>
             </Typography>
             <Typography
               variant="body1"
               sx={{
-                maxWidth: "900px",
+                maxWidth: "850px",
                 mx: "auto",
                 lineHeight: 1.8,
                 fontSize: "1.05rem",
-                color: mode === "dark" ? "#B0B3B8" : "#666",
+                color: "#94A3B8",
               }}
             >
               We have conducted comprehensive technical workshops at premier
@@ -426,20 +473,22 @@ const NewAbout = () => {
             <Box
               key={workshopIndex}
               sx={{
-                mb: 10,
+                mb: { xs: 8, md: 10 },
                 "&:last-child": { mb: 0 },
               }}
             >
-              {/* Workshop Header */}
+              {/* Workshop Header Card */}
               <Box
                 sx={{
-                  background: `linear-gradient(135deg, ${workshop.color}f5 0%, ${workshop.color}dd 100%)`,
-                  borderRadius: 4,
-                  overflow: "hidden",
-                  mb: 5,
-                  boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  background: "rgba(17, 20, 28, 0.85)",
+                  backdropFilter: "blur(16px)",
+                  border: `1px solid ${workshop.color}40`,
+                  borderRadius: "20px",
+                  p: { xs: 3.5, md: 5 },
+                  mb: 4,
                   position: "relative",
+                  overflow: "hidden",
+                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.7)",
                   "&::before": {
                     content: '""',
                     position: "absolute",
@@ -447,329 +496,172 @@ const NewAbout = () => {
                     left: 0,
                     right: 0,
                     height: "4px",
-                    background: "rgba(255, 255, 255, 0.3)",
+                    background: `linear-gradient(90deg, ${workshop.color}, #FF8C00)`,
                   },
                 }}
               >
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
-                    width: "100%",
-                  }}
-                >
-                  {/* Left Section - Main Content */}
-                  <Box sx={{ flex: 1, p: { xs: 4, md: 5 }, pr: { md: 4 } }}>
-                    {/* Workshop Topic Badge */}
-                    <Box sx={{ mb: 3 }}>
+                <Grid container spacing={3} alignItems="center">
+                  <Grid item xs={12} md={8}>
+                    <Box sx={{ display: "flex", gap: 1.5, alignItems: "center", mb: 2, flexWrap: "wrap" }}>
                       <Chip
                         label={workshop.topic}
                         sx={{
-                          backgroundColor: "rgba(255, 255, 255, 0.25)",
-                          color: "white",
+                          backgroundColor: `${workshop.color}25`,
+                          color: "#FFFFFF",
                           fontWeight: 700,
-                          fontSize: "0.75rem",
-                          letterSpacing: 1.2,
+                          fontSize: "0.78rem",
+                          letterSpacing: "0.08em",
                           textTransform: "uppercase",
-                          height: 32,
-                          borderRadius: 2,
-                          backdropFilter: "blur(10px)",
-                          border: "1px solid rgba(255, 255, 255, 0.4)",
-                          px: 2,
+                          border: `1px solid ${workshop.color}50`,
+                        }}
+                      />
+                      <Chip
+                        icon={<LocationOn sx={{ fontSize: "1rem !important", color: "#FF8C00" }} />}
+                        label={workshop.location}
+                        sx={{
+                          backgroundColor: "rgba(255, 140, 0, 0.12)",
+                          color: "#FFA500",
+                          fontWeight: 600,
+                          fontSize: "0.8rem",
+                          border: "1px solid rgba(255, 140, 0, 0.25)",
                         }}
                       />
                     </Box>
 
-                    {/* Institution Name */}
                     <Typography
                       variant="h3"
                       sx={{
-                        color: "white",
+                        color: "#F8FAFC",
                         fontWeight: 800,
-                        mb: 1.5,
-                        fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-                        lineHeight: 1.2,
-                        textShadow: "0 2px 10px rgba(0,0,0,0.2)",
+                        fontSize: { xs: "1.8rem", md: "2.4rem" },
+                        mb: 1,
                       }}
                     >
                       {workshop.institution}
                     </Typography>
 
-                    {/* Full Institution Name */}
                     <Typography
                       variant="h6"
                       sx={{
-                        color: "rgba(255, 255, 255, 0.95)",
+                        color: "#94A3B8",
                         fontWeight: 500,
-                        mb: 3,
-                        fontSize: { xs: "1.1rem", md: "1.25rem" },
-                        lineHeight: 1.4,
-                        letterSpacing: 0.5,
+                        fontSize: { xs: "1rem", md: "1.15rem" },
+                        mb: 2,
                       }}
                     >
                       {workshop.fullName}
                     </Typography>
 
-                    {/* Description */}
                     <Typography
                       variant="body1"
                       sx={{
-                        color: "rgba(255, 255, 255, 0.92)",
-                        lineHeight: 1.8,
-                        fontSize: { xs: "0.95rem", md: "1.05rem" },
-                        fontWeight: 400,
+                        color: "#CBD5E1",
+                        lineHeight: 1.75,
+                        fontSize: "0.98rem",
                       }}
                     >
                       {workshop.description}
                     </Typography>
-                  </Box>
+                  </Grid>
 
-                  {/* Right Section - Location Badge */}
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: { xs: "flex-start", md: "center" },
-                      p: { xs: 4, md: 4 },
-                      pt: { xs: 0, md: 4 },
-                      minWidth: { md: "220px" },
-                      background: {
-                        xs: "transparent",
-                        md: "rgba(0, 0, 0, 0.1)",
-                      },
-                      borderLeft: {
-                        xs: "none",
-                        md: "1px solid rgba(255, 255, 255, 0.2)",
-                      },
-                    }}
-                  >
+                  <Grid item xs={12} md={4} sx={{ textAlign: { xs: "center", md: "right" }, mt: { xs: 1, md: 0 } }}>
                     <Box
                       sx={{
+                        display: { xs: "block", md: "inline-block" },
+                        p: { xs: 2, sm: 2.5 },
+                        borderRadius: "14px",
+                        backgroundColor: "rgba(255, 255, 255, 0.03)",
+                        border: "1px solid rgba(255, 255, 255, 0.08)",
                         textAlign: "center",
-                        p: 3,
-                        borderRadius: 3,
-                        backgroundColor: "rgba(255, 255, 255, 0.15)",
-                        backdropFilter: "blur(15px)",
-                        border: "2px solid rgba(255, 255, 255, 0.3)",
-                        minWidth: { xs: "auto", md: "140px" },
                       }}
                     >
-                      <Typography
-                        variant="caption"
-                        sx={{
-                          color: "rgba(255, 255, 255, 0.8)",
-                          fontWeight: 600,
-                          fontSize: "0.7rem",
-                          letterSpacing: 1,
-                          textTransform: "uppercase",
-                          display: "block",
-                          mb: 1,
-                        }}
-                      >
-                        Location
+                      <Typography variant="caption" sx={{ color: "#94A3B8", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                        Host Campus
                       </Typography>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          color: "white",
-                          fontWeight: 700,
-                          fontSize: { xs: "1.1rem", md: "1.25rem" },
-                        }}
-                      >
+                      <Typography variant="h5" sx={{ color: "#F8FAFC", fontWeight: 700, mt: 0.5, fontSize: { xs: "1.2rem", md: "1.5rem" } }}>
+                        {workshop.institution}
+                      </Typography>
+                      <Typography variant="body2" sx={{ color: "#FF8C00", fontWeight: 600 }}>
                         {workshop.location}
                       </Typography>
                     </Box>
-                  </Box>
-                </Box>
+                  </Grid>
+                </Grid>
               </Box>
 
               {/* Photo Gallery Grid */}
-              {workshop.photos.length === 1 ? (
-                // Special layout for single photo (UVCE)
-                <Box
-                  sx={{
-                    px: { xs: 0, md: 2 },
-                  }}
-                >
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xs: "1fr",
+                    sm: workshop.photos.length === 1 ? "1fr" : "repeat(2, 1fr)",
+                    md: workshop.photos.length === 1 ? "1fr" : "repeat(4, 1fr)",
+                  },
+                  gap: 2.5,
+                }}
+              >
+                {workshop.photos.map((photo, photoIndex) => (
                   <Box
+                    key={photoIndex}
                     sx={{
                       position: "relative",
+                      borderRadius: "14px",
                       overflow: "hidden",
-                      borderRadius: 3,
-                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
-                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                      cursor: "pointer",
-                      bgcolor: mode === "dark" ? "#000000" : "white",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.5)",
+                      aspectRatio: workshop.photos.length === 1 ? "16/9" : "4/3",
+                      maxHeight: workshop.photos.length === 1 ? "480px" : "280px",
+                      backgroundColor: "#11141C",
+                      transition: "all 0.35s ease",
                       "&:hover": {
-                        transform: "translateY(-4px)",
-                        boxShadow: `0 16px 48px ${workshop.color}50`,
+                        transform: "scale(1.02)",
+                        borderColor: workshop.color,
+                        boxShadow: `0 15px 35px -5px ${workshop.color}40`,
                         "& img": {
-                          transform: "scale(1.05)",
+                          transform: "scale(1.06)",
                         },
                       },
                     }}
                   >
                     <Box
+                      component="img"
+                      src={photo}
+                      alt={`${workshop.institution} Workshop ${photoIndex + 1}`}
                       sx={{
-                        position: "relative",
-                        paddingTop: "50%",
-                        overflow: "hidden",
-                        bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.5s ease",
+                      }}
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 10,
+                        right: 10,
+                        width: 28,
+                        height: 28,
+                        borderRadius: "50%",
+                        backgroundColor: "rgba(17, 20, 28, 0.8)",
+                        backdropFilter: "blur(6px)",
+                        border: `1px solid ${workshop.color}`,
+                        color: "#FFFFFF",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 700,
+                        fontSize: "0.75rem",
                       }}
                     >
-                      <Box
-                        component="img"
-                        src={workshop.photos[0]}
-                        alt={`${workshop.institution} Workshop`}
-                        sx={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          transition: "transform 0.6s ease",
-                        }}
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                        }}
-                      />
-                      {/* Overlay gradient for better text visibility */}
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          background:
-                            "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%)",
-                          p: 4,
-                        }}
-                      >
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            color: "white",
-                            fontWeight: 700,
-                            textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-                          }}
-                        >
-                          {workshop.topic} at {workshop.institution}
-                        </Typography>
-                      </Box>
+                      {photoIndex + 1}
                     </Box>
                   </Box>
-                </Box>
-              ) : (
-                // Grid layout for multiple photos
-                <Box
-                  sx={{
-                    display: "grid",
-                    gridTemplateColumns: {
-                      xs: "1fr",
-                      sm: "repeat(2, 1fr)",
-                      md:
-                        workshop.photos.length >= 4
-                          ? "repeat(3, 1fr)"
-                          : "repeat(2, 1fr)",
-                      lg:
-                        workshop.photos.length >= 4
-                          ? "repeat(4, 1fr)"
-                          : "repeat(3, 1fr)",
-                    },
-                    gap: 3,
-                    px: { xs: 0, md: 2 },
-                  }}
-                >
-                  {workshop.photos.map((photo, photoIndex) => (
-                    <Box
-                      key={photoIndex}
-                      sx={{
-                        position: "relative",
-                        overflow: "hidden",
-                        borderRadius: 2,
-                        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
-                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                        cursor: "pointer",
-                        bgcolor: mode === "dark" ? "#000000" : "white",
-                        "&:hover": {
-                          transform: "translateY(-8px) scale(1.02)",
-                          boxShadow: `0 12px 40px ${workshop.color}40`,
-                          "& .photo-number": {
-                            opacity: 0,
-                          },
-                          "& img": {
-                            transform: "scale(1.1)",
-                          },
-                        },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          position: "relative",
-                          paddingTop: "75%",
-                          overflow: "hidden",
-                          bgcolor: mode === "dark" ? "#0A0A0A" : "grey.100",
-                        }}
-                      >
-                        <Box
-                          component="img"
-                          src={photo}
-                          alt={`${workshop.institution} Workshop ${
-                            photoIndex + 1
-                          }`}
-                          sx={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            transition: "transform 0.4s ease",
-                          }}
-                          onError={(e) => {
-                            e.target.style.display = "none";
-                          }}
-                        />
-                        <Box
-                          className="photo-number"
-                          sx={{
-                            position: "absolute",
-                            top: 12,
-                            right: 12,
-                            width: 36,
-                            height: 36,
-                            borderRadius: "50%",
-                            backgroundColor: workshop.color,
-                            color: "white",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontWeight: 700,
-                            fontSize: "0.9rem",
-                            boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-                            opacity: 1,
-                            transition: "opacity 0.3s ease",
-                          }}
-                        >
-                          {photoIndex + 1}
-                        </Box>
-                      </Box>
-                    </Box>
-                  ))}
-                </Box>
-              )}
-
-              {/* Divider between workshops */}
-              {workshopIndex < workshops.length - 1 && (
-                <Box
-                  sx={{
-                    mt: 8,
-                    height: 2,
-                    background: `linear-gradient(to right, transparent 0%, ${workshop.color}40 50%, transparent 100%)`,
-                  }}
-                />
-              )}
+                ))}
+              </Box>
             </Box>
           ))}
 
@@ -777,19 +669,17 @@ const NewAbout = () => {
           <Box
             sx={{
               textAlign: "center",
-              mt: 10,
+              mt: 8,
               pt: 6,
-              borderTop: `2px solid ${
-                mode === "dark" ? "rgba(37, 99, 235, 0.2)" : "rgba(0,0,0,0.08)"
-              }`,
+              borderTop: "1px solid rgba(255, 255, 255, 0.08)",
             }}
           >
             <Typography
-              variant="h6"
+              variant="h5"
               sx={{
-                color: mode === "dark" ? "#F4FAFF" : "#000000",
-                fontWeight: 600,
-                mb: 2,
+                color: "#F8FAFC",
+                fontWeight: 700,
+                mb: 1.5,
               }}
             >
               Empowering Future Innovators
@@ -800,8 +690,8 @@ const NewAbout = () => {
                 maxWidth: "800px",
                 mx: "auto",
                 lineHeight: 1.8,
-                fontSize: "1.05rem",
-                color: mode === "dark" ? "#B0B3B8" : "#666",
+                fontSize: "1.02rem",
+                color: "#94A3B8",
               }}
             >
               Through our partnerships with leading educational institutions and
@@ -814,31 +704,53 @@ const NewAbout = () => {
       </Box>
 
       {/* Values Section */}
-      <Box sx={{ bgcolor: mode === "dark" ? "#000000" : "#FFFFFF", py: 8 }}>
+      <Box sx={{ backgroundColor: "#08090A", py: { xs: 10, md: 14 } }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 6 }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
             <Typography
-              variant="h4"
+              variant="overline"
+              sx={{
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
+              }}
+            >
+              GUIDING PRINCIPLES
+            </Typography>
+            <Typography
+              variant="h2"
               component="h2"
               sx={{
-                fontWeight: 700,
+                fontWeight: 800,
+                color: "#F8FAFC",
                 mb: 2,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                color: mode === "dark" ? "#FFFFFF" : "#000000",
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
               }}
             >
               Our Core{" "}
-              <Box component="span" sx={{ color: "#FF8C00" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Values
               </Box>
             </Typography>
             <Typography
               variant="body1"
               sx={{
-                maxWidth: "700px",
+                maxWidth: "680px",
                 mx: "auto",
-                lineHeight: 1.6,
-                color: mode === "dark" ? "#B0B3B8" : "#666",
+                lineHeight: 1.7,
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                color: "#94A3B8",
               }}
             >
               Core principles driving our educational excellence and
@@ -855,83 +767,54 @@ const NewAbout = () => {
                 md: "repeat(4, 1fr)",
               },
               gap: 3,
-              maxWidth: "1600px",
-              margin: "0 auto",
-              px: { xs: 2, md: 0 },
             }}
           >
             {values.map((value, index) => (
               <Box
                 key={index}
                 sx={{
-                  minHeight: 240,
-                  background:
-                    mode === "dark"
-                      ? "rgba(10, 10, 10, 0.95)"
-                      : "rgba(255, 255, 255, 0.95)",
-                  backdropFilter: "blur(15px)",
-                  WebkitBackdropFilter: "blur(15px)",
-                  border: `1px solid ${
-                    mode === "dark"
-                      ? "rgba(37, 99, 235, 0.3)"
-                      : "rgba(37, 99, 235, 0.2)"
-                  }`,
-                  borderRadius: 3,
-                  padding: 3,
-                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  position: "relative",
-                  overflow: "hidden",
+                  minHeight: 220,
+                  background: "rgba(17, 20, 28, 0.8)",
+                  backdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  borderRadius: "16px",
+                  p: { xs: 3, md: 3.5 },
+                  transition: "all 0.35s ease",
+                  textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  textAlign: "center",
-                  boxShadow:
-                    mode === "dark"
-                      ? "0 4px 20px rgba(0, 0, 0, 0.5)"
-                      : "0 4px 20px rgba(37, 99, 235, 0.15)",
+                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
                   "&:hover": {
-                    transform: "translateY(-8px) scale(1.02)",
-                    borderColor:
-                      mode === "dark"
-                        ? "rgba(255, 140, 0, 0.6)"
-                        : "rgba(255, 140, 0, 0.4)",
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 12px 40px rgba(255, 140, 0, 0.3)"
-                        : "0 12px 40px rgba(255, 140, 0, 0.25)",
-                    background:
-                      mode === "dark"
-                        ? "rgba(10, 10, 10, 1)"
-                        : "rgba(255, 255, 255, 1)",
+                    transform: "translateY(-6px)",
+                    borderColor: value.color,
+                    boxShadow: `0 18px 40px -12px ${value.color}35`,
                   },
                 }}
               >
                 <Chip
                   label={value.title}
-                  color={value.color}
-                  variant="outlined"
                   sx={{
-                    mb: 2,
-                    fontWeight: "bold",
-                    fontSize: "1rem",
+                    mb: 2.5,
+                    fontWeight: 700,
+                    fontSize: "0.95rem",
                     py: 2,
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                    },
+                    px: 1,
+                    backgroundColor: `${value.color}15`,
+                    color: value.color,
+                    border: `1.5px solid ${value.color}40`,
                   }}
                 />
 
                 <Typography
-                  variant="body1"
+                  variant="body2"
                   sx={{
                     lineHeight: 1.7,
-                    fontSize: "0.95rem",
+                    fontSize: "0.92rem",
+                    color: "#94A3B8",
                     flex: 1,
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    color: mode === "dark" ? "#B0B3B8" : "#666",
                   }}
                 >
                   {value.description}
@@ -943,21 +826,42 @@ const NewAbout = () => {
       </Box>
 
       {/* Team Section */}
-      <Box sx={{ bgcolor: mode === "dark" ? "#0A0A0A" : "#FFFFFF", py: 10 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center", mb: 8 }}>
+      <Box sx={{ backgroundColor: "#0B0E17", py: { xs: 10, md: 14 } }}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Box sx={{ textAlign: "center", mb: { xs: 6, md: 8 } }}>
             <Typography
-              variant="h4"
+              variant="overline"
+              sx={{
+                color: "#FF8C00",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.15em",
+                display: "block",
+                mb: 1.5,
+              }}
+            >
+              LEADERSHIP & EXPERTISE
+            </Typography>
+            <Typography
+              variant="h2"
               component="h2"
               sx={{
-                fontWeight: 700,
+                fontWeight: 800,
+                color: "#F8FAFC",
                 mb: 2,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                color: mode === "dark" ? "#FFFFFF" : "#000000",
+                fontSize: { xs: "2.2rem", md: "3rem" },
+                letterSpacing: "-0.02em",
               }}
             >
               Meet Our{" "}
-              <Box component="span" sx={{ color: "#FF8C00" }}>
+              <Box
+                component="span"
+                sx={{
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Team
               </Box>
             </Typography>
@@ -965,11 +869,11 @@ const NewAbout = () => {
             <Typography
               variant="body1"
               sx={{
-                maxWidth: "700px",
+                maxWidth: "680px",
                 mx: "auto",
-                lineHeight: 1.6,
-                fontSize: "1.05rem",
-                color: mode === "dark" ? "#B0B3B8" : "#666",
+                lineHeight: 1.7,
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                color: "#94A3B8",
               }}
             >
               Expert professionals driving innovation and excellence in
@@ -977,184 +881,142 @@ const NewAbout = () => {
             </Typography>
           </Box>
 
-          <Grid container spacing={4} justifyContent="center">
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "repeat(1, 1fr)",
+                sm: "repeat(3, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
+              gap: { xs: 2.5, sm: 3, md: 3.5 },
+              maxWidth: { xs: "360px", sm: "1080px" },
+              mx: "auto",
+            }}
+          >
             {team.map((member, index) => (
-              <Grid
-                item
+              <Card
                 key={index}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <Card
-                  elevation={0}
-                  sx={{
-                    width: 300,
-                    height: 280,
-                    borderRadius: 4,
-                    position: "relative",
-                    overflow: "hidden",
-                    background:
-                      mode === "dark"
-                        ? "linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(20,20,30,0.95) 100%)"
-                        : "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(249,250,251,0.95) 100%)",
-                    border: `2px solid ${
-                      mode === "dark"
-                        ? "rgba(37,99,235,0.25)"
-                        : "rgba(37,99,235,0.12)"
-                    }`,
-                    boxShadow:
-                      mode === "dark"
-                        ? "0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)"
-                        : "0 8px 32px rgba(37,99,235,0.12), inset 0 1px 0 rgba(255,255,255,0.8)",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                elevation={0}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  minHeight: { xs: 250, sm: 290 },
+                  borderRadius: { xs: "14px", sm: "18px" },
+                  background: "rgba(17, 20, 28, 0.85)",
+                  backdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+                  transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+                  overflow: "hidden",
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: "3px",
+                    background: "linear-gradient(90deg, #2563EB 0%, #FF8C00 100%)",
+                    opacity: 0,
+                    transition: "opacity 0.35s ease",
+                  },
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    borderColor: "rgba(255, 140, 0, 0.4)",
+                    boxShadow: "0 20px 45px -15px rgba(255, 140, 0, 0.25)",
                     "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: "4px",
-                      background:
-                        "linear-gradient(90deg, #2563EB 0%, #FF8C00 100%)",
-                      opacity: 0,
-                      transition: "opacity 0.4s ease",
+                      opacity: 1,
                     },
-                    "&:hover": {
-                      transform: "translateY(-12px) scale(1.03)",
+                    "& .team-avatar": {
                       borderColor: "#FF8C00",
-                      boxShadow:
-                        mode === "dark"
-                          ? "0 24px 64px rgba(255,140,0,0.4), 0 0 0 1px rgba(255,140,0,0.2)"
-                          : "0 24px 64px rgba(255,140,0,0.3), 0 0 0 1px rgba(255,140,0,0.15)",
-                      "&::before": {
-                        opacity: 1,
-                      },
-                      "& .avatar-ring": {
-                        transform: "rotate(180deg) scale(1.1)",
-                      },
+                      transform: "scale(1.05)",
                     },
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    p: { xs: 2, sm: 3 },
+                    flex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    textAlign: "center",
                   }}
                 >
-                  <CardContent
+                  {/* Avatar */}
+                  <Box sx={{ position: "relative", mb: { xs: 1.5, sm: 2 } }}>
+                    <Avatar
+                      className="team-avatar"
+                      src={member.image}
+                      alt={member.name}
+                      sx={{
+                        width: { xs: 80, sm: 96 },
+                        height: { xs: 80, sm: 96 },
+                        border: "3px solid #2563EB",
+                        boxShadow: "0 8px 24px rgba(37, 99, 235, 0.3)",
+                        transition: "all 0.35s ease",
+                        "& img": {
+                          objectFit: "cover",
+                          objectPosition: member.photoPosition || "center top",
+                        },
+                      }}
+                    />
+                  </Box>
+
+                  {/* Member Name with strictly fixed uniform container height */}
+                  <Box
                     sx={{
-                      height: "100%",
-                      display: "grid",
-                      gridTemplateRows: "auto 50px 1fr auto",
+                      height: { xs: 46, sm: 52 },
+                      display: "flex",
                       alignItems: "center",
-                      textAlign: "center",
-                      px: 2,
-                      py: 2.5,
+                      justifyContent: "center",
+                      width: "100%",
+                      px: 0.5,
+                      mb: { xs: 1, sm: 1.5 },
                     }}
                   >
-                    {/* Avatar with animated ring */}
-                    <Box sx={{ position: "relative", mx: "auto" }}>
-                      <Box
-                        className="avatar-ring"
-                        sx={{
-                          position: "absolute",
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          width: 110,
-                          height: 110,
-                          borderRadius: "50%",
-                          background:
-                            "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
-                          opacity: 0.15,
-                          transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-                        }}
-                      />
-                      <Avatar
-                        src={member.image}
-                        alt={member.name}
-                        sx={{
-                          width: 100,
-                          height: 100,
-                          position: "relative",
-                          border: "4px solid",
-                          borderColor: mode === "dark" ? "#FF8C00" : "#2563EB",
-                          boxShadow:
-                            mode === "dark"
-                              ? "0 12px 32px rgba(255,140,0,0.4), 0 0 0 8px rgba(255,140,0,0.1)"
-                              : "0 12px 32px rgba(37,99,235,0.3), 0 0 0 8px rgba(37,99,235,0.08)",
-                          transition: "all 0.4s ease",
-                          "& img": {
-                            objectFit: "cover",
-                            objectPosition:
-                              member.photoPosition || "center top",
-                          },
-                        }}
-                      />
-                    </Box>
-
-                    {/* Name */}
                     <Typography
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        fontSize: "1rem",
-                        lineHeight: 1.3,
-                        height: 50,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        px: 1,
-                        background:
-                          mode === "dark"
-                            ? "linear-gradient(135deg, #F4FAFF 0%, #E0E7FF 100%)"
-                            : "linear-gradient(135deg, #1E293B 0%, #334155 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
+                        fontSize: { xs: "0.9rem", sm: "1.05rem" },
+                        color: "#F8FAFC",
+                        lineHeight: 1.25,
+                        textAlign: "center",
                       }}
                     >
                       {member.name}
                     </Typography>
+                  </Box>
 
-                    {/* Spacer */}
-                    <Box />
-
-                    {/* Role Badge */}
-                    <Box
+                  {/* Member Role Badge */}
+                  <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                    <Chip
+                      label={member.role}
                       sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        mb: 0.5,
+                        background: "linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)",
+                        color: "#FFFFFF",
+                        fontWeight: 600,
+                        fontSize: { xs: "0.72rem", sm: "0.8rem" },
+                        height: { xs: 26, sm: 28 },
+                        px: { xs: 1, sm: 1.5 },
+                        borderRadius: "8px",
+                        border: "1px solid rgba(255, 255, 255, 0.15)",
+                        boxShadow: "0 4px 12px rgba(37, 99, 235, 0.3)",
+                        whiteSpace: "nowrap",
+                        maxWidth: "100%",
                       }}
-                    >
-                      <Chip
-                        label={member.role}
-                        sx={{
-                          background:
-                            "linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)",
-                          color: "white",
-                          fontWeight: 700,
-                          fontSize: "0.8rem",
-                          height: 30,
-                          px: 2,
-                          borderRadius: 2,
-                          boxShadow: "0 6px 20px rgba(37,99,235,0.35)",
-                          border: "1px solid rgba(255,255,255,0.1)",
-                          letterSpacing: "0.5px",
-                          transition: "all 0.3s ease",
-                          "&:hover": {
-                            transform: "scale(1.05)",
-                            boxShadow: "0 8px 24px rgba(37,99,235,0.45)",
-                          },
-                        }}
-                      />
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Grid>
+                    />
+                  </Box>
+                </CardContent>
+              </Card>
             ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* Footer */}
-      <Box sx={{ bgcolor: "#000000", color: "white", py: 6 }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center" }}></Box>
+          </Box>
         </Container>
       </Box>
     </Box>

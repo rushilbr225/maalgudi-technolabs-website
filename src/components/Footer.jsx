@@ -11,8 +11,6 @@ import {
 } from "@mui/material";
 import {
   LinkedIn,
-  Twitter,
-  Facebook,
   Instagram,
   Email,
   Phone,
@@ -20,11 +18,8 @@ import {
   ArrowForward,
 } from "@mui/icons-material";
 import { Link as RouterLink } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
 
 const Footer = () => {
-  const { mode } = useTheme();
-
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
@@ -41,17 +36,16 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      icon: <LinkedIn />,
+      icon: <LinkedIn sx={{ fontSize: 20 }} />,
       name: "LinkedIn",
       url: "https://www.linkedin.com/company/maalgudi-technolabs-llp/",
-      color: "#0077b5",
+      color: "#0A66C2",
     },
-
     {
-      icon: <Instagram />,
+      icon: <Instagram sx={{ fontSize: 20 }} />,
       name: "Instagram",
       url: "https://www.instagram.com/maalgudi_technolabs?igsh=MTlxdGkyNjI2b2xicw==",
-      color: "#e4405f",
+      color: "#E4405F",
     },
   ];
 
@@ -59,118 +53,120 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background:
-          mode === "dark"
-            ? "linear-gradient(180deg, #000000 0%, #0A0A0A 100%)"
-            : "linear-gradient(180deg, #1A1A1A 0%, #000000 100%)",
-        color: "#FFFFFF",
-        pt: 4,
-        pb: 2,
+        backgroundColor: "#050608",
+        color: "#F8FAFC",
+        pt: { xs: 8, md: 10 },
+        pb: 4,
         position: "relative",
         overflow: "hidden",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
         "&::before": {
           content: '""',
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
-          height: "1px",
+          height: "2px",
           background:
-            "linear-gradient(90deg, transparent, #FF8C00, transparent)",
+            "linear-gradient(90deg, transparent 0%, #2563EB 30%, #FF8C00 70%, transparent 100%)",
         },
       }}
     >
       <Container maxWidth="lg">
-        {/* Company Info - Compact */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            mb: 4,
-            flexWrap: "wrap",
-            gap: 2,
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Grid container spacing={{ xs: 5, md: 4 }} sx={{ mb: 6 }}>
+          {/* Company Brand Column */}
+          <Grid item xs={12} md={4}>
             <Box
-              component="img"
-              src="/maalgudi.png"
-              alt="Maalgudi Technolabs"
               sx={{
-                height: { xs: "30px", md: "40px" },
-                width: { xs: "30px", md: "40px" },
-                mr: 2,
-              }}
-            />
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 700,
-                background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                fontSize: { xs: "1rem", md: "1.25rem" },
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                mb: 2.5,
               }}
             >
-              Maalgudi Technolabs
-            </Typography>
-          </Box>
-          <Stack direction="row" spacing={1}>
-            {socialLinks.map((social, index) => (
-              <IconButton
-                key={index}
-                component="a"
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Box
+                component="img"
+                src="/maalgudi.png"
+                alt="Maalgudi Technolabs"
                 sx={{
-                  backgroundColor: "rgba(255, 140, 0, 0.1)",
-                  color: "#FF8C00",
-                  border: "1px solid rgba(255, 140, 0, 0.2)",
-                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  "&:hover": {
-                    backgroundColor: social.color,
-                    borderColor: social.color,
-                    color: "#FFF",
-                    transform: "translateY(-4px)",
-                    boxShadow: `0 8px 20px ${social.color}40`,
-                  },
+                  height: 38,
+                  width: 38,
+                  borderRadius: "8px",
+                  filter: "drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3))",
+                }}
+              />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: "1.25rem",
+                  background: "linear-gradient(135deg, #2563EB 0%, #FF8C00 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  letterSpacing: "-0.01em",
                 }}
               >
-                {social.icon}
-              </IconButton>
-            ))}
-          </Stack>
-        </Box>
+                Maalgudi Technolabs
+              </Typography>
+            </Box>
 
-        <Typography
-          variant="body2"
-          sx={{
-            color: "#B0B3B8",
-            lineHeight: 1.6,
-            mb: 4,
-            textAlign: "center",
-            fontSize: "0.95rem",
-          }}
-        >
-          Delivering excellence in technology training and professional
-          development. Empowering the next generation of tech leaders through
-          industry-aligned curriculum and expert mentorship.
-        </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "#94A3B8",
+                lineHeight: 1.75,
+                mb: 3,
+                fontSize: "0.92rem",
+                maxWidth: "360px",
+              }}
+            >
+              Delivering excellence in technology training and professional
+              development. Empowering the next generation of tech leaders through
+              industry-aligned curriculum and expert mentorship.
+            </Typography>
 
-        <Grid container spacing={4} sx={{ mb: 4 }}>
+            {/* Social Links */}
+            <Stack direction="row" spacing={1.5}>
+              {socialLinks.map((social, index) => (
+                <IconButton
+                  key={index}
+                  component="a"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  sx={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: "10px",
+                    backgroundColor: "rgba(255, 255, 255, 0.04)",
+                    color: "#94A3B8",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: social.color,
+                      borderColor: social.color,
+                      color: "#FFFFFF",
+                      transform: "translateY(-3px)",
+                      boxShadow: `0 6px 16px ${social.color}40`,
+                    },
+                  }}
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Stack>
+          </Grid>
+
           {/* Quick Links */}
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={4} md={2.5}>
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
                 color: "#FF8C00",
-                mb: 3,
-                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
-                mt: { xs: 2, md: 0 },
+                mb: 2.5,
+                fontSize: "1.05rem",
               }}
             >
               Quick Links
@@ -182,31 +178,20 @@ const Footer = () => {
                   component={RouterLink}
                   to={link.path}
                   sx={{
-                    color: "#B0B3B8",
+                    color: "#94A3B8",
                     textDecoration: "none",
-                    display: "flex",
+                    display: "inline-flex",
                     alignItems: "center",
-                    transition: "all 0.3s ease",
-                    fontSize: "0.95rem",
+                    gap: 0.5,
+                    fontSize: "0.92rem",
+                    transition: "all 0.25s ease",
                     "&:hover": {
                       color: "#FF8C00",
-                      transform: "translateX(5px)",
-                      "& .arrow-icon": {
-                        opacity: 1,
-                        transform: "translateX(3px)",
-                      },
+                      transform: "translateX(4px)",
                     },
                   }}
                 >
-                  <ArrowForward
-                    className="arrow-icon"
-                    sx={{
-                      fontSize: "1rem",
-                      mr: 1,
-                      opacity: 0,
-                      transition: "all 0.3s ease",
-                    }}
-                  />
+                  <ArrowForward sx={{ fontSize: "0.85rem", opacity: 0.7 }} />
                   {link.name}
                 </Link>
               ))}
@@ -214,15 +199,14 @@ const Footer = () => {
           </Grid>
 
           {/* Services */}
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={4} md={2.5}>
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
                 color: "#FF8C00",
-                mb: 3,
-                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
-                mt: { xs: 2, md: 0 },
+                mb: 2.5,
+                fontSize: "1.05rem",
               }}
             >
               Our Services
@@ -233,13 +217,10 @@ const Footer = () => {
                   key={index}
                   variant="body2"
                   sx={{
-                    color: "#B0B3B8",
+                    color: "#94A3B8",
                     display: "flex",
                     alignItems: "center",
-                    fontSize: "0.95rem",
-                    "&:hover": {
-                      color: "#FF8C00",
-                    },
+                    fontSize: "0.92rem",
                   }}
                 >
                   <Box
@@ -260,37 +241,22 @@ const Footer = () => {
           </Grid>
 
           {/* Contact Info */}
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={4} md={3}>
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
                 color: "#FF8C00",
-                mb: 3,
-                fontSize: { xs: "1rem", sm: "1.05rem", md: "1.1rem" },
-                mt: { xs: 2, md: 0 },
+                mb: 2.5,
+                fontSize: "1.05rem",
               }}
             >
               Get in Touch
             </Typography>
             <Stack spacing={2}>
-              <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-                <LocationOn
-                  sx={{
-                    color: "#FF8C00",
-                    fontSize: "1.2rem",
-                    mr: 1.5,
-                    mt: 0.3,
-                  }}
-                />
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#B0B3B8",
-                    lineHeight: 1.7,
-                    fontSize: "0.95rem",
-                  }}
-                >
+              <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1.5 }}>
+                <LocationOn sx={{ color: "#FF8C00", fontSize: 20, mt: 0.2 }} />
+                <Typography variant="body2" sx={{ color: "#94A3B8", lineHeight: 1.6, fontSize: "0.92rem" }}>
                   Maalgudi Technolabs
                   <br />
                   Bangalore, Karnataka
@@ -298,39 +264,17 @@ const Footer = () => {
                   India
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Phone
-                  sx={{
-                    color: "#FF8C00",
-                    fontSize: "1.2rem",
-                    mr: 1.5,
-                  }}
-                />
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#B0B3B8",
-                    fontSize: "0.95rem",
-                  }}
-                >
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+                <Phone sx={{ color: "#FF8C00", fontSize: 20 }} />
+                <Typography variant="body2" sx={{ color: "#94A3B8", fontSize: "0.92rem" }}>
                   +91 99453 46124
                 </Typography>
               </Box>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Email
-                  sx={{
-                    color: "#FF8C00",
-                    fontSize: "1.2rem",
-                    mr: 1.5,
-                  }}
-                />
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#B0B3B8",
-                    fontSize: "0.95rem",
-                  }}
-                >
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+                <Email sx={{ color: "#FF8C00", fontSize: 20 }} />
+                <Typography variant="body2" sx={{ color: "#94A3B8", fontSize: "0.92rem" }}>
                   admin@malguditechnolabs.com
                 </Typography>
               </Box>
@@ -338,12 +282,7 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        <Divider
-          sx={{
-            borderColor: "rgba(255, 140, 0, 0.1)",
-            mb: 3,
-          }}
-        />
+        <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.08)", mb: 3.5 }} />
 
         {/* Bottom Bar */}
         <Box
@@ -358,33 +297,30 @@ const Footer = () => {
           <Typography
             variant="body2"
             sx={{
-              color: "#B0B3B8",
+              color: "#64748B",
               textAlign: { xs: "center", md: "left" },
-              fontSize: "0.9rem",
+              fontSize: "0.88rem",
             }}
           >
-            © {new Date().getFullYear()} Maalgudi Technolabs. All rights
-            reserved.
+            © {new Date().getFullYear()} Maalgudi Technolabs. All rights reserved.
           </Typography>
+
           <Stack
             direction="row"
             spacing={3}
             sx={{
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: { xs: 1, sm: 0 },
             }}
           >
             <Link
               href="#"
               sx={{
-                color: "#B0B3B8",
+                color: "#64748B",
                 textDecoration: "none",
-                fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  color: "#FF8C00",
-                },
+                fontSize: "0.85rem",
+                transition: "color 0.2s ease",
+                "&:hover": { color: "#FF8C00" },
               }}
             >
               Privacy Policy
@@ -392,13 +328,11 @@ const Footer = () => {
             <Link
               href="#"
               sx={{
-                color: "#B0B3B8",
+                color: "#64748B",
                 textDecoration: "none",
-                fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  color: "#FF8C00",
-                },
+                fontSize: "0.85rem",
+                transition: "color 0.2s ease",
+                "&:hover": { color: "#FF8C00" },
               }}
             >
               Terms of Service
@@ -406,13 +340,11 @@ const Footer = () => {
             <Link
               href="#"
               sx={{
-                color: "#B0B3B8",
+                color: "#64748B",
                 textDecoration: "none",
-                fontSize: { xs: "0.85rem", sm: "0.9rem" },
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  color: "#FF8C00",
-                },
+                fontSize: "0.85rem",
+                transition: "color 0.2s ease",
+                "&:hover": { color: "#FF8C00" },
               }}
             >
               Cookie Policy
@@ -420,32 +352,6 @@ const Footer = () => {
           </Stack>
         </Box>
       </Container>
-
-      {/* Decorative Elements */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-          width: "300px",
-          height: "300px",
-          background:
-            "radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: 0,
-          width: "200px",
-          height: "200px",
-          background:
-            "radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
     </Box>
   );
 };
